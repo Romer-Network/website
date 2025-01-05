@@ -91,46 +91,130 @@
     "text": "RØMER Chain’s architecture represents a systematic response to blockchain’s core challenges. Instead of adding complexity, we’ve focused on fundamental solutions:\n\nTrue geographic decentralization through physical requirements\nSustainable security through market cycle independence\nAccessible validation through reduced financial barriers\nPredictable costs through smart VM choice\nNatural MEV resistance through network design\n\nThis isn’t about revolutionary technology - it’s about solving real problems that have held back blockchain adoption. Each architectural decision traces directly back to one of these fundamental challenges."
   },
   {
-    "objectID": "regions.html",
-    "href": "regions.html",
+    "objectID": "pitch/index.html#vision-the-future-of-blockchain-infrastructure",
+    "href": "pitch/index.html#vision-the-future-of-blockchain-infrastructure",
     "title": "Rømer Chain",
-    "section": "",
-    "text": "City\nCategory\nJurisdiction\n\n\n\n\nFrankfurt\nMajor Internet Exchange (DE-CIX)\nEuropean Union/Germany\n\n\nAmsterdam\nMajor Internet Exchange (AMS-IX)\nEuropean Union/Netherlands\n\n\nLondon\nMajor Internet Exchange (LINX)\nUnited Kingdom\n\n\nAshburn VA\nMajor Internet Exchange (Equinix)\nUnited States/Federal\n\n\nNew York/NJ\nMajor Internet Exchange (NYIIX)\nUnited States/Federal\n\n\nTokyo\nMajor Internet Exchange (JPNAP)\nJapan\n\n\nSingapore\nMajor Internet Exchange (SGIX)\nSingapore\n\n\nHong Kong\nMajor Internet Exchange (HKIX)\nHong Kong SAR\n\n\nSydney\nMajor Internet Exchange (IX Australia)\nAustralia\n\n\nSão Paulo\nMajor Internet Exchange (IX.br)\nBrazil\n\n\nMarseille\nSubmarine Cable Landing\nEuropean Union/France\n\n\nLos Angeles\nSubmarine Cable Landing\nUnited States/California\n\n\nSeattle\nSubmarine Cable Landing\nUnited States/Washington\n\n\nMiami\nSubmarine Cable Landing\nUnited States/Florida\n\n\nToronto\nSubmarine Cable Landing\nCanada/Ontario\n\n\nDubai\nSubmarine Cable Landing\nUAE\n\n\nMumbai\nSubmarine Cable Landing\nIndia\n\n\nChennai\nSubmarine Cable Landing\nIndia\n\n\nFortaleza\nSubmarine Cable Landing\nBrazil\n\n\nManila\nSubmarine Cable Landing\nPhilippines\n\n\nStockholm\nStrategic Terrestrial Crossing\nEuropean Union/Sweden\n\n\nWarsaw\nStrategic Terrestrial Crossing\nEuropean Union/Poland\n\n\nIstanbul\nStrategic Terrestrial Crossing\nTurkey\n\n\nCairo\nStrategic Terrestrial Crossing\nEgypt\n\n\nMoscow\nStrategic Terrestrial Crossing\nRussia\n\n\nBeijing\nStrategic Terrestrial Crossing\nChina\n\n\nSeoul\nStrategic Terrestrial Crossing\nSouth Korea\n\n\nTaipei\nStrategic Terrestrial Crossing\nTaiwan\n\n\nJakarta\nStrategic Terrestrial Crossing\nIndonesia\n\n\nAuckland\nStrategic Terrestrial Crossing\nNew Zealand\n\n\nParis\nRegional Internet Exchange (France-IX)\nEuropean Union/France\n\n\nMadrid\nRegional Internet Exchange (ESPANIX)\nEuropean Union/Spain\n\n\nMilan\nRegional Internet Exchange (MIX)\nEuropean Union/Italy\n\n\nVienna\nRegional Internet Exchange (VIX)\nEuropean Union/Austria\n\n\nPrague\nRegional Internet Exchange (NIX.CZ)\nEuropean Union/Czech Republic\n\n\nCopenhagen\nRegional Internet Exchange (Netnod)\nEuropean Union/Denmark\n\n\nHelsinki\nRegional Internet Exchange (FICIX)\nEuropean Union/Finland\n\n\nTel Aviv\nRegional Internet Exchange (IIX)\nIsrael\n\n\nJohannesburg\nRegional Internet Exchange (NAPAfrica)\nSouth Africa\n\n\nLagos\nRegional Internet Exchange (IXPN)\nNigeria\n\n\nNairobi\nEmerging Strategic Point\nKenya\n\n\nCape Town\nEmerging Strategic Point\nSouth Africa\n\n\nPanama City\nEmerging Strategic Point\nPanama\n\n\nSantiago\nEmerging Strategic Point\nChile\n\n\nVancouver\nEmerging Strategic Point\nCanada/British Columbia\n\n\nPerth\nEmerging Strategic Point\nAustralia\n\n\nKuala Lumpur\nEmerging Strategic Point\nMalaysia\n\n\nMuscat\nEmerging Strategic Point\nOman\n\n\nDublin\nEmerging Strategic Point\nEuropean Union/Ireland\n\n\nMontreal\nEmerging Strategic Point\nCanada/Quebec\n\n\nBuenos Aires\nRegional Internet Exchange (CABASE)\nArgentina\n\n\nRio de Janeiro\nRegional Internet Exchange (IX.br)\nBrazil\n\n\nBogotá\nRegional Internet Exchange (NAP Colombia)\nColombia\n\n\nMexico City\nRegional Internet Exchange (IXSY)\nMexico\n\n\nLima\nRegional Internet Exchange (NAP Peru)\nPeru\n\n\nQuito\nRegional Internet Exchange (NAP.EC)\nEcuador\n\n\nCaracas\nRegional Internet Exchange (IXP Venezuela)\nVenezuela\n\n\nSan Juan\nRegional Internet Exchange (Puerto Rico Bridge Initiative)\nPuerto Rico\n\n\nWashington D.C.\nMajor Internet Exchange (Equinix)\nUnited States/Federal\n\n\nChicago\nMajor Internet Exchange (CHI-X)\nUnited States/Illinois\n\n\nAtlanta\nMajor Internet Exchange (Equinix)\nUnited States/Georgia\n\n\nDallas\nMajor Internet Exchange (Equinix)\nUnited States/Texas\n\n\nDenver\nMajor Internet Exchange (Any2)\nUnited States/Colorado\n\n\nPhoenix\nMajor Internet Exchange (Phoenix-IX)\nUnited States/Arizona\n\n\nSan Jose\nMajor Internet Exchange (Equinix)\nUnited States/California\n\n\nBoston\nMajor Internet Exchange (MASS-IX)\nUnited States/Massachusetts\n\n\nOsaka\nMajor Internet Exchange (JPIX)\nJapan\n\n\nNagoya\nMajor Internet Exchange (JPNAP)\nJapan\n\n\nFukuoka\nMajor Internet Exchange (BBIX)\nJapan\n\n\nSapporo\nMajor Internet Exchange (BBIX)\nJapan\n\n\nShanghai\nMajor Internet Exchange (CHN-IX)\nChina\n\n\nGuangzhou\nMajor Internet Exchange (CHN-IX)\nChina\n\n\nShenzhen\nMajor Internet Exchange (CHN-IX)\nChina\n\n\nTaipei\nMajor Internet Exchange (TPIX)\nTaiwan\n\n\nKaohsiung\nMajor Internet Exchange (TPIX)\nTaiwan\n\n\nBangkok\nMajor Internet Exchange (BKNIX)\nThailand\n\n\nHo Chi Minh City\nMajor Internet Exchange (VNIX)\nVietnam\n\n\nHanoi\nMajor Internet Exchange (VNIX)\nVietnam\n\n\nKuala Lumpur\nMajor Internet Exchange (MyIX)\nMalaysia\n\n\nCyberjaya\nMajor Internet Exchange (JBIX)\nMalaysia\n\n\nQuezon City\nMajor Internet Exchange (PHOpenIX)\nPhilippines\n\n\nCebu City\nMajor Internet Exchange (PHOpenIX)\nPhilippines\n\n\nMumbai\nMajor Internet Exchange (NIXI)\nIndia\n\n\nDelhi\nMajor Internet Exchange (NIXI)\nIndia\n\n\nBangalore\nMajor Internet Exchange (NIXI)\nIndia\n\n\nHyderabad\nMajor Internet Exchange (NIXI)\nIndia\n\n\nChennai\nMajor Internet Exchange (NIXI)\nIndia\n\n\nKolkata\nMajor Internet Exchange (NIXI)\nIndia\n\n\nPune\nMajor Internet Exchange (NIXI)\nIndia\n\n\nRiyadh\nMajor Internet Exchange (SAIX)\nSaudi Arabia\n\n\nJeddah\nMajor Internet Exchange (SAIX)\nSaudi Arabia\n\n\nDubai\nMajor Internet Exchange (UAE-IX)\nUAE\n\n\nAbu Dhabi\nMajor Internet Exchange (UAE-IX)\nUAE\n\n\nDoha\nMajor Internet Exchange (QIXP)\nQatar\n\n\nKuwait City\nMajor Internet Exchange (IX.kw)\nKuwait\n\n\nManama\nMajor Internet Exchange (BIXP)\nBahrain\n\n\nJohannesburg\nMajor Internet Exchange (JINX)\nSouth Africa\n\n\nCape Town\nMajor Internet Exchange (CINX)\nSouth Africa\n\n\nDurban\nMajor Internet Exchange (DINX)\nSouth Africa\n\n\nNairobi\nMajor Internet Exchange (KIXP)\nKenya\n\n\nMombasa\nMajor Internet Exchange (KIXP)\nKenya"
+    "section": "Vision: The Future of Blockchain Infrastructure",
+    "text": "Vision: The Future of Blockchain Infrastructure\nRømer Chain represents a fundamental reimagining of blockchain architecture. By combining Austrian economics, physical decentralization, and innovative consensus mechanisms, we’re creating the first blockchain explicitly designed to thrive during bear markets - precisely when other chains are most vulnerable.\n\n\nFirst blockchain built on physical reality rather than virtual consensus\nTrue geographic decentralization across 80+ strategic network locations\nAustrian economic principles that naturally strengthen the network during market downturns\nFixed computation costs enabling enterprise-grade stability"
+  },
+  {
+    "objectID": "pitch/index.html#market-opportunity",
+    "href": "pitch/index.html#market-opportunity",
+    "title": "Rømer Chain",
+    "section": "Market Opportunity",
+    "text": "Market Opportunity\nThe blockchain industry faces critical challenges that create an opening for innovation:\n\n\n$100B+ lost in 2022 bear market due to unstable tokenomics\n90% of Ethereum nodes run on just 3 cloud providers\nAverage validator costs exceed $50,000 on major chains\nComputation costs vary by 1000%+ during market cycles\n\n\nThese systemic weaknesses create an opportunity for a fundamentally new approach."
+  },
+  {
+    "objectID": "pitch/index.html#the-problem",
+    "href": "pitch/index.html#the-problem",
+    "title": "Rømer Chain",
+    "section": "The Problem",
+    "text": "The Problem\nCurrent blockchain architectures face five fundamental challenges:\n\n\nMarket Cycle Vulnerability: Bear markets devastate development and security\nGeographic Centralization: Most nodes run in the same data centers\nHigh Validator Barriers: Massive financial requirements limit participation\nUnstable Computation Costs: Unpredictable pricing blocks enterprise adoption\nMEV as Market Distortion: Front-running undermines market integrity"
+  },
+  {
+    "objectID": "pitch/index.html#the-rømer-solution",
+    "href": "pitch/index.html#the-rømer-solution",
+    "title": "Rømer Chain",
+    "section": "The Rømer Solution",
+    "text": "The Rømer Solution\nFour core innovations solve these fundamental challenges:\n\n\nCounter-Cyclical Economics\n\nSupply contracts in bear markets\nToken value naturally rises\nDevelopment continues unimpeded\n\n\nGeographic Distribution\n\nPhysical infrastructure requirements\nMulti-jurisdictional resilience\nNatural DDoS protection\n\n\nProof of Physics\n\nPerformance-based validation\nMinimal financial barriers\nTrue decentralization\n\n\nSui Move VM\n\nUpfront compute costs\nNo gas refunds for reverts\nPrevents MEV spam attacks\nGranular resource tracking"
+  },
+  {
+    "objectID": "pitch/index.html#our-competitive-edge",
+    "href": "pitch/index.html#our-competitive-edge",
+    "title": "Rømer Chain",
+    "section": "Our Competitive Edge",
+    "text": "Our Competitive Edge\nWhy Rømer Chain represents a step-function improvement:\n\n\nTraditional Chains\n\nVulnerable to bear markets\nCentralized in data centers\nHigh financial barriers\nVolatile compute costs\nMEV extraction issues\n\n\nRømer Chain\n\nThrives in bear markets\nTrue physical distribution\nMinimal financial barriers\nFixed compute costs\nNatural MEV protection"
+  },
+  {
+    "objectID": "pitch/index.html#technical-innovation",
+    "href": "pitch/index.html#technical-innovation",
+    "title": "Rømer Chain",
+    "section": "Technical Innovation",
+    "text": "Technical Innovation\nOur architecture leverages three major components:\n\n\nCommonware Primitives: Sub-second finality through Simplex consensus\nProof of Physics: Geographic validation through network performance\nSui Integration: Precise computation cost tracking via Move\n\n\nEach component reinforces our core advantages while maintaining simplicity."
+  },
+  {
+    "objectID": "pitch/index.html#development-roadmap",
+    "href": "pitch/index.html#development-roadmap",
+    "title": "Rømer Chain",
+    "section": "Development Roadmap",
+    "text": "Development Roadmap\n\n\nPhase 1: Q2-Q3 2025\n\nCore network bootstrap\nEconomic engine implementation\nInitial devnet deployment\n\n\nPhase 2: Q3-Q4 2025\n\nNetwork coordination system\nPerformance measurement\nGeographic proof prototype\n\n\nPhase 3: Q4 2025 - Q1 2026\n\nMulti-validator expansion\nGeographic distribution\nProduction infrastructure\n\n\nPhase 4: Q2 2026\n\nSui integration completion\nMainnet preparation\nSecurity audits & testing"
+  },
+  {
+    "objectID": "pitch/index.html#current-status-next-steps",
+    "href": "pitch/index.html#current-status-next-steps",
+    "title": "Rømer Chain",
+    "section": "Current Status & Next Steps",
+    "text": "Current Status & Next Steps\nDevelopment Progress:\n\n\nCore consensus mechanism implementation underway\nEconomic model fully specified\nGeographic distribution system designed\n\n\nImmediate Focus:\n\n\nCommonware integration development\nAngel investment outreach\nCommunity building initiation"
+  },
+  {
+    "objectID": "pitch/index.html#leadership",
+    "href": "pitch/index.html#leadership",
+    "title": "Rømer Chain",
+    "section": "Leadership",
+    "text": "Leadership\nFounder & CEO\nExperienced blockchain founder and technical leader:\n\nSuccessfully scaled Pangolin DEX to nearly $500M TVL\nManaged over $18B in total trading volume\nExpanded operations across 4 blockchain networks\nPrevious successful exit from Microsoft Dynamics payroll solution\nEconomics degree providing foundation for tokenomics design"
+  },
+  {
+    "objectID": "pitch/index.html#investment-opportunity",
+    "href": "pitch/index.html#investment-opportunity",
+    "title": "Rømer Chain",
+    "section": "Investment Opportunity",
+    "text": "Investment Opportunity\nSeeking angel investment to:\n\n\nAccelerate core development\nBuild strategic partnerships\nExpand technical team\nLaunch initial testnet\n\n\nPerfect timing to:\n\n\nCapitalize on bear market building opportunity\nPosition for next market cycle\nEstablish first-mover advantage in physical blockchain infrastructure"
+  },
+  {
+    "objectID": "pitch/index.html#why-now",
+    "href": "pitch/index.html#why-now",
+    "title": "Rømer Chain",
+    "section": "Why Now?",
+    "text": "Why Now?\nThe market desperately needs a blockchain that:\n\n\nProvides genuine geographic decentralization\nImplements sound Austrian economics\nOffers predictable computation costs\nEliminates financial barriers to validation\nCreates natural resistance to centralization\n\n\nThe time is perfect to build the infrastructure for the next generation of blockchain adoption."
+  },
+  {
+    "objectID": "pitch/index.html#long-term-vision",
+    "href": "pitch/index.html#long-term-vision",
+    "title": "Rømer Chain",
+    "section": "Long-Term Vision",
+    "text": "Long-Term Vision\nBuilding the foundation for truly sustainable blockchain infrastructure:\n\n\nNetwork Sustainability\n\nGeographic resilience\nEconomic stability\nPermissionless validation\n\nTechnical Innovation\n\nAdvanced privacy features\nMEV protection systems\nContinued geographic expansion\n\nMarket Impact\n\nEnterprise-grade stability\nTrue decentralization\nSound money principles\n\n\n\nLet’s build the future of blockchain infrastructure together."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Rømer Chain: Building the First Physically Decentralized Layer 1",
+    "title": "Rømer Chain: The First Layer 1 Built for Market Makers",
     "section": "",
-    "text": "Rømer Chain represents a fundamental reimagining of blockchain infrastructure, combining physical decentralization with Austrian economics to create a network that grows stronger in challenging market conditions.\n\n\nAre you interested in supporting the next evolution in blockchain infrastructure? Rømer Chain introduces novel solutions to critical industry challenges:\nView Our Investment Pitch →\n\nGeographic decentralization preventing network capture\nCounter-cyclical economics that strengthen in bear markets\n\nNatural MEV resistance through physical topology\nDramatically lower barriers to network participation\n\n\n\n\nWant to understand how we’re building a blockchain that validates physical reality? Dive into our technical architecture:\nExplore Technical Design →\n\nProof of Physics consensus mechanism\nIntegration with Sui Move VM\nZero-knowledge hardware attestation\nSimplex consensus implementation\n\n\n\n\nCurious about our Austrian approach to blockchain economics? Examine our novel tokenomics model:\nStudy Economic Model →\n\nFixed computation costs with dynamic supply\nCounter-cyclical validator incentives\nMarket-driven price discovery\nSustainable treasury mechanics\n\n\n\n\nRømer Chain demonstrates how proper system design can solve fundamental blockchain challenges through physical decentralization, economic stability, and technical innovation. Whether you’re an investor, engineer, or researcher, we invite you to explore how we’re building the foundation for truly sustainable blockchain infrastructure.\nRead Our Latest Development Updates →"
+    "text": "Rømer Chain reimagines blockchain infrastructure by putting market makers at the center of network operations. Through our unique Proof of Physics consensus mechanism, we create natural regional advantages that protect local market makers while ensuring true physical decentralization.\n\n\nAs a market maker, your validator node becomes your complete trading infrastructure. Take control of your regional market:\nJoin Our Market Maker Program →\n\nBuilt-in order management and risk controls\nDirect transaction ordering when producing blocks\nGeographic protection from global HFT firms\nDual revenue from validation and market making\nAutomated yield farming for idle inventory\n\n\n\n\nHelp build the first blockchain designed specifically for market making operations:\nExplore Our Architecture →\n\nIntegration with Sui Move VM for DeFi primitives\nZero-knowledge hardware attestation\nProof of Physics consensus mechanism\nStandardized DEX interfaces\nGeographic validation protocols\n\n\n\n\nSupport the evolution of decentralized market making infrastructure:\nView Investment Opportunities →\n\nMarket maker validators ensure natural liquidity\nGeographic decentralization prevents network capture\nPhysical infrastructure requirements create defensible moats\nGrowing ecosystem of regional trading firms\n\n\n\n\nStudy how we align network economics with market making principles:\nExamine Our Economic Model →\n\nRegional price discovery mechanics\nMarket maker incentive structures\nGeographic game theory\nAustrian economic foundations\n\n\n\n\nRømer Chain demonstrates how proper system design can transform market making through physical decentralization, economic alignment, and purpose-built infrastructure. Whether you’re a market maker seeking an edge, an engineer building the future of trading, an investor backing innovation, or a researcher studying market dynamics, we invite you to explore how we’re creating the foundation for regional market making excellence."
   },
   {
-    "objectID": "index.html#for-investors",
-    "href": "index.html#for-investors",
-    "title": "Rømer Chain: Building the First Physically Decentralized Layer 1",
+    "objectID": "index.html#for-market-makers",
+    "href": "index.html#for-market-makers",
+    "title": "Rømer Chain: The First Layer 1 Built for Market Makers",
     "section": "",
-    "text": "Are you interested in supporting the next evolution in blockchain infrastructure? Rømer Chain introduces novel solutions to critical industry challenges:\nView Our Investment Pitch →\n\nGeographic decentralization preventing network capture\nCounter-cyclical economics that strengthen in bear markets\n\nNatural MEV resistance through physical topology\nDramatically lower barriers to network participation"
+    "text": "As a market maker, your validator node becomes your complete trading infrastructure. Take control of your regional market:\nJoin Our Market Maker Program →\n\nBuilt-in order management and risk controls\nDirect transaction ordering when producing blocks\nGeographic protection from global HFT firms\nDual revenue from validation and market making\nAutomated yield farming for idle inventory"
   },
   {
     "objectID": "index.html#for-engineers-developers",
     "href": "index.html#for-engineers-developers",
-    "title": "Rømer Chain: Building the First Physically Decentralized Layer 1",
+    "title": "Rømer Chain: The First Layer 1 Built for Market Makers",
     "section": "",
-    "text": "Want to understand how we’re building a blockchain that validates physical reality? Dive into our technical architecture:\nExplore Technical Design →\n\nProof of Physics consensus mechanism\nIntegration with Sui Move VM\nZero-knowledge hardware attestation\nSimplex consensus implementation"
+    "text": "Help build the first blockchain designed specifically for market making operations:\nExplore Our Architecture →\n\nIntegration with Sui Move VM for DeFi primitives\nZero-knowledge hardware attestation\nProof of Physics consensus mechanism\nStandardized DEX interfaces\nGeographic validation protocols"
+  },
+  {
+    "objectID": "index.html#for-investors",
+    "href": "index.html#for-investors",
+    "title": "Rømer Chain: The First Layer 1 Built for Market Makers",
+    "section": "",
+    "text": "Support the evolution of decentralized market making infrastructure:\nView Investment Opportunities →\n\nMarket maker validators ensure natural liquidity\nGeographic decentralization prevents network capture\nPhysical infrastructure requirements create defensible moats\nGrowing ecosystem of regional trading firms"
   },
   {
     "objectID": "index.html#for-economic-researchers",
     "href": "index.html#for-economic-researchers",
-    "title": "Rømer Chain: Building the First Physically Decentralized Layer 1",
+    "title": "Rømer Chain: The First Layer 1 Built for Market Makers",
     "section": "",
-    "text": "Curious about our Austrian approach to blockchain economics? Examine our novel tokenomics model:\nStudy Economic Model →\n\nFixed computation costs with dynamic supply\nCounter-cyclical validator incentives\nMarket-driven price discovery\nSustainable treasury mechanics"
+    "text": "Study how we align network economics with market making principles:\nExamine Our Economic Model →\n\nRegional price discovery mechanics\nMarket maker incentive structures\nGeographic game theory\nAustrian economic foundations"
   },
   {
     "objectID": "index.html#join-the-evolution",
     "href": "index.html#join-the-evolution",
-    "title": "Rømer Chain: Building the First Physically Decentralized Layer 1",
+    "title": "Rømer Chain: The First Layer 1 Built for Market Makers",
     "section": "",
-    "text": "Rømer Chain demonstrates how proper system design can solve fundamental blockchain challenges through physical decentralization, economic stability, and technical innovation. Whether you’re an investor, engineer, or researcher, we invite you to explore how we’re building the foundation for truly sustainable blockchain infrastructure.\nRead Our Latest Development Updates →"
+    "text": "Rømer Chain demonstrates how proper system design can transform market making through physical decentralization, economic alignment, and purpose-built infrastructure. Whether you’re a market maker seeking an edge, an engineer building the future of trading, an investor backing innovation, or a researcher studying market dynamics, we invite you to explore how we’re creating the foundation for regional market making excellence."
   },
   {
     "objectID": "economics/model.html",
@@ -418,13 +502,6 @@
     "title": "Order Flow Wars: From Wall Street to Blockchain",
     "section": "",
     "text": "The conversation around MEV often focuses on whether it can be eliminated. This misses the point. The real question is how we can structure markets to channel trading activity toward beneficial forms of value extraction while making harmful forms prohibitively expensive. Through its combination of economic incentives, geographic distribution, and infrastructure rotation, Rømer Chain works to create markets where MEV extraction aligns with, rather than opposes, market efficiency."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
   },
   {
     "objectID": "blog/drafts/2025-01-01-devnet/index.html",
@@ -719,88 +796,39 @@
     "text": "RØMER’s resource model creates a sustainable economic framework that aligns the interests of all network participants. By combining fixed computational fees with a storage deposit system, we ensure both efficient immediate resource usage and responsible long-term state growth. This approach provides the predictability users need while maintaining the economic incentives required for network sustainability."
   },
   {
-    "objectID": "pitch/index.html#vision-the-future-of-blockchain-infrastructure",
-    "href": "pitch/index.html#vision-the-future-of-blockchain-infrastructure",
-    "title": "Rømer Chain",
-    "section": "Vision: The Future of Blockchain Infrastructure",
-    "text": "Vision: The Future of Blockchain Infrastructure\nRømer Chain represents a fundamental reimagining of blockchain architecture. By combining Austrian economics, physical decentralization, and innovative consensus mechanisms, we’re creating the first blockchain explicitly designed to thrive during bear markets - precisely when other chains are most vulnerable.\n\n\nFirst blockchain built on physical reality rather than virtual consensus\nTrue geographic decentralization across 80+ strategic network locations\nAustrian economic principles that naturally strengthen the network during market downturns\nFixed computation costs enabling enterprise-grade stability"
+    "objectID": "market-makers/index.html",
+    "href": "market-makers/index.html",
+    "title": "Market Makers: Help Build Your Future Infrastructure",
+    "section": "",
+    "text": "As market makers, your edge comes from deep understanding of local markets and the ability to react quickly to opportunities. But this advantage is constantly under threat from global firms using cloud infrastructure to compete in your region. Rømer Chain is building the first blockchain infrastructure that protects and enhances your regional advantage.\n\n\n\n\nOur first development phase focuses on the foundation of regional market making: ensuring validators are physically present in their operating regions. This creates natural geographic advantages that cloud providers cannot replicate, protecting local market makers from global firms attempting to compete in multiple regions simultaneously.\nThink of this as building the secure foundation that protects your regional trading advantage. When you operate a Rømer validator, you gain natural latency advantages that distant competitors cannot overcome, regardless of their technical resources.\nCurrent Status: We are implementing and testing our core validator infrastructure with built-in geographic protections.\n\n\n\nThe second phase focuses on integrating professional trading capabilities directly into validator nodes. We’re starting with the most critical component: comprehensive multi-signature functionality that mirrors how trading firms actually operate.\nKey Features Under Development: - Role-based access control for trading operations - Configurable approval thresholds based on trade size - Time-locked transaction scheduling - Emergency shutdown capabilities - Audit trail and compliance reporting\nWe Need Your Input: This is where you come in. We want to build infrastructure that serves your actual needs. We’re seeking conversations with market makers to understand:\n\nYour current operational workflows\nRisk management requirements\nIntegration needs with existing systems\nRegulatory compliance considerations\nFeature prioritization for future development\n\n\n\n\n\nWhile we’re not in a position to offer financial compensation for your time, we are offering a meaningful allocation of Rømer tokens to market makers who help shape the protocol during this critical phase.\nPartnership Benefits: - Direct influence on protocol development - Early access to validator software - Reserved validator slots in your region - Token allocation for participation - Priority technical support\nCommitment Required: - 2-3 hours of interviews over 6 months - Feedback on proposed features - Review of technical specifications - Testing of beta implementations - Input on regional market requirements\n\n\n\nThe blockchain industry has built plenty of infrastructure for developers, but very little specifically for market makers. This is your opportunity to help create tooling that serves your actual needs. By engaging early, you can ensure that Rømer Chain develops features that:\n\nMatch your operational requirements\nIntegrate with your existing systems\nAddress your regulatory constraints\nSolve real problems you face daily\nProtect your regional advantages\n\n\n\n\nIf you’re interested in shaping the future of market making infrastructure:\n\nFill out our Market Maker Interest Form\nSchedule an initial discussion with our team\nReview our technical documentation\nStart providing input on feature priorities\n\nThe future of market making is regional, and we’re building the infrastructure to make that future possible. Join us in creating a system that serves the actual needs of market makers while protecting the advantages that come from local market expertise."
   },
   {
-    "objectID": "pitch/index.html#market-opportunity",
-    "href": "pitch/index.html#market-opportunity",
-    "title": "Rømer Chain",
-    "section": "Market Opportunity",
-    "text": "Market Opportunity\nThe blockchain industry faces critical challenges that create an opening for innovation:\n\n\n$100B+ lost in 2022 bear market due to unstable tokenomics\n90% of Ethereum nodes run on just 3 cloud providers\nAverage validator costs exceed $50,000 on major chains\nComputation costs vary by 1000%+ during market cycles\n\n\nThese systemic weaknesses create an opportunity for a fundamentally new approach."
+    "objectID": "market-makers/index.html#development-roadmap",
+    "href": "market-makers/index.html#development-roadmap",
+    "title": "Market Makers: Help Build Your Future Infrastructure",
+    "section": "",
+    "text": "Our first development phase focuses on the foundation of regional market making: ensuring validators are physically present in their operating regions. This creates natural geographic advantages that cloud providers cannot replicate, protecting local market makers from global firms attempting to compete in multiple regions simultaneously.\nThink of this as building the secure foundation that protects your regional trading advantage. When you operate a Rømer validator, you gain natural latency advantages that distant competitors cannot overcome, regardless of their technical resources.\nCurrent Status: We are implementing and testing our core validator infrastructure with built-in geographic protections.\n\n\n\nThe second phase focuses on integrating professional trading capabilities directly into validator nodes. We’re starting with the most critical component: comprehensive multi-signature functionality that mirrors how trading firms actually operate.\nKey Features Under Development: - Role-based access control for trading operations - Configurable approval thresholds based on trade size - Time-locked transaction scheduling - Emergency shutdown capabilities - Audit trail and compliance reporting\nWe Need Your Input: This is where you come in. We want to build infrastructure that serves your actual needs. We’re seeking conversations with market makers to understand:\n\nYour current operational workflows\nRisk management requirements\nIntegration needs with existing systems\nRegulatory compliance considerations\nFeature prioritization for future development"
   },
   {
-    "objectID": "pitch/index.html#the-problem",
-    "href": "pitch/index.html#the-problem",
-    "title": "Rømer Chain",
-    "section": "The Problem",
-    "text": "The Problem\nCurrent blockchain architectures face five fundamental challenges:\n\n\nMarket Cycle Vulnerability: Bear markets devastate development and security\nGeographic Centralization: Most nodes run in the same data centers\nHigh Validator Barriers: Massive financial requirements limit participation\nUnstable Computation Costs: Unpredictable pricing blocks enterprise adoption\nMEV as Market Distortion: Front-running undermines market integrity"
+    "objectID": "market-makers/index.html#early-engagement-program",
+    "href": "market-makers/index.html#early-engagement-program",
+    "title": "Market Makers: Help Build Your Future Infrastructure",
+    "section": "",
+    "text": "While we’re not in a position to offer financial compensation for your time, we are offering a meaningful allocation of Rømer tokens to market makers who help shape the protocol during this critical phase.\nPartnership Benefits: - Direct influence on protocol development - Early access to validator software - Reserved validator slots in your region - Token allocation for participation - Priority technical support\nCommitment Required: - 2-3 hours of interviews over 6 months - Feedback on proposed features - Review of technical specifications - Testing of beta implementations - Input on regional market requirements"
   },
   {
-    "objectID": "pitch/index.html#the-rømer-solution",
-    "href": "pitch/index.html#the-rømer-solution",
-    "title": "Rømer Chain",
-    "section": "The Rømer Solution",
-    "text": "The Rømer Solution\nFour core innovations solve these fundamental challenges:\n\n\nCounter-Cyclical Economics\n\nSupply contracts in bear markets\nToken value naturally rises\nDevelopment continues unimpeded\n\n\nGeographic Distribution\n\nPhysical infrastructure requirements\nMulti-jurisdictional resilience\nNatural DDoS protection\n\n\nProof of Physics\n\nPerformance-based validation\nMinimal financial barriers\nTrue decentralization\n\n\nSui Move VM\n\nUpfront compute costs\nNo gas refunds for reverts\nPrevents MEV spam attacks\nGranular resource tracking"
+    "objectID": "market-makers/index.html#why-engage-now",
+    "href": "market-makers/index.html#why-engage-now",
+    "title": "Market Makers: Help Build Your Future Infrastructure",
+    "section": "",
+    "text": "The blockchain industry has built plenty of infrastructure for developers, but very little specifically for market makers. This is your opportunity to help create tooling that serves your actual needs. By engaging early, you can ensure that Rømer Chain develops features that:\n\nMatch your operational requirements\nIntegrate with your existing systems\nAddress your regulatory constraints\nSolve real problems you face daily\nProtect your regional advantages"
   },
   {
-    "objectID": "pitch/index.html#our-competitive-edge",
-    "href": "pitch/index.html#our-competitive-edge",
-    "title": "Rømer Chain",
-    "section": "Our Competitive Edge",
-    "text": "Our Competitive Edge\nWhy Rømer Chain represents a step-function improvement:\n\n\nTraditional Chains\n\nVulnerable to bear markets\nCentralized in data centers\nHigh financial barriers\nVolatile compute costs\nMEV extraction issues\n\n\nRømer Chain\n\nThrives in bear markets\nTrue physical distribution\nMinimal financial barriers\nFixed compute costs\nNatural MEV protection"
-  },
-  {
-    "objectID": "pitch/index.html#technical-innovation",
-    "href": "pitch/index.html#technical-innovation",
-    "title": "Rømer Chain",
-    "section": "Technical Innovation",
-    "text": "Technical Innovation\nOur architecture leverages three major components:\n\n\nCommonware Primitives: Sub-second finality through Simplex consensus\nProof of Physics: Geographic validation through network performance\nSui Integration: Precise computation cost tracking via Move\n\n\nEach component reinforces our core advantages while maintaining simplicity."
-  },
-  {
-    "objectID": "pitch/index.html#development-roadmap",
-    "href": "pitch/index.html#development-roadmap",
-    "title": "Rømer Chain",
-    "section": "Development Roadmap",
-    "text": "Development Roadmap\n\n\nPhase 1: Q2-Q3 2025\n\nCore network bootstrap\nEconomic engine implementation\nInitial devnet deployment\n\n\nPhase 2: Q3-Q4 2025\n\nNetwork coordination system\nPerformance measurement\nGeographic proof prototype\n\n\nPhase 3: Q4 2025 - Q1 2026\n\nMulti-validator expansion\nGeographic distribution\nProduction infrastructure\n\n\nPhase 4: Q2 2026\n\nSui integration completion\nMainnet preparation\nSecurity audits & testing"
-  },
-  {
-    "objectID": "pitch/index.html#current-status-next-steps",
-    "href": "pitch/index.html#current-status-next-steps",
-    "title": "Rømer Chain",
-    "section": "Current Status & Next Steps",
-    "text": "Current Status & Next Steps\nDevelopment Progress:\n\n\nCore consensus mechanism implementation underway\nEconomic model fully specified\nGeographic distribution system designed\n\n\nImmediate Focus:\n\n\nCommonware integration development\nAngel investment outreach\nCommunity building initiation"
-  },
-  {
-    "objectID": "pitch/index.html#leadership",
-    "href": "pitch/index.html#leadership",
-    "title": "Rømer Chain",
-    "section": "Leadership",
-    "text": "Leadership\nFounder & CEO\nExperienced blockchain founder and technical leader:\n\nSuccessfully scaled Pangolin DEX to nearly $500M TVL\nManaged over $18B in total trading volume\nExpanded operations across 4 blockchain networks\nPrevious successful exit from Microsoft Dynamics payroll solution\nEconomics degree providing foundation for tokenomics design"
-  },
-  {
-    "objectID": "pitch/index.html#investment-opportunity",
-    "href": "pitch/index.html#investment-opportunity",
-    "title": "Rømer Chain",
-    "section": "Investment Opportunity",
-    "text": "Investment Opportunity\nSeeking angel investment to:\n\n\nAccelerate core development\nBuild strategic partnerships\nExpand technical team\nLaunch initial testnet\n\n\nPerfect timing to:\n\n\nCapitalize on bear market building opportunity\nPosition for next market cycle\nEstablish first-mover advantage in physical blockchain infrastructure"
-  },
-  {
-    "objectID": "pitch/index.html#why-now",
-    "href": "pitch/index.html#why-now",
-    "title": "Rømer Chain",
-    "section": "Why Now?",
-    "text": "Why Now?\nThe market desperately needs a blockchain that:\n\n\nProvides genuine geographic decentralization\nImplements sound Austrian economics\nOffers predictable computation costs\nEliminates financial barriers to validation\nCreates natural resistance to centralization\n\n\nThe time is perfect to build the infrastructure for the next generation of blockchain adoption."
-  },
-  {
-    "objectID": "pitch/index.html#long-term-vision",
-    "href": "pitch/index.html#long-term-vision",
-    "title": "Rømer Chain",
-    "section": "Long-Term Vision",
-    "text": "Long-Term Vision\nBuilding the foundation for truly sustainable blockchain infrastructure:\n\n\nNetwork Sustainability\n\nGeographic resilience\nEconomic stability\nPermissionless validation\n\nTechnical Innovation\n\nAdvanced privacy features\nMEV protection systems\nContinued geographic expansion\n\nMarket Impact\n\nEnterprise-grade stability\nTrue decentralization\nSound money principles\n\n\n\nLet’s build the future of blockchain infrastructure together."
+    "objectID": "market-makers/index.html#next-steps",
+    "href": "market-makers/index.html#next-steps",
+    "title": "Market Makers: Help Build Your Future Infrastructure",
+    "section": "",
+    "text": "If you’re interested in shaping the future of market making infrastructure:\n\nFill out our Market Maker Interest Form\nSchedule an initial discussion with our team\nReview our technical documentation\nStart providing input on feature priorities\n\nThe future of market making is regional, and we’re building the infrastructure to make that future possible. Join us in creating a system that serves the actual needs of market makers while protecting the advantages that come from local market expertise."
   },
   {
     "objectID": "technical/devnet.html",

@@ -1,0 +1,69 @@
+# Market Makers: Help Build Your Future Infrastructure
+
+As market makers, your edge comes from deep understanding of local markets and the ability to react quickly to opportunities. But this advantage is constantly under threat from global firms using cloud infrastructure to compete in your region. Rømer Chain is building the first blockchain infrastructure that protects and enhances your regional advantage.
+
+## Development Roadmap
+
+### Devnet 1: Protecting Regional Advantages
+Our first development phase focuses on the foundation of regional market making: ensuring validators are physically present in their operating regions. This creates natural geographic advantages that cloud providers cannot replicate, protecting local market makers from global firms attempting to compete in multiple regions simultaneously.
+
+Think of this as building the secure foundation that protects your regional trading advantage. When you operate a Rømer validator, you gain natural latency advantages that distant competitors cannot overcome, regardless of their technical resources.
+
+Current Status: We are implementing and testing our core validator infrastructure with built-in geographic protections.
+
+### Devnet 2: Building Your Trading Infrastructure
+The second phase focuses on integrating professional trading capabilities directly into validator nodes. We're starting with the most critical component: comprehensive multi-signature functionality that mirrors how trading firms actually operate.
+
+Key Features Under Development:
+- Role-based access control for trading operations
+- Configurable approval thresholds based on trade size
+- Time-locked transaction scheduling
+- Emergency shutdown capabilities
+- Audit trail and compliance reporting
+
+We Need Your Input: This is where you come in. We want to build infrastructure that serves your actual needs. We're seeking conversations with market makers to understand:
+
+1. Your current operational workflows
+2. Risk management requirements
+3. Integration needs with existing systems
+4. Regulatory compliance considerations
+5. Feature prioritization for future development
+
+## Early Engagement Program
+
+While we're not in a position to offer financial compensation for your time, we are offering a meaningful allocation of Rømer tokens to market makers who help shape the protocol during this critical phase.
+
+Partnership Benefits:
+- Direct influence on protocol development
+- Early access to validator software
+- Reserved validator slots in your region
+- Token allocation for participation
+- Priority technical support
+
+Commitment Required:
+- 2-3 hours of interviews over 6 months
+- Feedback on proposed features
+- Review of technical specifications
+- Testing of beta implementations
+- Input on regional market requirements
+
+## Why Engage Now?
+
+The blockchain industry has built plenty of infrastructure for developers, but very little specifically for market makers. This is your opportunity to help create tooling that serves your actual needs. By engaging early, you can ensure that Rømer Chain develops features that:
+
+1. Match your operational requirements
+2. Integrate with your existing systems
+3. Address your regulatory constraints
+4. Solve real problems you face daily
+5. Protect your regional advantages
+
+## Next Steps
+
+If you're interested in shaping the future of market making infrastructure:
+
+1. Fill out our [Market Maker Interest Form]()
+2. Schedule an initial discussion with our team
+3. Review our technical documentation
+4. Start providing input on feature priorities
+
+The future of market making is regional, and we're building the infrastructure to make that future possible. Join us in creating a system that serves the actual needs of market makers while protecting the advantages that come from local market expertise.

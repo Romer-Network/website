@@ -1,42 +1,53 @@
-# Rømer Chain: Building the First Physically Decentralized Layer 1
+# Rømer Chain: The First Layer 1 Built for Market Makers
 
-Rømer Chain represents a fundamental reimagining of blockchain infrastructure, combining physical decentralization with Austrian economics to create a network that grows stronger in challenging market conditions.
+Rømer Chain reimagines blockchain infrastructure by putting market makers at the center of network operations. Through our unique Proof of Physics consensus mechanism, we create natural regional advantages that protect local market makers while ensuring true physical decentralization.
+
+## For Market Makers
+
+As a market maker, your validator node becomes your complete trading infrastructure. Take control of your regional market:
+
+[Join Our Market Maker Program →](./market-makers/index.qmd)
+
+- Built-in order management and risk controls
+- Direct transaction ordering when producing blocks
+- Geographic protection from global HFT firms
+- Dual revenue from validation and market making
+- Automated yield farming for idle inventory
+
+## For Engineers & Developers
+
+Help build the first blockchain designed specifically for market making operations:
+
+[Explore Our Architecture →](./technical/index.qmd)
+
+- Integration with Sui Move VM for DeFi primitives
+- Zero-knowledge hardware attestation
+- Proof of Physics consensus mechanism
+- Standardized DEX interfaces
+- Geographic validation protocols
 
 ## For Investors
 
-Are you interested in supporting the next evolution in blockchain infrastructure? Rømer Chain introduces novel solutions to critical industry challenges:
+Support the evolution of decentralized market making infrastructure:
 
-[View Our Investment Pitch →](./pitch/index.qmd)
+[View Investment Opportunities →](./pitch/index.qmd)
 
-- Geographic decentralization preventing network capture
-- Counter-cyclical economics that strengthen in bear markets  
-- Natural MEV resistance through physical topology
-- Dramatically lower barriers to network participation
-
-## For Engineers & Developers 
-
-Want to understand how we're building a blockchain that validates physical reality? Dive into our technical architecture:
-
-[Explore Technical Design →](./technical/index.qmd)
-
-- Proof of Physics consensus mechanism
-- Integration with Sui Move VM
-- Zero-knowledge hardware attestation
-- Simplex consensus implementation
+- Market maker validators ensure natural liquidity
+- Geographic decentralization prevents network capture
+- Physical infrastructure requirements create defensible moats
+- Growing ecosystem of regional trading firms
 
 ## For Economic Researchers
 
-Curious about our Austrian approach to blockchain economics? Examine our novel tokenomics model:
+Study how we align network economics with market making principles:
 
-[Study Economic Model →](./economics/index.qmd)
+[Examine Our Economic Model →](./economics/index.qmd)
 
-- Fixed computation costs with dynamic supply
-- Counter-cyclical validator incentives
-- Market-driven price discovery
-- Sustainable treasury mechanics
+- Regional price discovery mechanics
+- Market maker incentive structures
+- Geographic game theory
+- Austrian economic foundations
 
 ## Join the Evolution
 
-Rømer Chain demonstrates how proper system design can solve fundamental blockchain challenges through physical decentralization, economic stability, and technical innovation. Whether you're an investor, engineer, or researcher, we invite you to explore how we're building the foundation for truly sustainable blockchain infrastructure.
-
-[Read Our Latest Development Updates →](./blog/index.qmd)
+Rømer Chain demonstrates how proper system design can transform market making through physical decentralization, economic alignment, and purpose-built infrastructure. Whether you're a market maker seeking an edge, an engineer building the future of trading, an investor backing innovation, or a researcher studying market dynamics, we invite you to explore how we're creating the foundation for regional market making excellence.
