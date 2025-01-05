@@ -1,0 +1,52 @@
+# Competitors
+
+## Consensus Mechanisms
+
+| Platform | Type | Block Time | Key Features |
+|----------|------|------------|--------------|
+| Romer | Simplex | Sub-second | DAG-based structure with parallel processing, deterministic finality, strong sequential ordering within markets |
+| Sei | Twin Turbo (Modified Tendermint) | 400ms | Parallel order matching, optimistic execution paths, atomic cross-market settlement |
+| Injective | Modified Tendermint (VultBlock) | 1s | Off-chain matching with on-chain settlement, parallel processing capabilities |
+| dYdX | Tendermint | 2s | Standard BFT consensus, sequential processing, off-chain matching |
+
+## Regional Market Making
+
+| Platform | Regional Support | Liquidity Model | Geographic Features |
+|----------|-----------------|-----------------|-------------------|
+| Romer | Full | Isolated pools with cross-region arbitrage | Geographic routing, regional validators, latency optimization |
+| Sei | Limited | Global pool | Market-driven validator distribution, no explicit regional features |
+| Injective | Partial | Hybrid model | Some regional support with primary global pool |
+| dYdX | None | Global pool | Uniform distribution model |
+
+## Access Control
+
+| Platform | System Type | Key Capabilities | Risk Management |
+|----------|-------------|------------------|-----------------|
+| Romer | Multi-party hierarchical | Complex approval flows, regional customization | Dynamic risk parameters, automatic adjustments |
+| Sei | Parallel unified | Performance-optimized permissions | Built-in rate limiting, standard risk checks |
+| Injective | Modular framework | Granular permissions, customizable rules | Standard controls |
+| dYdX | Traditional optimized | Simplified model | Standard trading limits |
+
+## Virtual Machine
+
+| Platform | VM Type | Design Focus | Features |
+|----------|---------|--------------|-----------|
+| Romer | MoveVM | Safety and Speed | Specialized instructions, integrated risk management |
+| Sei | Modified CosmWasm | Trading performance | Parallel execution, smart contracts |
+| Injective | Modified EVM | Smart contract compatibility | Trading extensions, Ethereum compatibility |
+| dYdX | CosmWasm | Trading operations | Standard features, performance optimized |
+
+## Incentive Structure
+
+| Platform | Model | Reward Types | Unique Aspects |
+|----------|-------|--------------|----------------|
+| Romer | Integrated | Validator-MM combined rewards | No token printing, performance multipliers |
+| Sei | Token emissions | Trading and liquidity rewards | Regular token distributions |
+| Injective | Token emissions | Staking and trading rewards | Protocol-owned liquidity |
+| dYdX | Token emissions | Trading and staking rewards | Regular reward distributions |
+
+The most significant distinction lies in Romer's approach to consensus and incentives. While other platforms rely on variations of Tendermint and token emissions, Romer implements Simplex consensus with an integrated validator-market maker reward system that doesn't require continuous token inflation. Their regional market making capabilities also stand out, offering sophisticated tools for managing geographically distributed liquidity pools.
+
+In terms of access control and virtual machines, each platform reflects different priorities. Romer focuses on market making optimization with their Move VM and hierarchical access control, while Sei emphasizes parallel execution, and Injective maintains EVM compatibility. dYdX takes a more traditional approach, optimizing standard components for trading performance.
+
+This comparison shows how each platform has made distinct architectural choices based on their priorities, whether that's regional market making (Romer), execution speed (Sei), smart contract flexibility (Injective), or simplified reliability (dYdX).

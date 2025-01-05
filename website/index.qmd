@@ -1,4 +1,4 @@
-# Rømer Chain: The First Layer 1 Built for Market Makers
+# Rømer Chain: The Layer 1 Built for Market Makers
 
 Rømer Chain reimagines blockchain infrastructure by putting market makers at the center of network operations. Through our unique Proof of Physics consensus mechanism, we create natural regional advantages that protect local market makers while ensuring true physical decentralization.
 
