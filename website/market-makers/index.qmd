@@ -15,6 +15,7 @@ Current Status: We are implementing and testing our core validator infrastructur
 The second phase focuses on integrating professional trading capabilities directly into validator nodes. We're starting with the most critical component: comprehensive multi-signature functionality that mirrors how trading firms actually operate.
 
 Key Features Under Development:
+
 - Role-based access control for trading operations
 - Configurable approval thresholds based on trade size
 - Time-locked transaction scheduling
@@ -34,6 +35,7 @@ We Need Your Input: This is where you come in. We want to build infrastructure t
 While we're not in a position to offer financial compensation for your time, we are offering a meaningful allocation of Rømer tokens to market makers who help shape the protocol during this critical phase.
 
 Partnership Benefits:
+
 - Direct influence on protocol development
 - Early access to validator software
 - Reserved validator slots in your region
@@ -41,6 +43,7 @@ Partnership Benefits:
 - Priority technical support
 
 Commitment Required:
+
 - 2-3 hours of interviews over 6 months
 - Feedback on proposed features
 - Review of technical specifications
