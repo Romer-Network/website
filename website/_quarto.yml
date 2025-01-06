@@ -41,8 +41,6 @@ website:
             href: technical/network.qmd
           - text: Development Roadmap
             href: technical/devnet.qmd
-          - text: Validator Requirements
-            href: technical/validators.qmd
       
       - text: Tokenomics
         menu:

@@ -1,1 +1,132 @@
 /* css styles */
+/* Brand Colors */
+:root {
+    --primary: #f04275;
+    --primary-dark: #d93964;
+    --primary-light: #f37396;
+    --secondary: #510e74;
+    --secondary-light: #6a1a92;
+    --secondary-dark: #3d0957;
+    --tertiary: #f2ede9;
+    --tertiary-dark: #e5dcd5;
+  }
+  
+  /* Navigation */
+  .navbar {
+    background-color: var(--tertiary);
+    border-bottom: 2px solid var(--primary);
+  }
+  
+  .navbar .nav-link {
+    color: var(--secondary) !important;
+  }
+  
+  .navbar .nav-link:hover {
+    color: var(--primary) !important;
+  }
+  
+  /* Headers */
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--secondary);
+  }
+  
+  /* Links */
+  a {
+    color: var(--primary);
+  }
+  
+  a:hover {
+    color: var(--primary-dark);
+    text-decoration: none;
+  }
+  
+  /* Buttons */
+  .btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+  }
+  
+  .btn-secondary {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+  }
+  
+  .btn-secondary:hover {
+    background-color: var(--secondary-light);
+    border-color: var(--secondary-light);
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    background-color: var(--tertiary);
+  }
+  
+  .sidebar .nav-link {
+    color: var(--secondary);
+  }
+  
+  .sidebar .nav-link:hover {
+    color: var(--primary);
+  }
+  
+  .sidebar .nav-link.active {
+    color: var(--primary);
+    border-left: 3px solid var(--primary);
+  }
+  
+  /* Code blocks */
+  pre {
+    background-color: var(--tertiary);
+    border-left: 4px solid var(--primary);
+  }
+  
+  /* Tables */
+  thead {
+    background-color: var(--secondary);
+    color: white;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: var(--secondary);
+    color: var(--tertiary);
+  }
+  
+  footer a {
+    color: var(--primary-light);
+  }
+  
+  /* TOC */
+  #toc-title {
+    color: var(--secondary);
+  }
+  
+  .toc-active {
+    color: var(--primary) !important;
+  }
+  
+  /* Custom classes for content */
+  .highlight-box {
+    background-color: var(--tertiary);
+    border-left: 4px solid var(--primary);
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .feature-card {
+    border: 1px solid var(--tertiary-dark);
+    border-radius: 4px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    transition: all 0.3s ease;
+  }
+  
+  .feature-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+  }

@@ -1,118 +1,137 @@
-# Rømer Chain Development Milestones
+# Rømer Chain Development Roadmap
 
-## Phase 1: Core Network Bootstrap
+The Rømer Chain development process progresses through a series of devnet phases, each validating critical components of the system. The first three phases focus on core infrastructure, economic systems, and market making functionality, creating a complete but simplified system. Later phases will integrate virtual machine capabilities based on market requirements and technological evolution.
 
-### Milestone 1.1: Genesis and Block Production
-The network must first demonstrate basic operation with a single node producing empty blocks. This establishes the foundation for all future development.
+## Devnet 1: Physical Infrastructure Validation
 
-Primary Goals:
+The first development phase establishes the foundation of Rømer Chain's physical security model through zero-knowledge proofs of hardware and location. This creates the basis for regional market making advantages.
 
-- Fix Commonware storage integration for genesis block
-- Implement basic block production with timestamps
-- Create basic network startup sequence
-- Validate block sequence integrity
+### Core Components
 
-### Milestone 1.2: Economic Engine Core
-Implementing a simplified ledger-based token system allows testing of economic principles without requiring full transaction support.
+The system must demonstrate:
 
-Primary Goals:
+1. Zero-Knowledge Proof Generation
+   - Hardware specifications validation
+   - Geographic location verification
+   - Network path confirmation
+   - Infrastructure control validation
 
-- Implement internal token ledger system
-- Create genesis supply tracking
-- Build supply adjustment algorithms
-- Implement basic treasury record-keeping
-- Maintain mint and burn history
+2. Proof Verification System
+   - Proof submission pipeline
+   - Verification node infrastructure
+   - Cross-validation mechanisms
+   - Proof storage and retrieval
 
-## Phase 2: Network Coordination
+3. Basic Block Production
+   - Genesis block creation
+   - Block sequencing with timestamps
+   - Simple consensus on block hashes
+   - Multi-validator agreement
 
-### Milestone 2.1: Leader Election
-Even with a single validator, the network must implement proper leader election mechanics to prepare for future expansion.
+### Success Criteria
 
-Primary Goals:
+Devnet 1 completion requires:
 
-- Implement leader election protocol
-- Create validator scoring system
-- Build election state management
-- Test single-validator scenarios
-- Prepare for multi-validator support
+- Validators successfully generating and verifying hardware proofs
+- Confirmed geographic distribution of test nodes
+- Stable block production with validator agreement
+- Complete proof verification documentation
+- Working node deployment process
 
-### Milestone 2.2: Network Performance Infrastructure
-Before expanding to multiple validators, the system needs infrastructure to measure and validate network performance.
+## Devnet 2: Economic Engine Implementation
 
-Primary Goals:
+The second phase implements Rømer Chain's Austrian economic model, establishing the foundation for sustainable network operations through market-driven supply management.
 
-- Build network performance measurement
-- Create latency tracking systems
-- Implement regional performance benchmarks
-- Develop network topology mapping
-- Set up performance data storage
+### Core Components
 
-## Phase 3: Validator Network Expansion
+1. Token Economics
+   - Base validator rewards (1 RØMER per block)
+   - Supply adjustment mechanisms
+   - Treasury management system
+   - Burn reserve tracking
 
-### Milestone 3.1: Basic ZK Proof System
-Validators must prove their physical presence before joining the network.
+2. Network Usage Simulation
+   - Randomized usage patterns
+   - Threshold monitoring
+   - Supply response validation
+   - Economic metric tracking
 
-Primary Goals:
+3. Leader Selection
+   - Performance-based selection
+   - Geographic rotation
+   - Validator scoring system
+   - Leadership transition handling
 
-- Implement basic hardware verification proofs
-- Create proof submission system
-- Build verification infrastructure
-- Set up validator identity management
-- Test proof validation process
+### Success Criteria
 
-### Milestone 3.2: Validator Onboarding
-The network must support multiple validators joining and participating in consensus.
+Devnet 2 completion requires:
 
-Primary Goals:
+- Functional token emission system
+- Verified supply adjustment mechanisms
+- Working leader selection process
+- Economic simulation results
+- Complete system monitoring
 
-- Create validator registration process
-- Implement multi-validator coordination
-- Build validator state synchronization
-- Deploy test validators across regions
-- Validate network performance metrics
+## Devnet 3: Market Maker Integration
 
-## Phase 4: Transaction Integration
+The third phase integrates core market making functionality directly into validator nodes, creating the foundation for professional trading operations. This phase uses simulated order execution to validate the complete infrastructure.
 
-### Milestone 4.1: Sui Integration
-Connecting to the Sui ecosystem represents a major expansion of network capabilities.
+### Core Components
 
-Primary Goals:
+1. Access Control System
+   - Role-based permissions
+   - Multi-signature support
+   - Trading limits and thresholds
+   - Emergency controls
 
-- Set up Sui node integration
-- Implement mempool monitoring
-- Create transaction validation system
-- Build state management interface
-- Migrate from ledger to full token system
+2. Trading Interface
+   - Order management system
+   - Position tracking
+   - Risk controls
+   - Market data handling
 
-### Milestone 4.2: Full Network Operation
-The final phase brings all components together into a complete, operational network.
+3. Parameter Management
+   - Trading configuration
+   - Risk parameters
+   - Regional settings
+   - Performance optimization
 
-Primary Goals:
+4. Order Simulation
+   - Basic matching engine
+   - Simulated executions
+   - Performance validation
+   - Market impact modeling
 
-- Implement full transaction processing
-- Create block execution pipeline
-- Build SDK integration
-- Deploy monitoring systems
-- Complete system documentation
+### Success Criteria
 
-## Testing Requirements
+Devnet 3 completion requires:
 
-Each milestone requires:
+- Working multi-signature trading
+- Functional order management
+- Complete access control system
+- Successful order simulation
+- Parameter management tools
 
-- Functional testing of new components
-- Integration testing with existing systems
-- Performance validation
-- Security review
-- Documentation updates
+## Future Development: Virtual Machine Integration
 
-## Success Metrics
+After validating core infrastructure through the first three devnet phases, subsequent development will focus on virtual machine integration. While current plans favor the Sui Move VM for its safety features and performance characteristics, this decision remains flexible based on:
 
-Milestone completion requires:
+- Market maker requirements
+- Performance analysis
+- Security considerations
+- Ecosystem evolution
+- Technical advances
 
-- Working software deployment
-- Meeting performance targets
-- Passing security requirements
-- Documentation completion
-- Operational validation
+This phase will be defined in detail after gathering feedback from market makers and analyzing results from the initial devnet phases.
 
-This roadmap prioritizes building a working network first, then gradually adding complexity. Each phase builds directly on previous work, maintaining a functional system throughout development.
+## Development Philosophy
+
+This roadmap creates a systematic validation of Rømer Chain's core innovations:
+
+1. Physical Infrastructure: Devnet 1 proves the feasibility of geographic validation
+2. Economic Systems: Devnet 2 demonstrates sustainable network economics
+3. Market Making: Devnet 3 validates the complete trading infrastructure
+
+Each phase builds directly on previous work while maintaining focus on the core requirements. By completing these phases with simulated order execution, we can validate the complete system without being constrained by virtual machine implementation details.
+
+The flexible approach to VM integration ensures we can adapt to market requirements and technological evolution while maintaining our focus on market maker needs and physical infrastructure advantages.
