@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>devnet – Rømer Chain</title>
+<title>pitch – Rømer Chain</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -200,25 +200,27 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#rømer-chain-development-roadmap" id="toc-rømer-chain-development-roadmap" class="nav-link active" data-scroll-target="#rømer-chain-development-roadmap">Rømer Chain Development Roadmap</a>
+  <li><a href="#rømer-chain-the-market-makers-native-blockchain-infrastructure" id="toc-rømer-chain-the-market-makers-native-blockchain-infrastructure" class="nav-link active" data-scroll-target="#rømer-chain-the-market-makers-native-blockchain-infrastructure">Rømer Chain: The Market Maker’s Native Blockchain Infrastructure</a>
   <ul class="collapse">
-  <li><a href="#devnet-1-physical-infrastructure-validation" id="toc-devnet-1-physical-infrastructure-validation" class="nav-link" data-scroll-target="#devnet-1-physical-infrastructure-validation">Devnet 1: Physical Infrastructure Validation</a>
+  <li><a href="#redefining-blockchain-validation-node-providers-are-market-makers" id="toc-redefining-blockchain-validation-node-providers-are-market-makers" class="nav-link" data-scroll-target="#redefining-blockchain-validation-node-providers-are-market-makers">Redefining Blockchain Validation: Node Providers ARE Market Makers</a>
   <ul class="collapse">
-  <li><a href="#core-components" id="toc-core-components" class="nav-link" data-scroll-target="#core-components">Core Components</a></li>
-  <li><a href="#success-criteria" id="toc-success-criteria" class="nav-link" data-scroll-target="#success-criteria">Success Criteria</a></li>
+  <li><a href="#your-validator-node-a-complete-market-making-platform" id="toc-your-validator-node-a-complete-market-making-platform" class="nav-link" data-scroll-target="#your-validator-node-a-complete-market-making-platform">Your Validator Node: A Complete Market Making Platform</a></li>
   </ul></li>
-  <li><a href="#devnet-2-economic-engine-implementation" id="toc-devnet-2-economic-engine-implementation" class="nav-link" data-scroll-target="#devnet-2-economic-engine-implementation">Devnet 2: Economic Engine Implementation</a>
+  <li><a href="#native-market-maker-api-plug-and-play" id="toc-native-market-maker-api-plug-and-play" class="nav-link" data-scroll-target="#native-market-maker-api-plug-and-play">Native Market Maker API: Plug and Play</a>
   <ul class="collapse">
-  <li><a href="#core-components-1" id="toc-core-components-1" class="nav-link" data-scroll-target="#core-components-1">Core Components</a></li>
-  <li><a href="#success-criteria-1" id="toc-success-criteria-1" class="nav-link" data-scroll-target="#success-criteria-1">Success Criteria</a></li>
+  <li><a href="#seamless-integration-features" id="toc-seamless-integration-features" class="nav-link" data-scroll-target="#seamless-integration-features">Seamless Integration Features</a></li>
   </ul></li>
-  <li><a href="#devnet-3-market-maker-integration" id="toc-devnet-3-market-maker-integration" class="nav-link" data-scroll-target="#devnet-3-market-maker-integration">Devnet 3: Market Maker Integration</a>
+  <li><a href="#the-economic-mechanism-rømer-as-a-computational-utility-token" id="toc-the-economic-mechanism-rømer-as-a-computational-utility-token" class="nav-link" data-scroll-target="#the-economic-mechanism-rømer-as-a-computational-utility-token">The Economic Mechanism: RØMER as a Computational Utility Token</a>
   <ul class="collapse">
-  <li><a href="#core-components-2" id="toc-core-components-2" class="nav-link" data-scroll-target="#core-components-2">Core Components</a></li>
-  <li><a href="#success-criteria-2" id="toc-success-criteria-2" class="nav-link" data-scroll-target="#success-criteria-2">Success Criteria</a></li>
+  <li><a href="#dynamic-supply-adjustment" id="toc-dynamic-supply-adjustment" class="nav-link" data-scroll-target="#dynamic-supply-adjustment">Dynamic Supply Adjustment</a></li>
   </ul></li>
-  <li><a href="#future-development-virtual-machine-integration" id="toc-future-development-virtual-machine-integration" class="nav-link" data-scroll-target="#future-development-virtual-machine-integration">Future Development: Virtual Machine Integration</a></li>
-  <li><a href="#development-philosophy" id="toc-development-philosophy" class="nav-link" data-scroll-target="#development-philosophy">Development Philosophy</a></li>
+  <li><a href="#investment-structure" id="toc-investment-structure" class="nav-link" data-scroll-target="#investment-structure">Investment Structure</a></li>
+  <li><a href="#market-maker-value-proposition" id="toc-market-maker-value-proposition" class="nav-link" data-scroll-target="#market-maker-value-proposition">Market Maker Value Proposition</a>
+  <ul class="collapse">
+  <li><a href="#beyond-traditional-blockchain-participation" id="toc-beyond-traditional-blockchain-participation" class="nav-link" data-scroll-target="#beyond-traditional-blockchain-participation">Beyond Traditional Blockchain Participation</a></li>
+  <li><a href="#technical-differentiation" id="toc-technical-differentiation" class="nav-link" data-scroll-target="#technical-differentiation">Technical Differentiation</a></li>
+  </ul></li>
+  <li><a href="#core-philosophical-shift" id="toc-core-philosophical-shift" class="nav-link" data-scroll-target="#core-philosophical-shift">Core Philosophical Shift</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -229,162 +231,97 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="rømer-chain-development-roadmap" class="level1">
-<h1>Rømer Chain Development Roadmap</h1>
-<p>The Rømer Chain development process progresses through a series of devnet phases, each validating critical components of the system. The first three phases focus on core infrastructure, economic systems, and market making functionality, creating a complete but simplified system. Later phases will integrate virtual machine capabilities based on market requirements and technological evolution.</p>
-<section id="devnet-1-physical-infrastructure-validation" class="level2">
-<h2 class="anchored" data-anchor-id="devnet-1-physical-infrastructure-validation">Devnet 1: Physical Infrastructure Validation</h2>
-<p>The first development phase establishes the foundation of Rømer Chain’s physical security model through zero-knowledge proofs of hardware and location. This creates the basis for regional market making advantages.</p>
-<section id="core-components" class="level3">
-<h3 class="anchored" data-anchor-id="core-components">Core Components</h3>
-<p>The system must demonstrate:</p>
-<ol type="1">
-<li>Zero-Knowledge Proof Generation
+<section id="rømer-chain-the-market-makers-native-blockchain-infrastructure" class="level1">
+<h1>Rømer Chain: The Market Maker’s Native Blockchain Infrastructure</h1>
+<section id="redefining-blockchain-validation-node-providers-are-market-makers" class="level2">
+<h2 class="anchored" data-anchor-id="redefining-blockchain-validation-node-providers-are-market-makers">Redefining Blockchain Validation: Node Providers ARE Market Makers</h2>
+<p>Rømer Chain fundamentally reimagines blockchain infrastructure by recognizing a critical truth: market makers and node providers aren’t separate entities—they’re one and the same.</p>
+<section id="your-validator-node-a-complete-market-making-platform" class="level3">
+<h3 class="anchored" data-anchor-id="your-validator-node-a-complete-market-making-platform">Your Validator Node: A Complete Market Making Platform</h3>
+<p>We’ve designed the validator node as an integrated market making suite, not just a computational resource. This means:</p>
 <ul>
-<li>Hardware specifications validation</li>
-<li>Geographic location verification</li>
-<li>Network path confirmation</li>
-<li>Infrastructure control validation</li>
+<li>Your node is simultaneously your:
+<ul>
+<li>Network validation infrastructure</li>
+<li>Trading operation center</li>
+<li>Risk management platform</li>
+<li>Liquidity management system</li>
 </ul></li>
-<li>Proof Verification System
-<ul>
-<li>Proof submission pipeline</li>
-<li>Verification node infrastructure</li>
-<li>Cross-validation mechanisms</li>
-<li>Proof storage and retrieval</li>
-</ul></li>
-<li>Basic Block Production
-<ul>
-<li>Genesis block creation</li>
-<li>Block sequencing with timestamps</li>
-<li>Simple consensus on block hashes</li>
-<li>Multi-validator agreement</li>
-</ul></li>
-</ol>
-</section>
-<section id="success-criteria" class="level3">
-<h3 class="anchored" data-anchor-id="success-criteria">Success Criteria</h3>
-<p>Devnet 1 completion requires:</p>
-<ul>
-<li>Validators successfully generating and verifying hardware proofs</li>
-<li>Confirmed geographic distribution of test nodes</li>
-<li>Stable block production with validator agreement</li>
-<li>Complete proof verification documentation</li>
-<li>Working node deployment process</li>
 </ul>
 </section>
 </section>
-<section id="devnet-2-economic-engine-implementation" class="level2">
-<h2 class="anchored" data-anchor-id="devnet-2-economic-engine-implementation">Devnet 2: Economic Engine Implementation</h2>
-<p>The second phase implements Rømer Chain’s Austrian economic model, establishing the foundation for sustainable network operations through market-driven supply management.</p>
-<section id="core-components-1" class="level3">
-<h3 class="anchored" data-anchor-id="core-components-1">Core Components</h3>
-<ol type="1">
-<li>Token Economics
+<section id="native-market-maker-api-plug-and-play" class="level2">
+<h2 class="anchored" data-anchor-id="native-market-maker-api-plug-and-play">Native Market Maker API: Plug and Play</h2>
+<p>Our validator nodes come with an intuitive API specifically engineered for professional trading operations. This isn’t an afterthought—it’s the core design philosophy.</p>
+<section id="seamless-integration-features" class="level3">
+<h3 class="anchored" data-anchor-id="seamless-integration-features">Seamless Integration Features</h3>
 <ul>
-<li>Base validator rewards (1 RØMER per block)</li>
-<li>Supply adjustment mechanisms</li>
-<li>Treasury management system</li>
-<li>Burn reserve tracking</li>
-</ul></li>
-<li>Network Usage Simulation
-<ul>
-<li>Randomized usage patterns</li>
-<li>Threshold monitoring</li>
-<li>Supply response validation</li>
-<li>Economic metric tracking</li>
-</ul></li>
-<li>Leader Selection
-<ul>
-<li>Performance-based selection</li>
-<li>Geographic rotation</li>
-<li>Validator scoring system</li>
-<li>Leadership transition handling</li>
-</ul></li>
-</ol>
-</section>
-<section id="success-criteria-1" class="level3">
-<h3 class="anchored" data-anchor-id="success-criteria-1">Success Criteria</h3>
-<p>Devnet 2 completion requires:</p>
-<ul>
-<li>Functional token emission system</li>
-<li>Verified supply adjustment mechanisms</li>
-<li>Working leader selection process</li>
-<li>Economic simulation results</li>
-<li>Complete system monitoring</li>
+<li>Direct DEX interaction</li>
+<li>Automated trading strategies</li>
+<li>Real-time network utilization tracking</li>
+<li>Risk management controls</li>
+<li>Multi-signature trading configurations</li>
 </ul>
 </section>
 </section>
-<section id="devnet-3-market-maker-integration" class="level2">
-<h2 class="anchored" data-anchor-id="devnet-3-market-maker-integration">Devnet 3: Market Maker Integration</h2>
-<p>The third phase integrates core market making functionality directly into validator nodes, creating the foundation for professional trading operations. This phase uses simulated order execution to validate the complete infrastructure.</p>
-<section id="core-components-2" class="level3">
-<h3 class="anchored" data-anchor-id="core-components-2">Core Components</h3>
-<ol type="1">
-<li>Access Control System
+<section id="the-economic-mechanism-rømer-as-a-computational-utility-token" class="level2">
+<h2 class="anchored" data-anchor-id="the-economic-mechanism-rømer-as-a-computational-utility-token">The Economic Mechanism: RØMER as a Computational Utility Token</h2>
+<section id="dynamic-supply-adjustment" class="level3">
+<h3 class="anchored" data-anchor-id="dynamic-supply-adjustment">Dynamic Supply Adjustment</h3>
+<p>Unlike traditional cryptocurrencies, RØMER maintains stability by directly tracking computational demand:</p>
+<section id="low-network-demand-below-50-capacity" class="level4">
+<h4 class="anchored" data-anchor-id="low-network-demand-below-50-capacity">Low Network Demand (Below 50% Capacity)</h4>
 <ul>
-<li>Role-based permissions</li>
-<li>Multi-signature support</li>
-<li>Trading limits and thresholds</li>
-<li>Emergency controls</li>
-</ul></li>
-<li>Trading Interface
-<ul>
-<li>Order management system</li>
-<li>Position tracking</li>
-<li>Risk controls</li>
-<li>Market data handling</li>
-</ul></li>
-<li>Parameter Management
-<ul>
-<li>Trading configuration</li>
-<li>Risk parameters</li>
-<li>Regional settings</li>
-<li>Performance optimization</li>
-</ul></li>
-<li>Order Simulation
-<ul>
-<li>Basic matching engine</li>
-<li>Simulated executions</li>
-<li>Performance validation</li>
-<li>Market impact modeling</li>
-</ul></li>
-</ol>
+<li>Automatic token burning</li>
+<li>Reduces total supply</li>
+<li>Creates natural price support</li>
+<li>Incentivizes efficient resource allocation</li>
+</ul>
 </section>
-<section id="success-criteria-2" class="level3">
-<h3 class="anchored" data-anchor-id="success-criteria-2">Success Criteria</h3>
-<p>Devnet 3 completion requires:</p>
+<section id="high-network-demand-above-50-capacity" class="level4">
+<h4 class="anchored" data-anchor-id="high-network-demand-above-50-capacity">High Network Demand (Above 50% Capacity)</h4>
 <ul>
-<li>Working multi-signature trading</li>
-<li>Functional order management</li>
-<li>Complete access control system</li>
-<li>Successful order simulation</li>
-<li>Parameter management tools</li>
+<li>Token minting triggered</li>
+<li>New tokens match excess computational requirements</li>
+<li>Ensures liquidity reflects actual network utility</li>
 </ul>
 </section>
 </section>
-<section id="future-development-virtual-machine-integration" class="level2">
-<h2 class="anchored" data-anchor-id="future-development-virtual-machine-integration">Future Development: Virtual Machine Integration</h2>
-<p>After validating core infrastructure through the first three devnet phases, subsequent development will focus on virtual machine integration. While current plans favor the Sui Move VM for its safety features and performance characteristics, this decision remains flexible based on:</p>
-<ul>
-<li>Market maker requirements</li>
-<li>Performance analysis</li>
-<li>Security considerations</li>
-<li>Ecosystem evolution</li>
-<li>Technical advances</li>
-</ul>
-<p>This phase will be defined in detail after gathering feedback from market makers and analyzing results from the initial devnet phases.</p>
 </section>
-<section id="development-philosophy" class="level2">
-<h2 class="anchored" data-anchor-id="development-philosophy">Development Philosophy</h2>
-<p>This roadmap creates a systematic validation of Rømer Chain’s core innovations:</p>
-<ol type="1">
-<li>Physical Infrastructure: Devnet 1 proves the feasibility of geographic validation</li>
-<li>Economic Systems: Devnet 2 demonstrates sustainable network economics</li>
-<li>Market Making: Devnet 3 validates the complete trading infrastructure</li>
-</ol>
-<p>Each phase builds directly on previous work while maintaining focus on the core requirements. By completing these phases with simulated order execution, we can validate the complete system without being constrained by virtual machine implementation details.</p>
-<p>The flexible approach to VM integration ensures we can adapt to market requirements and technological evolution while maintaining our focus on market maker needs and physical infrastructure advantages.</p>
+<section id="investment-structure" class="level2">
+<h2 class="anchored" data-anchor-id="investment-structure">Investment Structure</h2>
+<ul>
+<li>$100,000 initial investment</li>
+<li>Immediate 100,000 RØMER tokens</li>
+<li>No complex vesting</li>
+<li>Transparent, algorithmic market making strategy</li>
+</ul>
+</section>
+<section id="market-maker-value-proposition" class="level2">
+<h2 class="anchored" data-anchor-id="market-maker-value-proposition">Market Maker Value Proposition</h2>
+<section id="beyond-traditional-blockchain-participation" class="level3">
+<h3 class="anchored" data-anchor-id="beyond-traditional-blockchain-participation">Beyond Traditional Blockchain Participation</h3>
+<ul>
+<li>Become network infrastructure</li>
+<li>Earn tokens through market making</li>
+<li>Contribute to a stable computational economy</li>
+<li>Use familiar trading infrastructure</li>
+</ul>
+</section>
+<section id="technical-differentiation" class="level3">
+<h3 class="anchored" data-anchor-id="technical-differentiation">Technical Differentiation</h3>
+<ul>
+<li>Integrated validation and trading tools</li>
+<li>Built-in market making capabilities</li>
+<li>Geographic market making advantages</li>
+<li>Professional-grade trading API</li>
+</ul>
+</section>
+</section>
+<section id="core-philosophical-shift" class="level2">
+<h2 class="anchored" data-anchor-id="core-philosophical-shift">Core Philosophical Shift</h2>
+<p>We don’t see market makers as external participants. You’re not just providing liquidity—you’re the fundamental economic layer of computational infrastructure.</p>
+<p><strong>Are you ready to become the infrastructure?</strong></p>
 
 
 </section>

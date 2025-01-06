@@ -1,0 +1,75 @@
+# Rømer Chain: The Market Maker's Native Blockchain Infrastructure
+
+## Redefining Blockchain Validation: Node Providers ARE Market Makers
+
+Rømer Chain fundamentally reimagines blockchain infrastructure by recognizing a critical truth: market makers and node providers aren't separate entities—they're one and the same.
+
+### Your Validator Node: A Complete Market Making Platform
+
+We've designed the validator node as an integrated market making suite, not just a computational resource. This means:
+
+- Your node is simultaneously your:
+  - Network validation infrastructure
+  - Trading operation center
+  - Risk management platform
+  - Liquidity management system
+
+## Native Market Maker API: Plug and Play
+
+Our validator nodes come with an intuitive API specifically engineered for professional trading operations. This isn't an afterthought—it's the core design philosophy.
+
+### Seamless Integration Features
+
+- Direct DEX interaction
+- Automated trading strategies
+- Real-time network utilization tracking
+- Risk management controls
+- Multi-signature trading configurations
+
+## The Economic Mechanism: RØMER as a Computational Utility Token
+
+### Dynamic Supply Adjustment
+
+Unlike traditional cryptocurrencies, RØMER maintains stability by directly tracking computational demand:
+
+#### Low Network Demand (Below 50% Capacity)
+
+- Automatic token burning
+- Reduces total supply
+- Creates natural price support
+- Incentivizes efficient resource allocation
+
+#### High Network Demand (Above 50% Capacity)
+
+- Token minting triggered
+- New tokens match excess computational requirements
+- Ensures liquidity reflects actual network utility
+
+## Investment Structure
+
+- $100,000 initial investment
+- Immediate 100,000 RØMER tokens
+- No complex vesting
+- Transparent, algorithmic market making strategy
+
+## Market Maker Value Proposition
+
+### Beyond Traditional Blockchain Participation
+
+- Become network infrastructure
+- Earn tokens through market making
+- Contribute to a stable computational economy
+- Use familiar trading infrastructure
+
+### Technical Differentiation
+
+- Integrated validation and trading tools
+- Built-in market making capabilities
+- Geographic market making advantages
+- Professional-grade trading API
+
+## Core Philosophical Shift
+
+We don't see market makers as external participants. You're not just providing liquidity—you're the fundamental economic layer of computational infrastructure.
+
+**Are you ready to become the infrastructure?**

@@ -28,6 +28,8 @@ website:
         menu: 
           - text: Overview
             href: market-makers/index.qmd
+          - text: Pitch
+            href: market-makers/pitch.qmd
           - text: Competitors
             href: market-makers/competitors.qmd
       
