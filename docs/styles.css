@@ -62,10 +62,6 @@
   }
   
   /* Sidebar */
-  .sidebar {
-    background-color: var(--tertiary);
-  }
-  
   .sidebar .nav-link {
     color: var(--secondary);
   }

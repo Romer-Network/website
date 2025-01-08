@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>index – Rømer Chain</title>
+<title>State Machine Replication in Distributed Systems – Rømer Chain</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -66,6 +66,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&amp;display=swap" rel="stylesheet">
@@ -192,96 +195,272 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#order-flow-wars-from-wall-street-to-blockchain" id="toc-order-flow-wars-from-wall-street-to-blockchain" class="nav-link active" data-scroll-target="#order-flow-wars-from-wall-street-to-blockchain">Order Flow Wars: From Wall Street to Blockchain</a>
+  <li><a href="#understanding-state-machine-replication-smr" id="toc-understanding-state-machine-replication-smr" class="nav-link active" data-scroll-target="#understanding-state-machine-replication-smr">Understanding State Machine Replication (SMR)</a>
   <ul class="collapse">
-  <li><a href="#the-power-of-seeing-whats-next" id="toc-the-power-of-seeing-whats-next" class="nav-link" data-scroll-target="#the-power-of-seeing-whats-next">The Power of Seeing What’s Next</a></li>
-  <li><a href="#from-wall-street-to-crypto-the-evolution-of-speed-trading" id="toc-from-wall-street-to-crypto-the-evolution-of-speed-trading" class="nav-link" data-scroll-target="#from-wall-street-to-crypto-the-evolution-of-speed-trading">From Wall Street to Crypto: The Evolution of Speed Trading</a></li>
-  <li><a href="#why-order-flow-matters-a-super-bowl-betting-analogy" id="toc-why-order-flow-matters-a-super-bowl-betting-analogy" class="nav-link" data-scroll-target="#why-order-flow-matters-a-super-bowl-betting-analogy">Why Order Flow Matters: A Super Bowl Betting Analogy</a></li>
-  <li><a href="#different-approaches-to-the-order-box" id="toc-different-approaches-to-the-order-box" class="nav-link" data-scroll-target="#different-approaches-to-the-order-box">Different Approaches to the Order Box</a>
+  <li><a href="#what-is-state" id="toc-what-is-state" class="nav-link" data-scroll-target="#what-is-state">What is State?</a></li>
+  <li><a href="#evolution-of-state-machine-replication" id="toc-evolution-of-state-machine-replication" class="nav-link" data-scroll-target="#evolution-of-state-machine-replication">Evolution of State Machine Replication</a>
   <ul class="collapse">
-  <li><a href="#ethereums-open-auction-system" id="toc-ethereums-open-auction-system" class="nav-link" data-scroll-target="#ethereums-open-auction-system">Ethereum’s Open Auction System</a></li>
-  <li><a href="#solanas-private-line" id="toc-solanas-private-line" class="nav-link" data-scroll-target="#solanas-private-line">Solana’s Private Line</a></li>
+  <li><a href="#traditional-smr-the-foundation" id="toc-traditional-smr-the-foundation" class="nav-link" data-scroll-target="#traditional-smr-the-foundation">Traditional SMR: The Foundation</a></li>
+  <li><a href="#timestamped-smr-a-new-order" id="toc-timestamped-smr-a-new-order" class="nav-link" data-scroll-target="#timestamped-smr-a-new-order">Timestamped SMR: A New Order</a></li>
+  <li><a href="#sequenced-smr-the-traffic-controller" id="toc-sequenced-smr-the-traffic-controller" class="nav-link" data-scroll-target="#sequenced-smr-the-traffic-controller">Sequenced SMR: The Traffic Controller</a></li>
+  <li><a href="#decoupled-smr-the-performance-breakthrough" id="toc-decoupled-smr-the-performance-breakthrough" class="nav-link" data-scroll-target="#decoupled-smr-the-performance-breakthrough">Decoupled SMR: The Performance Breakthrough</a></li>
   </ul></li>
-  <li><a href="#rømers-new-approach" id="toc-rømers-new-approach" class="nav-link" data-scroll-target="#rømers-new-approach">Rømer’s New Approach</a>
+  <li><a href="#modern-implementation-considerations" id="toc-modern-implementation-considerations" class="nav-link" data-scroll-target="#modern-implementation-considerations">Modern Implementation Considerations</a>
   <ul class="collapse">
-  <li><a href="#pay-first-model" id="toc-pay-first-model" class="nav-link" data-scroll-target="#pay-first-model">Pay-First Model</a></li>
-  <li><a href="#geographic-balance" id="toc-geographic-balance" class="nav-link" data-scroll-target="#geographic-balance">Geographic Balance</a></li>
-  <li><a href="#rotating-service-windows" id="toc-rotating-service-windows" class="nav-link" data-scroll-target="#rotating-service-windows">Rotating Service Windows</a></li>
+  <li><a href="#real-world-trade-offs" id="toc-real-world-trade-offs" class="nav-link" data-scroll-target="#real-world-trade-offs">Real-world Trade-offs</a></li>
   </ul></li>
-  <li><a href="#the-future-of-market-structure" id="toc-the-future-of-market-structure" class="nav-link" data-scroll-target="#the-future-of-market-structure">The Future of Market Structure</a></li>
-  <li><a href="#looking-forward" id="toc-looking-forward" class="nav-link" data-scroll-target="#looking-forward">Looking Forward</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">State Machine Replication in Distributed Systems</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<section id="order-flow-wars-from-wall-street-to-blockchain" class="level1">
-<h1>Order Flow Wars: From Wall Street to Blockchain</h1>
-<p>Imagine you’re at a busy auction house. Before an item goes up for bid, some buyers get to peek at what’s coming up next, while others have to wait. Those with the early peek have an obvious advantage - they can prepare their bids and strategy before anyone else. This is essentially what happens in financial markets through something called “order flow” - the stream of incoming trades that people want to make.</p>
-<section id="the-power-of-seeing-whats-next" class="level2">
-<h2 class="anchored" data-anchor-id="the-power-of-seeing-whats-next">The Power of Seeing What’s Next</h2>
-<p>Let’s start with a simple example from traditional stock trading. When you click “buy” on your trading app to purchase some Apple shares, your order doesn’t go directly to the stock exchange. Instead, it typically goes through several intermediaries, each of whom gets to see your intention to buy before it becomes public knowledge.</p>
-<p>This advance knowledge is incredibly valuable. If someone knows you’re about to buy 1,000 shares of Apple at the market price, they could quickly buy shares themselves and sell them to you at a slightly higher price. This practice, known as front-running in traditional markets, has evolved into a sophisticated industry in the world of cryptocurrency.</p>
-</section>
-<section id="from-wall-street-to-crypto-the-evolution-of-speed-trading" class="level2">
-<h2 class="anchored" data-anchor-id="from-wall-street-to-crypto-the-evolution-of-speed-trading">From Wall Street to Crypto: The Evolution of Speed Trading</h2>
-<p>On Wall Street, high-frequency trading (HFT) firms spend millions of dollars to place their computers as close as possible to stock exchanges. They even lay specialized cables to gain microsecond advantages in trading speed. When a pension fund wants to buy a large amount of shares, these HFT firms can spot the order coming and react before it hits the exchange.</p>
-<p>In cryptocurrency markets, this race for speed has taken on new forms. Instead of building faster cables, traders compete to have their transactions included in the next block of a blockchain. This competition is what we call MEV (Maximal Extractable Value), and it’s become a multi-billion dollar industry.</p>
-</section>
-<section id="why-order-flow-matters-a-super-bowl-betting-analogy" class="level2">
-<h2 class="anchored" data-anchor-id="why-order-flow-matters-a-super-bowl-betting-analogy">Why Order Flow Matters: A Super Bowl Betting Analogy</h2>
-<p>Imagine you’re at a Las Vegas sportsbook during the Super Bowl. Bettors are lining up to place their wagers at betting windows. As the game progresses, the betting odds constantly change based on what’s happening on the field. Now imagine three different scenarios:</p>
-<p>First, think about someone who could see all the bets people are about to place before they reach the window. If they notice a large bet coming that might move the odds, they could quickly place their own bet first at better odds. This is exactly how order flow works in financial markets - seeing what trades are coming before they happen is incredibly valuable information.</p>
-<p>Second, consider if someone could pay extra to jump to the front of the betting line during crucial moments - like right after a big touchdown when everyone’s rushing to place bets at the current odds. They’d have a huge advantage over other bettors who have to wait in line while the odds change. This is similar to how traders pay higher fees to have their transactions processed first in cryptocurrency markets.</p>
-<p>Third, picture if certain bettors had a special VIP betting window that processed their bets faster than the regular windows. While everyone else waits in long lines watching the odds change, these VIP bettors could always get their bets in quickly at the odds they want. This is like having special access to faster blockchain infrastructure.</p>
-<p>This is similar to how order flow works in crypto markets. The line of people waiting to place bets is like the “mempool” - where transactions wait to be processed. Different blockchain networks handle this queue of transactions in different ways.</p>
-</section>
-<section id="different-approaches-to-the-order-box" class="level2">
-<h2 class="anchored" data-anchor-id="different-approaches-to-the-order-box">Different Approaches to the Order Box</h2>
-<section id="ethereums-open-auction-system" class="level3">
-<h3 class="anchored" data-anchor-id="ethereums-open-auction-system">Ethereum’s Open Auction System</h3>
-<p>Ethereum treats its order box like a transparent auction house. Everyone can see the incoming orders, and traders can openly bid to have their transactions processed first. While this is transparent, it means that regular users often have to pay extra to have their transactions processed in a timely manner.</p>
-</section>
-<section id="solanas-private-line" class="level3">
-<h3 class="anchored" data-anchor-id="solanas-private-line">Solana’s Private Line</h3>
-<p>Solana takes a different approach - like a special VIP line that only certain customers know about. While this prevents some types of front-running, it gives special advantages to those with insider access to the network.</p>
-</section>
-</section>
-<section id="rømers-new-approach" class="level2">
-<h2 class="anchored" data-anchor-id="rømers-new-approach">Rømer’s New Approach</h2>
-<p>Rømer Chain is trying to create a fairer system through several innovations:</p>
-<section id="pay-first-model" class="level3">
-<h3 class="anchored" data-anchor-id="pay-first-model">Pay-First Model</h3>
-<p>The Move VM takes a fundamentally different approach. Rather than allowing cheap transaction reverts, it requires all computational costs to be paid upfront. Success or failure, the resources consumed by a transaction must be paid for. This shifts the economic model from “try everything and pay for successes” to “carefully validate before attempting.” The result is more efficient network usage and reduced spam opportunities.</p>
-</section>
-<section id="geographic-balance" class="level3">
-<h3 class="anchored" data-anchor-id="geographic-balance">Geographic Balance</h3>
-<p>Instead of having one central location where all orders are processed, Rømer spreads out its order processing across many locations. This prevents any one location from having too much control over all the orders.</p>
-</section>
-<section id="rotating-service-windows" class="level3">
-<h3 class="anchored" data-anchor-id="rotating-service-windows">Rotating Service Windows</h3>
-<p>Rather than allowing geographic concentration to determine transaction ordering, Rømer’s consensus mechanism incorporates physical location as a core part of its design. This distributes transaction processing across a broader geographic area, reducing the advantages of proximity to any single point of infrastructure.</p>
-</section>
-</section>
-<section id="the-future-of-market-structure" class="level2">
-<h2 class="anchored" data-anchor-id="the-future-of-market-structure">The Future of Market Structure</h2>
-<p>The goal isn’t to eliminate all MEV - that would be both impossible and, in some cases, undesirable. Rather, Rømer Chain aims to create a market structure where:</p>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="understanding-state-machine-replication-smr" class="level1">
+<h1>Understanding State Machine Replication (SMR)</h1>
+<section id="what-is-state" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-state">What is State?</h2>
+<p>Before diving into replication mechanisms, let’s understand what we mean by “state”. In distributed systems, state represents the complete snapshot of a system at a given moment. Think of it as a comprehensive database that captures all relevant information needed for the system to function.</p>
+<p>For example, in a blockchain system, state might include:</p>
 <ul>
-<li>Value extraction requires actual market intelligence rather than just technical advantages</li>
-<li>Infrastructure positioning can’t override market fundamentals</li>
-<li>Failed speculation has real costs that must be considered</li>
-<li>Information flow follows natural network topology rather than centralized paths</li>
+<li>Account balances</li>
+<li>Smart contract code</li>
+<li>Contract storage</li>
 </ul>
-<p>This creates an environment where MEV extraction aligns more closely with genuine market making and price discovery, rather than pure technical exploitation. The result is a more efficient market where resources flow toward actual value creation rather than rent-seeking behavior.</p>
+<p>State isn’t just data - it’s the system’s source of truth that must be consistently maintained across all participating nodes. When we talk about state machine replication, we’re discussing how to ensure all nodes in a distributed system maintain identical copies of this state.</p>
 </section>
-<section id="looking-forward" class="level2">
-<h2 class="anchored" data-anchor-id="looking-forward">Looking Forward</h2>
-<p>The conversation around MEV often focuses on whether it can be eliminated. This misses the point. The real question is how we can structure markets to channel trading activity toward beneficial forms of value extraction while making harmful forms prohibitively expensive. Through its combination of economic incentives, geographic distribution, and infrastructure rotation, Rømer Chain works to create markets where MEV extraction aligns with, rather than opposes, market efficiency.</p>
+<section id="evolution-of-state-machine-replication" class="level2">
+<h2 class="anchored" data-anchor-id="evolution-of-state-machine-replication">Evolution of State Machine Replication</h2>
+<section id="traditional-smr-the-foundation" class="level3">
+<h3 class="anchored" data-anchor-id="traditional-smr-the-foundation">Traditional SMR: The Foundation</h3>
+<p>Traditional State Machine Replication represented our first attempt at maintaining consistent state across distributed nodes. Here’s how it works:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">sequenceDiagram
+    participant C as Client
+    participant N1 as Node 1
+    participant N2 as Node 2
+    participant N3 as Node 3
+    
+    C-&gt;&gt;N1: Submit Transaction
+    Note over N1,N3: Agreement Phase
+    N1-&gt;&gt;N2: Replicate
+    N1-&gt;&gt;N3: Replicate
+    Note over N1,N3: All nodes verify &amp; execute
+    
+    Note over N1: Execute
+    Note over N2: Execute
+    Note over N3: Execute
+    
+    Note over N1,N3: State Updated
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>This approach introduced significant bottlenecks:</p>
+<ul>
+<li>Every node must process every transaction</li>
+<li>Network bandwidth becomes a limiting factor</li>
+<li>Computational resources are replicated across all nodes</li>
+</ul>
+<p>TSMR and SSMR are generally (sequence -&gt; execute -&gt; Replicate) whereas DSMR is replicate -&gt; sequence -&gt; execute.</p>
+<p>TSMR and SSMR can semantically verify whereas DSMR cannot.</p>
+<p>In Vryx’s DSMR because transaction transaction validation occurs after replication and sequencing, validators cannot provide strong preconfirmations about transaction validity. They simply don’t know yet if a transaction will be valid when it’s eventually executed.</p>
+<p>With commonware coupling threshold consensus with DSMR the sequencers act as a preliminary validation layer. When users submit transactions, they must go through registered sequencers who can validate basic properties like account balances before propoaging them to validators. The sequencers effectively form a threshold group - meaning some minimum number of them must agree before a transaction batch moves forward.</p>
+</section>
+<section id="timestamped-smr-a-new-order" class="level3">
+<h3 class="anchored" data-anchor-id="timestamped-smr-a-new-order">Timestamped SMR: A New Order</h3>
+<p>Timestamped SMR (TSMR) emerged as an attempt to streamline ordering.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">sequenceDiagram
+    participant C as Client
+    participant TS as Timestamp Oracle
+    participant N1 as Node 1
+    participant N2 as Node 2
+    
+    C-&gt;&gt;TS: Submit Transaction
+    TS-&gt;&gt;TS: Generate Timestamp
+    TS-&gt;&gt;N1: Timestamped Tx
+    TS-&gt;&gt;N2: Timestamped Tx
+    
+    Note over N1,N2: Process by timestamp
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="sequenced-smr-the-traffic-controller" class="level3">
+<h3 class="anchored" data-anchor-id="sequenced-smr-the-traffic-controller">Sequenced SMR: The Traffic Controller</h3>
+<p>Modern layer-2 solutions like Arbitrum and Optimism implement SSMR with a single sequencer, effectively eliminating the replication bottleneck. This approach trades decentralization for performance:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">sequenceDiagram
+    participant C as Client
+    participant S as Sequencer
+    participant N1 as Node 1
+    participant N2 as Node 2
+    
+    C-&gt;&gt;S: Submit Transaction
+    S-&gt;&gt;S: Assign Sequence Number
+    
+    par Parallel Distribution
+        S-&gt;&gt;N1: Sequenced Transaction
+        S-&gt;&gt;N2: Sequenced Transaction
+    end
+    
+    Note over N1,N2: Process in sequence order
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="decoupled-smr-the-performance-breakthrough" class="level3">
+<h3 class="anchored" data-anchor-id="decoupled-smr-the-performance-breakthrough">Decoupled SMR: The Performance Breakthrough</h3>
+<p>DSMR represents a paradigm shift in how we handle state machine replication. By decoupling replication from execution, it achieves significant performance improvements, but at a cost:</p>
+<ul>
+<li><strong>Replication First</strong>: Transactions are replicated before validation</li>
+<li><strong>Delayed Verification</strong>: Semantic verification happens during execution</li>
+<li><strong>Potential Waste</strong>: Resources might be spent on invalid transactions</li>
+</ul>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">sequenceDiagram
+    participant C as Client
+    participant M as Mempool
+    participant N1 as Node 1
+    participant N2 as Node 2
+    
+    C-&gt;&gt;M: Submit Transaction
+    
+    par Fast Replication
+        M-&gt;&gt;N1: Replicate Tx
+        M-&gt;&gt;N2: Replicate Tx
+    end
+    
+    Note over N1,N2: Later Verification &amp; Execution
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<section id="solving-the-semantic-verification-challenge" class="level4">
+<h4 class="anchored" data-anchor-id="solving-the-semantic-verification-challenge">Solving the Semantic Verification Challenge</h4>
+<p>Projects have developed various approaches to mitigate DSMR’s semantic verification trade-off:</p>
+<ol type="1">
+<li><strong>Avalanche’s HyperSDK</strong>: Introduces upfront fees to discourage spam and invalid transactions</li>
+<li><strong>Economic Deterrence</strong>: Making invalid transaction submission costly</li>
+<li><strong>Pre-flight Checks</strong>: Light validation before replication</li>
+</ol>
+</section>
+</section>
+</section>
+<section id="modern-implementation-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="modern-implementation-considerations">Modern Implementation Considerations</h2>
+<p>The choice between these approaches often depends on specific requirements:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Approach</th>
+<th>Decentralization</th>
+<th>Performance</th>
+<th>Complexity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Traditional SMR</td>
+<td>High</td>
+<td>Low</td>
+<td>Medium</td>
+</tr>
+<tr class="even">
+<td>TSMR</td>
+<td>High</td>
+<td>High</td>
+<td>High</td>
+</tr>
+<tr class="odd">
+<td>SSMR (e.g., Optimism)</td>
+<td>Low</td>
+<td>Very High</td>
+<td>Low</td>
+</tr>
+<tr class="even">
+<td>DSMR</td>
+<td>High</td>
+<td>High</td>
+<td>Medium</td>
+</tr>
+</tbody>
+</table>
+<section id="real-world-trade-offs" class="level3">
+<h3 class="anchored" data-anchor-id="real-world-trade-offs">Real-world Trade-offs</h3>
+<p>Looking at actual implementations:</p>
+<ol type="1">
+<li><strong>Optimism/Arbitrum (SSMR)</strong>
+<ul>
+<li>Single sequencer provides high performance</li>
+<li>Centralization risk mitigated through fault proofs</li>
+<li>Elimination of replication bottleneck</li>
+</ul></li>
+<li><strong>Solana (TSMR)</strong>
+<ul>
+<li>PoH provides natural ordering</li>
+<li>Clock synchronization challenges</li>
+<li>High performance but complex recovery</li>
+</ul></li>
+<li><strong>Avalanche (DSMR)</strong>
+<ul>
+<li>Economic mechanisms to prevent spam</li>
+<li>High throughput through parallel validation</li>
+<li>Complex conflict resolution</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>The evolution of SMR approaches reflects a deeper understanding of distributed systems trade-offs. While DSMR presents promising performance characteristics, its adoption requires careful consideration of semantic verification challenges. Modern implementations increasingly rely on economic mechanisms and hybrid approaches to balance these trade-offs.</p>
 
 
 </section>

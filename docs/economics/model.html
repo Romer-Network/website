@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -138,14 +104,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="../market-makers/index.html">
  <span class="dropdown-text">Overview</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../market-makers/pitch.html">
- <span class="dropdown-text">Pitch</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../market-makers/competitors.html">
- <span class="dropdown-text">Competitors</span></a>
-  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -166,7 +124,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Network Design</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../technical/devnet.html">
+    <a class="dropdown-item" href="../technical/roadmap.html">
  <span class="dropdown-text">Development Roadmap</span></a>
   </li>  
     </ul>
@@ -234,39 +192,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#rømers-economic-model-understanding-the-first-true-market-driven-blockchain-economy" id="toc-rømers-economic-model-understanding-the-first-true-market-driven-blockchain-economy" class="nav-link active" data-scroll-target="#rømers-economic-model-understanding-the-first-true-market-driven-blockchain-economy">RØMER’s Economic Model: Understanding the First True Market-Driven Blockchain Economy</a>
+  <li><a href="#rømer-chain-a-market-driven-economic-model" id="toc-rømer-chain-a-market-driven-economic-model" class="nav-link active" data-scroll-target="#rømer-chain-a-market-driven-economic-model">RØMER Chain: A Market-Driven Economic Model</a>
   <ul class="collapse">
-  <li><a href="#introduction-to-core-economic-principles" id="toc-introduction-to-core-economic-principles" class="nav-link" data-scroll-target="#introduction-to-core-economic-principles">Introduction to Core Economic Principles</a>
+  <li><a href="#core-economic-principles" id="toc-core-economic-principles" class="nav-link" data-scroll-target="#core-economic-principles">Core Economic Principles</a>
   <ul class="collapse">
-  <li><a href="#computation-as-the-product" id="toc-computation-as-the-product" class="nav-link" data-scroll-target="#computation-as-the-product">Computation as the Product</a></li>
-  <li><a href="#austrian-economic-alignment" id="toc-austrian-economic-alignment" class="nav-link" data-scroll-target="#austrian-economic-alignment">Austrian Economic Alignment</a></li>
-  <li><a href="#stable-operational-costs" id="toc-stable-operational-costs" class="nav-link" data-scroll-target="#stable-operational-costs">Stable Operational Costs</a></li>
+  <li><a href="#trading-volume-as-the-core-metric" id="toc-trading-volume-as-the-core-metric" class="nav-link" data-scroll-target="#trading-volume-as-the-core-metric">Trading Volume as the Core Metric</a></li>
+  <li><a href="#performance-based-validation" id="toc-performance-based-validation" class="nav-link" data-scroll-target="#performance-based-validation">Performance-Based Validation</a></li>
+  <li><a href="#regional-market-protection" id="toc-regional-market-protection" class="nav-link" data-scroll-target="#regional-market-protection">Regional Market Protection</a></li>
   </ul></li>
-  <li><a href="#the-base-computation-threshold" id="toc-the-base-computation-threshold" class="nav-link" data-scroll-target="#the-base-computation-threshold">The Base Computation Threshold</a>
+  <li><a href="#the-baseline-volume-threshold" id="toc-the-baseline-volume-threshold" class="nav-link" data-scroll-target="#the-baseline-volume-threshold">The Baseline Volume Threshold</a>
   <ul class="collapse">
-  <li><a href="#capacity-based-threshold-mechanics" id="toc-capacity-based-threshold-mechanics" class="nav-link" data-scroll-target="#capacity-based-threshold-mechanics">Capacity-Based Threshold Mechanics</a></li>
-  <li><a href="#economic-safeguards" id="toc-economic-safeguards" class="nav-link" data-scroll-target="#economic-safeguards">Economic Safeguards</a></li>
-  </ul></li>
-  <li><a href="#supply-dynamics" id="toc-supply-dynamics" class="nav-link" data-scroll-target="#supply-dynamics">Supply Dynamics</a>
-  <ul class="collapse">
-  <li><a href="#above-base-threshold-operations" id="toc-above-base-threshold-operations" class="nav-link" data-scroll-target="#above-base-threshold-operations">Above Base Threshold Operations</a></li>
-  <li><a href="#below-base-threshold-operations" id="toc-below-base-threshold-operations" class="nav-link" data-scroll-target="#below-base-threshold-operations">Below Base Threshold Operations</a></li>
+  <li><a href="#volume-based-economics" id="toc-volume-based-economics" class="nav-link" data-scroll-target="#volume-based-economics">Volume-Based Economics</a></li>
+  <li><a href="#dynamic-supply-adjustment" id="toc-dynamic-supply-adjustment" class="nav-link" data-scroll-target="#dynamic-supply-adjustment">Dynamic Supply Adjustment</a></li>
   </ul></li>
   <li><a href="#market-participant-behavior" id="toc-market-participant-behavior" class="nav-link" data-scroll-target="#market-participant-behavior">Market Participant Behavior</a>
   <ul class="collapse">
-  <li><a href="#rational-traders" id="toc-rational-traders" class="nav-link" data-scroll-target="#rational-traders">Rational Traders</a></li>
+  <li><a href="#market-makers" id="toc-market-makers" class="nav-link" data-scroll-target="#market-makers">Market Makers</a></li>
+  <li><a href="#traders" id="toc-traders" class="nav-link" data-scroll-target="#traders">Traders</a></li>
   <li><a href="#network-users" id="toc-network-users" class="nav-link" data-scroll-target="#network-users">Network Users</a></li>
-  <li><a href="#validators" id="toc-validators" class="nav-link" data-scroll-target="#validators">Validators</a></li>
   </ul></li>
-  <li><a href="#crypto-market-cycles" id="toc-crypto-market-cycles" class="nav-link" data-scroll-target="#crypto-market-cycles">Crypto Market Cycles</a>
+  <li><a href="#market-cycle-resilience" id="toc-market-cycle-resilience" class="nav-link" data-scroll-target="#market-cycle-resilience">Market Cycle Resilience</a>
   <ul class="collapse">
   <li><a href="#bull-market-dynamics" id="toc-bull-market-dynamics" class="nav-link" data-scroll-target="#bull-market-dynamics">Bull Market Dynamics</a></li>
-  <li><a href="#bear-market-resilience" id="toc-bear-market-resilience" class="nav-link" data-scroll-target="#bear-market-resilience">Bear Market Resilience</a></li>
+  <li><a href="#bear-market-protection" id="toc-bear-market-protection" class="nav-link" data-scroll-target="#bear-market-protection">Bear Market Protection</a></li>
   </ul></li>
-  <li><a href="#implementation-and-technical-details" id="toc-implementation-and-technical-details" class="nav-link" data-scroll-target="#implementation-and-technical-details">Implementation and Technical Details</a>
+  <li><a href="#implementation-details" id="toc-implementation-details" class="nav-link" data-scroll-target="#implementation-details">Implementation Details</a>
   <ul class="collapse">
-  <li><a href="#utilization-calculation-example" id="toc-utilization-calculation-example" class="nav-link" data-scroll-target="#utilization-calculation-example">Utilization Calculation Example</a></li>
-  <li><a href="#market-launch-configuration" id="toc-market-launch-configuration" class="nav-link" data-scroll-target="#market-launch-configuration">Market Launch Configuration</a></li>
+  <li><a href="#network-performance-metrics" id="toc-network-performance-metrics" class="nav-link" data-scroll-target="#network-performance-metrics">Network Performance Metrics</a></li>
+  <li><a href="#volume-requirements" id="toc-volume-requirements" class="nav-link" data-scroll-target="#volume-requirements">Volume Requirements</a></li>
+  <li><a href="#qualification-process" id="toc-qualification-process" class="nav-link" data-scroll-target="#qualification-process">Qualification Process</a></li>
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul></li>
@@ -279,111 +233,106 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="rømers-economic-model-understanding-the-first-true-market-driven-blockchain-economy" class="level1">
-<h1>RØMER’s Economic Model: Understanding the First True Market-Driven Blockchain Economy</h1>
-<section id="introduction-to-core-economic-principles" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-to-core-economic-principles">Introduction to Core Economic Principles</h2>
-<p>RØMER Chain introduces an Austrian inspired economic model built on three foundational principles that work together to create a truly market-driven blockchain economy. By understanding how these principles interact, we can appreciate how RØMER achieves both stability and efficiency in ways traditional blockchain networks cannot.</p>
-<section id="computation-as-the-product" class="level3">
-<h3 class="anchored" data-anchor-id="computation-as-the-product">Computation as the Product</h3>
-<p>At the heart of RØMER’s design is the recognition that computation itself is the fundamental product being traded. Unlike networks that treat computation as a secondary consideration, RØMER explicitly bases its entire economic model on computational capacity. This begins with our base threshold, calibrated at 50% of the network’s total computational capacity.</p>
-<p>This threshold serves as the network’s natural equilibrium point, creating a clear and predictable pricing structure for computational resources. When users purchase computation on RØMER, they know exactly what they’re getting and what it will cost, enabling reliable business planning and efficient resource allocation. This predictability stems from our fixed per-operation pricing model, which maintains stable costs regardless of network conditions.</p>
+<section id="rømer-chain-a-market-driven-economic-model" class="level1">
+<h1>RØMER Chain: A Market-Driven Economic Model</h1>
+<p>RØMER Chain introduces an economic model built specifically for professional market making. By anchoring our token economics to actual trading volume rather than computational metrics or staked tokens, we create an environment where network value directly reflects market making activity and trading demand.</p>
+<section id="core-economic-principles" class="level2">
+<h2 class="anchored" data-anchor-id="core-economic-principles">Core Economic Principles</h2>
+<p>Our economic model rests on three foundational principles that work together to create a sustainable market making ecosystem.</p>
+<section id="trading-volume-as-the-core-metric" class="level3">
+<h3 class="anchored" data-anchor-id="trading-volume-as-the-core-metric">Trading Volume as the Core Metric</h3>
+<p>At the heart of RØMER’s design is the recognition that trading volume represents the fundamental measure of network utility. Unlike networks that focus on computational capacity or staked tokens, RØMER explicitly bases its entire economic model on actual trading activity. This begins with our baseline volume threshold, which serves as the network’s natural equilibrium point.</p>
+<p>When volumes fall below this baseline, automatic token burning creates natural support for network value. When volumes exceed the baseline, controlled token minting allows the network to grow sustainably. This creates a direct link between network usage and token economics, ensuring that token value reflects genuine trading demand rather than speculative activity.</p>
 </section>
-<section id="austrian-economic-alignment" class="level3">
-<h3 class="anchored" data-anchor-id="austrian-economic-alignment">Austrian Economic Alignment</h3>
-<p>RØMER’s economic design draws heavily from Austrian economic principles, particularly in how it approaches value discovery and market dynamics. Instead of imposing artificial constraints or centrally planned parameters, RØMER allows the market to determine value through actual usage patterns and participant behavior.</p>
-<p>This alignment manifests in several ways. First, price discovery happens naturally through the interaction of supply and demand, with no artificial floors or ceilings. Second, the system avoids creating artificial scarcity, instead letting real resource constraints and market demand drive token economics. Perhaps most importantly, RØMER enables true economic calculation by providing clear, stable pricing signals that market participants can use to make informed decisions.</p>
+<section id="performance-based-validation" class="level3">
+<h3 class="anchored" data-anchor-id="performance-based-validation">Performance-Based Validation</h3>
+<p>Rather than requiring validators to stake tokens, RØMER qualifies validators based on their actual contribution to network health. Market makers maintain their validator status by consistently meeting two critical criteria:</p>
+<p>First, they must maintain exceptional network performance, measured through metrics like latency, uptime, and geographic presence. Second, they must contribute meaningfully to trading volume in their region. This dual requirement ensures that validator slots go to market makers who actively improve network quality rather than those who simply hold tokens.</p>
 </section>
-<section id="stable-operational-costs" class="level3">
-<h3 class="anchored" data-anchor-id="stable-operational-costs">Stable Operational Costs</h3>
-<p>The third principle addresses one of the most significant challenges in blockchain networks: cost predictability. RØMER implements fixed operation pricing, which means that the cost of any given computation remains constant in nominal terms. This stability creates several important advantages for network participants.</p>
-<p>Businesses can create reliable budgets for their blockchain operations, knowing that their costs won’t suddenly spike due to network congestion or speculative activity. The long-term planning horizon this enables is crucial for enterprise adoption, as organizations need to forecast their operational costs accurately. This predictability also encourages more efficient resource utilization, as users can optimize their operations around known, stable costs.</p>
-</section>
-</section>
-<section id="the-base-computation-threshold" class="level2">
-<h2 class="anchored" data-anchor-id="the-base-computation-threshold">The Base Computation Threshold</h2>
-<p>The 50% base computation threshold represents one of RØMER’s most innovative economic mechanisms. This threshold creates a clear reference point for network operations while ensuring the system maintains sufficient capacity for demand spikes.</p>
-<section id="capacity-based-threshold-mechanics" class="level3">
-<h3 class="anchored" data-anchor-id="capacity-based-threshold-mechanics">Capacity-Based Threshold Mechanics</h3>
-<p>Setting the base threshold at 50% of validator capacity creates a natural operating equilibrium that serves multiple purposes. First, it ensures the network always maintains substantial headroom for demand spikes, preventing the congestion issues that plague many blockchain networks. Second, it creates clear incentives for resource optimization, as operators can maximize their efficiency by targeting this known threshold.</p>
-<p>The threshold also scales naturally with network growth, as computing power increases through hardware upgrades and network expansion. This creates a sustainable growth model where capacity can increase to meet demand while maintaining economic stability.</p>
-</section>
-<section id="economic-safeguards" class="level3">
-<h3 class="anchored" data-anchor-id="economic-safeguards">Economic Safeguards</h3>
-<p>The threshold mechanism incorporates several economic safeguards to ensure network stability. Validator cost tracking provides real-time feedback about the economic sustainability of network operations. Anti-manipulation design features prevent gaming of the threshold mechanism, while hardware upgrade incentives ensure the network can scale to meet growing demand.</p>
-<p>These safeguards focus particularly on network security, ensuring that the economic model supports rather than undermines the network’s security properties. This creates a virtuous cycle where economic stability reinforces network security, which in turn supports stable economics.</p>
+<section id="regional-market-protection" class="level3">
+<h3 class="anchored" data-anchor-id="regional-market-protection">Regional Market Protection</h3>
+<p>The third principle addresses one of the most significant challenges in market making: protecting regional advantages. RØMER’s geographic validation system creates natural regional markets where qualified market makers can build sustainable operations. This geographic distribution also ensures true decentralization while creating multiple centers of price discovery.</p>
 </section>
 </section>
-<section id="supply-dynamics" class="level2">
-<h2 class="anchored" data-anchor-id="supply-dynamics">Supply Dynamics</h2>
-<p>RØMER’s supply dynamics respond directly to network utilization, creating a natural feedback loop between usage and token supply. This mechanism operates differently depending on whether network usage is above or below the base threshold.</p>
-<section id="above-base-threshold-operations" class="level3">
-<h3 class="anchored" data-anchor-id="above-base-threshold-operations">Above Base Threshold Operations</h3>
-<p>When network usage exceeds 50% of capacity, several mechanisms activate to maintain stability. New RØMER tokens are minted in proportion to the excess usage, creating natural supply expansion that helps maintain stable computation costs. The market price adjusts to reflect this increased supply, while resource optimization incentives become stronger to encourage efficient usage of the network’s capacity.</p>
+<section id="the-baseline-volume-threshold" class="level2">
+<h2 class="anchored" data-anchor-id="the-baseline-volume-threshold">The Baseline Volume Threshold</h2>
+<p>The baseline volume threshold represents RØMER’s most innovative economic mechanism. This threshold creates a reference point for network activity while ensuring the system maintains sustainable growth.</p>
+<section id="volume-based-economics" class="level3">
+<h3 class="anchored" data-anchor-id="volume-based-economics">Volume-Based Economics</h3>
+<p>The baseline threshold is calculated as a moving average of trading volume across all regions. This creates several important economic effects:</p>
+<p>First, it provides a clear measure of network health that participants can monitor. Second, it creates predictable supply dynamics based on actual usage. Third, it allows the network to scale naturally as trading activity grows, without requiring artificial adjustments to economic parameters.</p>
 </section>
-<section id="below-base-threshold-operations" class="level3">
-<h3 class="anchored" data-anchor-id="below-base-threshold-operations">Below Base Threshold Operations</h3>
-<p>During periods of lower network usage (below 50% capacity), the system automatically burns RØMER tokens. This supply contraction helps maintain token value during periods of reduced demand. The burning mechanism creates stronger efficiency incentives, encouraging users to optimize their resource usage while ensuring the network remains economically sustainable even during lower utilization periods.</p>
+<section id="dynamic-supply-adjustment" class="level3">
+<h3 class="anchored" data-anchor-id="dynamic-supply-adjustment">Dynamic Supply Adjustment</h3>
+<p>When trading volume deviates from the baseline threshold, the system automatically adjusts token supply:</p>
+<p>During periods of reduced trading, the system burns tokens proportionally to the decrease in volume. This creates buying pressure during market downturns and helps maintain network value when activity temporarily decreases.</p>
+<p>During high-volume periods, controlled token minting allows the supply to expand with genuine network growth. This ensures the network can scale while maintaining economic stability.</p>
 </section>
 </section>
 <section id="market-participant-behavior" class="level2">
 <h2 class="anchored" data-anchor-id="market-participant-behavior">Market Participant Behavior</h2>
-<p>The economic model creates distinct incentives and opportunities for different types of market participants, each playing an important role in maintaining network stability.</p>
-<section id="rational-traders" class="level3">
-<h3 class="anchored" data-anchor-id="rational-traders">Rational Traders</h3>
-<p>Traders in the RØMER ecosystem focus on capacity utilization as their primary market signal. By monitoring the network’s position relative to the 50% threshold, they can identify trading opportunities while supporting system stability. Their trading activities help maintain price equilibrium and provide important market liquidity.</p>
+<p>The economic model creates distinct incentives for different types of market participants.</p>
+<section id="market-makers" class="level3">
+<h3 class="anchored" data-anchor-id="market-makers">Market Makers</h3>
+<p>Market makers focus on maintaining their validator status through consistent performance and volume contribution. The geographic validation system protects their regional advantages, while the volume-based economics ensure that successful market making directly contributes to network value.</p>
+</section>
+<section id="traders" class="level3">
+<h3 class="anchored" data-anchor-id="traders">Traders</h3>
+<p>For traders, the model provides clear signals about market depth and activity. Regions with strong market maker performance naturally attract more trading volume, creating a virtuous cycle of liquidity and activity.</p>
 </section>
 <section id="network-users" class="level3">
 <h3 class="anchored" data-anchor-id="network-users">Network Users</h3>
-<p>For users of the network, the economic model provides clear signals for optimizing their operations. The stable pricing allows for effective resource planning, while the capacity threshold creates natural incentives for efficient usage patterns. Users can time their operations to take advantage of lower utilization periods, leading to more efficient overall network usage.</p>
-</section>
-<section id="validators" class="level3">
-<h3 class="anchored" data-anchor-id="validators">Validators</h3>
-<p>Validators play a crucial role in maintaining network capacity and security. The economic model encourages them to maintain optimal capacity while providing predictable economics for their operations. Geographic distribution adds another dimension to validator strategy, as different locations may offer varying advantages for network participation.</p>
+<p>Users benefit from the stability created by having professional market makers as validators. The geographic distribution ensures reliable access to liquidity across different regions, while the performance requirements maintain high network quality.</p>
 </section>
 </section>
-<section id="crypto-market-cycles" class="level2">
-<h2 class="anchored" data-anchor-id="crypto-market-cycles">Crypto Market Cycles</h2>
-<p>One of RØMER’s most innovative features is its ability to maintain stability across different market conditions, particularly during the extreme swings common in cryptocurrency markets.</p>
+<section id="market-cycle-resilience" class="level2">
+<h2 class="anchored" data-anchor-id="market-cycle-resilience">Market Cycle Resilience</h2>
+<p>RØMER’s volume-based economics create natural resilience across market cycles.</p>
 <section id="bull-market-dynamics" class="level3">
 <h3 class="anchored" data-anchor-id="bull-market-dynamics">Bull Market Dynamics</h3>
-<p>During bull markets, when network usage typically exceeds 50% capacity, the system responds with controlled supply expansion. This helps maintain stable computation costs while encouraging hardware upgrades to meet increased demand. The model creates natural resistances to speculative excess while ensuring the network can scale to meet genuine usage growth.</p>
+<p>During bull markets, increased trading volume leads to controlled supply expansion. This allows the network to grow naturally with demand while maintaining economic stability. The performance requirements ensure that this growth doesn’t come at the cost of network quality.</p>
 </section>
-<section id="bear-market-resilience" class="level3">
-<h3 class="anchored" data-anchor-id="bear-market-resilience">Bear Market Resilience</h3>
-<p>In bear markets, when usage often falls below 50% capacity, the system’s automatic supply contraction helps maintain economic stability. The excess capacity available during these periods enables highly efficient operations, while the supply contraction provides natural price support. This creates a counter-cyclical stability mechanism that helps the network thrive even during market downturns.</p>
+<section id="bear-market-protection" class="level3">
+<h3 class="anchored" data-anchor-id="bear-market-protection">Bear Market Protection</h3>
+<p>In bear markets, the automatic supply contraction helps maintain network value even as trading volumes decrease. This creates a counter-cyclical effect that helps sustain market maker economics during downturns, ensuring consistent network operation across market conditions.</p>
 </section>
 </section>
-<section id="implementation-and-technical-details" class="level2">
-<h2 class="anchored" data-anchor-id="implementation-and-technical-details">Implementation and Technical Details</h2>
-<p>The practical implementation of RØMER’s economic model requires careful attention to technical details and system parameters.</p>
-<section id="utilization-calculation-example" class="level3">
-<h3 class="anchored" data-anchor-id="utilization-calculation-example">Utilization Calculation Example</h3>
-<p>Here’s how the system calculates and responds to network utilization:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calc_utilization():</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    total_capacity <span class="op">=</span> get_validator_capacity()</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    current_usage <span class="op">=</span> measure_network_load()</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    utilization <span class="op">=</span> current_usage <span class="op">/</span> total_capacity</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compare to 50% threshold</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> utilization <span class="op">&gt;</span> <span class="fl">0.5</span>:</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (utilization <span class="op">-</span> <span class="fl">0.5</span>) <span class="op">*</span> <span class="dv">100</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (<span class="fl">0.5</span> <span class="op">-</span> utilization) <span class="op">*</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This calculation provides the basic input for the system’s supply adjustment mechanisms. When utilization exceeds 50%, the positive return value triggers token minting. When it falls below 50%, the negative return value triggers token burning.</p>
+<section id="implementation-details" class="level2">
+<h2 class="anchored" data-anchor-id="implementation-details">Implementation Details</h2>
+<p>The practical implementation focuses on several key metrics:</p>
+<section id="network-performance-metrics" class="level3">
+<h3 class="anchored" data-anchor-id="network-performance-metrics">Network Performance Metrics</h3>
+<ul>
+<li>Latency: Must maintain consistent low latency to regional users</li>
+<li>Uptime: Required to maintain high availability</li>
+<li>Geographic Presence: Must demonstrate physical presence in region</li>
+<li>Path Optimization: Must maintain efficient network routes</li>
+</ul>
 </section>
-<section id="market-launch-configuration" class="level3">
-<h3 class="anchored" data-anchor-id="market-launch-configuration">Market Launch Configuration</h3>
-<p>Initial network parameters are carefully calibrated to ensure stability from launch:</p>
-<p>The validator configuration begins with hardware requirements sized for 200% of expected launch demand, providing substantial growth headroom while maintaining the 50% base threshold. This conservative initial sizing helps ensure network stability during the critical early period.</p>
-<p>Economic parameters, including initial token supply and burn rates, are calibrated based on expected utilization patterns. The system includes reserves sized for extended periods of underutilization, ensuring it can maintain stability even during prolonged market downturns.</p>
+<section id="volume-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="volume-requirements">Volume Requirements</h3>
+<ul>
+<li>Minimum Regional Contribution: Must consistently provide significant liquidity</li>
+<li>Market Quality Metrics: Spread maintenance and depth requirements</li>
+<li>Activity Consistency: Regular participation in market making</li>
+</ul>
+</section>
+<section id="qualification-process" class="level3">
+<h3 class="anchored" data-anchor-id="qualification-process">Qualification Process</h3>
+<p>New validators must:</p>
+<ol type="1">
+<li>Demonstrate technical capabilities</li>
+<li>Prove geographic presence</li>
+<li>Meet initial volume requirements</li>
+<li>Maintain consistent performance</li>
+</ol>
 </section>
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>RØMER Chain’s economic model represents a fundamental advance in blockchain economics. By anchoring the system to physical computational capacity and implementing Austrian economic principles, we create a naturally stable and efficient market for blockchain computation.</p>
-<p>The combination of fixed computational costs, capacity-based supply adjustment, and geographic distribution creates an environment where market forces drive sustainable growth and optimization. This approach provides the predictability that businesses require while maintaining the economic incentives necessary for long-term network sustainability.</p>
-<p>Through its focus on real physical capacity and market-driven growth, RØMER Chain establishes itself as a platform for sustainable blockchain computation with unique stability across market cycles. This stability, combined with predictable costs and clear economic signals, positions RØMER to support the next generation of blockchain applications and enterprise adoption.</p>
+<p>RØMER Chain’s economic model represents a fundamental advance in blockchain market making infrastructure. By anchoring the system to actual trading volume and combining this with performance-based validation, we create an environment where network value directly reflects genuine market making activity.</p>
+<p>The combination of volume-based economics, performance requirements, and geographic protection creates sustainable economics for professional market makers. This approach provides the stability that market makers require while maintaining the incentives necessary for long-term network growth.</p>
+<p>Through its focus on actual trading activity and market maker performance, RØMER Chain establishes itself as purpose-built infrastructure for professional market making. This focus, combined with our unique economic model, positions RØMER to become the preferred platform for serious market makers seeking sustainable, protected regional operations.</p>
 
 
 </section>

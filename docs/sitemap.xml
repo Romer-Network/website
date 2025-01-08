@@ -1,40 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://romer.network/technical/pop.html</loc>
-    <lastmod>2024-12-29T01:44:36.235Z</lastmod>
+    <loc>http://romer.network/technical/roadmap.html</loc>
+    <lastmod>2025-01-08T03:21:57.812Z</lastmod>
   </url>
   <url>
-    <loc>http://romer.network/technical/network.html</loc>
-    <lastmod>2024-12-31T03:18:39.732Z</lastmod>
+    <loc>http://romer.network/technical/notes.html</loc>
+    <lastmod>2024-12-30T10:11:49.302Z</lastmod>
   </url>
   <url>
-    <loc>http://romer.network/technical/devnet.html</loc>
-    <lastmod>2025-01-06T00:30:34.016Z</lastmod>
+    <loc>http://romer.network/technical/index.html</loc>
+    <lastmod>2025-01-08T02:43:11.852Z</lastmod>
   </url>
   <url>
     <loc>http://romer.network/market-makers/pitch.html</loc>
     <lastmod>2025-01-06T05:38:20.875Z</lastmod>
   </url>
   <url>
-    <loc>http://romer.network/market-makers/competitors.html</loc>
-    <lastmod>2025-01-05T22:47:23.534Z</lastmod>
+    <loc>http://romer.network/market-makers/index.html</loc>
+    <lastmod>2025-01-08T03:18:17.838Z</lastmod>
   </url>
   <url>
-    <loc>http://romer.network/economics/validators.html</loc>
-    <lastmod>2024-12-29T03:00:50.593Z</lastmod>
+    <loc>http://romer.network/index.html</loc>
+    <lastmod>2025-01-07T23:48:13.394Z</lastmod>
   </url>
   <url>
-    <loc>http://romer.network/economics/market.html</loc>
-    <lastmod>2024-12-28T22:04:02.087Z</lastmod>
+    <loc>http://romer.network/economics/model.html</loc>
+    <lastmod>2025-01-08T03:05:37.593Z</lastmod>
   </url>
   <url>
-    <loc>http://romer.network/economics/distribution.html</loc>
-    <lastmod>2024-12-29T22:41:02.941Z</lastmod>
+    <loc>http://romer.network/economics/index.html</loc>
+    <lastmod>2024-12-29T22:32:10.847Z</lastmod>
   </url>
   <url>
-    <loc>http://romer.network/blog/index.html</loc>
-    <lastmod>2024-12-31T00:23:00.225Z</lastmod>
+    <loc>http://romer.network/blog/posts/2025-01-03-why-commonware/index.html</loc>
+    <lastmod>2024-12-31T01:02:06.663Z</lastmod>
+  </url>
+  <url>
+    <loc>http://romer.network/blog/drafts/2025-01-08-DSMR/index.html</loc>
+    <lastmod>2025-01-07T23:38:53.931Z</lastmod>
   </url>
   <url>
     <loc>http://romer.network/blog/drafts/2025-01-01-devnet/index.html</loc>
@@ -49,35 +53,39 @@
     <lastmod>2025-01-02T21:58:37.042Z</lastmod>
   </url>
   <url>
-    <loc>http://romer.network/blog/posts/2025-01-03-why-commonware/index.html</loc>
-    <lastmod>2024-12-31T01:02:06.663Z</lastmod>
+    <loc>http://romer.network/blog/index.html</loc>
+    <lastmod>2024-12-31T00:23:00.225Z</lastmod>
   </url>
   <url>
-    <loc>http://romer.network/economics/index.html</loc>
-    <lastmod>2024-12-29T22:32:10.847Z</lastmod>
+    <loc>http://romer.network/economics/distribution.html</loc>
+    <lastmod>2024-12-29T22:41:02.941Z</lastmod>
   </url>
   <url>
-    <loc>http://romer.network/economics/model.html</loc>
-    <lastmod>2024-12-29T22:41:15.472Z</lastmod>
+    <loc>http://romer.network/economics/market.html</loc>
+    <lastmod>2024-12-28T22:04:02.087Z</lastmod>
   </url>
   <url>
-    <loc>http://romer.network/index.html</loc>
-    <lastmod>2025-01-05T22:44:09.198Z</lastmod>
+    <loc>http://romer.network/economics/validators.html</loc>
+    <lastmod>2024-12-29T03:00:50.593Z</lastmod>
   </url>
   <url>
-    <loc>http://romer.network/market-makers/index.html</loc>
-    <lastmod>2025-01-05T22:18:17.386Z</lastmod>
+    <loc>http://romer.network/market-makers/competitors.html</loc>
+    <lastmod>2025-01-05T22:47:23.534Z</lastmod>
+  </url>
+  <url>
+    <loc>http://romer.network/market-makers/partner-framework.html</loc>
+    <lastmod>2025-01-08T03:17:11.859Z</lastmod>
   </url>
   <url>
     <loc>http://romer.network/pitch/index.html</loc>
-    <lastmod>2024-12-31T21:24:48.822Z</lastmod>
+    <lastmod>2025-01-08T02:52:56.964Z</lastmod>
   </url>
   <url>
-    <loc>http://romer.network/technical/index.html</loc>
-    <lastmod>2025-01-02T21:31:35.526Z</lastmod>
+    <loc>http://romer.network/technical/network.html</loc>
+    <lastmod>2024-12-31T03:18:39.732Z</lastmod>
   </url>
   <url>
-    <loc>http://romer.network/technical/notes.html</loc>
-    <lastmod>2024-12-30T10:11:49.302Z</lastmod>
+    <loc>http://romer.network/technical/pop.html</loc>
+    <lastmod>2024-12-29T01:44:36.235Z</lastmod>
   </url>
 </urlset>

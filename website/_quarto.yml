@@ -28,10 +28,6 @@ website:
         menu: 
           - text: Overview
             href: market-makers/index.qmd
-          - text: Pitch
-            href: market-makers/pitch.qmd
-          - text: Competitors
-            href: market-makers/competitors.qmd
       
       - text: Technical Design
         menu:
@@ -42,7 +38,7 @@ website:
           - text: Network Design
             href: technical/network.qmd
           - text: Development Roadmap
-            href: technical/devnet.qmd
+            href: technical/roadmap.qmd
       
       - text: Tokenomics
         menu:

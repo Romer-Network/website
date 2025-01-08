@@ -8,11 +8,12 @@ As a market maker, your validator node becomes your complete trading infrastruct
 
 [Join Our Market Maker Program →](./market-makers/index.qmd)
 
-- Built-in order management and risk controls
-- Direct transaction ordering when producing blocks
-- Geographic protection from global HFT firms
+- Native support for complex order types and risk management
+- Purpose-built VM optimized for market making operations
+- Direct control over transaction ordering in your region
+- Geographic protection through physical network topology
+- Automated inventory management and yield generation
 - Dual revenue from validation and market making
-- Automated yield farming for idle inventory
 
 ## For Engineers & Developers
 
@@ -20,22 +21,12 @@ Help build the first blockchain designed specifically for market making operatio
 
 [Explore Our Architecture →](./technical/index.qmd)
 
-- Integration with Sui Move VM for DeFi primitives
-- Zero-knowledge hardware attestation
+- Purpose-built VM with native market making primitives
+- High-performance sequencer-driven architecture
+- Hardware attestation
 - Proof of Physics consensus mechanism
 - Standardized DEX interfaces
 - Geographic validation protocols
-
-## For Investors
-
-Support the evolution of decentralized market making infrastructure:
-
-[View Investment Opportunities →](./pitch/index.qmd)
-
-- Market maker validators ensure natural liquidity
-- Geographic decentralization prevents network capture
-- Physical infrastructure requirements create defensible moats
-- Growing ecosystem of regional trading firms
 
 ## For Economic Researchers
 
@@ -50,4 +41,4 @@ Study how we align network economics with market making principles:
 
 ## Join the Evolution
 
-Rømer Chain demonstrates how proper system design can transform market making through physical decentralization, economic alignment, and purpose-built infrastructure. Whether you're a market maker seeking an edge, an engineer building the future of trading, an investor backing innovation, or a researcher studying market dynamics, we invite you to explore how we're creating the foundation for regional market making excellence.
+Rømer Chain demonstrates how purpose-built infrastructure can transform market making through physical decentralization, economic alignment, and specialized primitives. By focusing exclusively on the needs of market makers, we've created a system that delivers unprecedented performance and protection for regional trading operations. Whether you're a market maker seeking an edge, an engineer building the future of trading, or a researcher studying market dynamics, we invite you to explore how we're creating the foundation for regional market making excellence.
