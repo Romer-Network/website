@@ -105,6 +105,13 @@
     "text": "Vision: Purpose-Built Infrastructure for Market Makers\nRømer Chain reimagines blockchain infrastructure by putting market makers at the center of system design. Through specialized architecture and geographic validation, we create natural regional advantages that protect local market makers while ensuring true physical decentralization.\n\n\nFirst blockchain optimized specifically for market making operations\nNative FIX protocol support for seamless infrastructure integration\nProtected regional markets through physical network topology\nSuperior performance through advanced consensus mechanisms"
   },
   {
+    "objectID": "pitch/index.html#the-market-opportunity",
+    "href": "pitch/index.html#the-market-opportunity",
+    "title": "Rømer Chain",
+    "section": "The Market Opportunity",
+    "text": "The Market Opportunity\nThe global financial markets present a massive opportunity for blockchain integration:\n\n\n$1.1 trillion in daily global equity trading volume\nFIX protocol handles $900 billion to $1 trillion of this volume\n85% of institutional forex trading flows through FIX\nBlockchain infrastructure remains disconnected from this massive market\nFirst-mover advantage in bridging traditional finance with blockchain"
+  },
+  {
     "objectID": "pitch/index.html#market-making-challenges",
     "href": "pitch/index.html#market-making-challenges",
     "title": "Rømer Chain",
@@ -116,7 +123,7 @@
     "href": "pitch/index.html#the-rømer-solution",
     "title": "Rømer Chain",
     "section": "The RØMER Solution",
-    "text": "The RØMER Solution\nFour core innovations create unprecedented advantages for market makers:\n\n\nSuperior Performance\n\n2-hop block acceptance\n3-hop finality\nOutperforms dYdX, Sei, Injective\n\n\nRegional Protection\n\nGeographic validation\nLocal market advantages\nNatural MEV protection\n\n\nInfrastructure Integration\n\nNative FIX support\nDirect system connection\nUnified trading stack\n\n\nMarket Economics\n\nDual revenue streams\nProtected regional flow\nCapital efficiency"
+    "text": "The RØMER Solution\nFour core innovations create unprecedented advantages for market makers:\n\n\nSuperior Performance\n\nPowered by Commonware::Simplex\nIndustry-leading speed\nOutperforms all competitors\n\n\nRegional Protection\n\nGeographic validation\nLocal market advantages\nNatural MEV protection\n\n\nInfrastructure Integration\n\nNative FIX protocol support\nPlug into existing systems\nNo custom adaptors needed\n\n\nMarket Economics\n\nDual revenue streams\nProtected regional flow\nCapital efficiency"
   },
   {
     "objectID": "pitch/index.html#technical-edge-market-maker-vm",
@@ -133,11 +140,11 @@
     "text": "Performance Advantage\nWhy Rømer Chain significantly outperforms existing trading chains:\n\n\nCurrent Trading Chains\n\ndYdX: 4-6 hops for finality\nSei: Complex parallel execution\nInjective: Modified EVM limitations\n\n\nRømer Chain\n\n2-hop block acceptance\n3-hop finality\nHardware optimization"
   },
   {
-    "objectID": "pitch/index.html#infrastructure-integration",
-    "href": "pitch/index.html#infrastructure-integration",
+    "objectID": "pitch/index.html#infrastructure-integration-seamless-fix-support",
+    "href": "pitch/index.html#infrastructure-integration-seamless-fix-support",
     "title": "Rømer Chain",
-    "section": "Infrastructure Integration",
-    "text": "Infrastructure Integration\nValidator nodes replace multiple pieces of trading infrastructure:\n\n\nNative FIX protocol connectivity\nDirect market data integration\nBuilt-in risk management\nPosition monitoring systems\nCross-venue operations"
+    "section": "Infrastructure Integration: Seamless FIX Support",
+    "text": "Infrastructure Integration: Seamless FIX Support\nRømer Chain integrates directly with the world’s trading infrastructure:\n\n\nNative FIX protocol support connects to existing trading systems\nNo custom adaptors or middleware required\nCompatible with standard FIX order types and messages\nLeverage existing risk management and position tracking\nDirect connection to global liquidity pools"
   },
   {
     "objectID": "pitch/index.html#development-roadmap",

@@ -52,6 +52,20 @@ Rømer Chain reimagines blockchain infrastructure by putting market makers at th
 
 ---
 
+## The Market Opportunity
+
+The global financial markets present a massive opportunity for blockchain integration:
+
+::: {.incremental}
+- $1.1 trillion in daily global equity trading volume
+- FIX protocol handles $900 billion to $1 trillion of this volume
+- 85% of institutional forex trading flows through FIX
+- Blockchain infrastructure remains disconnected from this massive market
+- First-mover advantage in bridging traditional finance with blockchain
+:::
+
+---
+
 ## Market Making Challenges
 
 Current blockchain infrastructure forces market makers to adapt to systems not designed for their needs:
@@ -75,9 +89,9 @@ Four core innovations create unprecedented advantages for market makers:
 ::: {.column width="25%"}
 **Superior Performance**
 
-- 2-hop block acceptance
-- 3-hop finality
-- Outperforms dYdX, Sei, Injective
+- Powered by Commonware::Simplex
+- Industry-leading speed
+- Outperforms all competitors
 :::
 
 ::: {.column width="25%"}
@@ -91,9 +105,9 @@ Four core innovations create unprecedented advantages for market makers:
 ::: {.column width="25%"}
 **Infrastructure Integration**
 
-- Native FIX support
-- Direct system connection
-- Unified trading stack
+- Native FIX protocol support
+- Plug into existing systems
+- No custom adaptors needed
 :::
 
 ::: {.column width="25%"}
@@ -148,16 +162,16 @@ Why Rømer Chain significantly outperforms existing trading chains:
 
 ---
 
-## Infrastructure Integration
+## Infrastructure Integration: Seamless FIX Support
 
-Validator nodes replace multiple pieces of trading infrastructure:
+Rømer Chain integrates directly with the world's trading infrastructure:
 
 ::: {.incremental}
-- Native FIX protocol connectivity
-- Direct market data integration
-- Built-in risk management
-- Position monitoring systems
-- Cross-venue operations
+- Native FIX protocol support connects to existing trading systems
+- No custom adaptors or middleware required
+- Compatible with standard FIX order types and messages
+- Leverage existing risk management and position tracking
+- Direct connection to global liquidity pools
 :::
 
 ---
