@@ -39,6 +39,8 @@ website:
             href: technical/network.qmd
           - text: Development Roadmap
             href: technical/roadmap.qmd
+          - text: FIX
+            href: technical/fix.qmd
       
       - text: Tokenomics
         menu:

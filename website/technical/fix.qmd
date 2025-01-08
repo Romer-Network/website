@@ -1,0 +1,195 @@
+# FIX Protocol Integration Architecture
+
+## Overview
+
+Romer Chain's FIX protocol integration enables market makers to connect their existing trading systems directly to the blockchain network. By combining traditional FIX session management with blockchain security through session keys, we create a system that maintains both the performance expectations of market makers and the security requirements of a blockchain network.
+
+## Session Establishment
+
+The first phase of FIX integration involves establishing a secure session between a market maker and a sequencer.
+
+```{mermaid}
+sequenceDiagram
+    participant MM as Market Maker
+    participant SK as Session Key Generator
+    participant SQ as Sequencer
+    participant BC as Blockchain
+
+    MM->>SK: Generate session key
+    SK-->>MM: Return session key
+    MM->>MM: Sign session key with blockchain private key
+    MM->>SQ: FIX Logon (SenderCompID, session key, signature)
+    SQ->>SQ: Verify signature
+    SQ->>SQ: Initialize session state
+    SQ-->>MM: FIX Logon Accept
+    
+    loop Session Maintenance
+        MM->>SQ: Heartbeat
+        SQ-->>MM: Heartbeat
+    end
+```
+
+### Session Key Generation
+
+A market maker begins their trading day by establishing a secure session. This process involves several crucial steps to ensure both security and proper FIX protocol compliance:
+
+1. The market maker generates a temporary session key specifically for FIX trading. This key will only be valid for this particular trading session.
+2. They sign this session key with their blockchain private key to create a session certificate, proving ownership of their blockchain address.
+3. Both the session key and certificate are included in the FIX Logon message's password field.
+4. This session key remains valid only for the duration of the FIX session.
+
+### Session Verification
+
+When the sequencer receives a new session request, it follows a careful verification process:
+
+1. Receives the Logon message containing the session credentials
+2. Extracts the session key and certificate from the password field
+3. Verifies the certificate using the market maker's known blockchain address
+4. Associates the verified blockchain address with the new FIX session
+5. Initializes session sequence numbers and begins state tracking
+6. Starts the heartbeat monitoring process
+
+## Message Flow
+
+Once a session is established, orders and execution reports flow through the system in a carefully orchestrated sequence that preserves both FIX protocol requirements and blockchain security.
+
+```{mermaid}
+flowchart TD
+    MM[Market Maker] -->|FIX Message| SQ[Sequencer]
+    SQ -->|Immediate ACK| MM
+    SQ -->|Initial Validation| SQ
+    SQ -->|Create Transaction| BC[Blockchain Network]
+    BC -->|Block Creation| V[Validators]
+    V -->|Block Confirmation| BC
+    BC -->|Execution Report| SQ
+    SQ -->|FIX Execution Report| MM
+
+    subgraph Sequencer Operations
+        VAL[Message Validation]
+        SEQ[Sequence Tracking]
+        CONV[Transaction Conversion]
+    end
+
+    subgraph Blockchain Operations
+        CONS[Consensus]
+        EXEC[Execution]
+        STATE[State Updates]
+    end
+```
+
+### Message Processing Steps
+
+The journey of an order through the system involves multiple stages, each serving a specific purpose:
+
+1. Market Maker Order Submission
+   - Creates a FIX New Order Single message within their existing trading system
+   - Sends the order through their established session to the sequencer
+   - Expects an immediate acknowledgment to maintain FIX protocol compliance
+
+2. Sequencer Processing
+   - Performs immediate validation of the FIX message format and sequence number
+   - Returns an acknowledgment to the market maker to maintain FIX session state
+   - Converts the validated FIX message into a blockchain transaction
+   - Submits the transaction to the blockchain network
+
+3. Blockchain Processing
+   - Network achieves consensus on the transaction
+   - Executes the order according to established market rules
+   - Updates the global state with the execution results
+   - Generates execution results for reporting
+
+4. Result Communication
+   - Sequencer receives the execution results from the blockchain
+   - Converts the results into a FIX Execution Report format
+   - Sends the report back through the established FIX session
+
+## Regional Considerations
+
+Romer Chain's unique geographic validation system introduces important considerations for FIX session management and message routing.
+
+```{mermaid}
+graph TD
+    subgraph Region A
+        MMA[Market Maker A]
+        SQA[Sequencer A]
+        VA[Validator A]
+    end
+
+    subgraph Region B
+        MMB[Market Maker B]
+        SQB[Sequencer B]
+        VB[Validator B]
+    end
+
+    MMA -->|FIX Session| SQA
+    MMB -->|FIX Session| SQB
+    
+    SQA <-->|Cross-Region Sync| SQB
+    VA <-->|Consensus| VB
+```
+
+### Regional Routing
+
+The geographic distribution of the network affects how orders flow through the system:
+
+1. Market makers establish FIX connections to sequencers in their geographic region
+2. Sequencers maintain cross-region synchronization to ensure consistent order processing
+3. Orders are processed according to the geographic validation rules of the network
+4. Results are routed back through the regional sequencers to maintain locality
+
+## Session Security
+
+Our session key approach provides several important security benefits while maintaining high performance:
+
+1. Limited Scope
+   - Session keys have strictly limited permissions
+   - Keys are valid only for a single trading session
+   - Sessions can be revoked without affecting the main blockchain key
+
+2. Performance Optimization
+   - Utilizes BLS signatures from Commonware for efficient processing
+   - Enables fast signature verification
+   - Supports potential signature aggregation for batch processing
+
+3. Compromise Mitigation
+   - Any session compromise is limited to that single session
+   - Main blockchain keys remain secure even if a session is compromised
+   - Simple process for session regeneration if needed
+
+## Implementation Considerations
+
+Several key factors require careful attention during implementation:
+
+1. Session Management
+   - Accurate session state tracking
+   - Proper sequence number synchronization
+   - Regular heartbeat monitoring
+   - Robust session recovery procedures
+
+2. Message Validation
+   - Strict FIX protocol compliance checking
+   - Thorough session key verification
+   - Proper transaction formatting
+   - Comprehensive error handling
+
+3. Performance Requirements
+   - Minimal latency for acknowledgments
+   - Efficient message processing
+   - Reliable session maintenance
+   - Quick recovery from any disruptions
+
+4. Geographic Distribution
+   - Strategic regional sequencer placement
+   - Efficient cross-region synchronization
+   - Continuous latency optimization
+   - Robust failover handling
+
+## Next Steps
+
+To bring this architecture to life, we should proceed with:
+
+1. Developing a Rust-based FIX engine optimized for blockchain integration
+2. Implementing the session key management system
+3. Creating the sequencer validation logic
+4. Designing the regional routing system
+5. Building comprehensive monitoring and management tools
