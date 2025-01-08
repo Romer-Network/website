@@ -127,4 +127,4 @@ For interested parties, we provide appropriate documentation based on engagement
 - [Technical architecture overview](../technical/index.qmd)
 - [Economic model analysis](../economics/model.qmd)
 - [Partnership framework](../market-makers/partner-framework.qmd)
-- [Development roadmap](../technical/devnet.qmd)
+- [Development roadmap](../technical/roadmap.qmd)
