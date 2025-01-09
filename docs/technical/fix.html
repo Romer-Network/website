@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -129,9 +95,6 @@ cookieconsent.run({
 </script> 
   
 <style>html{ scroll-behavior: smooth; }</style>
-<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <meta name="color-scheme" content="light dark">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -140,11 +103,19 @@ cookieconsent.run({
 
 <link rel="stylesheet" href="../styles.scss">
 <meta property="og:title" content="Rømer Chain">
+<meta property="og:description" content="A First Principles Approach to Blockchain Design">
+<meta property="og:image" content="http://romer.network/images/fix_session.png">
 <meta property="og:site_name" content="Rømer Chain">
+<meta property="og:image:height" content="633">
+<meta property="og:image:width" content="646">
 <meta name="twitter:title" content="Rømer Chain">
+<meta name="twitter:description" content="A First Principles Approach to Blockchain Design">
+<meta name="twitter:image" content="http://romer.network/images/fix_session.png">
 <meta name="twitter:creator" content="@romerchain">
 <meta name="twitter:site" content="@romerchain">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="633">
+<meta name="twitter:image-width" content="646">
 </head>
 
 <body class="nav-fixed">
@@ -295,303 +266,81 @@ cookieconsent.run({
 
 
 
-<section id="fix-protocol-integration-architecture" class="level1">
-<h1>FIX Protocol Integration Architecture</h1>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>Romer Chain’s FIX protocol integration enables market makers to connect their existing trading systems directly to the blockchain network. By combining traditional FIX session management with blockchain security through session keys, we create a system that maintains both the performance expectations of market makers and the security requirements of a blockchain network.</p>
+<section id="fix-protocol-integration" class="level1">
+<h1>FIX Protocol Integration</h1>
+<p>Rømer Chain provides seamless integration with traditional finance through native FIX protocol support. Our approach simplifies authentication while maintaining security by leveraging blockchain cryptography for session management.</p>
+<section id="traditional-fix-authentication" class="level2">
+<h2 class="anchored" data-anchor-id="traditional-fix-authentication">Traditional FIX Authentication</h2>
+<p>In traditional FIX environments, firms typically handle authentication through a combination of SenderCompID and password fields in the Logon message. This approach often involves:</p>
+<ul>
+<li>Preset credentials shared between counterparties</li>
+<li>Password rotation policies</li>
+<li>Complex credential management</li>
+<li>Multiple authentication schemes across venues</li>
+</ul>
+<p>Session management then requires ongoing maintenance of sequence numbers and heartbeat messages to maintain connectivity. While effective, this creates significant operational overhead in managing credentials across multiple venues.</p>
 </section>
-<section id="session-establishment" class="level2">
-<h2 class="anchored" data-anchor-id="session-establishment">Session Establishment</h2>
-<p>The first phase of FIX integration involves establishing a secure session between a market maker and a sequencer.</p>
-<div class="cell" data-layout-align="default">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>sequenceDiagram</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    participant MM as Market Maker</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    participant SK as Session Key Generator</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    participant SQ as Sequencer</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    participant BC as Blockchain</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    MM-&gt;&gt;SK: Generate session key</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    SK--&gt;&gt;MM: Return session key</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    MM-&gt;&gt;MM: Sign session key with blockchain private key</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    MM-&gt;&gt;SQ: FIX Logon (SenderCompID, session key, signature)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    SQ-&gt;&gt;SQ: Verify signature</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    SQ-&gt;&gt;SQ: Initialize session state</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    SQ--&gt;&gt;MM: FIX Logon Accept</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    loop Session Maintenance</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        MM-&gt;&gt;SQ: Heartbeat</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        SQ--&gt;&gt;MM: Heartbeat</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    end</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">sequenceDiagram
-    participant MM as Market Maker
-    participant SK as Session Key Generator
-    participant SQ as Sequencer
-    participant BC as Blockchain
-
-    MM-&gt;&gt;SK: Generate session key
-    SK--&gt;&gt;MM: Return session key
-    MM-&gt;&gt;MM: Sign session key with blockchain private key
-    MM-&gt;&gt;SQ: FIX Logon (SenderCompID, session key, signature)
-    SQ-&gt;&gt;SQ: Verify signature
-    SQ-&gt;&gt;SQ: Initialize session state
-    SQ--&gt;&gt;MM: FIX Logon Accept
-    
-    loop Session Maintenance
-        MM-&gt;&gt;SQ: Heartbeat
-        SQ--&gt;&gt;MM: Heartbeat
-    end
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<section id="session-key-generation" class="level3">
-<h3 class="anchored" data-anchor-id="session-key-generation">Session Key Generation</h3>
-<p>A market maker begins their trading day by establishing a secure session. This process involves several crucial steps to ensure both security and proper FIX protocol compliance:</p>
+<section id="rømers-blockchain-based-authentication" class="level2">
+<h2 class="anchored" data-anchor-id="rømers-blockchain-based-authentication">Rømer’s Blockchain-Based Authentication</h2>
+<p>Rømer Chain simplifies this process by using blockchain cryptography for authentication. Instead of managing separate credentials, market makers use their blockchain identity:</p>
 <ol type="1">
-<li>The market maker generates a temporary session key specifically for FIX trading. This key will only be valid for this particular trading session.</li>
-<li>They sign this session key with their blockchain private key to create a session certificate, proving ownership of their blockchain address.</li>
-<li>Both the session key and certificate are included in the FIX Logon message’s password field.</li>
-<li>This session key remains valid only for the duration of the FIX session.</li>
+<li>The market maker creates a Logon message with their SenderCompID</li>
+<li>Instead of a traditional password, they sign the session initiation data with their BLS private key</li>
+<li>This signature is included in the Logon message’s password field</li>
+<li>The sequencer verifies the signature using the market maker’s known public key</li>
 </ol>
+<p>This approach provides several benefits:</p>
+<ul>
+<li>Single identity across the network</li>
+<li>Cryptographic security</li>
+<li>No separate credential management</li>
+<li>Simplified authentication process</li>
+</ul>
 </section>
-<section id="session-verification" class="level3">
-<h3 class="anchored" data-anchor-id="session-verification">Session Verification</h3>
-<p>When the sequencer receives a new session request, it follows a careful verification process:</p>
+<section id="session-management" class="level2">
+<h2 class="anchored" data-anchor-id="session-management">Session Management</h2>
+<p>Once authenticated, Rømer Chain creates a session key that enables standard FIX session operation:</p>
 <ol type="1">
-<li>Receives the Logon message containing the session credentials</li>
-<li>Extracts the session key and certificate from the password field</li>
-<li>Verifies the certificate using the market maker’s known blockchain address</li>
-<li>Associates the verified blockchain address with the new FIX session</li>
-<li>Initializes session sequence numbers and begins state tracking</li>
-<li>Starts the heartbeat monitoring process</li>
-</ol>
-</section>
-</section>
-<section id="message-flow" class="level2">
-<h2 class="anchored" data-anchor-id="message-flow">Message Flow</h2>
-<p>Once a session is established, orders and execution reports flow through the system in a carefully orchestrated sequence that preserves both FIX protocol requirements and blockchain security.</p>
-<div class="cell" data-layout-align="default">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>flowchart TD</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    MM[Market Maker] --&gt;|FIX Message| SQ[Sequencer]</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    SQ --&gt;|Immediate ACK| MM</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    SQ --&gt;|Initial Validation| SQ</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    SQ --&gt;|Create Transaction| BC[Blockchain Network]</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    BC --&gt;|Block Creation| V[Validators]</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    V --&gt;|Block Confirmation| BC</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    BC --&gt;|Execution Report| SQ</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    SQ --&gt;|FIX Execution Report| MM</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    subgraph Sequencer Operations</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        VAL[Message Validation]</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        SEQ[Sequence Tracking]</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        CONV[Transaction Conversion]</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    end</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    subgraph Blockchain Operations</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>        CONS[Consensus]</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>        EXEC[Execution]</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>        STATE[State Updates]</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    end</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart TD
-    MM[Market Maker] --&gt;|FIX Message| SQ[Sequencer]
-    SQ --&gt;|Immediate ACK| MM
-    SQ --&gt;|Initial Validation| SQ
-    SQ --&gt;|Create Transaction| BC[Blockchain Network]
-    BC --&gt;|Block Creation| V[Validators]
-    V --&gt;|Block Confirmation| BC
-    BC --&gt;|Execution Report| SQ
-    SQ --&gt;|FIX Execution Report| MM
-
-    subgraph Sequencer Operations
-        VAL[Message Validation]
-        SEQ[Sequence Tracking]
-        CONV[Transaction Conversion]
-    end
-
-    subgraph Blockchain Operations
-        CONS[Consensus]
-        EXEC[Execution]
-        STATE[State Updates]
-    end
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<section id="message-processing-steps" class="level3">
-<h3 class="anchored" data-anchor-id="message-processing-steps">Message Processing Steps</h3>
-<p>The journey of an order through the system involves multiple stages, each serving a specific purpose:</p>
-<ol type="1">
-<li>Market Maker Order Submission
+<li>The sequencer generates a session key upon successful authentication</li>
+<li>This key is used for the duration of the FIX session</li>
+<li>Standard FIX session management proceeds as normal:
 <ul>
-<li>Creates a FIX New Order Single message within their existing trading system</li>
-<li>Sends the order through their established session to the sequencer</li>
-<li>Expects an immediate acknowledgment to maintain FIX protocol compliance</li>
-</ul></li>
-<li>Sequencer Processing
-<ul>
-<li>Performs immediate validation of the FIX message format and sequence number</li>
-<li>Returns an acknowledgment to the market maker to maintain FIX session state</li>
-<li>Converts the validated FIX message into a blockchain transaction</li>
-<li>Submits the transaction to the blockchain network</li>
-</ul></li>
-<li>Blockchain Processing
-<ul>
-<li>Network achieves consensus on the transaction</li>
-<li>Executes the order according to established market rules</li>
-<li>Updates the global state with the execution results</li>
-<li>Generates execution results for reporting</li>
-</ul></li>
-<li>Result Communication
-<ul>
-<li>Sequencer receives the execution results from the blockchain</li>
-<li>Converts the results into a FIX Execution Report format</li>
-<li>Sends the report back through the established FIX session</li>
+<li>Sequence number tracking</li>
+<li>Heartbeat messages</li>
+<li>Message resend requests</li>
+<li>Session level reject handling</li>
 </ul></li>
 </ol>
+<p>Market makers can then use their established FIX session exactly as they would with any other FIX server:</p>
+<ul>
+<li>Submit new orders</li>
+<li>Receive execution reports</li>
+<li>Manage order modifications and cancellations</li>
+<li>Handle market data</li>
+</ul>
 </section>
-</section>
-<section id="regional-considerations" class="level2">
-<h2 class="anchored" data-anchor-id="regional-considerations">Regional Considerations</h2>
-<p>Romer Chain’s unique geographic validation system introduces important considerations for FIX session management and message routing.</p>
-<div class="cell" data-layout-align="default">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>graph TD</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    subgraph Region A</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        MMA[Market Maker A]</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        SQA[Sequencer A]</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        VA[Validator A]</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    end</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    subgraph Region B</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        MMB[Market Maker B]</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        SQB[Sequencer B]</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        VB[Validator B]</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    end</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    MMA --&gt;|FIX Session| SQA</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    MMB --&gt;|FIX Session| SQB</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    SQA &lt;--&gt;|Cross-Region Sync| SQB</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    VA &lt;--&gt;|Consensus| VB</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph TD
-    subgraph Region A
-        MMA[Market Maker A]
-        SQA[Sequencer A]
-        VA[Validator A]
-    end
-
-    subgraph Region B
-        MMB[Market Maker B]
-        SQB[Sequencer B]
-        VB[Validator B]
-    end
-
-    MMA --&gt;|FIX Session| SQA
-    MMB --&gt;|FIX Session| SQB
-    
-    SQA &lt;--&gt;|Cross-Region Sync| SQB
-    VA &lt;--&gt;|Consensus| VB
-</pre>
+<section id="implementation-example" class="level2">
+<h2 class="anchored" data-anchor-id="implementation-example">Implementation Example</h2>
+<p>A typical session establishment flow:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/fix_session.png" class="img-fluid figure-img"></p>
+<figcaption>Fix Session</figcaption>
+</figure>
 </div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<section id="regional-routing" class="level3">
-<h3 class="anchored" data-anchor-id="regional-routing">Regional Routing</h3>
-<p>The geographic distribution of the network affects how orders flow through the system:</p>
-<ol type="1">
-<li>Market makers establish FIX connections to sequencers in their geographic region</li>
-<li>Sequencers maintain cross-region synchronization to ensure consistent order processing</li>
-<li>Orders are processed according to the geographic validation rules of the network</li>
-<li>Results are routed back through the regional sequencers to maintain locality</li>
-</ol>
+<p>After session establishment, trading proceeds using standard FIX messages and workflows. The sequencer handles all necessary session management tasks while providing the security benefits of blockchain-based authentication.</p>
 </section>
-</section>
-<section id="session-security" class="level2">
-<h2 class="anchored" data-anchor-id="session-security">Session Security</h2>
-<p>Our session key approach provides several important security benefits while maintaining high performance:</p>
-<ol type="1">
-<li>Limited Scope
+<section id="integration-benefits" class="level2">
+<h2 class="anchored" data-anchor-id="integration-benefits">Integration Benefits</h2>
+<p>This approach provides several key advantages for market makers:</p>
 <ul>
-<li>Session keys have strictly limited permissions</li>
-<li>Keys are valid only for a single trading session</li>
-<li>Sessions can be revoked without affecting the main blockchain key</li>
-</ul></li>
-<li>Performance Optimization
-<ul>
-<li>Utilizes BLS signatures from Commonware for efficient processing</li>
-<li>Enables fast signature verification</li>
-<li>Supports potential signature aggregation for batch processing</li>
-</ul></li>
-<li>Compromise Mitigation
-<ul>
-<li>Any session compromise is limited to that single session</li>
-<li>Main blockchain keys remain secure even if a session is compromised</li>
-<li>Simple process for session regeneration if needed</li>
-</ul></li>
-</ol>
-</section>
-<section id="implementation-considerations" class="level2">
-<h2 class="anchored" data-anchor-id="implementation-considerations">Implementation Considerations</h2>
-<p>Several key factors require careful attention during implementation:</p>
-<ol type="1">
-<li>Session Management
-<ul>
-<li>Accurate session state tracking</li>
-<li>Proper sequence number synchronization</li>
-<li>Regular heartbeat monitoring</li>
-<li>Robust session recovery procedures</li>
-</ul></li>
-<li>Message Validation
-<ul>
-<li>Strict FIX protocol compliance checking</li>
-<li>Thorough session key verification</li>
-<li>Proper transaction formatting</li>
-<li>Comprehensive error handling</li>
-</ul></li>
-<li>Performance Requirements
-<ul>
-<li>Minimal latency for acknowledgments</li>
-<li>Efficient message processing</li>
-<li>Reliable session maintenance</li>
-<li>Quick recovery from any disruptions</li>
-</ul></li>
-<li>Geographic Distribution
-<ul>
-<li>Strategic regional sequencer placement</li>
-<li>Efficient cross-region synchronization</li>
-<li>Continuous latency optimization</li>
-<li>Robust failover handling</li>
-</ul></li>
-</ol>
-</section>
-<section id="next-steps" class="level2">
-<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
-<p>To bring this architecture to life, we should proceed with:</p>
-<ol type="1">
-<li>Developing a Rust-based FIX engine optimized for blockchain integration</li>
-<li>Implementing the session key management system</li>
-<li>Creating the sequencer validation logic</li>
-<li>Designing the regional routing system</li>
-<li>Building comprehensive monitoring and management tools</li>
-</ol>
+<li>Use existing FIX trading systems without modification</li>
+<li>Maintain familiar operational workflows</li>
+<li>Eliminate credential management overhead</li>
+<li>Gain blockchain security benefits</li>
+<li>Simplify venue connectivity</li>
+</ul>
+<p>Market makers can focus on their trading strategies while gaining the benefits of blockchain infrastructure without complex integration requirements.</p>
 
 
 </section>
