@@ -1,70 +1,48 @@
-# Reimagining Blockchain Infrastructure for Market Makers
+# Bring Traditional Finance On Chain
 
-Rømer Chain introduces a revolutionary approach to blockchain architecture by placing market makers at the core of network operations. Through our innovative Proof of Physics consensus mechanism, we create a system that naturally protects regional market makers while ensuring true physical decentralization across the globe.
+Rømer Chain seamlessly connects with your existing FIX infrastructure, enabling traditional finance to step directly into Web3. No custom adapters, no parallel systems - just your familiar FIX protocol trading environment, enhanced with blockchain's transformative capabilities.
 
-<div class="feature-card">
-### For Market Makers
-Transform your validator node into a complete trading infrastructure and take control of your regional market. Our purpose-built system provides:
+<div class="feature-grid">
+<div class="feature-card feature-card">
+### Native FIX Integration
+Connect your existing systems directly to the blockchain:
 
-- **Advanced Order Management**: Native support for complex order types and sophisticated risk management systems
-- **Optimized Performance**: Purpose-built virtual machine designed specifically for market making operations
-- **Regional Control**: Direct influence over transaction ordering within your geographic region
-- **Protected Operations**: Geographic safeguards through our physical network topology
-- **Automated Efficiency**: Streamlined inventory management with built-in yield generation
-- **Dual Revenue Streams**: Earn from both validation activities and market making operations
+- Submit FIX messages as native transaction types
+- Maintain your current trading workflows
+- Keep your risk management systems
+- Leverage existing infrastructure investments
 
-[Transform Your Trading Infrastructure →](./market-makers/index.qmd){.cta-button}
+[Explore FIX Integration →](./technical/fix.qmd){.card-cta-button}
 </div>
 
-<div class="feature-card">
-### For Engineers & Developers
-Join us in building the first blockchain specifically engineered for market making operations. Our technical innovations include:
+<div class="feature-card feature-card">
+### Professional Market Making
+Purpose-built for institutional trading:
 
-- **Market Making VM**: Purpose-built virtual machine with native market making primitives
-- **High-Performance Architecture**: Advanced sequencer-driven design for optimal execution
-- **Hardware Security**: Robust hardware attestation mechanisms
-- **Novel Consensus**: Revolutionary Proof of Physics consensus mechanism
-- **Standardized Interfaces**: Universal DEX interaction protocols
-- **Geographic Validation**: Advanced protocols for regional operation verification
+- Complex order types as native operations
+- Protected regional order flow
+- Multi-venue execution capabilities
+- Institutional-grade performance
 
-[Explore Our Technical Architecture →](./technical/index.qmd){.cta-button}
+[View Market Maker Benefits →](./market-makers/index.qmd){.card-cta-button}
 </div>
 
-<div class="feature-card">
-### For Economic Researchers
-Investigate how we align network economics with market making principles through:
+<div class="feature-card feature-card">
+### Bridge to Web3
+Transform your business without disruption:
 
-- **Regional Price Discovery**: Advanced mechanics for local market efficiency
-- **Incentive Alignment**: Carefully crafted market maker reward structures
-- **Geographic Game Theory**: Novel approaches to regional competition dynamics
-- **Economic Foundations**: Built on sound Austrian economic principles
-- **Market Analysis**: Tools for studying cross-regional trading patterns
-- **Validator Economics**: Complex interplay of validation and market making
+- Seamless DeFi market making
+- Access to on-chain liquidity
+- Blockchain security guarantees
+- Future-proof your operations
 
-[Study Our Economic Model →](./economics/index.qmd){.cta-button}
-</div>
-
-## The Future of Market Making
-
-Rømer Chain represents a fundamental shift in how we think about blockchain infrastructure. By focusing exclusively on the needs of market makers, we've created a system that delivers:
-
-<div class="py-8">
-<div class="feature-card">
-### Physical Decentralization
-Our Proof of Physics consensus mechanism ensures true geographic distribution of network operations, creating natural regional advantages that protect local market makers while maintaining global network cohesion.
-</div>
-
-<div class="feature-card">
-### Economic Alignment
-Every aspect of our network is designed to align the interests of market makers, validators, and users. This creates a self-reinforcing ecosystem where network security and market efficiency grow together.
-</div>
-
-<div class="feature-card">
-### Specialized Infrastructure
-From our market making VM to our geographic validation protocols, every component is purpose-built to support sophisticated trading operations at a regional and global scale.
+[Learn About Our Technology →](./technical/index.qmd){.card-cta-button}
 </div>
 </div>
 
-Ready to be part of the evolution in market making infrastructure? Explore our documentation, join our community, or reach out to discuss becoming a market maker on Rømer Chain.
+## Ready to Bridge Traditional Finance and Web3?
 
-[Join Our Market Maker Program →](./market-makers/index.qmd){.cta-button}
+Join the financial institutions already bringing traditional finance on chain with Rømer. Our technical team understands both FIX and blockchain - we speak your language.
+
+[Schedule Technical Discussion →](./market-makers/index.qmd){.cta-button}
+[Explore FIX Integration →](./technical/fix.qmd){.cta-button}

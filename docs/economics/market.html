@@ -206,6 +206,11 @@ cookieconsent.run({
 </i> 
  <span class="dropdown-text">Validator Economics</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../pitch/index.html"><i class="bi bi-presentation-chart" role="img">
+</i> 
+ <span class="dropdown-text">Pitch</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -238,79 +243,12 @@ cookieconsent.run({
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#rømer-chain-an-austrian-economic-approach-to-dynamic-supply-adjustment" id="toc-rømer-chain-an-austrian-economic-approach-to-dynamic-supply-adjustment" class="nav-link active" data-scroll-target="#rømer-chain-an-austrian-economic-approach-to-dynamic-supply-adjustment">RØMER Chain: An Austrian Economic Approach to Dynamic Supply Adjustment</a>
-  <ul class="collapse">
-  <li><a href="#abstract" id="toc-abstract" class="nav-link" data-scroll-target="#abstract">Abstract</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">1. Introduction</a></li>
-  <li><a href="#austrian-economic-foundations" id="toc-austrian-economic-foundations" class="nav-link" data-scroll-target="#austrian-economic-foundations">2. Austrian Economic Foundations</a>
-  <ul class="collapse">
-  <li><a href="#core-principles" id="toc-core-principles" class="nav-link" data-scroll-target="#core-principles">2.1 Core Principles</a></li>
-  <li><a href="#key-mechanisms" id="toc-key-mechanisms" class="nav-link" data-scroll-target="#key-mechanisms">2.2 Key Mechanisms</a></li>
-  </ul></li>
-  <li><a href="#supply-dynamics" id="toc-supply-dynamics" class="nav-link" data-scroll-target="#supply-dynamics">3. Supply Dynamics</a>
-  <ul class="collapse">
-  <li><a href="#natural-market-states" id="toc-natural-market-states" class="nav-link" data-scroll-target="#natural-market-states">3.1 Natural Market States</a></li>
-  <li><a href="#dynamic-supply-adjustment" id="toc-dynamic-supply-adjustment" class="nav-link" data-scroll-target="#dynamic-supply-adjustment">3.2 Dynamic Supply Adjustment</a></li>
-  </ul></li>
-  <li><a href="#fee-burning-as-dynamic-supply-control" id="toc-fee-burning-as-dynamic-supply-control" class="nav-link" data-scroll-target="#fee-burning-as-dynamic-supply-control">4. Fee Burning as Dynamic Supply Control</a>
-  <ul class="collapse">
-  <li><a href="#purpose-of-enhanced-fee-burning" id="toc-purpose-of-enhanced-fee-burning" class="nav-link" data-scroll-target="#purpose-of-enhanced-fee-burning">4.1 Purpose of Enhanced Fee Burning</a></li>
-  <li><a href="#proportional-supply-control" id="toc-proportional-supply-control" class="nav-link" data-scroll-target="#proportional-supply-control">4.2 Proportional Supply Control</a></li>
-  </ul></li>
-  <li><a href="#validator-economics" id="toc-validator-economics" class="nav-link" data-scroll-target="#validator-economics">5. Validator Economics</a>
-  <ul class="collapse">
-  <li><a href="#market-based-rewards-and-mev-economics" id="toc-market-based-rewards-and-mev-economics" class="nav-link" data-scroll-target="#market-based-rewards-and-mev-economics">5.1 Market-Based Rewards and MEV Economics</a></li>
-  </ul></li>
-  <li><a href="#market-driven-price-discovery" id="toc-market-driven-price-discovery" class="nav-link" data-scroll-target="#market-driven-price-discovery">6. Market-Driven Price Discovery</a>
-  <ul class="collapse">
-  <li><a href="#market-leadership-through-dex-efficiency" id="toc-market-leadership-through-dex-efficiency" class="nav-link" data-scroll-target="#market-leadership-through-dex-efficiency">6.1 Market Leadership Through DEX Efficiency</a></li>
-  <li><a href="#quarterly-governance-reviews" id="toc-quarterly-governance-reviews" class="nav-link" data-scroll-target="#quarterly-governance-reviews">6.2 Quarterly Governance Reviews</a></li>
-  </ul></li>
-  <li><a href="#implementation" id="toc-implementation" class="nav-link" data-scroll-target="#implementation">7. Implementation</a>
-  <ul class="collapse">
-  <li><a href="#market-launch-parameters" id="toc-market-launch-parameters" class="nav-link" data-scroll-target="#market-launch-parameters">7.1 Market Launch Parameters</a></li>
-  <li><a href="#natural-market-evolution" id="toc-natural-market-evolution" class="nav-link" data-scroll-target="#natural-market-evolution">7.2 Natural Market Evolution</a></li>
-  </ul></li>
-  <li><a href="#game-theory-and-economic-behavior" id="toc-game-theory-and-economic-behavior" class="nav-link" data-scroll-target="#game-theory-and-economic-behavior">8. Game Theory and Economic Behavior</a>
-  <ul class="collapse">
-  <li><a href="#block-space-optimization" id="toc-block-space-optimization" class="nav-link" data-scroll-target="#block-space-optimization">8.1 Block Space Optimization</a></li>
-  <li><a href="#mev-distribution" id="toc-mev-distribution" class="nav-link" data-scroll-target="#mev-distribution">8.2 MEV Distribution</a></li>
-  </ul></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">9. Conclusion</a></li>
-  </ul></li>
-  <li><a href="#rømer-chain-token-distribution-and-supply-mechanics" id="toc-rømer-chain-token-distribution-and-supply-mechanics" class="nav-link" data-scroll-target="#rømer-chain-token-distribution-and-supply-mechanics">RØMER Chain: Token Distribution and Supply Mechanics</a>
-  <ul class="collapse">
-  <li><a href="#initial-token-distribution" id="toc-initial-token-distribution" class="nav-link" data-scroll-target="#initial-token-distribution">Initial Token Distribution</a>
-  <ul class="collapse">
-  <li><a href="#genesis-allocation" id="toc-genesis-allocation" class="nav-link" data-scroll-target="#genesis-allocation">Genesis Allocation</a></li>
-  <li><a href="#burn-reserve-calculation" id="toc-burn-reserve-calculation" class="nav-link" data-scroll-target="#burn-reserve-calculation">Burn Reserve Calculation</a></li>
-  </ul></li>
-  <li><a href="#supply-mechanics" id="toc-supply-mechanics" class="nav-link" data-scroll-target="#supply-mechanics">Supply Mechanics</a>
-  <ul class="collapse">
-  <li><a href="#price-stability-mechanism" id="toc-price-stability-mechanism" class="nav-link" data-scroll-target="#price-stability-mechanism">Price Stability Mechanism</a></li>
-  <li><a href="#base-compute-threshold" id="toc-base-compute-threshold" class="nav-link" data-scroll-target="#base-compute-threshold">Base Compute Threshold</a></li>
-  <li><a href="#quarterly-adjustments" id="toc-quarterly-adjustments" class="nav-link" data-scroll-target="#quarterly-adjustments">Quarterly Adjustments</a></li>
-  </ul></li>
-  <li><a href="#example-scenarios" id="toc-example-scenarios" class="nav-link" data-scroll-target="#example-scenarios">Example Scenarios</a>
-  <ul class="collapse">
-  <li><a href="#scenario-1-low-demand-period" id="toc-scenario-1-low-demand-period" class="nav-link" data-scroll-target="#scenario-1-low-demand-period">Scenario 1: Low Demand Period</a></li>
-  <li><a href="#scenario-2-high-demand-period" id="toc-scenario-2-high-demand-period" class="nav-link" data-scroll-target="#scenario-2-high-demand-period">Scenario 2: High Demand Period</a></li>
-  <li><a href="#scenario-3-burn-reserve-management" id="toc-scenario-3-burn-reserve-management" class="nav-link" data-scroll-target="#scenario-3-burn-reserve-management">Scenario 3: Burn Reserve Management</a></li>
-  </ul></li>
-  </ul></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 

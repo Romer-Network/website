@@ -95,6 +95,9 @@ website:
           - text: "Validator Economics"
             href: economics/validators.qmd
             icon: shield-check
+          - text: "Pitch"
+            href: pitch/index.qmd
+            icon: presentation-chart
       
       - text: "Blog"
         href: blog/index.qmd
@@ -179,6 +182,9 @@ format:
     # Theme Configuration
     theme: cosmo
     css: styles.scss
+    scss:
+      sass-options:
+        - style: compressed
     dark-mode: true
     
     # Typography
@@ -189,7 +195,8 @@ format:
   
     
     # Table of Contents
-    toc: true
+    toc: false
+    page-layout: full
     toc-depth: 3
     toc-title: "On this page"
     toc-location: right

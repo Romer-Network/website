@@ -182,29 +182,101 @@ a:hover {
     margin: var(--spacing-8) 0;
 }
 
+/* Feature Cards Grid */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-6);
+    margin: var(--spacing-8) 0;
+}
+
+/* Feature Cards */
+/* Feature Cards Grid */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Force 3 equal columns */
+    gap: var(--spacing-6);
+    margin: var(--spacing-8) 0;
+}
+
 /* Feature Cards */
 .feature-card {
     background: white;
-    border: 1px solid var(--gray-200);
-    border-radius: 8px;
+    border-radius: 12px;
     padding: var(--spacing-6);
-    margin-bottom: var(--spacing-6);
-    transition: var(--transition-base);
+    transition: all 0.3s ease;
+    height: 100%; /* Ensure all cards are same height */
+}
+
+.feature-card-primary {
+    background: var(--primary);
+    color: white;
+    
+    h3, p, li {
+        color: white;
+    }
+}
+
+.feature-card-secondary {
+    background: var(--secondary);
+    color: white;
+    
+    h3, p, li {
+        color: white;
+    }
+}
+
+.feature-card-tertiary {
+    background: #10b981; /* A complementary green */
+    color: white;
+    
+    h3, p, li {
+        color: white;
+    }
 }
 
 .feature-card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--primary);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.feature-card h3 {
-    color: var(--secondary);
-    margin-top: 0;
-    margin-bottom: var(--spacing-4);
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .feature-grid {
+        grid-template-columns: 1fr; /* Stack on mobile */
+    }
+}
+/* Dark mode adjustments */
+[data-theme="dark"] .feature-card {
+    background: var(--gray-800);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
+[data-theme="dark"] .feature-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .feature-card h3 {
+    color: var(--gray-100);
+}
 /* Call to Action Buttons */
+.card-cta-button {
+    display: inline-block;
+    background-color: white;
+    color: var(--primary);
+    padding: var(--spacing-2) var(--spacing-4);
+    border-radius: 6px;
+    font-weight: 500;
+    margin-top: var(--spacing-4);
+    border: 2px solid white;
+    transition: var(--transition-base);
+}
+
+.card-cta-button:hover {
+    background-color: transparent;
+    color: white;
+    transform: translateY(-2px);
+}
 .cta-button {
     display: inline-block;
     background-color: var(--primary);
