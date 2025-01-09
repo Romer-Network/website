@@ -10,6 +10,7 @@ project:
   output-dir: ../docs
   # Exclude draft blog posts from publication
   resources:
+    - "styles.scss"
     - "!blog/drafts/"
   # Execute Python code in a conda environment
   execute-dir: project
@@ -43,7 +44,8 @@ website:
     background: white
     search: true
     pinned: true
-    collapse: false
+    collapse: true
+    collapse-below: lg
     
     # Left-aligned navigation items
     left:
