@@ -1,0 +1,186 @@
+# Rømer Chain Codebase Architecture
+
+## Overview
+
+The Rømer Chain codebase is organized as a monorepo, combining all core components into a single, cohesive repository. This structure enables tight integration between components while maintaining clear boundaries and responsibilities. Our architecture reflects our focus on market maker operations, with each component designed to support high-performance trading infrastructure.
+
+## Repository Structure
+
+Our monorepo is organized into several primary components, each serving a distinct role in the overall system:
+
+### Client Component
+
+The client component serves as the primary interface for market makers and other network participants. This module handles:
+
+- Market maker registration and onboarding
+- Trading system integration
+- FIX protocol client implementation
+- Command-line interface tools
+- Configuration management
+- Local state persistence
+
+The client's architecture prioritizes reliability and ease of integration, recognizing that it serves as the entry point for most users into the Rømer ecosystem.
+
+### Common Component
+
+The common component provides shared functionality and types used throughout the system. This foundational module contains:
+
+- Core data structures
+- Shared utilities
+- Type definitions
+- Protocol specifications
+- Common interfaces
+- Error handling primitives
+
+By centralizing these elements, we ensure consistency across the codebase and reduce duplication of effort. The common component is designed to be lightweight yet comprehensive, providing only what is genuinely needed by multiple other components.
+
+### Sequencer Component
+
+The sequencer component implements our transaction ordering and processing logic. This critical module manages:
+
+- Transaction sequence determination
+- FIX message processing
+- Order book management
+- Cross-region synchronization
+- Performance optimization
+- Message routing
+
+The sequencer's design emphasizes predictable performance and reliable message ordering, crucial for maintaining fair and efficient markets.
+
+### Validator Component
+
+The validator component implements our Proof of Physics consensus mechanism and network validation logic. Key responsibilities include:
+
+- Block validation
+- Geographic attestation
+- Network performance monitoring
+- Consensus participation
+- State verification
+- Regional coordination
+
+This component's architecture reflects our unique approach to physical decentralization and regional market making.
+
+## Development Workflow
+
+Our development process emphasizes maintainability and collaboration:
+
+### Local Development
+
+When working with the monorepo locally, developers should:
+
+1. Clone the repository and install dependencies:
+   ```bash
+   git clone https://github.com/Romer-Network/romer.git
+   cd romer
+   cargo build
+   ```
+
+2. Set up the development environment:
+   ```bash
+   # Install development tools
+   cargo install cargo-watch cargo-expand
+   
+   # Set up git hooks
+   ./scripts/setup-hooks.sh
+   ```
+
+3. Run the test suite:
+   ```bash
+   cargo test --all-features
+   ```
+
+### Component Integration
+
+Components interact through well-defined interfaces specified in the common module. This approach:
+
+- Maintains clear boundaries between components
+- Enables independent testing and verification
+- Facilitates parallel development
+- Supports future optimizations
+
+### Testing Strategy
+
+Our testing approach encompasses multiple levels:
+
+1. Unit Tests: Located within each component directory
+2. Integration Tests: In dedicated test directories
+3. End-to-End Tests: In the root test directory
+4. Performance Tests: Specialized benchmarking suites
+
+## Architectural Decisions
+
+Several key decisions shape our monorepo structure:
+
+### Why a Monorepo?
+
+We chose a monorepo approach for several reasons:
+
+1. Atomic Changes: Updates affecting multiple components can be made in a single commit
+2. Dependency Management: Simplified versioning and dependency tracking
+3. Code Sharing: Easier sharing of utilities and types
+4. Testing: Comprehensive integration testing across components
+5. Development Experience: Simplified local development setup
+
+### Component Boundaries
+
+Component boundaries are designed to:
+
+1. Minimize cross-component dependencies
+2. Enable independent scaling
+3. Support clear ownership
+4. Facilitate testing
+5. Enable future optimizations
+
+## Future Development
+
+The codebase architecture supports several planned enhancements:
+
+### Short-term Goals
+
+1. Enhanced documentation generation
+2. Automated performance benchmarking
+3. Improved development tooling
+4. Additional testing frameworks
+5. Integration examples
+
+### Long-term Vision
+
+1. Component-specific optimization
+2. Enhanced modularity
+3. Plugin architecture
+4. Extended testing capabilities
+5. Advanced monitoring tools
+
+## Contributing
+
+We welcome contributions to any component of the system. Contributors should:
+
+1. Review our contributing guidelines
+2. Join our developer community
+3. Pick an appropriate starter issue
+4. Follow our code style guidelines
+5. Submit well-documented pull requests
+
+## Documentation
+
+Our documentation strategy includes:
+
+1. Inline code documentation
+2. Component-level README files
+3. API documentation
+4. Integration guides
+5. Architecture documentation
+
+Each component maintains its own detailed documentation, while system-wide documentation resides in the root docs directory.
+
+## Getting Started
+
+New developers should begin by:
+
+1. Reading this architecture overview
+2. Setting up their local development environment
+3. Running the test suite
+4. Building a simple integration
+5. Joining our developer community
+
+For detailed setup instructions, refer to our [development guide](./development-guide.qmd).

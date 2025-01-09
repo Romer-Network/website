@@ -406,3 +406,54 @@ footer a:hover {
 .font-bold { font-weight: 600 !important; }
 .text-sm { font-size: 0.875rem !important; }
 .text-lg { font-size: 1.125rem !important; }
+
+/* Update the dark mode selector to use Quarto's class */
+[data-theme="dark"] {
+    /* Override variables for dark mode */
+    --primary: #ff5286;
+    --primary-dark: #ff3a75;
+    --primary-light: #ff7aa3;
+    --secondary: #a0aec0;
+    --background: #1a202c;
+    --text-color: #f7fafc;
+    
+    /* Override the neutral colors for dark mode */
+    --gray-100: #1a202c;
+    --gray-200: #2d3748;
+    --gray-300: #4a5568;
+    --gray-400: #718096;
+    --gray-500: #a0aec0;
+    --gray-600: #cbd5e0;
+    --gray-700: #e2e8f0;
+    --gray-800: #edf2f7;
+    --gray-900: #f7fafc;
+}
+
+/* Update dark mode specific styles */
+[data-theme="dark"] body {
+    background-color: var(--gray-100);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .navbar {
+    background-color: var(--gray-200);
+    border-bottom: 1px solid var(--gray-300);
+}
+
+[data-theme="dark"] .content {
+    background-color: var(--gray-200);
+    box-shadow: var(--shadow-md);
+}
+
+/* Add these additional dark mode styles */
+[data-theme="dark"] .quarto-title-block {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .nav-link {
+    color: var(--gray-600) !important;
+}
+
+[data-theme="dark"] .nav-link:hover {
+    color: var(--primary) !important;
+}

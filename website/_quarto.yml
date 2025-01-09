@@ -1,65 +1,119 @@
-# Basic project configuration
+# ==============================================================================
+# Rømer Chain Website Configuration
+# A comprehensive Quarto configuration for professional documentation
+# ==============================================================================
+
+# Project Configuration
+# ------------------------------------------------------------------------------
 project:
   type: website
-  output-dir: ../docs  # Output directory for built site
+  output-dir: ../docs
+  # Exclude draft blog posts from publication
   resources:
-    - "!blog/drafts/"  # Excludes drafts from publication
+    - "!blog/drafts/"
+  # Execute Python code in a conda environment
+  execute-dir: project
+  preview:
+    port: 4200
+    browser: true
+    watch-inputs: true
+    navigate: true
 
-# Website configuration
+# Website Configuration
+# ------------------------------------------------------------------------------
 website:
   title: "Rømer Chain"
   description: "A First Principles Approach to Blockchain Design"
   site-url: http://romer.network
-  repo-url: https://github.com/hariseldon23/Romer
+  repo-url: https://github.com/Romer-Network/romer
   
+  # Open Graph and Twitter Card metadata
+  open-graph: true
+  twitter-card:
+    creator: "@romerchain"
+    site: "@romerchain"
+    card-style: summary_large_image
+  
+  # Cookie consent and analytics
+  cookie-consent: true
+  google-analytics: "G-XXXXXXXXXX"  # Replace with your tracking ID
+  
+  # Navigation Bar Configuration
   navbar:
-    right:  
+    background: white
+    search: true
+    pinned: true
+    collapse: false
+    
+    # Left-aligned navigation items
+    left:
+      - text: "Home"
+        href: index.qmd
+        icon: house
+      
+      - text: "Market Makers"
+        menu: 
+          - text: "Overview"
+            href: market-makers/index.qmd
+            icon: graph-up
+          - text: "Partnership Framework"
+            href: market-makers/partner-framework.qmd
+            icon: diagram-3
+      
+      - text: "Technical Design"
+        menu:
+          - text: "Architecture Overview"
+            href: technical/index.qmd
+            icon: diagram-2
+          - text: "Proof of Physics"
+            href: technical/pop.qmd
+            icon: cpu
+          - text: "Network Design"
+            href: technical/network.qmd
+            icon: hdd-network
+          - text: "Development Roadmap"
+            href: technical/roadmap.qmd
+            icon: calendar-check
+          - text: "FIX Protocol"
+            href: technical/fix.qmd
+            icon: wrench
+      
+      - text: "Tokenomics"
+        menu:
+          - text: "Overview"
+            href: economics/index.qmd
+            icon: cash-coin
+          - text: "Economic Model"
+            href: economics/model.qmd
+            icon: bank
+          - text: "Token Distribution"
+            href: economics/distribution.qmd
+            icon: pie-chart
+          - text: "Market Dynamics"
+            href: economics/market.qmd
+            icon: graph-up-arrow
+          - text: "Validator Economics"
+            href: economics/validators.qmd
+            icon: shield-check
+      
+      - text: "Blog"
+        href: blog/index.qmd
+        icon: newspaper
+    
+    # Right-aligned navigation items
+    right:
+      - icon: moon-stars
+        href: "#"
+        aria-label: "Toggle dark mode"
+        id: quarto-dark-toggle1
       - icon: github
         href: https://github.com/Romer-Network/romer
         aria-label: GitHub
       - icon: twitter 
         href: https://x.com/romerchain
         aria-label: Twitter
-    left:
-      - text: Home
-        href: index.qmd
-      
-      - text: Market Makers
-        menu: 
-          - text: Overview
-            href: market-makers/index.qmd
-      
-      - text: Technical Design
-        menu:
-          - text: Architecture Overview
-            href: technical/index.qmd
-          - text: Proof of Physics
-            href: technical/pop.qmd
-          - text: Network Design
-            href: technical/network.qmd
-          - text: Development Roadmap
-            href: technical/roadmap.qmd
-          - text: FIX
-            href: technical/fix.qmd
-      
-      - text: Tokenomics
-        menu:
-          - text: Overview
-            href: economics/index.qmd
-          - text: Economic Model
-            href: economics/model.qmd
-          - text: Token Distribution
-            href: economics/distribution.qmd
-          - text: Market Dynamics
-            href: economics/market.qmd
-          - text: Validator Economics
-            href: economics/validators.qmd
-          - text: Deck
-            href: pitch/index.qmd
-        
-      - text: Blog
-        href: blog/index.qmd
 
+  # Sidebar Configuration
   sidebar:
     - id: blog
       title: "Blog Navigation"
@@ -73,17 +127,28 @@ website:
           href: blog/categories.qmd
         - text: "Archive"
           href: blog/archive.qmd
-      search: true
+  
+  # Page Footer Configuration
+  page-footer:
+    left: "Copyright © 2024 Rømer Chain"
+    center: "Built with [Quarto](https://quarto.org/)"
+    right: 
+      - icon: github
+        href: https://github.com/Romer-Network/romer
+      - icon: twitter
+        href: https://x.com/romerchain
 
-# Blog-specific configuration
+# Blog Configuration
+# ------------------------------------------------------------------------------
 blog:
   title: "Rømer Chain Blog"
   description: "Technical insights and development updates from the Rømer Chain team"
   authors:
     - name: "Rømer Chain Team"
-      url: https://hariseldon23.github.io/Romer/
+      url: https://romer.network
+      image: team/avatar.jpg
   
-  # Blog post display settings
+  # Blog listing settings
   listing:
     contents: "blog/posts"
     sort: "date desc"
@@ -94,48 +159,79 @@ blog:
     feed: true
     page-size: 10
   
-  # Blog post sharing and comments
+  # Post sharing and comments
   sharing: [twitter, linkedin]
   comments:
     giscus:
-      repo: hariseldon23/Romer
+      repo: Romer-Network/romer
+      repo-id: "R_XXX"  # Replace with your repo ID
+      category: Comments
+      category-id: "DIC_XXX"  # Replace with your category ID
       mapping: title
       reactions-enabled: true
       loading: lazy
       input-position: bottom
 
-# Page format configuration
+# Format Configuration
+# ------------------------------------------------------------------------------
 format:
   html:
-    # Theme configuration
-    theme:
-      light: [cosmo]
+    # Theme Configuration
+    theme: cosmo
+    css: styles.scss
+    dark-mode: true
     
-    # Page features
+    # Typography
+    mainfont: "Inter"
+    monofont: "Source Code Pro"
+    fontsize: 1.05em
+    linestretch: 1.7
+  
+    
+    # Table of Contents
     toc: true
     toc-depth: 3
     toc-title: "On this page"
-    code-fold: false
-    code-tools: false
-    code-link: false
+    toc-location: right
     
-    # Typography and layout
-    fontsize: 1.0em
-    linestretch: 1.7
-    
-    # Header and footer
-    include-in-header:
-      text: |
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
-    
-    # CSS customization
-    css: styles.css
-    
-    # General settings
-    anchor-sections: true
-    fig-cap-location: margin
+    # Citations and References
+    citation-location: margin
     reference-location: margin
     citations-hover: true
     footnotes-hover: true
+    
+    # Page Features
+    smooth-scroll: true
+    anchor-sections: true
+    fig-responsive: true
+    fig-format: svg
+    
+    # HTML Features
+    html-math-method: katex
+    self-contained: false
+    
+    # Include Custom Headers
+    include-in-header:
+      - text: |
+          <meta name="color-scheme" content="light dark">
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+    
+    # CSS and JavaScript
+    js:
+      - js/theme-toggle.js
+      - js/mathjax-config.js
+      - js/analytics.js
+
+
+# Execution Configuration
+# ------------------------------------------------------------------------------
+execute:
+  freeze: auto
+  cache: true
+  error: false
+  echo: true
+  output: true
+  warning: false
+  enabled: true

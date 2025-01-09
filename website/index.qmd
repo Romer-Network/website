@@ -1,44 +1,70 @@
-# Rømer Chain: The Layer 1 Built for Market Makers
+# Reimagining Blockchain Infrastructure for Market Makers
 
-Rømer Chain reimagines blockchain infrastructure by putting market makers at the center of network operations. Through our unique Proof of Physics consensus mechanism, we create natural regional advantages that protect local market makers while ensuring true physical decentralization.
+Rømer Chain introduces a revolutionary approach to blockchain architecture by placing market makers at the core of network operations. Through our innovative Proof of Physics consensus mechanism, we create a system that naturally protects regional market makers while ensuring true physical decentralization across the globe.
 
-## For Market Makers
+<div class="feature-card">
+### For Market Makers
+Transform your validator node into a complete trading infrastructure and take control of your regional market. Our purpose-built system provides:
 
-As a market maker, your validator node becomes your complete trading infrastructure. Take control of your regional market:
+- **Advanced Order Management**: Native support for complex order types and sophisticated risk management systems
+- **Optimized Performance**: Purpose-built virtual machine designed specifically for market making operations
+- **Regional Control**: Direct influence over transaction ordering within your geographic region
+- **Protected Operations**: Geographic safeguards through our physical network topology
+- **Automated Efficiency**: Streamlined inventory management with built-in yield generation
+- **Dual Revenue Streams**: Earn from both validation activities and market making operations
 
-[Join Our Market Maker Program →](./market-makers/index.qmd)
+[Transform Your Trading Infrastructure →](./market-makers/index.qmd){.cta-button}
+</div>
 
-- Native support for complex order types and risk management
-- Purpose-built VM optimized for market making operations
-- Direct control over transaction ordering in your region
-- Geographic protection through physical network topology
-- Automated inventory management and yield generation
-- Dual revenue from validation and market making
+<div class="feature-card">
+### For Engineers & Developers
+Join us in building the first blockchain specifically engineered for market making operations. Our technical innovations include:
 
-## For Engineers & Developers
+- **Market Making VM**: Purpose-built virtual machine with native market making primitives
+- **High-Performance Architecture**: Advanced sequencer-driven design for optimal execution
+- **Hardware Security**: Robust hardware attestation mechanisms
+- **Novel Consensus**: Revolutionary Proof of Physics consensus mechanism
+- **Standardized Interfaces**: Universal DEX interaction protocols
+- **Geographic Validation**: Advanced protocols for regional operation verification
 
-Help build the first blockchain designed specifically for market making operations:
+[Explore Our Technical Architecture →](./technical/index.qmd){.cta-button}
+</div>
 
-[Explore Our Architecture →](./technical/index.qmd)
+<div class="feature-card">
+### For Economic Researchers
+Investigate how we align network economics with market making principles through:
 
-- Purpose-built VM with native market making primitives
-- High-performance sequencer-driven architecture
-- Hardware attestation
-- Proof of Physics consensus mechanism
-- Standardized DEX interfaces
-- Geographic validation protocols
+- **Regional Price Discovery**: Advanced mechanics for local market efficiency
+- **Incentive Alignment**: Carefully crafted market maker reward structures
+- **Geographic Game Theory**: Novel approaches to regional competition dynamics
+- **Economic Foundations**: Built on sound Austrian economic principles
+- **Market Analysis**: Tools for studying cross-regional trading patterns
+- **Validator Economics**: Complex interplay of validation and market making
 
-## For Economic Researchers
+[Study Our Economic Model →](./economics/index.qmd){.cta-button}
+</div>
 
-Study how we align network economics with market making principles:
+## The Future of Market Making
 
-[Examine Our Economic Model →](./economics/index.qmd)
+Rømer Chain represents a fundamental shift in how we think about blockchain infrastructure. By focusing exclusively on the needs of market makers, we've created a system that delivers:
 
-- Regional price discovery mechanics
-- Market maker incentive structures
-- Geographic game theory
-- Austrian economic foundations
+<div class="py-8">
+<div class="feature-card">
+### Physical Decentralization
+Our Proof of Physics consensus mechanism ensures true geographic distribution of network operations, creating natural regional advantages that protect local market makers while maintaining global network cohesion.
+</div>
 
-## Join the Evolution
+<div class="feature-card">
+### Economic Alignment
+Every aspect of our network is designed to align the interests of market makers, validators, and users. This creates a self-reinforcing ecosystem where network security and market efficiency grow together.
+</div>
 
-Rømer Chain demonstrates how purpose-built infrastructure can transform market making through physical decentralization, economic alignment, and specialized primitives. By focusing exclusively on the needs of market makers, we've created a system that delivers unprecedented performance and protection for regional trading operations. Whether you're a market maker seeking an edge, an engineer building the future of trading, or a researcher studying market dynamics, we invite you to explore how we're creating the foundation for regional market making excellence.
+<div class="feature-card">
+### Specialized Infrastructure
+From our market making VM to our geographic validation protocols, every component is purpose-built to support sophisticated trading operations at a regional and global scale.
+</div>
+</div>
+
+Ready to be part of the evolution in market making infrastructure? Explore our documentation, join our community, or reach out to discuss becoming a market maker on Rømer Chain.
+
+[Join Our Market Maker Program →](./market-makers/index.qmd){.cta-button}
