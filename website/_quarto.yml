@@ -72,9 +72,6 @@ website:
             icon: cpu
           - text: "Network Design"
             href: content/technical/network.qmd
-            icon: hdd-network
-          - text: "Development Roadmap"
-            href: content/technical/roadmap.qmd
             icon: calendar-check
           - text: "FIX Protocol"
             href: content/technical/fix.qmd

@@ -39,7 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-07c16812f08c4a1591d6ec4fc46327fa.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-624f8418185f20a6bf33d35588a1b63f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-3366c1018d3baa7b86d6bedae927f008.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -102,8 +102,10 @@ cookieconsent.run({
 
 
 <meta property="og:title" content="Rømer Chain">
+<meta property="og:description" content="A First Principles Approach to Blockchain Design">
 <meta property="og:site_name" content="Rømer Chain">
 <meta name="twitter:title" content="Rømer Chain">
+<meta name="twitter:description" content="A First Principles Approach to Blockchain Design">
 <meta name="twitter:creator" content="@romerchain">
 <meta name="twitter:site" content="@romerchain">
 <meta name="twitter:card" content="summary_large_image">
@@ -164,14 +166,9 @@ cookieconsent.run({
  <span class="dropdown-text">Proof of Physics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../content/technical/network.html"><i class="bi bi-hdd-network" role="img">
+    <a class="dropdown-item" href="../../content/technical/network.html"><i class="bi bi-calendar-check" role="img">
 </i> 
  <span class="dropdown-text">Network Design</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../content/technical/roadmap.html"><i class="bi bi-calendar-check" role="img">
-</i> 
- <span class="dropdown-text">Development Roadmap</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../content/technical/fix.html"><i class="bi bi-wrench" role="img">
@@ -257,233 +254,33 @@ cookieconsent.run({
 
 
 
-<section id="proof-of-physics-a-novel-layer-for-simplex-consensus-based-on-physical-infrastructure-and-network-topology" class="level1">
-<h1>Proof of Physics: A Novel Layer for Simplex Consensus Based on Physical Infrastructure and Network Topology</h1>
-<section id="abstract" class="level2">
-<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
-<p>We present Proof of Physics, a novel security layer for <a href="https://simplex.blog/">Simplex Consensus</a> that leverages physical infrastructure, network topology, and zero-knowledge proofs to create a secure and truly decentralized blockchain network. Built on <a href="https://commonware.xyz/">Commonware</a> primitives, our system anchors security in the immutable laws of physics - specifically the speed of light and physical reality of global network infrastructure. The system achieves security through geographic distribution, jurisdictional complexity, and cryptographic verification of physical hardware, making attacks exponentially more difficult as the network grows.</p>
+<section id="proof-of-physics-a-novel-approach-to-blockchain-security" class="level1">
+<h1>Proof of Physics: A Novel Approach to Blockchain Security</h1>
+<p>Proof of Physics represents a fundamental reimagining of blockchain security, building upon <a href="https://simplex.blog/">Simplex Consensus</a> and <a href="https://commonware.xyz/">Commonware</a> primitives. Rather than relying on computational work or financial stake, our system anchors security in the physical reality of network infrastructure and geographic distribution. Through continuous network performance verification and careful architectural design, we create a system that becomes exponentially more secure as it grows while remaining accessible to new participants.</p>
+<div class="feature-grid">
+<section id="geographic-decentralization-by-design" class="level3 feature-card">
+<h3 class="anchored" data-anchor-id="geographic-decentralization-by-design">Geographic Decentralization by Design</h3>
+<p>Traditional blockchain networks often claim decentralization while actually concentrating power in a few geographic locations. Rømer Chain takes a different approach by making physical distribution a core system requirement. Our network divides into distinct regions based on major internet exchanges and submarine cable landing points, with each region maintaining its own validator set.</p>
+<p>This geographic distribution isn’t just a feature—it’s a fundamental security mechanism. By requiring validators to demonstrate consistent network performance that matches their claimed location’s physical characteristics, we ensure that decentralization exists in reality, not just in theory. The network continuously monitors inter-node latencies and performance metrics, using these measurements to verify the physical distribution of infrastructure.</p>
+<p>The system’s security grows exponentially with each new region added, as attacking the network would require compromising multiple physically separated locations simultaneously. This creates true decentralization that becomes stronger as the network expands, rather than trending toward centralization over time.</p>
 </section>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Current blockchain consensus mechanisms face significant challenges:</p>
-<ul>
-<li>Proof of Work consumes massive energy resources</li>
-<li>Proof of Stake requires large capital lockup</li>
-<li>Both tend toward centralization</li>
-<li>Security costs scale linearly with protected value</li>
-<li>MEV extraction centralizes value capture</li>
-</ul>
-<p>Proof of Physics, built on Simplex Consensus and Commonware primitives, addresses these challenges by:</p>
-<ul>
-<li>Leveraging existing network infrastructure</li>
-<li>Requiring geographic distribution</li>
-<li>Creating jurisdictional complexity</li>
-<li>Verifying physical hardware through ZK proofs</li>
-<li>Making attacks exponentially harder to coordinate</li>
-<li>Maintaining Simplex’s 2-hop block times</li>
-<li>Preserving optimal finalization latency</li>
-<li>Distributing value capture across regions</li>
-<li>Rewarding actual contributions</li>
-</ul>
+<section id="built-in-mev-protection" class="level3 feature-card">
+<h3 class="anchored" data-anchor-id="built-in-mev-protection">Built-in MEV Protection</h3>
+<p>Rømer Chain’s geographic architecture provides natural protection against Maximal Extractable Value (MEV) extraction. In traditional blockchain networks, MEV often concentrates in the hands of a few sophisticated actors who can exploit their position in the network topology. Our system fundamentally changes this dynamic through its regional design.</p>
+<p>Transactions naturally flow through local validators first, creating regional price discovery and reducing opportunities for global front-running. The physical distance between regions, combined with the speed of light constraints in network communication, creates natural timing barriers that prevent centralized MEV extraction. No single actor can gain a network-wide timing advantage because the system’s geographic distribution enforces fair access to transaction flow.</p>
+<p>This protection extends beyond just MEV. The regional architecture also enables more efficient market making, as local validators can provide optimal service to their geographic area while still participating in global consensus. This creates a fairer, more efficient market structure that benefits all participants rather than concentrating advantages in a few hands.</p>
 </section>
-<section id="system-architecture" class="level2">
-<h2 class="anchored" data-anchor-id="system-architecture">System Architecture</h2>
-<section id="commonware-integration" class="level3">
-<h3 class="anchored" data-anchor-id="commonware-integration">Commonware Integration</h3>
-<p>The system is built on core Commonware primitives:</p>
-<ol type="1">
-<li>Commonware P2P</li>
-<li>Commonware Storage</li>
-<li>Commonware Runtime</li>
-<li>Commonware Consensus (Simplex)</li>
-</ol>
+<section id="accessible-participation-model" class="level3 feature-card">
+<h3 class="anchored" data-anchor-id="accessible-participation-model">Accessible Participation Model</h3>
+<p>Instead of requiring massive computational resources or large financial stakes, Rømer Chain bases validator qualification on sustained network performance and geographic positioning. This creates an accessible entry path for new validators while maintaining robust security guarantees.</p>
+<p>Validators prove their legitimacy through consistent demonstration of network capabilities and regional presence. The system continuously monitors basic performance metrics like latency, throughput, and uptime, using these measurements to verify that validators are maintaining appropriate infrastructure. This constant verification through normal network traffic provides strong security guarantees without requiring complex cryptographic proofs or large capital lockups.</p>
+<p>This approach makes validator participation more accessible while actually improving network security. Rather than having to acquire large token stakes or specialized mining hardware, prospective validators can focus on providing reliable, high-quality network infrastructure in their region. This aligns validator incentives with network health and creates a more sustainable, accessible path to participation.</p>
 </section>
-<section id="geographic-distribution" class="level3">
-<h3 class="anchored" data-anchor-id="geographic-distribution">Geographic Distribution</h3>
-<p>The network is divided into distinct regions based on major internet exchanges and submarine cable landing points. One validator can be active leader per region, with selection based on sustained network performance rather than computational work or stake.</p>
-</section>
-<section id="validator-requirements" class="level3">
-<h3 class="anchored" data-anchor-id="validator-requirements">Validator Requirements</h3>
-<p>Validators must:</p>
-<ul>
-<li>Maintain physical hardware (no cloud providers)</li>
-<li>Demonstrate geographic presence</li>
-<li>Provide high-quality network connections</li>
-<li>Pass hardware attestation via ZK proofs</li>
-<li>Meet performance standards</li>
-<li>Maintain infrastructure</li>
-</ul>
-</section>
-<section id="zero-knowledge-hardware-attestation" class="level3">
-<h3 class="anchored" data-anchor-id="zero-knowledge-hardware-attestation">Zero-Knowledge Hardware Attestation</h3>
-<p>Validators submit ZK proofs using halo2 to verify:</p>
-<ul>
-<li>Physical hardware characteristics</li>
-<li>Geographic location</li>
-<li>Network path validity</li>
-<li>Infrastructure control</li>
-<li>Performance capabilities</li>
-<li>Timing constraints</li>
-</ul>
-<p>Proofs are required:</p>
-<ul>
-<li>On network join (comprehensive)</li>
-<li>Per epoch (verification)</li>
-<li>On challenge (random checks)</li>
-</ul>
-</section>
-</section>
-<section id="security-model" class="level2">
-<h2 class="anchored" data-anchor-id="security-model">Security Model</h2>
-<section id="physical-security" class="level3">
-<h3 class="anchored" data-anchor-id="physical-security">Physical Security</h3>
-<p>Security is anchored in:</p>
-<ul>
-<li>Speed of light constraints</li>
-<li>Physical infrastructure requirements</li>
-<li>Network topology</li>
-<li>Geographic distribution</li>
-<li>Hardware attestation</li>
-<li>Infrastructure control</li>
-</ul>
-</section>
-<section id="jurisdictional-security" class="level3">
-<h3 class="anchored" data-anchor-id="jurisdictional-security">Jurisdictional Security</h3>
-<p>The system gains security through:</p>
-<ul>
-<li>Multiple legal jurisdictions</li>
-<li>Local operator relationships</li>
-<li>Regional diversity</li>
-<li>Infrastructure ownership</li>
-<li>Network path validation</li>
-<li>Operator incentives</li>
-</ul>
-</section>
-<section id="attack-resistance" class="level3">
-<h3 class="anchored" data-anchor-id="attack-resistance">Attack Resistance</h3>
-<p>Primary threats:</p>
-<ul>
-<li>Cloud providers</li>
-<li>Infrastructure operators</li>
-<li>Nation-state actors</li>
-</ul>
-<p>Defense mechanisms:</p>
-<ol type="1">
-<li>Physical Constraints</li>
-</ol>
-<ul>
-<li>Hardware must be physical not virtual</li>
-<li>Network paths verified</li>
-<li>Geographic distribution enforced</li>
-<li>Performance requirements</li>
-<li>Infrastructure validation</li>
-</ul>
-<ol start="2" type="1">
-<li>Jurisdictional Complexity</li>
-</ol>
-<ul>
-<li>Multiple legal frameworks</li>
-<li>Local business relationships</li>
-<li>Regional operations</li>
-<li>Infrastructure ownership</li>
-<li>Operator incentives</li>
-</ul>
-<ol start="3" type="1">
-<li>Simplex Consensus Protection</li>
-</ol>
-<ul>
-<li>2-hop block propagation</li>
-<li>3-hop finalization</li>
-<li>Fast attack recovery</li>
-<li>Network resilience</li>
-<li>Block verification</li>
-<li>Performance optimization</li>
-</ul>
-<ol start="4" type="1">
-<li>Economic Security</li>
-</ol>
-<ul>
-<li>Local operator profitability</li>
-<li>Infrastructure investment</li>
-<li>Business relationships</li>
-<li>Market dynamics</li>
-<li>Long-term alignment</li>
-</ul>
-</section>
-</section>
-<section id="mev-protection" class="level2">
-<h2 class="anchored" data-anchor-id="mev-protection">MEV Protection</h2>
-<section id="geographic-distribution-benefits" class="level3">
-<h3 class="anchored" data-anchor-id="geographic-distribution-benefits">Geographic Distribution Benefits</h3>
-<ol type="1">
-<li>Network Topology Protection</li>
-</ol>
-<ul>
-<li>Validators physically distributed</li>
-<li>Multiple network paths</li>
-<li>Regional latency advantages neutralized</li>
-<li>Front-running more difficult</li>
-<li>No centralized points for MEV extraction</li>
-<li>Path diversity reduces timing advantages</li>
-<li>Geographic separation enforces fairness</li>
-</ul>
-<ol start="2" type="1">
-<li>Regional Transaction Flow</li>
-</ol>
-<ul>
-<li>Transactions naturally flow through local validators</li>
-<li>Regional price discovery</li>
-<li>Reduced global arbitrage opportunities</li>
-<li>Local market efficiency</li>
-<li>Distributed order flow</li>
-<li>Regional market making</li>
-<li>Fair access to local liquidity</li>
-</ul>
-<ol start="3" type="1">
-<li>Latency-Based Protection</li>
-</ol>
-<ul>
-<li>Speed of light constraints</li>
-<li>Physical distance requirements</li>
-<li>No single point of order flow</li>
-<li>Geographic arbitrage limitations</li>
-<li>Timing advantage restrictions</li>
-<li>Natural network partitioning</li>
-<li>Fair order propagation</li>
-</ul>
-</section>
-</section>
-<section id="performance-characteristics" class="level2">
-<h2 class="anchored" data-anchor-id="performance-characteristics">Performance Characteristics</h2>
-<section id="consensus-speed" class="level3">
-<h3 class="anchored" data-anchor-id="consensus-speed">Consensus Speed</h3>
-<ul>
-<li>2 network hops for block times</li>
-<li>3 network hops for finalization</li>
-<li>Optimized for network latency</li>
-<li>Geographic distribution balanced with performance</li>
-<li>Fast recovery from attacks</li>
-<li>Efficient block propagation</li>
-</ul>
-</section>
-<section id="network-efficiency" class="level3">
-<h3 class="anchored" data-anchor-id="network-efficiency">Network Efficiency</h3>
-<ul>
-<li>Decoupled block broadcast</li>
-<li>Optimized path selection</li>
-<li>Regional leadership model</li>
-<li>Performance-based validation</li>
-<li>Infrastructure requirements</li>
-<li>Network path optimization</li>
-</ul>
-</section>
-</section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>Proof of Physics represents a novel approach to blockchain consensus that combines Simplex Consensus, Commonware primitives, and physical infrastructure requirements to create a secure and truly decentralized network. By requiring validators to maintain physical infrastructure across multiple jurisdictions and continuously prove their capabilities, the system achieves exponential security scaling while maintaining fast finality and low operating costs.</p>
+</div>
+<p>Our proof of physics system represents a practical approach to blockchain security that leverages fundamental physical constraints and network topology. By anchoring security in physical reality rather than computational work or financial stake, we create a system that remains accessible to new participants while providing robust protection against various forms of attack and manipulation.</p>
+<p>More detailed technical specifications about each aspect of the system will be available soon, including comprehensive documentation of our network monitoring mechanisms, regional architecture, and validator qualification process.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

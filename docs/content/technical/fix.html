@@ -39,7 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-07c16812f08c4a1591d6ec4fc46327fa.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-624f8418185f20a6bf33d35588a1b63f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-3366c1018d3baa7b86d6bedae927f008.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -103,11 +103,9 @@ cookieconsent.run({
 
 <meta property="og:title" content="Rømer Chain">
 <meta property="og:description" content="A First Principles Approach to Blockchain Design">
-<meta property="og:image" content="http://romer.network/content/images/fix_session.png">
 <meta property="og:site_name" content="Rømer Chain">
 <meta name="twitter:title" content="Rømer Chain">
 <meta name="twitter:description" content="A First Principles Approach to Blockchain Design">
-<meta name="twitter:image" content="http://romer.network/content/images/fix_session.png">
 <meta name="twitter:creator" content="@romerchain">
 <meta name="twitter:site" content="@romerchain">
 <meta name="twitter:card" content="summary_large_image">
@@ -168,14 +166,9 @@ cookieconsent.run({
  <span class="dropdown-text">Proof of Physics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../content/technical/network.html"><i class="bi bi-hdd-network" role="img">
+    <a class="dropdown-item" href="../../content/technical/network.html"><i class="bi bi-calendar-check" role="img">
 </i> 
  <span class="dropdown-text">Network Design</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../content/technical/roadmap.html"><i class="bi bi-calendar-check" role="img">
-</i> 
- <span class="dropdown-text">Development Roadmap</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../content/technical/fix.html"><i class="bi bi-wrench" role="img">
@@ -263,82 +256,31 @@ cookieconsent.run({
 
 <section id="fix-protocol-integration" class="level1">
 <h1>FIX Protocol Integration</h1>
-<p>Rømer Chain provides seamless integration with traditional finance through native FIX protocol support. Our approach simplifies authentication while maintaining security by leveraging blockchain cryptography for session management.</p>
-<section id="traditional-fix-authentication" class="level2">
-<h2 class="anchored" data-anchor-id="traditional-fix-authentication">Traditional FIX Authentication</h2>
-<p>In traditional FIX environments, firms typically handle authentication through a combination of SenderCompID and password fields in the Logon message. This approach often involves:</p>
-<ul>
-<li>Preset credentials shared between counterparties</li>
-<li>Password rotation policies</li>
-<li>Complex credential management</li>
-<li>Multiple authentication schemes across venues</li>
-</ul>
-<p>Session management then requires ongoing maintenance of sequence numbers and heartbeat messages to maintain connectivity. While effective, this creates significant operational overhead in managing credentials across multiple venues.</p>
+<p>Rømer Chain provides native FIX protocol support, enabling traditional finance institutions to connect directly to the blockchain without modifying their existing trading infrastructure. Our implementation creates a seamless bridge between traditional finance and Web3 by supporting standard FIX workflows while leveraging blockchain security and capabilities.</p>
+<div class="feature-grid">
+<section id="secure-session-management" class="level3 feature-card">
+<h3 class="anchored" data-anchor-id="secure-session-management">Secure Session Management</h3>
+<p>Rømer Chain revolutionizes FIX session management by integrating blockchain cryptography with standard FIX workflows. Rather than managing separate credentials for each venue, market makers use their blockchain identity secured by BLS signatures for authentication and session management.</p>
+<p>When establishing a session, market makers create a standard FIX Logon message with their SenderCompID, but instead of traditional password authentication, they sign the session initiation data with their BLS private key. This signature, included in the password field, provides cryptographic proof of identity that the sequencer can verify using the market maker’s known public key.</p>
+<p>Once authenticated, sessions proceed exactly as they would with any traditional FIX server. The sequencer manages sequence numbers, heartbeats, and message resend requests according to standard FIX protocols. This approach combines the security benefits of blockchain cryptography with the operational familiarity of traditional FIX session management, allowing market makers to maintain their existing workflows while gaining enhanced security.</p>
 </section>
-<section id="rømers-blockchain-based-authentication" class="level2">
-<h2 class="anchored" data-anchor-id="rømers-blockchain-based-authentication">Rømer’s Blockchain-Based Authentication</h2>
-<p>Rømer Chain simplifies this process by using blockchain cryptography for authentication. Instead of managing separate credentials, market makers use their blockchain identity:</p>
-<ol type="1">
-<li>The market maker creates a Logon message with their SenderCompID</li>
-<li>Instead of a traditional password, they sign the session initiation data with their BLS private key</li>
-<li>This signature is included in the Logon message’s password field</li>
-<li>The sequencer verifies the signature using the market maker’s known public key</li>
-</ol>
-<p>This approach provides several benefits:</p>
-<ul>
-<li>Single identity across the network</li>
-<li>Cryptographic security</li>
-<li>No separate credential management</li>
-<li>Simplified authentication process</li>
-</ul>
+<section id="comprehensive-trading-support" class="level3 feature-card">
+<h3 class="anchored" data-anchor-id="comprehensive-trading-support">Comprehensive Trading Support</h3>
+<p>Our FIX implementation begins with robust support for fundamental order types, ensuring market makers can immediately begin trading using familiar message formats. At launch, we support market and limit orders through standard FIX messages, with execution reports and order management flowing through traditional FIX workflows.</p>
+<p>The system translates these FIX messages into their blockchain equivalents in real-time, ensuring that orders execute with the security and transparency guarantees of the blockchain while maintaining FIX-standard reporting and management capabilities. Market makers can monitor positions, manage orders, and receive executions exactly as they would with any traditional venue.</p>
+<p>As the platform matures, we will systematically expand support to include advanced order types. Each new addition will be backed by corresponding on-chain functionality, ensuring that sophisticated trading strategies can leverage blockchain capabilities while maintaining standard FIX workflows. This progressive enhancement approach allows market makers to grow their trading capabilities naturally as the platform evolves.</p>
 </section>
-<section id="session-management" class="level2">
-<h2 class="anchored" data-anchor-id="session-management">Session Management</h2>
-<p>Once authenticated, Rømer Chain creates a session key that enables standard FIX session operation:</p>
-<ol type="1">
-<li>The sequencer generates a session key upon successful authentication</li>
-<li>This key is used for the duration of the FIX session</li>
-<li>Standard FIX session management proceeds as normal:
-<ul>
-<li>Sequence number tracking</li>
-<li>Heartbeat messages</li>
-<li>Message resend requests</li>
-<li>Session level reject handling</li>
-</ul></li>
-</ol>
-<p>Market makers can then use their established FIX session exactly as they would with any other FIX server:</p>
-<ul>
-<li>Submit new orders</li>
-<li>Receive execution reports</li>
-<li>Manage order modifications and cancellations</li>
-<li>Handle market data</li>
-</ul>
+<section id="asset-issuance-and-settlement" class="level3 feature-card">
+<h3 class="anchored" data-anchor-id="asset-issuance-and-settlement">Asset Issuance and Settlement</h3>
+<p>Rømer Chain introduces a standardized token framework that integrates seamlessly with existing FIX custody and settlement processes. Traditional custodians can use familiar FIX message types to issue and manage digital assets, creating a bridge between traditional custody operations and blockchain-based assets.</p>
+<p>The system supports the full lifecycle of asset management through standard FIX messages. Custodians can issue new tokens, manage supply, and handle settlements using the same message types they currently use for traditional assets. This standardization extends to money movement as well, with support for standard FIX settlement messages to handle deposits and withdrawals.</p>
+<p>This approach creates a natural path for bringing traditional assets on-chain. Custodians can maintain their existing operational workflows while leveraging blockchain capabilities for settlement and asset management. The result is a system that combines the best of both worlds: the operational familiarity of FIX with the settlement efficiency and transparency of blockchain technology.</p>
 </section>
-<section id="implementation-example" class="level2">
-<h2 class="anchored" data-anchor-id="implementation-example">Implementation Example</h2>
-<p>A typical session establishment flow:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/fix_session.png" class="img-fluid figure-img"></p>
-<figcaption>Fix Session</figcaption>
-</figure>
 </div>
-<p>After session establishment, trading proceeds using standard FIX messages and workflows. The sequencer handles all necessary session management tasks while providing the security benefits of blockchain-based authentication.</p>
-</section>
-<section id="integration-benefits" class="level2">
-<h2 class="anchored" data-anchor-id="integration-benefits">Integration Benefits</h2>
-<p>This approach provides several key advantages for market makers:</p>
-<ul>
-<li>Use existing FIX trading systems without modification</li>
-<li>Maintain familiar operational workflows</li>
-<li>Eliminate credential management overhead</li>
-<li>Gain blockchain security benefits</li>
-<li>Simplify venue connectivity</li>
-</ul>
-<p>Market makers can focus on their trading strategies while gaining the benefits of blockchain infrastructure without complex integration requirements.</p>
+<p>Our FIX implementation represents a thoughtful integration of traditional finance infrastructure with blockchain capabilities. By maintaining strict adherence to FIX standards while leveraging blockchain features, we create a system that feels familiar to traditional finance participants while providing the benefits of blockchain technology.</p>
+<p>More detailed technical specifications about our FIX implementation will be available soon, including comprehensive message type documentation, integration guides, and example workflows.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

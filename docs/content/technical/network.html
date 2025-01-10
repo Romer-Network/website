@@ -39,7 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-07c16812f08c4a1591d6ec4fc46327fa.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-624f8418185f20a6bf33d35588a1b63f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-3366c1018d3baa7b86d6bedae927f008.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -166,14 +166,9 @@ cookieconsent.run({
  <span class="dropdown-text">Proof of Physics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../content/technical/network.html"><i class="bi bi-hdd-network" role="img">
+    <a class="dropdown-item" href="../../content/technical/network.html"><i class="bi bi-calendar-check" role="img">
 </i> 
  <span class="dropdown-text">Network Design</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../content/technical/roadmap.html"><i class="bi bi-calendar-check" role="img">
-</i> 
- <span class="dropdown-text">Development Roadmap</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../content/technical/fix.html"><i class="bi bi-wrench" role="img">
@@ -259,235 +254,32 @@ cookieconsent.run({
 
 
 
-<section id="network-design-system-lifecycles" class="level1">
-<h1>Network Design: System Lifecycles</h1>
-<p>Understanding Rømer Chain’s network design is best approached through the lifecycles of its key components. Each lifecycle illustrates how different parts of the system evolve and interact over time, creating a network that maintains physical decentralization while delivering high performance.</p>
-<section id="lifecycle-of-a-block" class="level2">
-<h2 class="anchored" data-anchor-id="lifecycle-of-a-block">Lifecycle of a Block</h2>
-<p>A block’s journey through Rømer Chain follows several distinct phases, each designed to maintain both speed and physical decentralization:</p>
-<section id="leader-preparation" class="level3">
-<h3 class="anchored" data-anchor-id="leader-preparation">1. Leader Preparation</h3>
-<p>The designated leader begins by collecting transactions from their regional mempool. Because leaders operate from distinct geographic regions, this initial transaction gathering naturally creates regional price discovery and reduces global front-running opportunities.</p>
+<section id="network-architecture" class="level1">
+<h1>Network Architecture</h1>
+<p>Rømer Chain’s network architecture combines three powerful technologies to create high-performance trading infrastructure: Simplex Consensus for rapid finality, Commonware primitives for robust foundations, and decoupled state machine replication for optimal performance. Together, these create a system uniquely suited for professional market making operations.</p>
+<div class="feature-grid">
+<section id="simplex-consensus" class="level3 feature-card">
+<h3 class="anchored" data-anchor-id="simplex-consensus">Simplex Consensus</h3>
+<p>Rømer Chain builds on <a href="https://simplex.blog/">Simplex Consensus</a>, a breakthrough in blockchain consensus that achieves transaction acceptance in just two network hops and finality in three. This represents a significant improvement over traditional consensus mechanisms that require 4-6 hops for transaction acceptance.</p>
+<p>Simplex’s unique approach to consensus perfectly aligns with our focus on market making operations. By achieving finality in just three network hops, we enable the rapid transaction processing essential for professional trading operations. This speed advantage becomes particularly crucial in our geographic validation system, where regional market makers can achieve near-instant finality for local transactions.</p>
+<p>The system maintains security through a combination of physical infrastructure requirements and cryptographic validation, ensuring that the speed advantages of Simplex don’t come at the cost of network security. This creates an ideal foundation for our market-making focused infrastructure.</p>
 </section>
-<section id="block-construction" class="level3">
-<h3 class="anchored" data-anchor-id="block-construction">2. Block Construction</h3>
-<p>The leader constructs their block proposal considering several factors:</p>
-<ul>
-<li>Available transactions in their regional mempool</li>
-<li>Current network computational load</li>
-<li>Geographic distribution of recent block validators</li>
-<li>Physical network performance metrics</li>
-</ul>
+<section id="commonware-primitives" class="level3 feature-card">
+<h3 class="anchored" data-anchor-id="commonware-primitives">Commonware Primitives</h3>
+<p>Our network leverages Commonware primitives to provide robust, performance-optimized foundations for core blockchain operations. These primitives span three critical areas: storage, peer-to-peer networking, and cryptography.</p>
+<p>The storage primitives enable efficient state management and rapid access to blockchain data, crucial for processing high volumes of trading operations. Our peer-to-peer networking layer optimizes message passing between nodes, with particular attention to geographic topology and network path optimization.</p>
+<p>Cryptographic primitives provide the security foundation for our network, including specialized operations for our geographic validation system and hardware attestation requirements. These primitives work together to create a secure, efficient foundation for our trading infrastructure.</p>
 </section>
-<section id="network-distribution" class="level3">
-<h3 class="anchored" data-anchor-id="network-distribution">3. Network Distribution</h3>
-<p>Block distribution leverages Rømer’s geographic topology:</p>
-<ul>
-<li>The leader first broadcasts to their regional peers</li>
-<li>Regional validators verify and relay to adjacent regions</li>
-<li>Cross-region propagation follows natural network paths</li>
-<li>Speed-of-light latency creates predictable propagation patterns</li>
-</ul>
+<section id="decoupled-state-machine-replication" class="level3 feature-card">
+<h3 class="anchored" data-anchor-id="decoupled-state-machine-replication">Decoupled State Machine Replication</h3>
+<p>Rømer Chain implements decoupled state machine replication to optimize performance and scalability. This architecture separates transaction ordering from execution, allowing each component to be optimized independently while maintaining system consistency.</p>
+<p>By decoupling these operations, we achieve several crucial advantages. Transaction ordering can be optimized for speed and geographic distribution, while execution can be tuned for complex trading operations and state management. This separation also enables more efficient resource utilization, as nodes can specialize in either ordering or execution roles.</p>
+<p>The decoupled architecture proves particularly valuable for market making operations, where rapid transaction ordering must be balanced with complex execution logic for sophisticated trading strategies and risk management.</p>
 </section>
-<section id="validation-and-consensus" class="level3">
-<h3 class="anchored" data-anchor-id="validation-and-consensus">4. Validation and Consensus</h3>
-<p>Block validation occurs in geographic waves:</p>
-<ul>
-<li>Regional validators perform immediate verification</li>
-<li>Cross-region validation follows physical network topology</li>
-<li>Consensus considers geographic distribution of validating nodes</li>
-<li>Finality achieved through multi-region confirmation</li>
-</ul>
-</section>
-<section id="finalization" class="level3">
-<h3 class="anchored" data-anchor-id="finalization">5. Finalization</h3>
-<p>Once consensus is reached:</p>
-<ul>
-<li>Block is marked as finalized</li>
-<li>State updates are committed</li>
-<li>New leader selection process begins</li>
-<li>Network performance metrics are updated</li>
-</ul>
-</section>
-</section>
-<section id="lifecycle-of-leader-election" class="level2">
-<h2 class="anchored" data-anchor-id="lifecycle-of-leader-election">Lifecycle of Leader Election</h2>
-<p>Leader election in Rømer Chain differs from traditional blockchain networks by explicitly considering physical network characteristics and geographic distribution.</p>
-<section id="regional-qualification" class="level3">
-<h3 class="anchored" data-anchor-id="regional-qualification">1. Regional Qualification</h3>
-<p>Before each election cycle:</p>
-<ul>
-<li>Validators report their network performance metrics</li>
-<li>Geographic distribution is evaluated</li>
-<li>Regional validator rankings are updated</li>
-<li>Performance thresholds are checked</li>
-</ul>
-</section>
-<section id="selection-process" class="level3">
-<h3 class="anchored" data-anchor-id="selection-process">2. Selection Process</h3>
-<p>Leader selection considers multiple factors:</p>
-<ul>
-<li>Regional rotation requirements</li>
-<li>Validator performance history</li>
-<li>Network latency measurements</li>
-<li>Geographic diversity goals</li>
-</ul>
-</section>
-<section id="leader-operation" class="level3">
-<h3 class="anchored" data-anchor-id="leader-operation">3. Leader Operation</h3>
-<p>During their leadership period:</p>
-<ul>
-<li>Leader performance is continuously measured</li>
-<li>Network latencies are monitored</li>
-<li>Geographic distribution is maintained</li>
-<li>Regional transaction flow is optimized</li>
-</ul>
-</section>
-<section id="transition" class="level3">
-<h3 class="anchored" data-anchor-id="transition">4. Transition</h3>
-<p>Leader transition includes:</p>
-<ul>
-<li>Performance metric updates</li>
-<li>Regional ranking adjustments</li>
-<li>Network path optimization</li>
-<li>Preparation for next leader cycle</li>
-</ul>
-</section>
-</section>
-<section id="lifecycle-of-a-validator" class="level2">
-<h2 class="anchored" data-anchor-id="lifecycle-of-a-validator">Lifecycle of a Validator</h2>
-<p>The validator lifecycle illustrates how Rømer Chain maintains competition and performance while ensuring geographic distribution. We’ll examine three key scenarios:</p>
-<section id="first-validator-in-a-region" class="level3">
-<h3 class="anchored" data-anchor-id="first-validator-in-a-region">First Validator in a Region</h3>
-<p>When a validator becomes the first in their region, they go through several phases:</p>
-<section id="initial-setup" class="level4">
-<h4 class="anchored" data-anchor-id="initial-setup">Initial Setup</h4>
-<ul>
-<li>Prove physical hardware through zero-knowledge proofs</li>
-<li>Demonstrate geographic location</li>
-<li>Establish network connections to adjacent regions</li>
-<li>Begin performance metric tracking</li>
-</ul>
-</section>
-<section id="regional-establishment" class="level4">
-<h4 class="anchored" data-anchor-id="regional-establishment">Regional Establishment</h4>
-<ul>
-<li>Build regional transaction mempool</li>
-<li>Develop optimal network paths</li>
-<li>Create regional price discovery mechanisms</li>
-<li>Establish cross-region relationships</li>
-</ul>
-</section>
-<section id="performance-building" class="level4">
-<h4 class="anchored" data-anchor-id="performance-building">Performance Building</h4>
-<ul>
-<li>Optimize network connections</li>
-<li>Build transaction processing efficiency</li>
-<li>Develop regional market presence</li>
-<li>Create effective cross-region paths</li>
-</ul>
-</section>
-</section>
-<section id="competing-with-an-incumbent" class="level3">
-<h3 class="anchored" data-anchor-id="competing-with-an-incumbent">Competing with an Incumbent</h3>
-<p>When a new validator enters a region with an existing validator, competition drives network improvement:</p>
-<section id="entry-requirements" class="level4">
-<h4 class="anchored" data-anchor-id="entry-requirements">Entry Requirements</h4>
-<ul>
-<li>Must exceed regional performance minimums</li>
-<li>Prove physical separation from incumbent</li>
-<li>Demonstrate network path diversity</li>
-<li>Show computational capability</li>
-</ul>
-</section>
-<section id="performance-competition" class="level4">
-<h4 class="anchored" data-anchor-id="performance-competition">Performance Competition</h4>
-<ul>
-<li>Continuous latency measurements</li>
-<li>Transaction processing efficiency</li>
-<li>Network path optimization</li>
-<li>Regional service quality</li>
-</ul>
-</section>
-<section id="market-development" class="level4">
-<h4 class="anchored" data-anchor-id="market-development">Market Development</h4>
-<ul>
-<li>Build regional transaction flow</li>
-<li>Optimize cross-region connections</li>
-<li>Develop market making capability</li>
-<li>Enhance network resilience</li>
-</ul>
-</section>
-</section>
-<section id="maintaining-regional-leadership" class="level3">
-<h3 class="anchored" data-anchor-id="maintaining-regional-leadership">Maintaining Regional Leadership</h3>
-<p>Incumbent validators must continuously improve to maintain their position:</p>
-<section id="performance-optimization" class="level4">
-<h4 class="anchored" data-anchor-id="performance-optimization">Performance Optimization</h4>
-<ul>
-<li>Monitor competitor metrics</li>
-<li>Upgrade network infrastructure</li>
-<li>Optimize transaction processing</li>
-<li>Enhance regional services</li>
-</ul>
-</section>
-<section id="regional-development" class="level4">
-<h4 class="anchored" data-anchor-id="regional-development">Regional Development</h4>
-<ul>
-<li>Strengthen network paths</li>
-<li>Improve transaction flow</li>
-<li>Enhance market efficiency</li>
-<li>Build regional resilience</li>
-</ul>
-</section>
-<section id="competitive-response" class="level4">
-<h4 class="anchored" data-anchor-id="competitive-response">Competitive Response</h4>
-<ul>
-<li>Adapt to new entrants</li>
-<li>Optimize network paths</li>
-<li>Improve service quality</li>
-<li>Maintain performance edge</li>
-</ul>
-</section>
-</section>
-</section>
-<section id="network-evolution" class="level2">
-<h2 class="anchored" data-anchor-id="network-evolution">Network Evolution</h2>
-<p>These lifecycles create a dynamic system that naturally evolves toward greater decentralization and performance:</p>
-<section id="performance-improvement" class="level3">
-<h3 class="anchored" data-anchor-id="performance-improvement">Performance Improvement</h3>
-<p>Validator competition drives continuous enhancement of:</p>
-<ul>
-<li>Network latency</li>
-<li>Transaction processing</li>
-<li>Regional coverage</li>
-<li>Market efficiency</li>
-</ul>
-</section>
-<section id="geographic-distribution" class="level3">
-<h3 class="anchored" data-anchor-id="geographic-distribution">Geographic Distribution</h3>
-<p>The system maintains decentralization through:</p>
-<ul>
-<li>Regional competition</li>
-<li>Performance requirements</li>
-<li>Physical validation</li>
-<li>Network diversity</li>
-</ul>
-</section>
-<section id="market-development-1" class="level3">
-<h3 class="anchored" data-anchor-id="market-development-1">Market Development</h3>
-<p>Regional competition leads to:</p>
-<ul>
-<li>Efficient price discovery</li>
-<li>Reduced MEV</li>
-<li>Better service quality</li>
-<li>Enhanced resilience</li>
-</ul>
-<p>Through these interlinked lifecycles, Rømer Chain creates a network that combines high performance with true physical decentralization, setting a new standard for blockchain infrastructure.</p>
+</div>
+<p>More detailed documentation about each of these components is coming soon. Our team is working on comprehensive technical specifications that will provide in-depth information about implementation details, performance characteristics, and integration guidelines.</p>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->

@@ -120,15 +120,38 @@ body {
 }
 
 .cta-button {
+  display: inline-block;
   background-color: var(--primary);
   color: white;
   border: none;
-  margin-right: var(--spacing-4);
+  padding: var(--button-padding-y) var(--button-padding-x);
+  border-radius: var(--button-border-radius);
+  font-weight: var(--button-font-weight);
+  transition: var(--button-transition);
+  text-decoration: none;
+  margin-bottom: var(--spacing-4); // Add bottom margin
+  
+  @media (min-width: 768px) {
+    margin-right: var(--spacing-4); // Only add right margin on desktop
+    margin-bottom: 0; // Remove bottom margin on desktop
+  }
   
   &:hover {
     background-color: var(--primary-dark);
     color: white;
     box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+}
+
+.cta-button-container {
+  display: flex;
+  flex-direction: column; // Stack vertically on mobile
+  gap: var(--spacing-4); // Add consistent spacing between buttons
+  
+  @media (min-width: 768px) {
+    flex-direction: row; // Side by side on desktop
+    align-items: center;
   }
 }
 

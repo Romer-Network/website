@@ -39,7 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-07c16812f08c4a1591d6ec4fc46327fa.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-624f8418185f20a6bf33d35588a1b63f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-3366c1018d3baa7b86d6bedae927f008.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -166,14 +166,9 @@ cookieconsent.run({
  <span class="dropdown-text">Proof of Physics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../content/technical/network.html"><i class="bi bi-hdd-network" role="img">
+    <a class="dropdown-item" href="../../content/technical/network.html"><i class="bi bi-calendar-check" role="img">
 </i> 
  <span class="dropdown-text">Network Design</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../content/technical/roadmap.html"><i class="bi bi-calendar-check" role="img">
-</i> 
- <span class="dropdown-text">Development Roadmap</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../content/technical/fix.html"><i class="bi bi-wrench" role="img">
@@ -259,56 +254,51 @@ cookieconsent.run({
 
 
 
-<section id="rømer-chain-purpose-built-infrastructure-for-market-makers" class="level1">
-<h1>RØMER Chain: Purpose-Built Infrastructure for Market Makers</h1>
-<p>RØMER Chain reimagines blockchain infrastructure by putting market makers at the center of the system architecture. Through our combination of Commonware primitives, specialized Move VM, and geographic validation, we create a platform that delivers unprecedented advantages for professional market making operations.</p>
-<section id="performance-through-advanced-architecture" class="level2">
-<h2 class="anchored" data-anchor-id="performance-through-advanced-architecture">Performance Through Advanced Architecture</h2>
-<p>Our integration of Commonware primitives with decoupled state machine replication enables RØMER Chain to significantly outperform current trading-focused chains like dYdX, Sei, and Injective. By separating transaction ordering from execution, we achieve transaction acceptance in just two network hops and finality in three hops - far faster than traditional consensus mechanisms that require 4-6 hops for acceptance.</p>
-<p>The Commonware foundation provides zero-copy message passing between components, optimized network topology for minimal latency, and hardware-level optimizations that create real performance advantages. When combined with our geographic validation system, this architecture enables true performance gains while maintaining security through physical decentralization.</p>
-</section>
-<section id="specialized-market-making-vm" class="level2">
-<h2 class="anchored" data-anchor-id="specialized-market-making-vm">Specialized Market Making VM</h2>
-<p>Rather than using a general-purpose blockchain VM, RØMER implements a specialized version of the Move VM optimized specifically for market making operations. The VM includes native support for complex order types, position management, and risk limit enforcement directly at the instruction level.</p>
-<p>A key innovation in our VM is native FIX protocol support, allowing market makers to submit FIX messages directly as transaction data types. These messages are interpreted and executed on-chain, creating seamless integration with existing trading infrastructure while maintaining the performance benefits of our specialized VM.</p>
-</section>
-<section id="infrastructure-integration" class="level2">
-<h2 class="anchored" data-anchor-id="infrastructure-integration">Infrastructure Integration</h2>
-<p>RØMER nodes replace multiple pieces of traditional trading infrastructure while providing seamless integration with existing systems. Our native FIX protocol support means market makers can connect their current trading systems directly to RØMER nodes without building complex integration layers.</p>
-<p>Each validator node becomes a complete trading infrastructure component, providing:</p>
+<section id="rømer-chain-advanced-infrastructure-for-market-makers" class="level1">
+<h1>RØMER Chain: Advanced Infrastructure for Market Makers</h1>
+<p>RØMER Chain fundamentally reimagines blockchain infrastructure by combining three powerful innovations into a cohesive system designed specifically for professional market making.</p>
+<div class="feature-grid">
+<section id="built-on-commonware" class="level3 feature-card">
+<h3 class="anchored" data-anchor-id="built-on-commonware">Built on Commonware</h3>
+<p>Leveraging Simplex consensus and Commonware primitives delivers optimal performance:</p>
 <ul>
-<li>Order management and execution</li>
-<li>Market data processing</li>
-<li>Position tracking</li>
-<li>Risk monitoring</li>
-<li>Cross-venue operations</li>
-<li>Regional market making capabilities</li>
+<li>Two hop transaction acceptance</li>
+<li>Three hop finality time</li>
+<li>Highest possible consensus throughput</li>
+<li>Decoupled State Machine Replication</li>
+<li>Network-aware transaction ordering</li>
 </ul>
+<p><a href="../../content/technical/network.html" class="card-cta-button">Explore Commonware Design →</a></p>
 </section>
-<section id="regional-advantages" class="level2">
-<h2 class="anchored" data-anchor-id="regional-advantages">Regional Advantages</h2>
-<p>Our geographic validation system creates natural advantages for market makers in their local regions. Validators gain priority access to local order flow, reduced latency for regional operations, and better relationships with local participants. This geographic distribution also provides natural MEV protection and enables true regional price discovery.</p>
-</section>
-<section id="economic-benefits" class="level2">
-<h2 class="anchored" data-anchor-id="economic-benefits">Economic Benefits</h2>
-<p>The system creates multiple revenue streams while reducing operational costs. Market makers benefit from:</p>
+<section id="geographic-mev-protection" class="level3 feature-card">
+<h3 class="anchored" data-anchor-id="geographic-mev-protection">Geographic MEV Protection</h3>
+<p>Our Proof of Physics consensus creates natural MEV protection through physical infrastructure:</p>
 <ul>
-<li>Traditional market making spreads</li>
-<li>Validation rewards</li>
-<li>Protected regional advantages</li>
-<li>Reduced infrastructure costs</li>
-<li>Higher capital efficiency</li>
+<li>Regional transaction flow protection</li>
+<li>Priority access to local order flow</li>
+<li>Speed-of-light constraints on front-running</li>
+<li>True geographic decentralization</li>
+<li>Physical infrastructure verification</li>
 </ul>
+<p><a href="../../content/technical/pop.html" class="card-cta-button">Learn About Proof of Physics →</a></p>
 </section>
-<section id="next-steps" class="level2">
-<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
-<p>For market makers interested in participating in shaping this infrastructure:</p>
-<ol type="1">
-<li>Schedule an initial technical discussion</li>
-<li>Review detailed system specifications</li>
-<li>Begin partnership process</li>
-</ol>
-<p>Contact our team to start exploring how RØMER can transform your market making operations.</p>
+<section id="fix-compatible-sequencer" class="level3 feature-card">
+<h3 class="anchored" data-anchor-id="fix-compatible-sequencer">FIX Compatible Sequencer</h3>
+<p>High-performance sequencer functions as your FIX server:</p>
+<ul>
+<li>Native FIX message processing</li>
+<li>Complex order type support</li>
+<li>Built-in position tracking</li>
+<li>Integrated risk controls</li>
+<li>Market maker optimized execution</li>
+</ul>
+<p><a href="../../content/technical/fix.html" class="card-cta-button">Discover FIX Integration →</a></p>
+</section>
+</div>
+<section id="ready-to-transform-your-market-making" class="level2">
+<h2 class="anchored" data-anchor-id="ready-to-transform-your-market-making">Ready to Transform Your Market Making?</h2>
+<p>Join the financial institutions already bringing traditional finance on chain with RØMER. Our technical team understands both FIX and blockchain - we speak your language.</p>
+<p><a href="https://t.me/Hariseldon23" class="cta-button">Schedule Technical Discussion →</a></p>
 
 
 </section>

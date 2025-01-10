@@ -1,52 +1,50 @@
-# RØMER Chain: Purpose-Built Infrastructure for Market Makers
+# RØMER Chain: Advanced Infrastructure for Market Makers
 
-RØMER Chain reimagines blockchain infrastructure by putting market makers at the center of the system architecture. Through our combination of Commonware primitives, specialized Move VM, and geographic validation, we create a platform that delivers unprecedented advantages for professional market making operations.
+RØMER Chain fundamentally reimagines blockchain infrastructure by combining three powerful innovations into a cohesive system designed specifically for professional market making.
 
-## Performance Through Advanced Architecture
+<div class="feature-grid">
+<div class="feature-card">
+### Built on Commonware
+Leveraging Simplex consensus and Commonware primitives delivers optimal performance:
 
-Our integration of Commonware primitives with decoupled state machine replication enables RØMER Chain to significantly outperform current trading-focused chains like dYdX, Sei, and Injective. By separating transaction ordering from execution, we achieve transaction acceptance in just two network hops and finality in three hops - far faster than traditional consensus mechanisms that require 4-6 hops for acceptance.
+- Two hop transaction acceptance
+- Three hop finality time
+- Highest possible consensus throughput
+- Decoupled State Machine Replication
+- Network-aware transaction ordering
 
-The Commonware foundation provides zero-copy message passing between components, optimized network topology for minimal latency, and hardware-level optimizations that create real performance advantages. When combined with our geographic validation system, this architecture enables true performance gains while maintaining security through physical decentralization.
+[Explore Commonware Design →](./network.qmd){.card-cta-button}
+</div>
 
-## Specialized Market Making VM
+<div class="feature-card">
+### Geographic MEV Protection
+Our Proof of Physics consensus creates natural MEV protection through physical infrastructure:
 
-Rather than using a general-purpose blockchain VM, RØMER implements a specialized version of the Move VM optimized specifically for market making operations. The VM includes native support for complex order types, position management, and risk limit enforcement directly at the instruction level.
+- Regional transaction flow protection 
+- Priority access to local order flow
+- Speed-of-light constraints on front-running
+- True geographic decentralization
+- Physical infrastructure verification
 
-A key innovation in our VM is native FIX protocol support, allowing market makers to submit FIX messages directly as transaction data types. These messages are interpreted and executed on-chain, creating seamless integration with existing trading infrastructure while maintaining the performance benefits of our specialized VM.
+[Learn About Proof of Physics →](./pop.qmd){.card-cta-button}
+</div>
 
-## Infrastructure Integration
+<div class="feature-card">
+### FIX Compatible Sequencer 
+High-performance sequencer functions as your FIX server:
 
-RØMER nodes replace multiple pieces of traditional trading infrastructure while providing seamless integration with existing systems. Our native FIX protocol support means market makers can connect their current trading systems directly to RØMER nodes without building complex integration layers.
+- Native FIX message processing
+- Complex order type support
+- Built-in position tracking
+- Integrated risk controls
+- Market maker optimized execution
 
-Each validator node becomes a complete trading infrastructure component, providing:
+[Discover FIX Integration →](./fix.qmd){.card-cta-button}
+</div>
+</div>
 
-- Order management and execution
-- Market data processing
-- Position tracking
-- Risk monitoring
-- Cross-venue operations
-- Regional market making capabilities
+## Ready to Transform Your Market Making?
 
-## Regional Advantages
+Join the financial institutions already bringing traditional finance on chain with RØMER. Our technical team understands both FIX and blockchain - we speak your language.
 
-Our geographic validation system creates natural advantages for market makers in their local regions. Validators gain priority access to local order flow, reduced latency for regional operations, and better relationships with local participants. This geographic distribution also provides natural MEV protection and enables true regional price discovery.
-
-## Economic Benefits
-
-The system creates multiple revenue streams while reducing operational costs. Market makers benefit from:
-
-- Traditional market making spreads
-- Validation rewards
-- Protected regional advantages
-- Reduced infrastructure costs
-- Higher capital efficiency
-
-## Next Steps
-
-For market makers interested in participating in shaping this infrastructure:
-
-1. Schedule an initial technical discussion
-2. Review detailed system specifications
-3. Begin partnership process
-
-Contact our team to start exploring how RØMER can transform your market making operations.
+[Schedule Technical Discussion →](https://t.me/Hariseldon23){.cta-button}
