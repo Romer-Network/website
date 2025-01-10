@@ -1,0 +1,163 @@
+// main.scss
+/*-- scss:defaults --*/
+
+// First, define the SCSS variables
+$primary: #f04275;
+$primary-dark: #d93964;
+$primary-light: #f37396;
+$secondary: #2d3748;
+$gray-100: #f7fafc;
+$gray-800: #2d3748;
+$gray-900: #1a202c;
+
+// Then convert them to CSS custom properties
+:root {
+  // Colors
+  --primary: #{$primary};
+  --primary-dark: #{$primary-dark};
+  --primary-light: #{$primary-light};
+  --secondary: #{$secondary};
+  --gray-100: #{$gray-100};
+  --gray-800: #{$gray-800};
+  --gray-900: #{$gray-900};
+  
+  // Spacing
+  --spacing-2: 0.5rem;
+  --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-12: 3rem;
+  
+  // Shadows
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+  // Component-specific
+  --feature-card-border-radius: 12px;
+  --feature-card-padding: var(--spacing-6);
+  --feature-card-shadow: var(--shadow-lg);
+  --button-padding-y: 0.75rem;
+  --button-padding-x: 1.5rem;
+  --button-border-radius: 6px;
+  --button-font-weight: 500;
+  --button-transition: all 0.2s ease-in-out;
+}
+
+/*-- scss:rules --*/
+
+// Base styles
+body {
+  background-color: var(--gray-100);
+  color: var(--gray-800);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.7;
+}
+
+// Feature grid layout
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-6);
+  margin: var(--spacing-8) 0;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Feature cards
+.feature-card {
+  background: white;
+  border-radius: var(--feature-card-border-radius);
+  padding: var(--feature-card-padding);
+  box-shadow: var(--feature-card-shadow);
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+  }
+  
+  h3 {
+    color: var(--secondary);
+    margin-top: var(--spacing-4);
+    margin-bottom: var(--spacing-4);
+  }
+
+  ul {
+    padding-left: var(--spacing-4);
+    margin-bottom: var(--spacing-6);
+  }
+}
+
+// CTA buttons
+.card-cta-button, .cta-button {
+  display: inline-block;
+  padding: var(--button-padding-y) var(--button-padding-x);
+  border-radius: var(--button-border-radius);
+  font-weight: var(--button-font-weight);
+  transition: var(--button-transition);
+  text-decoration: none;
+  
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.card-cta-button {
+  background-color: white;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  margin-top: var(--spacing-4);
+  
+  &:hover {
+    background-color: var(--primary);
+    color: white;
+  }
+}
+
+.cta-button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  margin-right: var(--spacing-4);
+  
+  &:hover {
+    background-color: var(--primary-dark);
+    color: white;
+    box-shadow: var(--shadow-md);
+  }
+}
+
+// Dark mode styles
+[data-theme="dark"] {
+  --background: var(--gray-900);
+  --text: var(--gray-100);
+  
+  body {
+    background-color: var(--background);
+    color: var(--text);
+  }
+  
+  .feature-card {
+    background-color: var(--gray-800);
+    
+    h3 {
+      color: var(--gray-100);
+    }
+  }
+  
+  .card-cta-button {
+    background-color: var(--gray-800);
+    border-color: var(--primary);
+    color: var(--primary);
+    
+    &:hover {
+      background-color: var(--primary);
+      color: var(--gray-100);
+    }
+  }
+}

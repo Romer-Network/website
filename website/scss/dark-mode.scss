@@ -1,0 +1,66 @@
+/*-- scss:rules --*/
+
+[data-theme="dark"] {
+    // Base dark mode styles
+    background-color: var(--dark-background);
+    color: var(--dark-text);
+
+    // Navigation dark mode
+    .navbar {
+        background-color: var(--gray-800);
+        border-bottom: 1px solid var(--dark-border);
+
+        .nav-link {
+            color: var(--gray-400) !important;
+
+            &:hover {
+                color: var(--primary) !important;
+            }
+        }
+    }
+
+    // Feature cards dark mode
+    .feature-card {
+        background: var(--gray-800);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+
+        &:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        h3 {
+            color: var(--gray-100);
+        }
+    }
+
+    // Links dark mode
+    a {
+        color: var(--dark-primary);
+
+        &:hover {
+            color: var(--primary-light); // Using predefined light variant instead of lighten()
+        }
+    }
+
+    // Typography dark mode
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--dark-text);
+    }
+
+    // Buttons dark mode
+    .cta-button {
+        &:hover {
+            background-color: var(--primary-light);
+        }
+    }
+
+    .card-cta-button {
+        background-color: var(--gray-800);
+        border-color: var(--gray-100);
+        
+        &:hover {
+            background-color: transparent;
+            color: var(--primary-light);
+        }
+    }
+}

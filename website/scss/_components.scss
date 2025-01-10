@@ -1,0 +1,73 @@
+/*-- scss:rules --*/
+
+// Feature Cards
+.feature-card {
+    background: white;
+    border-radius: var(--feature-card-border-radius);
+    padding: var(--feature-card-padding);
+    transition: var(--feature-card-transition);
+    height: 100%;
+    box-shadow: var(--feature-card-shadow);
+  
+    &:hover {
+      transform: var(--feature-card-hover-transform);
+      box-shadow: var(--shadow-xl);
+    }
+  
+    h3 {
+      margin-top: var(--spacing-4);
+      color: var(--secondary);
+    }
+  }
+  
+  // Call to Action Buttons
+  .card-cta-button {
+    display: inline-block;
+    background-color: white;
+    color: var(--primary);
+    padding: var(--button-padding-y) var(--button-padding-x);
+    border-radius: var(--button-border-radius);
+    font-weight: var(--button-font-weight);
+    margin-top: var(--spacing-4);
+    border: 2px solid white;
+    transition: var(--button-transition);
+  
+    &:hover {
+      background-color: transparent;
+      color: white;
+      transform: translateY(-2px);
+    }
+  }
+  
+  .cta-button {
+    display: inline-block;
+    background-color: var(--primary);
+    color: white;
+    padding: var(--button-padding-y) var(--button-padding-x);
+    border-radius: var(--button-border-radius);
+    font-weight: var(--button-font-weight);
+    transition: var(--button-transition);
+  
+    &:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+      color: white;
+    }
+  }
+  
+  // Navigation Components
+  .nav-link {
+    color: var(--nav-link-color) !important;
+    font-weight: var(--nav-font-weight);
+    transition: var(--transition-base);
+  
+    &:hover {
+      color: var(--nav-link-hover-color) !important;
+    }
+  
+    &.active {
+      color: var(--primary) !important;
+      border-bottom: 2px solid var(--primary);
+    }
+  }

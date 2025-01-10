@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Rømer Chain</title>
+<title>Rømer Chain Development Blog – Rømer Chain</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,23 +23,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-07c16812f08c4a1591d6ec4fc46327fa.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9d728398ce5fc7eb252415c24cc66ce0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-listing/list.min.js"></script>
+<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-07c16812f08c4a1591d6ec4fc46327fa.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-9d728398ce5fc7eb252415c24cc66ce0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-description','listing-categories','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 
 <script type="text/plain" cookie-consent="tracking">
@@ -100,25 +131,68 @@ cookieconsent.run({
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Source+Code+Pro:wght@400;600&amp;display=swap" rel="stylesheet">
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
-<meta property="og:title" content="Rømer Chain">
-<meta property="og:description" content="A First Principles Approach to Blockchain Design">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="alternate" type="application/rss+xml" title="Rømer Chain" href="index.xml" data-external="1"><meta property="og:title" content="Rømer Chain Development Blog – Rømer Chain">
+<meta property="og:description" content="Technical insights into building a first-principles blockchain">
 <meta property="og:site_name" content="Rømer Chain">
-<meta name="twitter:title" content="Rømer Chain">
-<meta name="twitter:description" content="A First Principles Approach to Blockchain Design">
+<meta name="twitter:title" content="Rømer Chain Development Blog – Rømer Chain">
+<meta name="twitter:description" content="Technical insights into building a first-principles blockchain">
 <meta name="twitter:creator" content="@romerchain">
 <meta name="twitter:site" content="@romerchain">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Rømer Chain</span>
     </a>
   </div>
@@ -129,7 +203,7 @@ cookieconsent.run({
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> <i class="bi bi-house" role="img">
+    <a class="nav-link" href="../../index.html"> <i class="bi bi-house" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
   </li>  
@@ -139,12 +213,12 @@ cookieconsent.run({
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-market-makers">    
         <li>
-    <a class="dropdown-item" href="./content/market-makers/index.html"><i class="bi bi-graph-up" role="img">
+    <a class="dropdown-item" href="../../content/market-makers/index.html"><i class="bi bi-graph-up" role="img">
 </i> 
  <span class="dropdown-text">Overview</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/market-makers/partner-framework.html"><i class="bi bi-diagram-3" role="img">
+    <a class="dropdown-item" href="../../content/market-makers/partner-framework.html"><i class="bi bi-diagram-3" role="img">
 </i> 
  <span class="dropdown-text">Partnership Framework</span></a>
   </li>  
@@ -156,27 +230,27 @@ cookieconsent.run({
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-technical-design">    
         <li>
-    <a class="dropdown-item" href="./content/technical/index.html"><i class="bi bi-diagram-2" role="img">
+    <a class="dropdown-item" href="../../content/technical/index.html"><i class="bi bi-diagram-2" role="img">
 </i> 
  <span class="dropdown-text">Architecture Overview</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/technical/pop.html"><i class="bi bi-cpu" role="img">
+    <a class="dropdown-item" href="../../content/technical/pop.html"><i class="bi bi-cpu" role="img">
 </i> 
  <span class="dropdown-text">Proof of Physics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/technical/network.html"><i class="bi bi-hdd-network" role="img">
+    <a class="dropdown-item" href="../../content/technical/network.html"><i class="bi bi-hdd-network" role="img">
 </i> 
  <span class="dropdown-text">Network Design</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/technical/roadmap.html"><i class="bi bi-calendar-check" role="img">
+    <a class="dropdown-item" href="../../content/technical/roadmap.html"><i class="bi bi-calendar-check" role="img">
 </i> 
  <span class="dropdown-text">Development Roadmap</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/technical/fix.html"><i class="bi bi-wrench" role="img">
+    <a class="dropdown-item" href="../../content/technical/fix.html"><i class="bi bi-wrench" role="img">
 </i> 
  <span class="dropdown-text">FIX Protocol</span></a>
   </li>  
@@ -188,46 +262,46 @@ cookieconsent.run({
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-tokenomics">    
         <li>
-    <a class="dropdown-item" href="./content/economics/index.html"><i class="bi bi-cash-coin" role="img">
+    <a class="dropdown-item" href="../../content/economics/index.html"><i class="bi bi-cash-coin" role="img">
 </i> 
  <span class="dropdown-text">Overview</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/economics/model.html"><i class="bi bi-bank" role="img">
+    <a class="dropdown-item" href="../../content/economics/model.html"><i class="bi bi-bank" role="img">
 </i> 
  <span class="dropdown-text">Economic Model</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/economics/distribution.html"><i class="bi bi-pie-chart" role="img">
+    <a class="dropdown-item" href="../../content/economics/distribution.html"><i class="bi bi-pie-chart" role="img">
 </i> 
  <span class="dropdown-text">Token Distribution</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/economics/market.html"><i class="bi bi-graph-up-arrow" role="img">
+    <a class="dropdown-item" href="../../content/economics/market.html"><i class="bi bi-graph-up-arrow" role="img">
 </i> 
  <span class="dropdown-text">Market Dynamics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/economics/validators.html"><i class="bi bi-shield-check" role="img">
+    <a class="dropdown-item" href="../../content/economics/validators.html"><i class="bi bi-shield-check" role="img">
 </i> 
  <span class="dropdown-text">Validator Economics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/pitch/index.html"><i class="bi bi-presentation-chart" role="img">
+    <a class="dropdown-item" href="../../content/pitch/index.html"><i class="bi bi-presentation-chart" role="img">
 </i> 
  <span class="dropdown-text">Pitch</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./content/blog/index.html"> <i class="bi bi-newspaper" role="img">
+    <a class="nav-link active" href="../../content/blog/index.html" aria-current="page"> <i class="bi bi-newspaper" role="img">
 </i> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="./#"> <i class="bi bi-moon-stars" role="img" aria-label="Toggle dark mode">
+    <a class="nav-link" href="../../#"> <i class="bi bi-moon-stars" role="img" aria-label="Toggle dark mode">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -247,66 +321,137 @@ cookieconsent.run({
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../content/blog/index.html">Recent Posts</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
-<!-- sidebar -->
-<!-- margin-sidebar -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Rømer Chain Development Blog</h1>
+            <p class="subtitle lead">Technical insights into building a first-principles blockchain</p>
+                      </div>
+  </div>
     
+  
+  <div class="quarto-title-meta column-body">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/blog/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Recent Posts</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/blog/categories.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Categories</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/blog/archive.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Archive</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YXJjaGl0ZWN0dXJl">architecture <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bWV2">mev <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dGVjaG5pY2Fs">technical <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
 
 
 
-<section id="bring-traditional-finance-on-chain" class="level1">
-<h1>Bring Traditional Finance On Chain</h1>
-<p>Rømer Chain seamlessly connects with your existing FIX infrastructure, enabling traditional finance to step directly into Web3. No custom adapters, no parallel systems - just your familiar FIX protocol trading environment, enhanced with blockchain’s transformative capabilities.</p>
-<div class="feature-grid">
-<section id="native-fix-integration" class="level3 feature-card">
-<h3 class="anchored" data-anchor-id="native-fix-integration">Native FIX Integration</h3>
-<p>Connect your existing systems directly to the blockchain:</p>
+
+<p>Welcome to the Rømer Chain development blog, where we share deep technical insights into our journey building a novel blockchain architecture from first principles. Here, we explore the engineering decisions, technical challenges, and innovative solutions that shape Rømer Chain’s development.</p>
+<p>Each post aims to illuminate a specific aspect of our design process, fostering transparency and encouraging meaningful technical discourse within our community. Whether you’re interested in distributed systems, cryptographic protocols, or blockchain architecture, you’ll find detailed explorations of how we’re tackling these challenges in novel ways.</p>
+<section id="featured-post" class="level2">
+<h2 class="anchored" data-anchor-id="featured-post">Featured Post</h2>
+<p>Our inaugural post explores why we chose Commonware as our foundational framework over traditional blockchain development platforms. This decision reflects our commitment to building a truly novel consensus mechanism <a href="../../content/technical/pop.html">Proof of Physics</a> that validates nodes based on their physical network characteristics rather than stake or computational work.</p>
+<p>This technical deep dive examines:</p>
 <ul>
-<li>Submit FIX messages as native transaction types</li>
-<li>Maintain your current trading workflows</li>
-<li>Keep your risk management systems</li>
-<li>Leverage existing infrastructure investments</li>
+<li>The unique requirements of Proof of Physics consensus</li>
+<li>Why traditional blockchain frameworks fell short</li>
+<li>How Commonware’s primitives enable our vision</li>
+<li>The engineering tradeoffs of our approach</li>
 </ul>
-<p><a href="./content/technical/fix.html" class="card-cta-button">Explore FIX Integration →</a></p>
+<p>As we continue development, we’ll share more insights into our technical architecture, consensus implementation, and the challenges of building a blockchain that explicitly considers physical reality in its design. Stay tuned for future posts about our progress, technical decisions, and the evolving landscape of blockchain infrastructure.</p>
 </section>
-<section id="professional-market-making" class="level3 feature-card">
-<h3 class="anchored" data-anchor-id="professional-market-making">Professional Market Making</h3>
-<p>Purpose-built for institutional trading:</p>
-<ul>
-<li>Complex order types as native operations</li>
-<li>Protected regional order flow</li>
-<li>Multi-venue execution capabilities</li>
-<li>Institutional-grade performance</li>
-</ul>
-<p><a href="./content/market-makers/index.html" class="card-cta-button">View Market Maker Benefits →</a></p>
-</section>
-<section id="bridge-to-web3" class="level3 feature-card">
-<h3 class="anchored" data-anchor-id="bridge-to-web3">Bridge to Web3</h3>
-<p>Transform your business without disruption:</p>
-<ul>
-<li>Seamless DeFi market making</li>
-<li>Access to on-chain liquidity</li>
-<li>Blockchain security guarantees</li>
-<li>Future-proof your operations</li>
-</ul>
-<p><a href="./content/technical/index.html" class="card-cta-button">Learn About Our Technology →</a></p>
-</section>
+<section id="latest-posts" class="level2">
+<h2 class="anchored" data-anchor-id="latest-posts">Latest Posts</h2>
+<div id="posts">
+
 </div>
-<section id="ready-to-bridge-traditional-finance-and-web3" class="level2">
-<h2 class="anchored" data-anchor-id="ready-to-bridge-traditional-finance-and-web3">Ready to Bridge Traditional Finance and Web3?</h2>
-<p>Join the financial institutions already bringing traditional finance on chain with Rømer. Our technical team understands both FIX and blockchain - we speak your language.</p>
-<p><a href="./content/market-makers/index.html" class="cta-button">Schedule Technical Discussion →</a> <a href="./content/technical/fix.html" class="cta-button">Explore FIX Integration →</a></p>
+
 
 
 </section>
-</section>
 
-</main> <!-- /main -->
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="dGVjaG5pY2FsJTJDYXJjaGl0ZWN0dXJlJTJDbWV2" data-listing-date-sort="1735567200000" data-listing-file-modified-sort="1736414020934" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1195">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../../content/blog/posts/2025-01-03-why-commonware/index.html" class="no-external">Why We Chose Commonware for Rømer Chain</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../../content/blog/posts/2025-01-03-why-commonware/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('dGVjaG5pY2Fs'); return false;">
+technical
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('YXJjaGl0ZWN0dXJl'); return false;">
+architecture
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('bWV2'); return false;">
+mev
+</div>
+</div>
+<div class="listing-description">
+<a href="../../content/blog/posts/2025-01-03-why-commonware/index.html" class="no-external">A personal journey from MEV research to building a physically decentralized blockchain</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../../content/blog/posts/2025-01-03-why-commonware/index.html" class="no-external">
+<div class="listing-date">
+Dec 31, 2024
+</div>
+<div class="listing-reading-time">
+6 min
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -755,5 +900,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

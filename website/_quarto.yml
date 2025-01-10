@@ -56,53 +56,53 @@ website:
       - text: "Market Makers"
         menu: 
           - text: "Overview"
-            href: market-makers/index.qmd
+            href: content/market-makers/index.qmd
             icon: graph-up
           - text: "Partnership Framework"
-            href: market-makers/partner-framework.qmd
+            href: content/market-makers/partner-framework.qmd
             icon: diagram-3
       
       - text: "Technical Design"
         menu:
           - text: "Architecture Overview"
-            href: technical/index.qmd
+            href: content/technical/index.qmd
             icon: diagram-2
           - text: "Proof of Physics"
-            href: technical/pop.qmd
+            href: content/technical/pop.qmd
             icon: cpu
           - text: "Network Design"
-            href: technical/network.qmd
+            href: content/technical/network.qmd
             icon: hdd-network
           - text: "Development Roadmap"
-            href: technical/roadmap.qmd
+            href: content/technical/roadmap.qmd
             icon: calendar-check
           - text: "FIX Protocol"
-            href: technical/fix.qmd
+            href: content/technical/fix.qmd
             icon: wrench
       
       - text: "Tokenomics"
         menu:
           - text: "Overview"
-            href: economics/index.qmd
+            href: content/economics/index.qmd
             icon: cash-coin
           - text: "Economic Model"
-            href: economics/model.qmd
+            href: content/economics/model.qmd
             icon: bank
           - text: "Token Distribution"
-            href: economics/distribution.qmd
+            href: content/economics/distribution.qmd
             icon: pie-chart
           - text: "Market Dynamics"
-            href: economics/market.qmd
+            href: content/economics/market.qmd
             icon: graph-up-arrow
           - text: "Validator Economics"
-            href: economics/validators.qmd
+            href: content/economics/validators.qmd
             icon: shield-check
           - text: "Pitch"
-            href: pitch/index.qmd
+            href: content/pitch/index.qmd
             icon: presentation-chart
       
       - text: "Blog"
-        href: blog/index.qmd
+        href: content/blog/index.qmd
         icon: newspaper
     
     # Right-aligned navigation items
@@ -127,11 +127,11 @@ website:
       collapse-level: 1
       contents:
         - text: "Recent Posts"
-          href: blog/index.qmd
+          href: content/blog/index.qmd
         - text: "Categories"
-          href: blog/categories.qmd
+          href: content/blog/categories.qmd
         - text: "Archive"
-          href: blog/archive.qmd
+          href: content/blog/archive.qmd
   
   # Page Footer Configuration
   page-footer:
@@ -155,7 +155,7 @@ blog:
   
   # Blog listing settings
   listing:
-    contents: "blog/posts"
+    contents: "content/blog/posts"
     sort: "date desc"
     type: default
     categories: true
@@ -182,8 +182,9 @@ blog:
 format:
   html:
     # Theme Configuration
-    theme: cosmo
-    css: styles.scss
+    theme: 
+      - cosmo
+      - scss/main.scss
     scss:
       sass-options:
         - style: compressed

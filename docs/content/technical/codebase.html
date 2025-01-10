@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Rømer Chain</title>
+<title>codebase – Rømer Chain</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-07c16812f08c4a1591d6ec4fc46327fa.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9d728398ce5fc7eb252415c24cc66ce0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-07c16812f08c4a1591d6ec4fc46327fa.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-9d728398ce5fc7eb252415c24cc66ce0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -102,10 +136,8 @@ cookieconsent.run({
 
 
 <meta property="og:title" content="Rømer Chain">
-<meta property="og:description" content="A First Principles Approach to Blockchain Design">
 <meta property="og:site_name" content="Rømer Chain">
 <meta name="twitter:title" content="Rømer Chain">
-<meta name="twitter:description" content="A First Principles Approach to Blockchain Design">
 <meta name="twitter:creator" content="@romerchain">
 <meta name="twitter:site" content="@romerchain">
 <meta name="twitter:card" content="summary_large_image">
@@ -118,7 +150,7 @@ cookieconsent.run({
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Rømer Chain</span>
     </a>
   </div>
@@ -129,7 +161,7 @@ cookieconsent.run({
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> <i class="bi bi-house" role="img">
+    <a class="nav-link" href="../../index.html"> <i class="bi bi-house" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
   </li>  
@@ -139,12 +171,12 @@ cookieconsent.run({
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-market-makers">    
         <li>
-    <a class="dropdown-item" href="./content/market-makers/index.html"><i class="bi bi-graph-up" role="img">
+    <a class="dropdown-item" href="../../content/market-makers/index.html"><i class="bi bi-graph-up" role="img">
 </i> 
  <span class="dropdown-text">Overview</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/market-makers/partner-framework.html"><i class="bi bi-diagram-3" role="img">
+    <a class="dropdown-item" href="../../content/market-makers/partner-framework.html"><i class="bi bi-diagram-3" role="img">
 </i> 
  <span class="dropdown-text">Partnership Framework</span></a>
   </li>  
@@ -156,27 +188,27 @@ cookieconsent.run({
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-technical-design">    
         <li>
-    <a class="dropdown-item" href="./content/technical/index.html"><i class="bi bi-diagram-2" role="img">
+    <a class="dropdown-item" href="../../content/technical/index.html"><i class="bi bi-diagram-2" role="img">
 </i> 
  <span class="dropdown-text">Architecture Overview</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/technical/pop.html"><i class="bi bi-cpu" role="img">
+    <a class="dropdown-item" href="../../content/technical/pop.html"><i class="bi bi-cpu" role="img">
 </i> 
  <span class="dropdown-text">Proof of Physics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/technical/network.html"><i class="bi bi-hdd-network" role="img">
+    <a class="dropdown-item" href="../../content/technical/network.html"><i class="bi bi-hdd-network" role="img">
 </i> 
  <span class="dropdown-text">Network Design</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/technical/roadmap.html"><i class="bi bi-calendar-check" role="img">
+    <a class="dropdown-item" href="../../content/technical/roadmap.html"><i class="bi bi-calendar-check" role="img">
 </i> 
  <span class="dropdown-text">Development Roadmap</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/technical/fix.html"><i class="bi bi-wrench" role="img">
+    <a class="dropdown-item" href="../../content/technical/fix.html"><i class="bi bi-wrench" role="img">
 </i> 
  <span class="dropdown-text">FIX Protocol</span></a>
   </li>  
@@ -188,46 +220,46 @@ cookieconsent.run({
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-tokenomics">    
         <li>
-    <a class="dropdown-item" href="./content/economics/index.html"><i class="bi bi-cash-coin" role="img">
+    <a class="dropdown-item" href="../../content/economics/index.html"><i class="bi bi-cash-coin" role="img">
 </i> 
  <span class="dropdown-text">Overview</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/economics/model.html"><i class="bi bi-bank" role="img">
+    <a class="dropdown-item" href="../../content/economics/model.html"><i class="bi bi-bank" role="img">
 </i> 
  <span class="dropdown-text">Economic Model</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/economics/distribution.html"><i class="bi bi-pie-chart" role="img">
+    <a class="dropdown-item" href="../../content/economics/distribution.html"><i class="bi bi-pie-chart" role="img">
 </i> 
  <span class="dropdown-text">Token Distribution</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/economics/market.html"><i class="bi bi-graph-up-arrow" role="img">
+    <a class="dropdown-item" href="../../content/economics/market.html"><i class="bi bi-graph-up-arrow" role="img">
 </i> 
  <span class="dropdown-text">Market Dynamics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/economics/validators.html"><i class="bi bi-shield-check" role="img">
+    <a class="dropdown-item" href="../../content/economics/validators.html"><i class="bi bi-shield-check" role="img">
 </i> 
  <span class="dropdown-text">Validator Economics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/pitch/index.html"><i class="bi bi-presentation-chart" role="img">
+    <a class="dropdown-item" href="../../content/pitch/index.html"><i class="bi bi-presentation-chart" role="img">
 </i> 
  <span class="dropdown-text">Pitch</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./content/blog/index.html"> <i class="bi bi-newspaper" role="img">
+    <a class="nav-link" href="../../content/blog/index.html"> <i class="bi bi-newspaper" role="img">
 </i> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="./#"> <i class="bi bi-moon-stars" role="img" aria-label="Toggle dark mode">
+    <a class="nav-link" href="../../#"> <i class="bi bi-moon-stars" role="img" aria-label="Toggle dark mode">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -259,48 +291,194 @@ cookieconsent.run({
 
 
 
-<section id="bring-traditional-finance-on-chain" class="level1">
-<h1>Bring Traditional Finance On Chain</h1>
-<p>Rømer Chain seamlessly connects with your existing FIX infrastructure, enabling traditional finance to step directly into Web3. No custom adapters, no parallel systems - just your familiar FIX protocol trading environment, enhanced with blockchain’s transformative capabilities.</p>
-<div class="feature-grid">
-<section id="native-fix-integration" class="level3 feature-card">
-<h3 class="anchored" data-anchor-id="native-fix-integration">Native FIX Integration</h3>
-<p>Connect your existing systems directly to the blockchain:</p>
-<ul>
-<li>Submit FIX messages as native transaction types</li>
-<li>Maintain your current trading workflows</li>
-<li>Keep your risk management systems</li>
-<li>Leverage existing infrastructure investments</li>
-</ul>
-<p><a href="./content/technical/fix.html" class="card-cta-button">Explore FIX Integration →</a></p>
+<section id="rømer-chain-codebase-architecture" class="level1">
+<h1>Rømer Chain Codebase Architecture</h1>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>The Rømer Chain codebase is organized as a monorepo, combining all core components into a single, cohesive repository. This structure enables tight integration between components while maintaining clear boundaries and responsibilities. Our architecture reflects our focus on market maker operations, with each component designed to support high-performance trading infrastructure.</p>
 </section>
-<section id="professional-market-making" class="level3 feature-card">
-<h3 class="anchored" data-anchor-id="professional-market-making">Professional Market Making</h3>
-<p>Purpose-built for institutional trading:</p>
+<section id="repository-structure" class="level2">
+<h2 class="anchored" data-anchor-id="repository-structure">Repository Structure</h2>
+<p>Our monorepo is organized into several primary components, each serving a distinct role in the overall system:</p>
+<section id="client-component" class="level3">
+<h3 class="anchored" data-anchor-id="client-component">Client Component</h3>
+<p>The client component serves as the primary interface for market makers and other network participants. This module handles:</p>
 <ul>
-<li>Complex order types as native operations</li>
-<li>Protected regional order flow</li>
-<li>Multi-venue execution capabilities</li>
-<li>Institutional-grade performance</li>
+<li>Market maker registration and onboarding</li>
+<li>Trading system integration</li>
+<li>FIX protocol client implementation</li>
+<li>Command-line interface tools</li>
+<li>Configuration management</li>
+<li>Local state persistence</li>
 </ul>
-<p><a href="./content/market-makers/index.html" class="card-cta-button">View Market Maker Benefits →</a></p>
+<p>The client’s architecture prioritizes reliability and ease of integration, recognizing that it serves as the entry point for most users into the Rømer ecosystem.</p>
 </section>
-<section id="bridge-to-web3" class="level3 feature-card">
-<h3 class="anchored" data-anchor-id="bridge-to-web3">Bridge to Web3</h3>
-<p>Transform your business without disruption:</p>
+<section id="common-component" class="level3">
+<h3 class="anchored" data-anchor-id="common-component">Common Component</h3>
+<p>The common component provides shared functionality and types used throughout the system. This foundational module contains:</p>
 <ul>
-<li>Seamless DeFi market making</li>
-<li>Access to on-chain liquidity</li>
-<li>Blockchain security guarantees</li>
-<li>Future-proof your operations</li>
+<li>Core data structures</li>
+<li>Shared utilities</li>
+<li>Type definitions</li>
+<li>Protocol specifications</li>
+<li>Common interfaces</li>
+<li>Error handling primitives</li>
 </ul>
-<p><a href="./content/technical/index.html" class="card-cta-button">Learn About Our Technology →</a></p>
+<p>By centralizing these elements, we ensure consistency across the codebase and reduce duplication of effort. The common component is designed to be lightweight yet comprehensive, providing only what is genuinely needed by multiple other components.</p>
 </section>
-</div>
-<section id="ready-to-bridge-traditional-finance-and-web3" class="level2">
-<h2 class="anchored" data-anchor-id="ready-to-bridge-traditional-finance-and-web3">Ready to Bridge Traditional Finance and Web3?</h2>
-<p>Join the financial institutions already bringing traditional finance on chain with Rømer. Our technical team understands both FIX and blockchain - we speak your language.</p>
-<p><a href="./content/market-makers/index.html" class="cta-button">Schedule Technical Discussion →</a> <a href="./content/technical/fix.html" class="cta-button">Explore FIX Integration →</a></p>
+<section id="sequencer-component" class="level3">
+<h3 class="anchored" data-anchor-id="sequencer-component">Sequencer Component</h3>
+<p>The sequencer component implements our transaction ordering and processing logic. This critical module manages:</p>
+<ul>
+<li>Transaction sequence determination</li>
+<li>FIX message processing</li>
+<li>Order book management</li>
+<li>Cross-region synchronization</li>
+<li>Performance optimization</li>
+<li>Message routing</li>
+</ul>
+<p>The sequencer’s design emphasizes predictable performance and reliable message ordering, crucial for maintaining fair and efficient markets.</p>
+</section>
+<section id="validator-component" class="level3">
+<h3 class="anchored" data-anchor-id="validator-component">Validator Component</h3>
+<p>The validator component implements our Proof of Physics consensus mechanism and network validation logic. Key responsibilities include:</p>
+<ul>
+<li>Block validation</li>
+<li>Geographic attestation</li>
+<li>Network performance monitoring</li>
+<li>Consensus participation</li>
+<li>State verification</li>
+<li>Regional coordination</li>
+</ul>
+<p>This component’s architecture reflects our unique approach to physical decentralization and regional market making.</p>
+</section>
+</section>
+<section id="development-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="development-workflow">Development Workflow</h2>
+<p>Our development process emphasizes maintainability and collaboration:</p>
+<section id="local-development" class="level3">
+<h3 class="anchored" data-anchor-id="local-development">Local Development</h3>
+<p>When working with the monorepo locally, developers should:</p>
+<ol type="1">
+<li><p>Clone the repository and install dependencies:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/Romer-Network/romer.git</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> romer</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> build</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Set up the development environment:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install development tools</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> install cargo-watch cargo-expand</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up git hooks</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">./scripts/setup-hooks.sh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Run the test suite:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> test <span class="at">--all-features</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ol>
+</section>
+<section id="component-integration" class="level3">
+<h3 class="anchored" data-anchor-id="component-integration">Component Integration</h3>
+<p>Components interact through well-defined interfaces specified in the common module. This approach:</p>
+<ul>
+<li>Maintains clear boundaries between components</li>
+<li>Enables independent testing and verification</li>
+<li>Facilitates parallel development</li>
+<li>Supports future optimizations</li>
+</ul>
+</section>
+<section id="testing-strategy" class="level3">
+<h3 class="anchored" data-anchor-id="testing-strategy">Testing Strategy</h3>
+<p>Our testing approach encompasses multiple levels:</p>
+<ol type="1">
+<li>Unit Tests: Located within each component directory</li>
+<li>Integration Tests: In dedicated test directories</li>
+<li>End-to-End Tests: In the root test directory</li>
+<li>Performance Tests: Specialized benchmarking suites</li>
+</ol>
+</section>
+</section>
+<section id="architectural-decisions" class="level2">
+<h2 class="anchored" data-anchor-id="architectural-decisions">Architectural Decisions</h2>
+<p>Several key decisions shape our monorepo structure:</p>
+<section id="why-a-monorepo" class="level3">
+<h3 class="anchored" data-anchor-id="why-a-monorepo">Why a Monorepo?</h3>
+<p>We chose a monorepo approach for several reasons:</p>
+<ol type="1">
+<li>Atomic Changes: Updates affecting multiple components can be made in a single commit</li>
+<li>Dependency Management: Simplified versioning and dependency tracking</li>
+<li>Code Sharing: Easier sharing of utilities and types</li>
+<li>Testing: Comprehensive integration testing across components</li>
+<li>Development Experience: Simplified local development setup</li>
+</ol>
+</section>
+<section id="component-boundaries" class="level3">
+<h3 class="anchored" data-anchor-id="component-boundaries">Component Boundaries</h3>
+<p>Component boundaries are designed to:</p>
+<ol type="1">
+<li>Minimize cross-component dependencies</li>
+<li>Enable independent scaling</li>
+<li>Support clear ownership</li>
+<li>Facilitate testing</li>
+<li>Enable future optimizations</li>
+</ol>
+</section>
+</section>
+<section id="future-development" class="level2">
+<h2 class="anchored" data-anchor-id="future-development">Future Development</h2>
+<p>The codebase architecture supports several planned enhancements:</p>
+<section id="short-term-goals" class="level3">
+<h3 class="anchored" data-anchor-id="short-term-goals">Short-term Goals</h3>
+<ol type="1">
+<li>Enhanced documentation generation</li>
+<li>Automated performance benchmarking</li>
+<li>Improved development tooling</li>
+<li>Additional testing frameworks</li>
+<li>Integration examples</li>
+</ol>
+</section>
+<section id="long-term-vision" class="level3">
+<h3 class="anchored" data-anchor-id="long-term-vision">Long-term Vision</h3>
+<ol type="1">
+<li>Component-specific optimization</li>
+<li>Enhanced modularity</li>
+<li>Plugin architecture</li>
+<li>Extended testing capabilities</li>
+<li>Advanced monitoring tools</li>
+</ol>
+</section>
+</section>
+<section id="contributing" class="level2">
+<h2 class="anchored" data-anchor-id="contributing">Contributing</h2>
+<p>We welcome contributions to any component of the system. Contributors should:</p>
+<ol type="1">
+<li>Review our contributing guidelines</li>
+<li>Join our developer community</li>
+<li>Pick an appropriate starter issue</li>
+<li>Follow our code style guidelines</li>
+<li>Submit well-documented pull requests</li>
+</ol>
+</section>
+<section id="documentation" class="level2">
+<h2 class="anchored" data-anchor-id="documentation">Documentation</h2>
+<p>Our documentation strategy includes:</p>
+<ol type="1">
+<li>Inline code documentation</li>
+<li>Component-level README files</li>
+<li>API documentation</li>
+<li>Integration guides</li>
+<li>Architecture documentation</li>
+</ol>
+<p>Each component maintains its own detailed documentation, while system-wide documentation resides in the root docs directory.</p>
+</section>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
+<p>New developers should begin by:</p>
+<ol type="1">
+<li>Reading this architecture overview</li>
+<li>Setting up their local development environment</li>
+<li>Running the test suite</li>
+<li>Building a simple integration</li>
+<li>Joining our developer community</li>
+</ol>
+<p>For detailed setup instructions, refer to our <a href="./development-guide.qmd">development guide</a>.</p>
 
 
 </section>
@@ -755,5 +933,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

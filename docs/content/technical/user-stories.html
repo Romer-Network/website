@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Rømer Chain</title>
+<title>user-stories – Rømer Chain</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-07c16812f08c4a1591d6ec4fc46327fa.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9d728398ce5fc7eb252415c24cc66ce0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-07c16812f08c4a1591d6ec4fc46327fa.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-9d728398ce5fc7eb252415c24cc66ce0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -102,10 +136,8 @@ cookieconsent.run({
 
 
 <meta property="og:title" content="Rømer Chain">
-<meta property="og:description" content="A First Principles Approach to Blockchain Design">
 <meta property="og:site_name" content="Rømer Chain">
 <meta name="twitter:title" content="Rømer Chain">
-<meta name="twitter:description" content="A First Principles Approach to Blockchain Design">
 <meta name="twitter:creator" content="@romerchain">
 <meta name="twitter:site" content="@romerchain">
 <meta name="twitter:card" content="summary_large_image">
@@ -118,7 +150,7 @@ cookieconsent.run({
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Rømer Chain</span>
     </a>
   </div>
@@ -129,7 +161,7 @@ cookieconsent.run({
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> <i class="bi bi-house" role="img">
+    <a class="nav-link" href="../../index.html"> <i class="bi bi-house" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
   </li>  
@@ -139,12 +171,12 @@ cookieconsent.run({
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-market-makers">    
         <li>
-    <a class="dropdown-item" href="./content/market-makers/index.html"><i class="bi bi-graph-up" role="img">
+    <a class="dropdown-item" href="../../content/market-makers/index.html"><i class="bi bi-graph-up" role="img">
 </i> 
  <span class="dropdown-text">Overview</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/market-makers/partner-framework.html"><i class="bi bi-diagram-3" role="img">
+    <a class="dropdown-item" href="../../content/market-makers/partner-framework.html"><i class="bi bi-diagram-3" role="img">
 </i> 
  <span class="dropdown-text">Partnership Framework</span></a>
   </li>  
@@ -156,27 +188,27 @@ cookieconsent.run({
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-technical-design">    
         <li>
-    <a class="dropdown-item" href="./content/technical/index.html"><i class="bi bi-diagram-2" role="img">
+    <a class="dropdown-item" href="../../content/technical/index.html"><i class="bi bi-diagram-2" role="img">
 </i> 
  <span class="dropdown-text">Architecture Overview</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/technical/pop.html"><i class="bi bi-cpu" role="img">
+    <a class="dropdown-item" href="../../content/technical/pop.html"><i class="bi bi-cpu" role="img">
 </i> 
  <span class="dropdown-text">Proof of Physics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/technical/network.html"><i class="bi bi-hdd-network" role="img">
+    <a class="dropdown-item" href="../../content/technical/network.html"><i class="bi bi-hdd-network" role="img">
 </i> 
  <span class="dropdown-text">Network Design</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/technical/roadmap.html"><i class="bi bi-calendar-check" role="img">
+    <a class="dropdown-item" href="../../content/technical/roadmap.html"><i class="bi bi-calendar-check" role="img">
 </i> 
  <span class="dropdown-text">Development Roadmap</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/technical/fix.html"><i class="bi bi-wrench" role="img">
+    <a class="dropdown-item" href="../../content/technical/fix.html"><i class="bi bi-wrench" role="img">
 </i> 
  <span class="dropdown-text">FIX Protocol</span></a>
   </li>  
@@ -188,46 +220,46 @@ cookieconsent.run({
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-tokenomics">    
         <li>
-    <a class="dropdown-item" href="./content/economics/index.html"><i class="bi bi-cash-coin" role="img">
+    <a class="dropdown-item" href="../../content/economics/index.html"><i class="bi bi-cash-coin" role="img">
 </i> 
  <span class="dropdown-text">Overview</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/economics/model.html"><i class="bi bi-bank" role="img">
+    <a class="dropdown-item" href="../../content/economics/model.html"><i class="bi bi-bank" role="img">
 </i> 
  <span class="dropdown-text">Economic Model</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/economics/distribution.html"><i class="bi bi-pie-chart" role="img">
+    <a class="dropdown-item" href="../../content/economics/distribution.html"><i class="bi bi-pie-chart" role="img">
 </i> 
  <span class="dropdown-text">Token Distribution</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/economics/market.html"><i class="bi bi-graph-up-arrow" role="img">
+    <a class="dropdown-item" href="../../content/economics/market.html"><i class="bi bi-graph-up-arrow" role="img">
 </i> 
  <span class="dropdown-text">Market Dynamics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/economics/validators.html"><i class="bi bi-shield-check" role="img">
+    <a class="dropdown-item" href="../../content/economics/validators.html"><i class="bi bi-shield-check" role="img">
 </i> 
  <span class="dropdown-text">Validator Economics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/pitch/index.html"><i class="bi bi-presentation-chart" role="img">
+    <a class="dropdown-item" href="../../content/pitch/index.html"><i class="bi bi-presentation-chart" role="img">
 </i> 
  <span class="dropdown-text">Pitch</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./content/blog/index.html"> <i class="bi bi-newspaper" role="img">
+    <a class="nav-link" href="../../content/blog/index.html"> <i class="bi bi-newspaper" role="img">
 </i> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="./#"> <i class="bi bi-moon-stars" role="img" aria-label="Toggle dark mode">
+    <a class="nav-link" href="../../#"> <i class="bi bi-moon-stars" role="img" aria-label="Toggle dark mode">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -259,50 +291,218 @@ cookieconsent.run({
 
 
 
-<section id="bring-traditional-finance-on-chain" class="level1">
-<h1>Bring Traditional Finance On Chain</h1>
-<p>Rømer Chain seamlessly connects with your existing FIX infrastructure, enabling traditional finance to step directly into Web3. No custom adapters, no parallel systems - just your familiar FIX protocol trading environment, enhanced with blockchain’s transformative capabilities.</p>
-<div class="feature-grid">
-<section id="native-fix-integration" class="level3 feature-card">
-<h3 class="anchored" data-anchor-id="native-fix-integration">Native FIX Integration</h3>
-<p>Connect your existing systems directly to the blockchain:</p>
-<ul>
-<li>Submit FIX messages as native transaction types</li>
-<li>Maintain your current trading workflows</li>
-<li>Keep your risk management systems</li>
-<li>Leverage existing infrastructure investments</li>
-</ul>
-<p><a href="./content/technical/fix.html" class="card-cta-button">Explore FIX Integration →</a></p>
+<section id="romer-chain-development-user-stories" class="level1">
+<h1>Romer Chain Development User Stories</h1>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>These user stories outline the initial development path for Romer Chain’s Devnet1. We begin with fundamental network storage setup, then progress through client development for both market makers and stablecoin issuers. The stories are designed to be implemented sequentially, with each building on the capabilities established by previous stories.</p>
 </section>
-<section id="professional-market-making" class="level3 feature-card">
-<h3 class="anchored" data-anchor-id="professional-market-making">Professional Market Making</h3>
-<p>Purpose-built for institutional trading:</p>
-<ul>
-<li>Complex order types as native operations</li>
-<li>Protected regional order flow</li>
-<li>Multi-venue execution capabilities</li>
-<li>Institutional-grade performance</li>
-</ul>
-<p><a href="./content/market-makers/index.html" class="card-cta-button">View Market Maker Benefits →</a></p>
+<section id="story-1-network-storage-initialization" class="level2">
+<h2 class="anchored" data-anchor-id="story-1-network-storage-initialization">Story 1: Network Storage Initialization</h2>
+<p>As a Romer Chain developer<br>
+I want to establish core network storage structures<br>
+So that we can track organizations and tokens in our network</p>
+<section id="background" class="level3">
+<h3 class="anchored" data-anchor-id="background">Background</h3>
+<p>Before we can handle account registration, our network needs fundamental data structures for tracking organizations and tokens. We implement these using Commonware’s storage capabilities, ensuring consistent and efficient data management across the network.</p>
 </section>
-<section id="bridge-to-web3" class="level3 feature-card">
-<h3 class="anchored" data-anchor-id="bridge-to-web3">Bridge to Web3</h3>
-<p>Transform your business without disruption:</p>
-<ul>
-<li>Seamless DeFi market making</li>
-<li>Access to on-chain liquidity</li>
-<li>Blockchain security guarantees</li>
-<li>Future-proof your operations</li>
-</ul>
-<p><a href="./content/technical/index.html" class="card-cta-button">Learn About Our Technology →</a></p>
+<section id="technical-implementation" class="level3">
+<h3 class="anchored" data-anchor-id="technical-implementation">Technical Implementation</h3>
+<p>The story requires implementing two core structures in our Commonware storage layer:</p>
+<p>Organization Storage:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode rust code-with-copy"><code class="sourceCode rust"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">pub</span> <span class="kw">struct</span> Organization <span class="op">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Unique identifier for the organization</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> id<span class="op">:</span> <span class="dt">String</span><span class="op">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Organization name</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> name<span class="op">:</span> <span class="dt">String</span><span class="op">,</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Organization type (Market Maker, Stablecoin Issuer)</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> org_type<span class="op">:</span> OrganizationType<span class="op">,</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">// The organization's FIX sender comp ID</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> sender_comp_id<span class="op">:</span> <span class="dt">String</span><span class="op">,</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">// BLS public key for the organization</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> public_key<span class="op">:</span> BlsPublicKey<span class="op">,</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Timestamp of registration</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> registered_at<span class="op">:</span> <span class="dt">u64</span><span class="op">,</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Token Storage:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode rust code-with-copy"><code class="sourceCode rust"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">pub</span> <span class="kw">struct</span> Token <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Token identifier</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> id<span class="op">:</span> <span class="dt">String</span><span class="op">,</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Token name</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> name<span class="op">:</span> <span class="dt">String</span><span class="op">,</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Token symbol</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> symbol<span class="op">:</span> <span class="dt">String</span><span class="op">,</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Number of decimal places</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> decimals<span class="op">:</span> <span class="dt">u8</span><span class="op">,</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Issuing organization's ID</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> issuer_id<span class="op">:</span> <span class="dt">String</span><span class="op">,</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Total supply</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> total_supply<span class="op">:</span> <span class="dt">u64</span><span class="op">,</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Creation timestamp</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> created_at<span class="op">:</span> <span class="dt">u64</span><span class="op">,</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-</div>
-<section id="ready-to-bridge-traditional-finance-and-web3" class="level2">
-<h2 class="anchored" data-anchor-id="ready-to-bridge-traditional-finance-and-web3">Ready to Bridge Traditional Finance and Web3?</h2>
-<p>Join the financial institutions already bringing traditional finance on chain with Rømer. Our technical team understands both FIX and blockchain - we speak your language.</p>
-<p><a href="./content/market-makers/index.html" class="cta-button">Schedule Technical Discussion →</a> <a href="./content/technical/fix.html" class="cta-button">Explore FIX Integration →</a></p>
+<section id="success-criteria" class="level3">
+<h3 class="anchored" data-anchor-id="success-criteria">Success Criteria</h3>
+<ul>
+<li>Commonware storage implementation for organizations complete</li>
+<li>Commonware storage implementation for tokens complete</li>
+<li>Uniqueness constraints enforced for organization IDs and sender comp IDs</li>
+<li>Basic CRUD operations tested and verified</li>
+<li>Storage queries perform within expected latency bounds</li>
+</ul>
+</section>
+</section>
+<section id="story-2-market-maker-registration-client" class="level2">
+<h2 class="anchored" data-anchor-id="story-2-market-maker-registration-client">Story 2: Market Maker Registration Client</h2>
+<p>As a market maker<br>
+I want to register my organization through a terminal interface<br>
+So that I can prepare for trading operations</p>
+<section id="background-1" class="level3">
+<h3 class="anchored" data-anchor-id="background-1">Background</h3>
+<p>Market makers need a straightforward way to register their organizations and establish their network identity. We’ll create this using ratatui for a clean terminal user interface that guides them through the registration process.</p>
+</section>
+<section id="technical-implementation-1" class="level3">
+<h3 class="anchored" data-anchor-id="technical-implementation-1">Technical Implementation</h3>
+<p>The story involves creating a ratatui-based client interface in our client crate:</p>
+<p>Registration Interface Requirements: - Organization name input - Organization type selection - SenderCompID input (with uniqueness verification) - BLS key pair generation - Registration confirmation display</p>
+<p>Layout Components:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode rust code-with-copy"><code class="sourceCode rust"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">pub</span> <span class="kw">struct</span> RegistrationForm <span class="op">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Form fields</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> name_input<span class="op">:</span> Input<span class="op">,</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> sender_comp_id_input<span class="op">:</span> Input<span class="op">,</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> org_type_select<span class="op">:</span> Select<span class="op">,</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Form state</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> current_field<span class="op">:</span> <span class="dt">usize</span><span class="op">,</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> error_message<span class="op">:</span> <span class="dt">Option</span><span class="op">&lt;</span><span class="dt">String</span><span class="op">&gt;,</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> success_message<span class="op">:</span> <span class="dt">Option</span><span class="op">&lt;</span><span class="dt">String</span><span class="op">&gt;,</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="success-criteria-1" class="level3">
+<h3 class="anchored" data-anchor-id="success-criteria-1">Success Criteria</h3>
+<ul>
+<li>Clean, intuitive terminal interface implemented</li>
+<li>Real-time SenderCompID uniqueness verification</li>
+<li>Secure BLS key generation and storage</li>
+<li>Clear error handling and user feedback</li>
+<li>Successful organization registration in network storage</li>
+</ul>
+</section>
+</section>
+<section id="story-3-stablecoin-issuer-registration-client" class="level2">
+<h2 class="anchored" data-anchor-id="story-3-stablecoin-issuer-registration-client">Story 3: Stablecoin Issuer Registration Client</h2>
+<p>As a stablecoin issuer<br>
+I want to register my organization and define my token<br>
+So that I can prepare to issue stablecoins on the network</p>
+<section id="background-2" class="level3">
+<h3 class="anchored" data-anchor-id="background-2">Background</h3>
+<p>Stablecoin issuers require similar registration capabilities to market makers, but with additional functionality for defining their tokens. The registration process must ensure both organization and token details are properly recorded.</p>
+</section>
+<section id="technical-implementation-2" class="level3">
+<h3 class="anchored" data-anchor-id="technical-implementation-2">Technical Implementation</h3>
+<p>Extends the registration interface to include token definition:</p>
+<p>Token Definition Interface:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode rust code-with-copy"><code class="sourceCode rust"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">pub</span> <span class="kw">struct</span> TokenDefinitionForm <span class="op">{</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Token details</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> name_input<span class="op">:</span> Input<span class="op">,</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> symbol_input<span class="op">:</span> Input<span class="op">,</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> decimals_input<span class="op">:</span> Input<span class="op">,</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Form state</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> current_field<span class="op">:</span> <span class="dt">usize</span><span class="op">,</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> validation_errors<span class="op">:</span> <span class="dt">Vec</span><span class="op">&lt;</span><span class="dt">String</span><span class="op">&gt;,</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Registration Flow: 1. Organization registration (similar to market maker) 2. Token definition 3. Registration confirmation</p>
+</section>
+<section id="success-criteria-2" class="level3">
+<h3 class="anchored" data-anchor-id="success-criteria-2">Success Criteria</h3>
+<ul>
+<li>Organization registration functions identical to market maker</li>
+<li>Token definition interface implemented</li>
+<li>Token parameters validated</li>
+<li>Token successfully registered in network storage</li>
+<li>Clear feedback throughout process</li>
+</ul>
+</section>
+</section>
+<section id="implementation-notes" class="level2">
+<h2 class="anchored" data-anchor-id="implementation-notes">Implementation Notes</h2>
+<section id="common-components-needed" class="level3">
+<h3 class="anchored" data-anchor-id="common-components-needed">Common Components Needed</h3>
+<ol type="1">
+<li>Key Management:
+<ul>
+<li>BLS key generation using Commonware cryptography</li>
+<li>Secure key storage</li>
+<li>Key backup functionality</li>
+</ul></li>
+<li>Network Storage:
+<ul>
+<li>Organization registry</li>
+<li>Token registry</li>
+<li>Uniqueness enforcement</li>
+<li>Query optimization</li>
+</ul></li>
+<li>User Interface:
+<ul>
+<li>Form management</li>
+<li>Input validation</li>
+<li>Error handling</li>
+<li>Status updates</li>
+</ul></li>
+</ol>
+</section>
+<section id="testing-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="testing-requirements">Testing Requirements</h3>
+<ol type="1">
+<li>Storage Tests:
+<ul>
+<li>Uniqueness constraints</li>
+<li>CRUD operations</li>
+<li>Query performance</li>
+<li>Error conditions</li>
+</ul></li>
+<li>Interface Tests:
+<ul>
+<li>Input validation</li>
+<li>Error handling</li>
+<li>Success flows</li>
+<li>Edge cases</li>
+</ul></li>
+<li>Integration Tests:
+<ul>
+<li>End-to-end registration</li>
+<li>Key generation</li>
+<li>Storage persistence</li>
+<li>Duplicate detection</li>
+</ul></li>
+</ol>
+</section>
+<section id="security-considerations" class="level3">
+<h3 class="anchored" data-anchor-id="security-considerations">Security Considerations</h3>
+<ol type="1">
+<li>Key Generation:
+<ul>
+<li>Secure randomness</li>
+<li>Key protection</li>
+<li>Backup procedures</li>
+</ul></li>
+<li>Data Validation:
+<ul>
+<li>Input sanitization</li>
+<li>Uniqueness verification</li>
+<li>Format validation</li>
+</ul></li>
+<li>Storage Security:
+<ul>
+<li>Access controls</li>
+<li>Data integrity</li>
+<li>Audit logging</li>
+</ul></li>
+</ol>
+<p>These stories establish the foundation for Romer Chain’s account management and token issuance capabilities. They focus on creating a robust, secure, and user-friendly registration process for both market makers and stablecoin issuers.</p>
 
 
+</section>
 </section>
 </section>
 
@@ -755,5 +955,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

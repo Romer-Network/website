@@ -12,7 +12,7 @@ Connect your existing systems directly to the blockchain:
 - Keep your risk management systems
 - Leverage existing infrastructure investments
 
-[Explore FIX Integration →](./technical/fix.qmd){.card-cta-button}
+[Explore FIX Integration →](./content/technical/fix.qmd){.card-cta-button}
 </div>
 
 <div class="feature-card feature-card">
@@ -24,7 +24,7 @@ Purpose-built for institutional trading:
 - Multi-venue execution capabilities
 - Institutional-grade performance
 
-[View Market Maker Benefits →](./market-makers/index.qmd){.card-cta-button}
+[View Market Maker Benefits →](./content/market-makers/index.qmd){.card-cta-button}
 </div>
 
 <div class="feature-card feature-card">
@@ -36,7 +36,7 @@ Transform your business without disruption:
 - Blockchain security guarantees
 - Future-proof your operations
 
-[Learn About Our Technology →](./technical/index.qmd){.card-cta-button}
+[Learn About Our Technology →](./content/technical/index.qmd){.card-cta-button}
 </div>
 </div>
 
@@ -44,5 +44,5 @@ Transform your business without disruption:
 
 Join the financial institutions already bringing traditional finance on chain with Rømer. Our technical team understands both FIX and blockchain - we speak your language.
 
-[Schedule Technical Discussion →](./market-makers/index.qmd){.cta-button}
-[Explore FIX Integration →](./technical/fix.qmd){.cta-button}
+[Schedule Technical Discussion →](./content/market-makers/index.qmd){.cta-button}
+[Explore FIX Integration →](./content/technical/fix.qmd){.cta-button}

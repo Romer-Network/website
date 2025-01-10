@@ -1,0 +1,227 @@
+// ==============================================================================
+// Main Stylesheet
+// Brings together all styles for the Rømer Chain website
+// ==============================================================================
+
+// Import variables first to make them available everywhere
+@import 'variables';
+
+// Reset and base styles
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: $font-sans;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $gray-800;
+  background-color: $gray-100;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  margin-top: $spacing-8;
+  margin-bottom: $spacing-4;
+  font-weight: 600;
+  line-height: 1.2;
+  color: $secondary;
+}
+
+h1 { font-size: $font-size-4xl; }
+h2 { font-size: $font-size-3xl; }
+h3 { font-size: $font-size-2xl; }
+h4 { font-size: $font-size-xl; }
+h5 { font-size: $font-size-lg; }
+h6 { font-size: $font-size-base; }
+
+p {
+  margin-bottom: $spacing-6;
+}
+
+// Links
+a {
+  color: $primary;
+  text-decoration: none;
+  transition: $transition-base;
+
+  &:hover {
+    color: $primary-dark;
+    text-decoration: none;
+  }
+}
+
+// Navigation
+.navbar {
+  background-color: white;
+  border-bottom: 1px solid $nav-border-color;
+  box-shadow: $shadow-sm;
+  height: $nav-height;
+  padding: 0 $nav-padding;
+
+  .nav-link {
+    color: $nav-link-color !important;
+    font-weight: $nav-font-weight;
+    padding: $spacing-4;
+    transition: $transition-base;
+
+    &:hover {
+      color: $nav-link-hover-color !important;
+    }
+
+    &.active {
+      color: $primary !important;
+      border-bottom: 2px solid $primary;
+    }
+  }
+
+  .navbar-brand {
+    font-weight: 600;
+    color: $secondary !important;
+  }
+}
+
+// Feature Cards
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $grid-gutter;
+  margin: $spacing-8 0;
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.feature-card {
+  background: white;
+  border-radius: $feature-card-border-radius;
+  padding: $feature-card-padding;
+  transition: $feature-card-transition;
+  height: 100%;
+  box-shadow: $feature-card-shadow;
+
+  &:hover {
+    transform: $feature-card-hover-transform;
+    box-shadow: $shadow-xl;
+  }
+
+  h3 {
+    margin-top: $spacing-4;
+    color: $secondary;
+  }
+}
+
+// Call to Action Buttons
+.card-cta-button {
+  display: inline-block;
+  background-color: white;
+  color: $primary;
+  padding: $button-padding-y $button-padding-x;
+  border-radius: $button-border-radius;
+  font-weight: $button-font-weight;
+  margin-top: $spacing-4;
+  border: 2px solid white;
+  transition: $button-transition;
+
+  &:hover {
+    background-color: transparent;
+    color: white;
+    transform: translateY(-2px);
+  }
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: $primary;
+  color: white;
+  padding: $button-padding-y $button-padding-x;
+  border-radius: $button-border-radius;
+  font-weight: $button-font-weight;
+  transition: $button-transition;
+
+  &:hover {
+    background-color: $primary-dark;
+    transform: translateY(-1px);
+    box-shadow: $shadow-md;
+    color: white;
+  }
+}
+
+// Dark mode styles
+[data-theme="dark"] {
+  background-color: $dark-background;
+  color: $dark-text;
+
+  .navbar {
+    background-color: $gray-800;
+    border-bottom: 1px solid $dark-border;
+  }
+
+  .feature-card {
+    background: $gray-800;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    h3 {
+      color: $gray-100;
+    }
+  }
+
+  a {
+    color: $dark-primary;
+
+    &:hover {
+      color: lighten($dark-primary, 10%);
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $dark-text;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: $breakpoint-md) {
+  .content {
+    padding: $spacing-4;
+  }
+
+  h1 { font-size: $font-size-3xl; }
+  h2 { font-size: $font-size-2xl; }
+
+  .feature-card {
+    margin-bottom: $spacing-4;
+  }
+
+  .navbar {
+    padding: $spacing-2;
+  }
+}
+
+// Print styles
+@media print {
+  .navbar, .sidebar, .toc {
+    display: none;
+  }
+
+  .content {
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  pre, code {
+    border: 1px solid $gray-300;
+    page-break-inside: avoid;
+  }
+}

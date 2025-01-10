@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Rømer Chain</title>
+<title>validators – Rømer Chain</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-07c16812f08c4a1591d6ec4fc46327fa.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9d728398ce5fc7eb252415c24cc66ce0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-07c16812f08c4a1591d6ec4fc46327fa.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-9d728398ce5fc7eb252415c24cc66ce0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -118,7 +152,7 @@ cookieconsent.run({
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Rømer Chain</span>
     </a>
   </div>
@@ -129,7 +163,7 @@ cookieconsent.run({
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> <i class="bi bi-house" role="img">
+    <a class="nav-link" href="../../index.html"> <i class="bi bi-house" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
   </li>  
@@ -139,12 +173,12 @@ cookieconsent.run({
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-market-makers">    
         <li>
-    <a class="dropdown-item" href="./content/market-makers/index.html"><i class="bi bi-graph-up" role="img">
+    <a class="dropdown-item" href="../../content/market-makers/index.html"><i class="bi bi-graph-up" role="img">
 </i> 
  <span class="dropdown-text">Overview</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/market-makers/partner-framework.html"><i class="bi bi-diagram-3" role="img">
+    <a class="dropdown-item" href="../../content/market-makers/partner-framework.html"><i class="bi bi-diagram-3" role="img">
 </i> 
  <span class="dropdown-text">Partnership Framework</span></a>
   </li>  
@@ -156,27 +190,27 @@ cookieconsent.run({
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-technical-design">    
         <li>
-    <a class="dropdown-item" href="./content/technical/index.html"><i class="bi bi-diagram-2" role="img">
+    <a class="dropdown-item" href="../../content/technical/index.html"><i class="bi bi-diagram-2" role="img">
 </i> 
  <span class="dropdown-text">Architecture Overview</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/technical/pop.html"><i class="bi bi-cpu" role="img">
+    <a class="dropdown-item" href="../../content/technical/pop.html"><i class="bi bi-cpu" role="img">
 </i> 
  <span class="dropdown-text">Proof of Physics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/technical/network.html"><i class="bi bi-hdd-network" role="img">
+    <a class="dropdown-item" href="../../content/technical/network.html"><i class="bi bi-hdd-network" role="img">
 </i> 
  <span class="dropdown-text">Network Design</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/technical/roadmap.html"><i class="bi bi-calendar-check" role="img">
+    <a class="dropdown-item" href="../../content/technical/roadmap.html"><i class="bi bi-calendar-check" role="img">
 </i> 
  <span class="dropdown-text">Development Roadmap</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/technical/fix.html"><i class="bi bi-wrench" role="img">
+    <a class="dropdown-item" href="../../content/technical/fix.html"><i class="bi bi-wrench" role="img">
 </i> 
  <span class="dropdown-text">FIX Protocol</span></a>
   </li>  
@@ -188,46 +222,46 @@ cookieconsent.run({
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-tokenomics">    
         <li>
-    <a class="dropdown-item" href="./content/economics/index.html"><i class="bi bi-cash-coin" role="img">
+    <a class="dropdown-item" href="../../content/economics/index.html"><i class="bi bi-cash-coin" role="img">
 </i> 
  <span class="dropdown-text">Overview</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/economics/model.html"><i class="bi bi-bank" role="img">
+    <a class="dropdown-item" href="../../content/economics/model.html"><i class="bi bi-bank" role="img">
 </i> 
  <span class="dropdown-text">Economic Model</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/economics/distribution.html"><i class="bi bi-pie-chart" role="img">
+    <a class="dropdown-item" href="../../content/economics/distribution.html"><i class="bi bi-pie-chart" role="img">
 </i> 
  <span class="dropdown-text">Token Distribution</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/economics/market.html"><i class="bi bi-graph-up-arrow" role="img">
+    <a class="dropdown-item" href="../../content/economics/market.html"><i class="bi bi-graph-up-arrow" role="img">
 </i> 
  <span class="dropdown-text">Market Dynamics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/economics/validators.html"><i class="bi bi-shield-check" role="img">
+    <a class="dropdown-item" href="../../content/economics/validators.html"><i class="bi bi-shield-check" role="img">
 </i> 
  <span class="dropdown-text">Validator Economics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/pitch/index.html"><i class="bi bi-presentation-chart" role="img">
+    <a class="dropdown-item" href="../../content/pitch/index.html"><i class="bi bi-presentation-chart" role="img">
 </i> 
  <span class="dropdown-text">Pitch</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./content/blog/index.html"> <i class="bi bi-newspaper" role="img">
+    <a class="nav-link" href="../../content/blog/index.html"> <i class="bi bi-newspaper" role="img">
 </i> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="./#"> <i class="bi bi-moon-stars" role="img" aria-label="Toggle dark mode">
+    <a class="nav-link" href="../../#"> <i class="bi bi-moon-stars" role="img" aria-label="Toggle dark mode">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -259,48 +293,338 @@ cookieconsent.run({
 
 
 
-<section id="bring-traditional-finance-on-chain" class="level1">
-<h1>Bring Traditional Finance On Chain</h1>
-<p>Rømer Chain seamlessly connects with your existing FIX infrastructure, enabling traditional finance to step directly into Web3. No custom adapters, no parallel systems - just your familiar FIX protocol trading environment, enhanced with blockchain’s transformative capabilities.</p>
-<div class="feature-grid">
-<section id="native-fix-integration" class="level3 feature-card">
-<h3 class="anchored" data-anchor-id="native-fix-integration">Native FIX Integration</h3>
-<p>Connect your existing systems directly to the blockchain:</p>
+<section id="rømer-transaction-costs-and-resource-model" class="level1">
+<h1>RØMER Transaction Costs and Resource Model</h1>
+<p>RØMER Chain implements a comprehensive resource management system that ensures sustainable network operation through careful economic design. Our approach combines computational fees for immediate resource usage with a storage deposit system for long-term state management. This dual system creates predictable costs for users while ensuring validator sustainability.</p>
+<section id="node-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="node-requirements">Node Requirements</h2>
+<p>Every validator in the RØMER network must maintain specific hardware capabilities to ensure consistent network performance. These requirements establish the baseline for our resource calculations.</p>
+<section id="hardware-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="hardware-requirements">Hardware Requirements</h3>
 <ul>
-<li>Submit FIX messages as native transaction types</li>
-<li>Maintain your current trading workflows</li>
-<li>Keep your risk management systems</li>
-<li>Leverage existing infrastructure investments</li>
+<li>RAM: 32GB DDR4 or better</li>
+<li>CPU: 8 cores (modern x86-64 processor)</li>
+<li>Storage: 4TB NVMe SSD</li>
+<li>Network: 1 Gbps dedicated connection</li>
 </ul>
-<p><a href="./content/technical/fix.html" class="card-cta-button">Explore FIX Integration →</a></p>
 </section>
-<section id="professional-market-making" class="level3 feature-card">
-<h3 class="anchored" data-anchor-id="professional-market-making">Professional Market Making</h3>
-<p>Purpose-built for institutional trading:</p>
+<section id="network-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="network-requirements">Network Requirements</h3>
 <ul>
-<li>Complex order types as native operations</li>
-<li>Protected regional order flow</li>
-<li>Multi-venue execution capabilities</li>
-<li>Institutional-grade performance</li>
+<li>Static IP address</li>
+<li>Geographic distribution compliance</li>
+<li>Consistent uptime monitoring</li>
+<li>Performance metric reporting</li>
 </ul>
-<p><a href="./content/market-makers/index.html" class="card-cta-button">View Market Maker Benefits →</a></p>
 </section>
-<section id="bridge-to-web3" class="level3 feature-card">
-<h3 class="anchored" data-anchor-id="bridge-to-web3">Bridge to Web3</h3>
-<p>Transform your business without disruption:</p>
+</section>
+<section id="computational-fee-model" class="level2">
+<h2 class="anchored" data-anchor-id="computational-fee-model">Computational Fee Model</h2>
+<p>Transaction fees reflect the immediate computational costs of processing operations on the network. Our model divides these costs between CPU and RAM usage, with each resource weighted according to its operational impact.</p>
+<section id="cpu-resources-0.6-rømer-per-block" class="level3">
+<h3 class="anchored" data-anchor-id="cpu-resources-0.6-rømer-per-block">CPU Resources (0.6 RØMER per block)</h3>
+<p>CPU represents our highest-weighted computational resource due to its significant impact on node operations. Each block allows for 400 compute units, representing 50% of the total CPU capacity of our minimum node specification. This target utilization ensures consistent performance while maintaining headroom for demand spikes.</p>
+<p>Base Fees:</p>
 <ul>
-<li>Seamless DeFi market making</li>
-<li>Access to on-chain liquidity</li>
-<li>Blockchain security guarantees</li>
-<li>Future-proof your operations</li>
+<li>Available Units: 400 compute units per block</li>
+<li>Cost Per Unit: 0.0015 RØMER</li>
+<li>Total CPU Capacity: 0.6 RØMER per block</li>
 </ul>
-<p><a href="./content/technical/index.html" class="card-cta-button">Learn About Our Technology →</a></p>
 </section>
-</div>
-<section id="ready-to-bridge-traditional-finance-and-web3" class="level2">
-<h2 class="anchored" data-anchor-id="ready-to-bridge-traditional-finance-and-web3">Ready to Bridge Traditional Finance and Web3?</h2>
-<p>Join the financial institutions already bringing traditional finance on chain with Rømer. Our technical team understands both FIX and blockchain - we speak your language.</p>
-<p><a href="./content/market-makers/index.html" class="cta-button">Schedule Technical Discussion →</a> <a href="./content/technical/fix.html" class="cta-button">Explore FIX Integration →</a></p>
+<section id="ram-resources-0.4-rømer-per-block" class="level3">
+<h3 class="anchored" data-anchor-id="ram-resources-0.4-rømer-per-block">RAM Resources (0.4 RØMER per block)</h3>
+<p>RAM usage forms our second computational cost component. While RAM has lower operational costs than CPU, it remains crucial for transaction processing and state management. We target 50% utilization of total RAM capacity, providing 16,384 MB per block.</p>
+<p>Base Fees:</p>
+<ul>
+<li>Available Memory: 16,384 MB per block</li>
+<li>Cost Per MB: 0.0000244140625 RØMER</li>
+<li>Total RAM Capacity: 0.4 RØMER per block</li>
+</ul>
+</section>
+<section id="computational-fee-formula" class="level3">
+<h3 class="anchored" data-anchor-id="computational-fee-formula">Computational Fee Formula</h3>
+<p>The total computational fee for a transaction combines its CPU and RAM usage:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>transaction_fee <span class="op">=</span> (</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># CPU Cost (0.6 RØMER base)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    (cpu_units × <span class="fl">0.0015</span>) <span class="op">+</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># RAM Cost (0.4 RØMER base)</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    (ram_mb × <span class="fl">0.0000244140625</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>) RØMER</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="storage-model" class="level2">
+<h2 class="anchored" data-anchor-id="storage-model">Storage Model</h2>
+<p>RØMER implements a storage deposit system that ensures sustainable state growth while providing incentives for efficient storage usage. Our model bases storage costs on the network’s 4TB minimum storage requirement, with target utilization of 50% (2TB) for active state.</p>
+<section id="storage-deposits" class="level3">
+<h3 class="anchored" data-anchor-id="storage-deposits">Storage Deposits</h3>
+<p>When creating new objects on the blockchain, users must provide a storage deposit that remains locked until the object is deleted. This deposit is calculated based on node storage requirements and operational factors:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>storage_deposit <span class="op">=</span> (</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Header cost (10x multiplier for indexing overhead)</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    (object_header_bytes × base_byte_cost × <span class="dv">10</span>) <span class="op">+</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Content cost (base rate)</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    (content_bytes × base_byte_cost) <span class="op">+</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Reference cost (5x multiplier for relationship maintenance)</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    (reference_count × reference_bytes × base_byte_cost × <span class="dv">5</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>) RØMER</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The <code>base_byte_cost</code> reflects:</p>
+<ul>
+<li>4TB minimum storage requirement</li>
+<li>50% target utilization (2TB)</li>
+<li>Hardware lifetime (estimated 1 year)</li>
+<li>Replication factor (3x for redundancy)</li>
+<li>Maintenance overhead (1.5x multiplier)</li>
+</ul>
+</section>
+<section id="storage-rebates" class="level3">
+<h3 class="anchored" data-anchor-id="storage-rebates">Storage Rebates</h3>
+<p>When objects are deleted from the blockchain, 90% of the original storage deposit is returned to the user who originally paid for storage. The remaining 10% is awarded to the validator who processes the deletion, creating an incentive for timely cleanup of unused state.</p>
+</section>
+</section>
+<section id="example-operation-costs" class="level2">
+<h2 class="anchored" data-anchor-id="example-operation-costs">Example Operation Costs</h2>
+<p>Let’s examine the total costs for common operations on the RØMER network.</p>
+<section id="simple-token-transfer" class="level3">
+<h3 class="anchored" data-anchor-id="simple-token-transfer">Simple Token Transfer</h3>
+<p>Computational Resources:</p>
+<ul>
+<li>RAM: 10MB (0.000244 RØMER)</li>
+<li>CPU: 2 compute units (0.003 RØMER)</li>
+</ul>
+<p>Computation Fee: 0.003244 RØMER</p>
+<p>Storage Impact: None (modifies existing state) Total Cost: 0.003244 RØMER</p>
+</section>
+<section id="nft-mint-operation" class="level3">
+<h3 class="anchored" data-anchor-id="nft-mint-operation">NFT Mint Operation</h3>
+<p>Computational Resources:</p>
+<ul>
+<li>RAM: 500MB (0.012207 RØMER)</li>
+<li>CPU: 15 compute units (0.0225 RØMER)</li>
+</ul>
+<p>Computation Fee: 0.034707 RØMER</p>
+<p>Storage Resources:</p>
+<ul>
+<li>Object Header: 32 bytes</li>
+<li>Content: 1000 bytes</li>
+<li>References: 2</li>
+</ul>
+<p>Storage Deposit: [calculated based on base_byte_cost] Total Cost: Computation Fee + Storage Deposit</p>
+</section>
+<section id="smart-contract-deployment" class="level3">
+<h3 class="anchored" data-anchor-id="smart-contract-deployment">Smart Contract Deployment</h3>
+<p>Computational Resources:</p>
+<ul>
+<li>RAM: 1,000MB (0.024414 RØMER)</li>
+<li>CPU: 100 compute units (0.15 RØMER)</li>
+</ul>
+<p>Computation Fee: 0.174414 RØMER</p>
+<p>Storage Resources:</p>
+<ul>
+<li>Object Header: 32 bytes</li>
+<li>Content: ~10,000 bytes (typical contract)</li>
+<li>References: 5</li>
+</ul>
+<p>Storage Deposit: [calculated based on base_byte_cost] Total Cost: Computation Fee + Storage Deposit</p>
+</section>
+</section>
+<section id="network-load-management" class="level2">
+<h2 class="anchored" data-anchor-id="network-load-management">Network Load Management</h2>
+<p>RØMER manages high demand through block scheduling rather than variable fees. This approach ensures predictable costs while maintaining network stability.</p>
+<section id="block-space-management" class="level3">
+<h3 class="anchored" data-anchor-id="block-space-management">Block Space Management</h3>
+<ul>
+<li>Target utilization: 50% of resources</li>
+<li>Maximum utilization: 80% of resources</li>
+<li>Excess transactions queue for future blocks</li>
+<li>No fee increases during high demand</li>
+</ul>
+</section>
+<section id="transaction-scheduling" class="level3">
+<h3 class="anchored" data-anchor-id="transaction-scheduling">Transaction Scheduling</h3>
+<p>The network prioritizes transactions based on:</p>
+<ul>
+<li>Time in mempool</li>
+<li>Resource availability</li>
+<li>Dependencies</li>
+<li>Storage operation balance</li>
+</ul>
+</section>
+</section>
+<section id="economic-benefits" class="level2">
+<h2 class="anchored" data-anchor-id="economic-benefits">Economic Benefits</h2>
+<p>Our resource model creates several key advantages for network participants:</p>
+<p>For Users:</p>
+<ul>
+<li>Predictable transaction costs</li>
+<li>Recoverable storage deposits</li>
+<li>Fair resource pricing</li>
+<li>No fee market volatility</li>
+</ul>
+<p>For Developers:</p>
+<ul>
+<li>Clear cost estimation</li>
+<li>Predictable application economics</li>
+<li>Resource optimization incentives</li>
+<li>Sustainable state management</li>
+</ul>
+<p>For Validators:</p>
+<ul>
+<li>Sustainable node economics</li>
+<li>Multiple revenue streams</li>
+<li>Clear capacity planning</li>
+<li>Predictable resource usage</li>
+</ul>
+</section>
+<section id="network-evolution-through-node-voting" class="level2">
+<h2 class="anchored" data-anchor-id="network-evolution-through-node-voting">Network Evolution Through Node Voting</h2>
+<p>RØMER implements a democratic mechanism for adjusting minimum node requirements through validator voting. This process allows the network to naturally evolve with technological advancement while maintaining decentralized governance.</p>
+<section id="voting-mechanism" class="level3">
+<h3 class="anchored" data-anchor-id="voting-mechanism">Voting Mechanism</h3>
+<p>Node operators can propose and vote on adjustments to minimum requirements in any of these dimensions:</p>
+<ul>
+<li>RAM capacity</li>
+<li>CPU cores and speed</li>
+<li>Storage capacity</li>
+<li>Network bandwidth</li>
+<li>Geographic distribution parameters</li>
+</ul>
+<p>The voting process follows these principles:</p>
+<ol type="1">
+<li><p>Proposal Threshold A proposal to adjust minimum requirements must be supported by at least 5% of active validators to enter the voting phase.</p></li>
+<li><p>Voting Period Each proposal has a voting period of 10,000 blocks (approximately 3.5 days with 30-second blocks), giving all validators time to participate.</p></li>
+<li><p>Gradual Implementation Approved changes take effect after a 30-day grace period, allowing operators to upgrade their hardware if necessary.</p></li>
+<li><p>Vote Weighting Each validator gets one vote, regardless of their hardware specifications. This ensures that larger operators cannot dominate the governance process.</p></li>
+<li><p>Passage Requirements A proposal must meet these criteria to pass:</p></li>
+</ol>
+<ul>
+<li>Over 67% participation from active validators</li>
+<li>Over 75% approval from voting validators</li>
+<li>No more than 30% increase in any single requirement</li>
+</ul>
+</section>
+<section id="adjustment-constraints" class="level3">
+<h3 class="anchored" data-anchor-id="adjustment-constraints">Adjustment Constraints</h3>
+<p>To maintain network stability, several constraints apply to requirement adjustments:</p>
+<ol type="1">
+<li>Timing Restrictions</li>
+</ol>
+<ul>
+<li>Minimum 90 days between successful requirement changes</li>
+<li>Maximum one active proposal per resource type</li>
+<li>Grace period cannot be shortened</li>
+</ul>
+<ol start="2" type="1">
+<li>Size Limitations</li>
+</ol>
+<ul>
+<li>Maximum 30% increase per vote</li>
+<li>No more than 100% total increase per year</li>
+<li>Cannot decrease requirements</li>
+</ul>
+<ol start="3" type="1">
+<li>Technical Validations</li>
+</ol>
+<ul>
+<li>RAM must be standard sizes (e.g., 32GB, 64GB)</li>
+<li>Storage must be practical configurations</li>
+<li>CPU requirements must align with available hardware</li>
+</ul>
+</section>
+<section id="example-voting-scenario" class="level3">
+<h3 class="anchored" data-anchor-id="example-voting-scenario">Example Voting Scenario</h3>
+<p>Consider a proposal to increase minimum RAM from 32GB to 64GB:</p>
+<ol type="1">
+<li>Initial Phase</li>
+</ol>
+<ul>
+<li>Validators running 64GB+ RAM notice increased state size</li>
+<li>Proposal created with support from 5% of validators</li>
+<li>Voting period begins</li>
+</ul>
+<ol start="2" type="1">
+<li>Voting Process</li>
+</ol>
+<ul>
+<li>Validators evaluate impact on their operations</li>
+<li>Community discusses hardware availability and costs</li>
+<li>Real-time voting progress visible to all participants</li>
+</ul>
+<ol start="3" type="1">
+<li>Implementation If approved:</li>
+</ol>
+<ul>
+<li>30-day grace period begins</li>
+<li>Operators prepare hardware upgrades</li>
+<li>Network clients update requirement checks</li>
+<li>New requirements take effect at specified block height</li>
+</ul>
+</section>
+<section id="impact-on-resource-model" class="level3">
+<h3 class="anchored" data-anchor-id="impact-on-resource-model">Impact on Resource Model</h3>
+<p>When minimum requirements change, the fee model automatically adjusts because all resource costs are calculated as fractions of total capacity. For example, if RAM requirements double:</p>
+<ol type="1">
+<li>Block Capacity</li>
+</ol>
+<ul>
+<li>New target RAM per block: 32GB (50% of 64GB)</li>
+<li>Computational units scale proportionally</li>
+<li>Storage capacity adjusts with new minimums</li>
+</ul>
+<ol start="2" type="1">
+<li>Fee Adjustments</li>
+</ol>
+<ul>
+<li>Per-unit costs adjust automatically</li>
+<li>Overall economic model remains stable</li>
+<li>User costs effectively decrease as capacity increases</li>
+</ul>
+<ol start="3" type="1">
+<li>Network Benefits</li>
+</ol>
+<ul>
+<li>Increased transaction throughput</li>
+<li>Better state management capability</li>
+<li>Improved performance for complex operations</li>
+<li>Future-proofing for network growth</li>
+</ul>
+</section>
+</section>
+<section id="future-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="future-considerations">Future Considerations</h2>
+<p>This governance model ensures RØMER can evolve while maintaining its core principles:</p>
+<ol type="1">
+<li>Technological Evolution</li>
+</ol>
+<ul>
+<li>Requirements track hardware advancement</li>
+<li>Network capacity grows organically</li>
+<li>Performance improves systematically</li>
+<li>Costs optimize naturally</li>
+</ul>
+<ol start="2" type="1">
+<li>Economic Stability</li>
+</ol>
+<ul>
+<li>Resource pricing remains predictable</li>
+<li>Node operations stay sustainable</li>
+<li>User costs scale with technology</li>
+<li>Market forces guide growth</li>
+</ul>
+<ol start="3" type="1">
+<li>Decentralized Control</li>
+</ol>
+<ul>
+<li>Community-driven evolution</li>
+<li>Democratic decision making</li>
+<li>Protected minority interests</li>
+<li>Stable upgrade path</li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>RØMER’s resource model creates a sustainable economic framework that aligns the interests of all network participants. By combining fixed computational fees with a storage deposit system, we ensure both efficient immediate resource usage and responsible long-term state growth. This approach provides the predictability users need while maintaining the economic incentives required for network sustainability.</p>
 
 
 </section>
@@ -755,5 +1079,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
