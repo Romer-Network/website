@@ -1,155 +1,78 @@
-# Rømer Chain Market Maker Partnership Framework
+# Shape the Future of Market Making Infrastructure
 
-## Executive Summary
+Rømer Chain seeks strategic partnerships with professional market makers to build infrastructure that truly serves your needs. We believe early partners who help validate and test the system should receive meaningful economic participation rights that align long-term interests.
 
-The Rømer Chain Market Maker Partnership Framework establishes a structured approach for engaging professional market makers in two critical phases: product validation and testnet deployment. This focused framework ensures that market makers can meaningfully contribute to and benefit from Rømer Chain's development, with clear pathways for increasing involvement as the project matures.
+[Schedule Partnership Discussion →](https://t.me/Hariseldon23){.cta-button}
 
-## Partnership Philosophy
-
-Rømer Chain approaches market maker partnerships with two core principles:
-
-First, we recognize that successful infrastructure must be built based on real market maker needs rather than theoretical requirements. This drives our emphasis on gathering detailed operational insights before writing significant code.
-
-Second, we believe that early partners who help validate and test the system should receive meaningful economic participation rights that align long-term interests.
-
-## Partnership Tiers
+<div class="feature-grid">
+<div class="feature-card">
 
 ### Product Market Fit Partner
+Perfect for market makers who want to influence core feature development with minimal technical commitment.
 
-This tier focuses on market makers who can provide crucial insights during our product validation phase. It requires minimal technical commitment while offering significant potential benefits.
+**Time Investment:**
 
-**Requirements:**
+- Two 60-minute product requirement sessions
+- Optional technical discussions
+- Flexible scheduling over 4-8 weeks
 
-- Participation in 2-3 product requirements interviews (60 minutes each)
-- Sharing of operational workflows and pain points
-- Feedback on proposed technical solutions
-- Input on feature prioritization
+**Key Benefits:**
 
-**Benefits:**
-
-- Right of first refusal on SAFE investment rounds
+- Right of first refusal on investment rounds
 - Early access to technical specifications
-- Input on feature development priorities
-- Option to upgrade to Testnet Partner status
-- Regular development updates
-- Recognition as founding research participant
+- Direct influence on feature priorities
+- Option to upgrade to Testnet Partner
+
+[Become a Product Partner →](https://t.me/Hariseldon23){.card-cta-button}
+</div>
+
+<div class="feature-card">
 
 ### Testnet Partner
+Ideal for market makers ready to deploy and test infrastructure while securing strategic regional positions.
 
-This tier is for market makers ready to deploy and test actual infrastructure. It builds on the Product Market Fit partnership with additional technical involvement and benefits.
+**Time Investment:**
 
-**Requirements:**
+- Validator infrastructure deployment
+- Network testing participation
+- 4-6 weeks technical integration
 
-- Maintaining validator infrastructure during testnet
-- Meeting performance and uptime requirements
-- Participating in network testing scenarios
-- Providing detailed technical feedback
-- Contributing to protocol improvements
+**Key Benefits:**
 
-**Benefits:**
+- Priority access to regional validator slots
+- Testnet token emissions (maintained through mainnet)
+- Direct technical support and customization
+- Protected regional advantages
+- All Product Partner benefits
 
-- All Product Market Fit Partner benefits
-- Testnet ROMER token emissions (maintained through mainnet migration)
-- Priority access to geographic validation slots
-- Direct technical support during deployment
-- Participation in protocol refinement
-- Enhanced influence on technical implementation
-- Co-marketing opportunities
+[Become a Testnet Partner →](https://t.me/Hariseldon23){.card-cta-button}
+</div>
+</div>
 
-## Engagement Process
+## Streamlined Engagement Process
 
-### Product Market Fit Phase
+### 1. Initial Discussion (30 minutes)
+Quick introduction to evaluate potential collaboration and partnership fit.
 
-**Initial Discussion (30 minutes)**
+### 2. Partnership Selection
+Choose the engagement level that matches your current priorities and resources.
 
-- Introduction to Rømer Chain vision
-- Overview of market maker benefits
-- Discussion of potential collaboration
-- Q&A session
+### 3. Begin Collaboration
+Start shaping the future of market making infrastructure through direct input and testing.
 
-**Product Requirements Sessions (2 x 60 minutes)**
+## Geographic Advantages
 
-- Deep dive into operational workflows
-- Pain point identification
-- Feature requirement gathering
-- Technical architecture feedback
+Both partnership tiers provide unique opportunities to influence and benefit from Rømer's geographic validation system:
 
-**Ongoing Engagement**
+- Priority access to regional validator slots
+- Protected regional order flow
+- Network topology optimization
+- Performance advantages in local markets
 
-- Regular development updates
-- Optional technical discussions
-- Opportunity to upgrade to Testnet Partner
+## Ready to Shape Market Making Infrastructure?
 
-### Testnet Phase
+Choose your partnership tier and begin influencing the development of infrastructure built specifically for market makers.
 
-**Technical Planning (2-3 weeks)**
+[Schedule Partnership Discussion →](https://t.me/Hariseldon23){.cta-button}
 
-- Infrastructure requirements review
-- Geographic validation planning
-- Integration strategy development
-- Performance metric establishment
-
-**Deployment Support (4-6 weeks)**
-
-- Validator setup assistance
-- Network integration support
-- Performance optimization
-- Operations documentation
-
-## Economic Rights
-
-### Product Market Fit Partners
-
-- Right of first refusal on SAFE investment rounds
-- Option to upgrade to Testnet Partner status
-- Early access to technical specifications
-
-### Testnet Partners
-
-- All Product Market Fit Partner rights
-- Testnet ROMER emissions (maintained through mainnet migration)
-- Priority access to geographic validation slots
-
-## Technical Collaboration
-
-### Product Market Fit Phase
-
-- Regular development updates
-- Feature prioritization input
-- Technical specification review
-- Optional deeper technical engagement
-
-### Testnet Phase
-
-- Direct technical support
-- Protocol improvement participation
-- Performance optimization assistance
-- Integration support
-- Testing coordination
-
-## Geographic Considerations
-
-### Product Market Fit Partners
-
-- Input on regional market requirements
-- Early insight into geographic validation system
-- Regional market analysis participation
-
-### Testnet Partners
-
-- Priority selection of geographic regions
-- Protected regional advantages through network topology
-- Geographic validation system testing
-- Regional performance optimization
-
-## Next Steps
-
-1. Schedule initial 30-minute discussion
-2. Review basic technical documentation
-3. Select appropriate partnership tier
-4. Begin engagement process
-
-## Contact Information
-
-For partnership inquiries:
-- Telegram: @Hariseldon23
+Contact Justin directly on Telegram @Hariseldon23

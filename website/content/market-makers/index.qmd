@@ -1,130 +1,51 @@
-# Market Maker Engagement Program: Shape the Future of Trading Infrastructure
+# Shape the Future of Trading Infrastructure
 
-## A Different Approach to Blockchain Development
+**Want infrastructure built for real market makers? Schedule a 30-minute call to learn how you can influence Rømer Chain's development.**
 
-Most blockchain projects start with technology and try to find users later. We're taking the opposite approach: starting with market makers' needs and building technology to serve them. Before writing significant code, we want to deeply understand how market makers actually operate and what they truly need from their infrastructure.
+[Schedule Discussion with Justin →](https://t.me/Hariseldon23){.cta-button}
 
-## Why Engage With Us Now?
+## Why Your Input Matters Now
 
-We understand that as an early-stage project, we're asking for your valuable time. In return, we're offering something unique: the opportunity to shape critical infrastructure from the ground up, backed by meaningful economic participation in the project's future.
+Most blockchain projects build technology first, then search for users. We're doing the opposite - starting with market makers' needs and building infrastructure that works the way you do. Your early input will shape every aspect of Rømer Chain's development.
 
-### What We're Offering
+## What You'll Receive as an Early Partner
 
-For market makers who participate in our initial research and development phase:
+### Guaranteed Regional Advantages
+- Priority access to validator slots in your preferred regions
+- Protected regional order flow
+- Early access to all testing phases
 
-1. Priority Access Agreement
-   - Guaranteed validator slot reservations in your preferred regions
-   - Early access to all testing phases
-   - Direct influence over feature prioritization
-   - Premium support during launch phases
+### Meaningful Economic Participation
+- Right of first refusal on investment rounds
+- Enhanced validator rewards during network launch
+- Reserved allocation in token distribution
 
-2. Economic Participation Rights
-   - Right of first refusal on SAFE investment rounds
-   - Preferential terms for early backers
-   - Validator reward multipliers during initial network phases
-   - Reserved allocation in token distribution events
+### Direct Technical Influence
+- Shape core feature development
+- Prioritize integration requirements
+- Guide infrastructure decisions
 
-3. Strategic Partnership Benefits
-   - Direct access to our technical team
-   - Custom feature development consideration
-   - Priority integration support
-   - Co-marketing opportunities
+[Discuss Partnership Benefits →](https://t.me/Hariseldon23){.cta-button}
 
-## Streamlined Engagement Process
+## Simple Engagement Process
 
-We value your time and have designed our engagement process to be efficient and flexible:
+### 1. Initial Discussion (30 minutes)
+A focused introduction to evaluate potential collaboration.
 
-### Initial Meeting (30 minutes)
-A focused introduction where you can:
+### 2. Technical Deep Dive (If valuable)
+Two 60-minute sessions to understand your specific needs.
 
-- Learn about Rømer Chain's vision
-- Ask questions about our approach
-- Evaluate potential alignment
-- Decide if further engagement makes sense
+### 3. Ongoing Partnership
+Regular updates and continued influence over development.
 
-If you see value in continuing the conversation, we move to:
+## Ready to Shape Market Making Infrastructure?
 
-### Product Requirements Sessions (2 x 60 minutes)
-Two focused sessions to understand:
+[Schedule 30-Minute Discussion →](https://t.me/Hariseldon23){.cta-button}
 
-- Your operational workflows
-- Technical requirements
-- Integration needs
-- Feature priorities
+Contact Justin directly on Telegram @Hariseldon23
 
-These sessions are scheduled at your convenience and can be spread over several weeks to accommodate your schedule.
-
-## What We're Seeking to Understand
-
-Through our conversations, we aim to learn about:
-
-1. Real Operational Challenges
-   - Current infrastructure pain points
-   - Risk management requirements
-   - Integration bottlenecks
-   - Regulatory compliance needs
-
-2. Technical Requirements
-   - Trading system architecture
-   - Order management workflows
-   - Market data requirements
-   - Integration preferences
-
-3. Business Operations
-   - Regional market dynamics
-   - Liquidity management strategies
-   - Cross-venue operations
-   - Risk mitigation approaches
-
-## Flexibility in Engagement
-
-We understand that different organizations have different requirements for information sharing and confidentiality. Our engagement process can be tailored to your needs:
-
-- Optional mutual NDA available if desired
-- Flexible meeting scheduling
-- Remote or in-person sessions
-- Adjustable scope of technical discussion
-
-## Why This Approach Matters
-
-The blockchain industry has largely ignored the specific needs of market makers, instead forcing you to adapt to infrastructure designed for other purposes. By starting with your requirements and building specifically for market makers, we can create something fundamentally different: infrastructure that works the way you do.
-
-## The Process
-
-1. Initial Discussion (30 minutes)
-   - Introduction to Rømer Chain
-   - Q&A session
-   - Evaluation of potential collaboration
-   - Decision on further engagement
-
-2. Technical Deep Dive (If proceeding)
-   - Two 60-minute product requirements sessions
-   - Review of your technical needs
-   - Feature prioritization discussion
-   - Integration requirements analysis
-
-3. Ongoing Relationship
-   - Regular updates on development
-   - Early access to prototypes
-   - Continued input opportunities
-   - Strategic partnership development
-
-## Next Steps
-
-If you're interested in learning more:
-
-1. Schedule an initial 30-minute conversation
-2. Review our preliminary technical vision
-3. Decide on engagement structure
-4. Begin the collaborative process
-
-Contact Justin on Telegram @Hariseldon23 to schedule your initial discussion.
-
-## Available Documentation
-
-For interested parties, we provide appropriate documentation based on engagement level and requirements:
-
-- [Technical architecture overview](../technical/index.qmd)
-- [Economic model analysis](../economics/model.qmd)
-- [Partnership framework](../market-makers/partner-framework.qmd)
-- [Development roadmap](../technical/roadmap.qmd)
+### Supporting Documentation
+- [Partnership Framework](../market-makers/partner-framework.qmd)
+- [Technical Architecture](../technical/index.qmd)
+- [Economic Model](../economics/model.qmd)
+- [Development Roadmap](../technical/roadmap.qmd)

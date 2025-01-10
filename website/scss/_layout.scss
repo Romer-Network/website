@@ -2,55 +2,66 @@
 
 // Main layout containers
 .content {
-    max-width: var(--container-max-width);
-    margin: 0 auto;
-    padding: var(--spacing-8);
-    
-    @media (max-width: var(--breakpoint-md)) {
-      padding: var(--spacing-4);
-    }
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: var(--spacing-8);
+
+  @media (max-width: var(--breakpoint-md)) {
+    padding: var(--spacing-4);
   }
-  
-  // Navigation layout
-  .navbar {
-    background-color: white;
-    border-bottom: 1px solid var(--nav-border-color);
-    box-shadow: var(--shadow-sm);
-    height: var(--nav-height);
-    padding: 0 var(--nav-padding);
-    
-    .nav-link {
-      padding: var(--spacing-4);
-    }
+}
+
+// Navigation layout
+.navbar {
+  background-color: white;
+  border-bottom: 1px solid var(--nav-border-color);
+  box-shadow: var(--shadow-sm);
+  height: var(--nav-height);
+  padding: 0 var(--nav-padding);
+
+  .nav-link {
+    padding: var(--spacing-4);
   }
-  
-  // Grid layouts
-  .feature-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--grid-gutter);
-    margin: var(--spacing-8) 0;
-    
-    @media (max-width: var(--breakpoint-md)) {
-      grid-template-columns: 1fr;
-    }
+}
+
+// Grid layouts
+// Feature grid layout with automatic column adjustment
+.feature-grid {
+  display: grid;
+  // auto-fit will automatically create as many columns as can fit
+  // minmax defines the minimum and maximum column width
+  // This creates columns that are at least 400px wide, but can grow larger
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--spacing-6);
+  margin: var(--spacing-8) 0;
+  width: 100%;
+  max-width: var(--container-max-width);
+  padding: 0 var(--spacing-4);
+
+  // When the screen gets too narrow for 400px columns
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr; // Switch to single column
   }
-  
-  // Footer layout
-  footer {
-    margin-top: var(--spacing-12);
-    padding: var(--spacing-8) 0;
+}
+
+// Footer layout
+footer {
+  margin-top: var(--spacing-12);
+  padding: var(--spacing-8) 0;
+}
+
+// Print layout adjustments
+@media print {
+
+  .navbar,
+  .sidebar,
+  .toc {
+    display: none;
   }
-  
-  // Print layout adjustments
-  @media print {
-    .navbar, .sidebar, .toc {
-      display: none;
-    }
-    
-    .content {
-      padding: 0;
-      margin: 0;
-      max-width: none;
-    }
+
+  .content {
+    padding: 0;
+    margin: 0;
+    max-width: none;
   }
+}

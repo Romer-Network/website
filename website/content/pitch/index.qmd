@@ -142,32 +142,6 @@ Our specialized Move VM creates native advantages for market makers:
 
 ---
 
-## Performance Advantage
-
-Why Rømer Chain significantly outperforms existing trading chains:
-
-:::: {.columns}
-
-::: {.column width="50%"}
-**Current Trading Chains**
-
-- dYdX: 4-6 hops for finality
-- Sei: Complex parallel execution
-- Injective: Modified EVM limitations
-:::
-
-::: {.column width="50%"}
-**Rømer Chain**
-
-- 2-hop block acceptance
-- 3-hop finality
-- Hardware optimization
-:::
-
-::::
-
----
-
 ## Infrastructure Integration: Seamless FIX Support
 
 Rømer Chain integrates directly with the world's trading infrastructure:
@@ -191,19 +165,21 @@ Rømer Chain integrates directly with the world's trading infrastructure:
 
 - Market Making Program
 - Devnet1 release
-- FIX block transactions
+- FIX Sessions with Sequencer
 :::
 
 ::: {.column width="25%"}
 **Phase 2: Q2 2025**
 
-- TBD
+- Sequencer with custom VM
+- DevNet2
+- FIX Orders
 :::
 
 ::: {.column width="25%"}
 **Phase 3: Q3 2025**
 
-- TBD
+- Testnet Release
 :::
 
 ::: {.column width="25%"}
@@ -289,25 +265,23 @@ The time is perfect to build the first blockchain infrastructure designed specif
 
 ---
 
-## Long-Term Vision
+## Development Funding
 
-Building the foundation for professional market making:
+Initial development through testnet requires:
 
 ::: {.incremental}
-- **Market Making Excellence**
-  - Protected regional markets
-  - Advanced trading capabilities
-  - Seamless infrastructure integration
-
-- **Technical Innovation**
-  - Continuous performance optimization
-  - Enhanced FIX protocol support
-  - Advanced risk management features
-
-- **Economic Sustainability**
-  - Dual revenue streams
-  - Geographic protection
-  - Capital efficiency gains
+- Full-time senior Rust developer
+- Technical leadership and architecture
+- $500k total development budget
 :::
 
-Join us in transforming blockchain market making.
+This funding will support:
+
+::: {.incremental}
+- Devnet implementation
+- FIX protocol integration
+- Geographic validation system
+- Market maker testing program
+:::
+
+Let's discuss how you can participate in building the future of market making infrastructure.
