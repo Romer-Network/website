@@ -5,7 +5,7 @@
 $primary: #f04275;
 $primary-dark: #d93964;
 $primary-light: #f37396;
-$secondary: #2d3748;
+$secondary: #510e74;
 $gray-100: #f7fafc;
 $gray-800: #2d3748;
 $gray-900: #1a202c;
@@ -160,4 +160,10 @@ body {
       color: var(--gray-100);
     }
   }
+}
+
+h1 {
+  color: var(--secondary);  
+  font-weight: 700;         
+  margin-bottom: var(--spacing-4);  
 }

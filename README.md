@@ -139,7 +139,7 @@ Please ensure your changes:
 
 ## License
 
-Copyright © 2024 Rømer Chain. All rights reserved.
+Copyright © 2025 Rømer Chain. All rights reserved.
 
 ## Contact
 
