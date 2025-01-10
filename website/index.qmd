@@ -3,7 +3,7 @@
 Rømer Chain seamlessly connects with your existing FIX infrastructure, enabling traditional finance to step directly into Web3. No custom adapters, no parallel systems - just your familiar FIX protocol trading environment, enhanced with blockchain's transformative capabilities.
 
 <div class="cta-button-container">
-[Meet the Founder →](https://t.me/hariseldon23){.cta-button}
+[Talk to the Founder →](https://t.me/hariseldon23){.cta-button}
 [See the Pitch Deck →](./content/pitch/index.qmd){.cta-button}
 </div>
 
@@ -49,5 +49,5 @@ Transform your business without disruption:
 
 Two ways to dive deeper:
 
-[Meet the Founder →](https://t.me/hariseldon23){.cta-button}
+[Talk to the Founder →](https://t.me/hariseldon23){.cta-button}
 [See the Pitch Deck →](./content/pitch/index.qmd){.cta-button}

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://romer.network/index.html</loc>
-    <lastmod>2025-01-10T03:45:32.521Z</lastmod>
+    <lastmod>2025-01-10T05:08:10.685Z</lastmod>
   </url>
   <url>
     <loc>http://romer.network/content/technical/roadmap.html</loc>
@@ -41,28 +41,32 @@
     <lastmod>2025-01-09T09:13:41.072Z</lastmod>
   </url>
   <url>
-    <loc>http://romer.network/content/blog/index.html</loc>
-    <lastmod>2025-01-09T09:13:40.932Z</lastmod>
-  </url>
-  <url>
-    <loc>http://romer.network/content/blog/drafts/2025-01-03-us-cloud-act/index.html</loc>
-    <lastmod>2025-01-09T09:13:40.929Z</lastmod>
-  </url>
-  <url>
-    <loc>http://romer.network/content/blog/drafts/2024-12-31-mev/index.html</loc>
-    <lastmod>2025-01-09T09:13:40.927Z</lastmod>
-  </url>
-  <url>
-    <loc>http://romer.network/content/blog/drafts/2025-01-01-devnet/index.html</loc>
-    <lastmod>2025-01-09T09:13:40.928Z</lastmod>
+    <loc>http://romer.network/content/blog/posts/2025-01-03-why-commonware/index.html</loc>
+    <lastmod>2025-01-09T09:13:40.934Z</lastmod>
   </url>
   <url>
     <loc>http://romer.network/content/blog/drafts/2025-01-08-DSMR/index.html</loc>
     <lastmod>2025-01-09T09:13:40.931Z</lastmod>
   </url>
   <url>
-    <loc>http://romer.network/content/blog/posts/2025-01-03-why-commonware/index.html</loc>
-    <lastmod>2025-01-09T09:13:40.934Z</lastmod>
+    <loc>http://romer.network/content/blog/drafts/2025-01-01-devnet/index.html</loc>
+    <lastmod>2025-01-09T09:13:40.928Z</lastmod>
+  </url>
+  <url>
+    <loc>http://romer.network/content/blog/drafts/2024-12-31-mev/index.html</loc>
+    <lastmod>2025-01-09T09:13:40.927Z</lastmod>
+  </url>
+  <url>
+    <loc>http://romer.network/content/blog/drafts/2025-01-03-us-cloud-act/index.html</loc>
+    <lastmod>2025-01-09T09:13:40.929Z</lastmod>
+  </url>
+  <url>
+    <loc>http://romer.network/content/blog/index.html</loc>
+    <lastmod>2025-01-09T09:13:40.932Z</lastmod>
+  </url>
+  <url>
+    <loc>http://romer.network/content/blog/posts/2025-01-10-fix/index.html</loc>
+    <lastmod>2025-01-10T05:39:00.982Z</lastmod>
   </url>
   <url>
     <loc>http://romer.network/content/economics/index.html</loc>

@@ -10,7 +10,172 @@
 <atom:link href="http://romer.network/content/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description>A First Principles Approach to Blockchain Design</description>
 <generator>quarto-1.7.2</generator>
-<lastBuildDate>Mon, 30 Dec 2024 14:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 09 Jan 2025 14:00:00 GMT</lastBuildDate>
+<item>
+  <title>Understanding FIX Protocol</title>
+  <dc:creator>Justin Trollip</dc:creator>
+  <link>http://romer.network/content/blog/posts/2025-01-10-fix/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>If you’ve spent time in web3, you’re familiar with smart contracts, AMMs, and order books. But there’s another world of trading infrastructure that moves nearly $1 trillion daily, yet rarely gets discussed in blockchain circles: the Financial Information eXchange (FIX) protocol. As cryptocurrency markets mature, understanding FIX becomes increasingly crucial for bridging the gap between traditional finance and web3.</p>
+<section id="what-is-fix" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-fix">What is FIX?</h2>
+<p>Imagine if every major financial institution in the world – banks, exchanges, brokers, and market makers – needed to agree on a common language for trading. That’s exactly what FIX protocol accomplished. Created in 1992 as a collaboration between Salomon Brothers and Fidelity Investments, FIX has become the de facto standard for electronic trading communication in traditional finance.</p>
+<p>Think of FIX as the SMTP of financial markets. Just as email servers use SMTP to exchange messages regardless of what email client you’re using, financial institutions use FIX to communicate orders, executions, and market data regardless of their internal trading systems.</p>
+</section>
+<section id="the-protocols-evolution-from-tradfi-to-crypto---a-fragmented-landscape" class="level2">
+<h2 class="anchored" data-anchor-id="the-protocols-evolution-from-tradfi-to-crypto---a-fragmented-landscape">The Protocol’s Evolution: From TradFi to Crypto - A Fragmented Landscape</h2>
+<p>Let’s be brutally honest about the current state of FIX in crypto: it’s a mess. While major exchanges have recognized the necessity of FIX for institutional adoption, they’ve each gone their own way, creating a fragmented landscape that perfectly illustrates the growing pains of an industry in transition.</p>
+<section id="the-protocol-version-chaos" class="level3">
+<h3 class="anchored" data-anchor-id="the-protocol-version-chaos">The Protocol Version Chaos</h3>
+<p>Here’s what we’re dealing with in the institutional crypto space:</p>
+<ul>
+<li>Coinbase Prime: FIX 4.2 with proprietary extensions for custody</li>
+<li>Gemini: FIX 4.4 with their own flavor of crypto adaptations</li>
+<li>Kraken: Back to FIX 4.2, but with different extensions</li>
+<li>BitMEX: FIX 5.0SP2, because why not add another version?</li>
+<li>ErisX: FIX 4.4 with futures-inspired modifications</li>
+</ul>
+<p>Each implementation reveals something about these platforms’ approach to institutional infrastructure - and not all of it is pretty. While Coinbase Prime opts for the widely-supported FIX 4.2, their proprietary extensions effectively create a walled garden. Gemini’s choice of 4.4 might seem more modern, but their custom modifications make it just as isolated.</p>
+</section>
+<section id="the-integration-nightmare" class="level3">
+<h3 class="anchored" data-anchor-id="the-integration-nightmare">The Integration Nightmare</h3>
+<p>This fragmentation creates real problems for institutional traders. Consider a typical trading desk running standardized FIX infrastructure:</p>
+<ol type="1">
+<li>Different Protocol Versions
+<ul>
+<li>Multiple client libraries required</li>
+<li>Inconsistent message formats</li>
+<li>Varying session management</li>
+<li>Custom error handling per venue</li>
+</ul></li>
+<li>Incompatible Extensions
+<ul>
+<li>Venue-specific message types</li>
+<li>Non-standard field definitions</li>
+<li>Custom workflow requirements</li>
+<li>Proprietary data models</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="the-bridge-to-defi-the-authentication-challenge" class="level2">
+<h2 class="anchored" data-anchor-id="the-bridge-to-defi-the-authentication-challenge">The Bridge to DeFi: The Authentication Challenge</h2>
+<p>Let’s talk about the elephant in the room: FIX protocol’s authentication model is fundamentally at odds with blockchain’s trustless paradigm. This isn’t just a technical detail - it’s the core challenge that’s prevented meaningful DeFi integration thus far.</p>
+<section id="the-password-problem" class="level3">
+<h3 class="anchored" data-anchor-id="the-password-problem">The Password Problem</h3>
+<p>Traditional FIX sessions rely on a simple username/password authentication model. Each session includes:</p>
+<pre><code># Standard FIX Login
+8=FIX.4.2|35=A|553=username|554=password|</code></pre>
+<p>This creates several critical issues for blockchain integration:</p>
+<ol type="1">
+<li>Security Model Mismatch
+<ul>
+<li>FIX expects trusted counterparties</li>
+<li>Password storage requires centralized infrastructure</li>
+<li>No native support for cryptographic signatures</li>
+<li>Vulnerable to traditional security threats</li>
+</ul></li>
+<li>Infrastructure Requirements
+<ul>
+<li>Needs password management systems</li>
+<li>Requires secure credential storage</li>
+<li>Demands session state maintenance</li>
+<li>Creates single points of failure</li>
+</ul></li>
+</ol>
+</section>
+<section id="the-current-landscape" class="level3">
+<h3 class="anchored" data-anchor-id="the-current-landscape">The Current Landscape</h3>
+<p>Here’s an uncomfortable truth: outside of centralized exchanges, there are currently no significant blockchain projects working on FIX protocol integration. While DeFi has innovated in many areas, it’s completely ignored this critical piece of institutional infrastructure. The reasons are clear:</p>
+<ol type="1">
+<li>Technical Focus
+<ul>
+<li>DeFi teams prioritize smart contracts</li>
+<li>Limited understanding of institutional needs</li>
+<li>Focus on retail-oriented interfaces</li>
+<li>Preference for web3-native protocols</li>
+</ul></li>
+<li>Market Reality
+<ul>
+<li>Limited awareness of FIX in web3 community</li>
+<li>Lack of standardization efforts</li>
+<li>Few bridges between TradFi and DeFi teams</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="breaking-the-cycle-rømers-approach-to-fix-standardization" class="level2">
+<h2 class="anchored" data-anchor-id="breaking-the-cycle-rømers-approach-to-fix-standardization">Breaking the Cycle: Rømer’s Approach to FIX Standardization</h2>
+<p>At Rømer Chain, we’re tackling both the fragmentation and authentication challenges head-on. Instead of adding another proprietary implementation to the mix, we’re pioneering two critical innovations:</p>
+<section id="bls-based-session-authentication" class="level3">
+<h3 class="anchored" data-anchor-id="bls-based-session-authentication">1. BLS-Based Session Authentication</h3>
+<p>We’ve replaced FIX’s traditional password authentication with BLS signatures, solving the security model mismatch:</p>
+<pre><code># Rømer FIX Session Authentication
+8=FIX.4.2|35=A|553=validator_public_key|554=bls_signature|</code></pre>
+<p>This approach provides:</p>
+<ul>
+<li>Cryptographic session security</li>
+<li>Native blockchain compatibility</li>
+<li>Trustless authentication</li>
+<li>No central password storage</li>
+</ul>
+<p>The BLS signature proves validator identity while maintaining FIX message structure, enabling:</p>
+<ul>
+<li>Secure session establishment</li>
+<li>Validator-specific permissions</li>
+<li>Message origin verification</li>
+<li>Regulatory compliance</li>
+</ul>
+</section>
+<section id="community-driven-standardization" class="level3">
+<h3 class="anchored" data-anchor-id="community-driven-standardization">2. Community-Driven Standardization</h3>
+<p>We’re initiating an open dialogue about standardized blockchain extensions to the FIX protocol:</p>
+<ol type="1">
+<li>Open Development
+<ul>
+<li>Publicly documented extension proposals</li>
+<li>Community feedback and iteration</li>
+<li>Transparent decision-making process</li>
+<li>Collaborative specification development</li>
+</ul></li>
+<li>Blockchain-Native Extensions
+<ul>
+<li>Standard crypto asset identifiers</li>
+<li>Unified custody operations</li>
+<li>Common settlement patterns</li>
+<li>Cross-chain interaction protocols</li>
+</ul></li>
+<li>Backward Compatibility
+<ul>
+<li>Maintain core FIX semantics</li>
+<li>Support existing session management</li>
+<li>Enable gradual migration paths</li>
+<li>Preserve investment in current systems</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>The cryptocurrency industry’s current approach to FIX protocol integration - fragmented implementations and centralized authentication - isn’t serving anyone well. At Rømer Chain, we’re demonstrating that there’s a better way forward through cryptographic innovation and open standardization.</p>
+<p>By solving the authentication challenge with BLS signatures and leading the charge for standardized crypto extensions, we’re building the foundation for true institutional DeFi adoption. The future of finance isn’t about choosing between traditional and decentralized systems - it’s about thoughtfully bridging them through open standards and modern cryptography.</p>
+<hr>
+<p><em>This post is part of our series on bridging traditional finance and web3. Follow us to learn more about how Rømer Chain is building the infrastructure for this convergence.</em></p>
+
+
+</section>
+
+ ]]></description>
+  <category>technical</category>
+  <category>architecture</category>
+  <category>fix</category>
+  <guid>http://romer.network/content/blog/posts/2025-01-10-fix/</guid>
+  <pubDate>Thu, 09 Jan 2025 14:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Why We Chose Commonware for Rømer Chain</title>
   <dc:creator>Justin Trollip</dc:creator>
