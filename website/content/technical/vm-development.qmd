@@ -1,0 +1,255 @@
+# Move VM Development Plan
+
+Our execution engine builds upon Sui's proven Move VM implementation, carefully extracting and adapting the components we need for market making operations. Rather than building a Move VM from scratch, we leverage Sui's production-tested code while creating our own simplified adapter layer focused specifically on trading operations.
+
+## Understanding Sui's Architecture
+
+Sui structures their Move implementation across several key crates within their `sui-execution` directory. This architecture separates core VM functionality from Sui-specific features, allowing us to use the fundamental VM components while building our own specialized layer for trading operations.
+
+The core components we need from Sui's implementation include:
+
+```rust
+// Core Move VM runtime - handles bytecode execution
+move-vm-runtime = { git = "https://github.com/MystenLabs/sui.git" }
+
+// Bytecode verification - ensures code safety
+move-bytecode-verifier = { git = "https://github.com/MystenLabs/sui.git" }
+
+// Module format definitions - handles Move binaries
+move-binary-format = { git = "https://github.com/MystenLabs/sui.git" }
+```
+
+## Our Execution Engine Architecture 
+
+We will create a focused execution engine that integrates these Move components with our trading-specific functionality:
+
+```rust
+pub struct RomerExecutionEngine {
+    // The core Move VM from Sui
+    vm: MoveVM,
+    
+    // Our trading-specific native functions
+    natives: NativeFunctionTable,
+    
+    // Simplified verifier for our needs
+    verifier: RomerVerifier,
+    
+    // Order book state management
+    state: OrderBookState,
+}
+
+impl RomerExecutionEngine {
+    pub fn new() -> Result<Self> {
+        // Initialize with only DEX-related native functions
+        let natives = build_dex_natives();
+        
+        // Create VM with minimal configuration
+        let vm = MoveVM::new_with_config(
+            natives.clone(),
+            VMConfig {
+                verifier: VerifierConfig::default(),
+                max_binary_format_version: 6,
+                runtime_limits_config: VMRuntimeLimitsConfig {
+                    vector_len_max: 1000,
+                    max_value_nest_depth: Some(128),
+                    ..Default::default()
+                }
+            },
+        )?;
+
+        Ok(Self {
+            vm,
+            natives,
+            verifier: RomerVerifier::new(),
+            state: OrderBookState::new(),
+        })
+    }
+}
+```
+
+## Implementation Phases
+
+Our development process focuses on incrementally building our execution engine while leveraging Sui's proven components.
+
+### Phase 1: Core VM Integration (Weeks 1-2)
+
+The first phase establishes our basic execution environment:
+
+1. Setup Dependencies
+   - Import core Move crates from Sui
+   - Create our project structure
+   - Set up build configuration
+
+2. Basic VM Initialization
+   - Create minimal VM configuration
+   - Initialize core Move VM
+   - Set up basic module loading
+   - Verify simple Move code execution
+
+3. Initial Testing
+   - Create basic test modules
+   - Verify module loading
+   - Test simple execution
+   - Establish performance baselines
+
+### Phase 2: Trading Extensions (Weeks 3-4)
+
+Next, we build our trading-specific functionality:
+
+1. Native Functions
+   - Implement order creation
+   - Add position tracking
+   - Create price calculations
+   - Build market data functions
+
+2. State Management
+   - Design order book state
+   - Implement position tracking
+   - Create state updates
+   - Build query interface
+
+3. Contract Loading
+   - Extract DeepBook modules
+   - Adapt for our environment
+   - Create deployment tools
+   - Test contract loading
+
+### Phase 3: Integration and Testing (Weeks 5-6)
+
+Finally, we integrate with our sequencer and implement comprehensive testing:
+
+1. Sequencer Integration
+   - Create transaction processor
+   - Implement ordered execution
+   - Add state synchronization
+   - Build response handling
+
+2. Testing Suite
+   - Unit test coverage
+   - Integration tests
+   - Performance benchmarks
+   - Stress testing
+
+## Key Implementation Details
+
+### Native Functions
+
+Our native function table focuses on essential trading operations:
+
+```rust
+fn build_dex_natives() -> NativeFunctionTable {
+    // Start with minimal Move natives
+    let mut natives = NativeFunctionTable::new();
+    
+    // Add order management
+    natives.register_function(
+        "order",
+        "create",
+        create_order_native,
+    );
+    
+    // Add position tracking
+    natives.register_function(
+        "position",
+        "update",
+        update_position_native,
+    );
+    
+    // Add price calculations
+    natives.register_function(
+        "price",
+        "calculate",
+        calculate_price_native,
+    );
+    
+    natives
+}
+```
+
+### Verifier Implementation
+
+We create a focused verifier that handles our specific needs:
+
+```rust
+pub struct RomerVerifier {
+    // Basic Move verification
+    move_verifier: Verifier,
+    
+    // Trading-specific checks
+    dex_verifier: DexVerifier,
+}
+
+impl RomerVerifier {
+    pub fn verify_module(&self, module: &CompiledModule) -> Result<()> {
+        // Run basic Move verification
+        self.move_verifier.verify(module)?;
+        
+        // Add our trading-specific checks
+        self.dex_verifier.verify_trading_safety(module)?;
+        
+        Ok(())
+    }
+}
+```
+
+## Development Workflow
+
+Our development process emphasizes incremental progress and thorough testing:
+
+1. Environment Setup
+   - Clone Sui repository
+   - Extract needed components
+   - Set up development tools
+   - Create test infrastructure
+
+2. Iterative Development
+   - Start with minimal VM
+   - Add features incrementally
+   - Continuous testing
+   - Regular performance checks
+
+3. Integration Testing
+   - Module loading tests
+   - Execution validation
+   - State management
+   - Error handling
+
+## Testing Strategy
+
+Testing focuses on both correctness and performance:
+
+1. Unit Testing
+   - VM initialization
+   - Module loading
+   - Native functions
+   - State management
+
+2. Integration Testing
+   - Full execution flows
+   - State synchronization
+   - Error conditions
+   - Recovery scenarios
+
+3. Performance Testing
+   - Execution latency
+   - State access speed
+   - Memory usage
+   - Transaction throughput
+
+## Success Criteria
+
+The execution engine must meet these requirements:
+
+1. Functionality
+   - Successful Move execution
+   - Correct order processing
+   - Accurate state management
+   - Proper error handling
+
+2. Performance
+   - Module load time < 50ms
+   - Transaction execution < 1ms
+   - State updates < 100μs
+   - Memory usage < 1GB
+
+This development plan creates a focused execution engine that leverages Sui's proven Move implementation while maintaining the simplicity and performance required for our trading operations. By carefully selecting which components to use from Sui's implementation, we can build a robust system without reinventing core VM functionality.

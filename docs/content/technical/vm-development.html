@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>pitch – Rømer Chain</title>
+<title>vm-development – Rømer Chain</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -102,8 +136,10 @@ cookieconsent.run({
 
 
 <meta property="og:title" content="Rømer Chain">
+<meta property="og:description" content="A First Principles Approach to Blockchain Design">
 <meta property="og:site_name" content="Rømer Chain">
 <meta name="twitter:title" content="Rømer Chain">
+<meta name="twitter:description" content="A First Principles Approach to Blockchain Design">
 <meta name="twitter:creator" content="@romerchain">
 <meta name="twitter:site" content="@romerchain">
 <meta name="twitter:card" content="summary_large_image">
@@ -275,97 +311,275 @@ cookieconsent.run({
 
 
 
-<section id="rømer-chain-the-market-makers-native-blockchain-infrastructure" class="level1">
-<h1>Rømer Chain: The Market Maker’s Native Blockchain Infrastructure</h1>
-<section id="redefining-blockchain-validation-node-providers-are-market-makers" class="level2">
-<h2 class="anchored" data-anchor-id="redefining-blockchain-validation-node-providers-are-market-makers">Redefining Blockchain Validation: Node Providers ARE Market Makers</h2>
-<p>Rømer Chain fundamentally reimagines blockchain infrastructure by recognizing a critical truth: market makers and node providers aren’t separate entities—they’re one and the same.</p>
-<section id="your-validator-node-a-complete-market-making-platform" class="level3">
-<h3 class="anchored" data-anchor-id="your-validator-node-a-complete-market-making-platform">Your Validator Node: A Complete Market Making Platform</h3>
-<p>We’ve designed the validator node as an integrated market making suite, not just a computational resource. This means:</p>
+<section id="move-vm-development-plan" class="level1">
+<h1>Move VM Development Plan</h1>
+<p>Our execution engine builds upon Sui’s proven Move VM implementation, carefully extracting and adapting the components we need for market making operations. Rather than building a Move VM from scratch, we leverage Sui’s production-tested code while creating our own simplified adapter layer focused specifically on trading operations.</p>
+<section id="understanding-suis-architecture" class="level2">
+<h2 class="anchored" data-anchor-id="understanding-suis-architecture">Understanding Sui’s Architecture</h2>
+<p>Sui structures their Move implementation across several key crates within their <code>sui-execution</code> directory. This architecture separates core VM functionality from Sui-specific features, allowing us to use the fundamental VM components while building our own specialized layer for trading operations.</p>
+<p>The core components we need from Sui’s implementation include:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode rust code-with-copy"><code class="sourceCode rust"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Core Move VM runtime - handles bytecode execution</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">move</span><span class="op">-</span>vm<span class="op">-</span>runtime <span class="op">=</span> <span class="op">{</span> git <span class="op">=</span> <span class="st">"https://github.com/MystenLabs/sui.git"</span> <span class="op">}</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">// Bytecode verification - ensures code safety</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">move</span><span class="op">-</span>bytecode<span class="op">-</span>verifier <span class="op">=</span> <span class="op">{</span> git <span class="op">=</span> <span class="st">"https://github.com/MystenLabs/sui.git"</span> <span class="op">}</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">// Module format definitions - handles Move binaries</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="kw">move</span><span class="op">-</span>binary<span class="op">-</span>format <span class="op">=</span> <span class="op">{</span> git <span class="op">=</span> <span class="st">"https://github.com/MystenLabs/sui.git"</span> <span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="our-execution-engine-architecture" class="level2">
+<h2 class="anchored" data-anchor-id="our-execution-engine-architecture">Our Execution Engine Architecture</h2>
+<p>We will create a focused execution engine that integrates these Move components with our trading-specific functionality:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode rust code-with-copy"><code class="sourceCode rust"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">pub</span> <span class="kw">struct</span> RomerExecutionEngine <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// The core Move VM from Sui</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    vm<span class="op">:</span> MoveVM<span class="op">,</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Our trading-specific native functions</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    natives<span class="op">:</span> NativeFunctionTable<span class="op">,</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Simplified verifier for our needs</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    verifier<span class="op">:</span> RomerVerifier<span class="op">,</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Order book state management</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    state<span class="op">:</span> OrderBookState<span class="op">,</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="kw">impl</span> RomerExecutionEngine <span class="op">{</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> <span class="kw">fn</span> new() <span class="op">-&gt;</span> <span class="dt">Result</span><span class="op">&lt;</span><span class="dt">Self</span><span class="op">&gt;</span> <span class="op">{</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Initialize with only DEX-related native functions</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>        <span class="kw">let</span> natives <span class="op">=</span> build_dex_natives()<span class="op">;</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Create VM with minimal configuration</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>        <span class="kw">let</span> vm <span class="op">=</span> <span class="pp">MoveVM::</span>new_with_config(</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>            natives<span class="op">.</span>clone()<span class="op">,</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>            VMConfig <span class="op">{</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>                verifier<span class="op">:</span> <span class="pp">VerifierConfig::</span><span class="kw">default</span>()<span class="op">,</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>                max_binary_format_version<span class="op">:</span> <span class="dv">6</span><span class="op">,</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>                runtime_limits_config<span class="op">:</span> VMRuntimeLimitsConfig <span class="op">{</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>                    vector_len_max<span class="op">:</span> <span class="dv">1000</span><span class="op">,</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>                    max_value_nest_depth<span class="op">:</span> <span class="cn">Some</span>(<span class="dv">128</span>)<span class="op">,</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>                    <span class="op">..</span><span class="bu">Default</span><span class="pp">::</span><span class="kw">default</span>()</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>            <span class="op">},</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>        )<span class="op">?;</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>        <span class="cn">Ok</span>(<span class="dt">Self</span> <span class="op">{</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>            vm<span class="op">,</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>            natives<span class="op">,</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>            verifier<span class="op">:</span> <span class="pp">RomerVerifier::</span>new()<span class="op">,</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>            state<span class="op">:</span> <span class="pp">OrderBookState::</span>new()<span class="op">,</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span>)</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="implementation-phases" class="level2">
+<h2 class="anchored" data-anchor-id="implementation-phases">Implementation Phases</h2>
+<p>Our development process focuses on incrementally building our execution engine while leveraging Sui’s proven components.</p>
+<section id="phase-1-core-vm-integration-weeks-1-2" class="level3">
+<h3 class="anchored" data-anchor-id="phase-1-core-vm-integration-weeks-1-2">Phase 1: Core VM Integration (Weeks 1-2)</h3>
+<p>The first phase establishes our basic execution environment:</p>
+<ol type="1">
+<li>Setup Dependencies
 <ul>
-<li>Your node is simultaneously your:
-<ul>
-<li>Network validation infrastructure</li>
-<li>Trading operation center</li>
-<li>Risk management platform</li>
-<li>Liquidity management system</li>
+<li>Import core Move crates from Sui</li>
+<li>Create our project structure</li>
+<li>Set up build configuration</li>
 </ul></li>
-</ul>
-</section>
-</section>
-<section id="native-market-maker-api-plug-and-play" class="level2">
-<h2 class="anchored" data-anchor-id="native-market-maker-api-plug-and-play">Native Market Maker API: Plug and Play</h2>
-<p>Our validator nodes come with an intuitive API specifically engineered for professional trading operations. This isn’t an afterthought—it’s the core design philosophy.</p>
-<section id="seamless-integration-features" class="level3">
-<h3 class="anchored" data-anchor-id="seamless-integration-features">Seamless Integration Features</h3>
+<li>Basic VM Initialization
 <ul>
-<li>Direct DEX interaction</li>
-<li>Automated trading strategies</li>
-<li>Real-time network utilization tracking</li>
-<li>Risk management controls</li>
-<li>Multi-signature trading configurations</li>
-</ul>
-</section>
-</section>
-<section id="the-economic-mechanism-rømer-as-a-computational-utility-token" class="level2">
-<h2 class="anchored" data-anchor-id="the-economic-mechanism-rømer-as-a-computational-utility-token">The Economic Mechanism: RØMER as a Computational Utility Token</h2>
-<section id="dynamic-supply-adjustment" class="level3">
-<h3 class="anchored" data-anchor-id="dynamic-supply-adjustment">Dynamic Supply Adjustment</h3>
-<p>Unlike traditional cryptocurrencies, RØMER maintains stability by directly tracking computational demand:</p>
-<section id="low-network-demand-below-50-capacity" class="level4">
-<h4 class="anchored" data-anchor-id="low-network-demand-below-50-capacity">Low Network Demand (Below 50% Capacity)</h4>
+<li>Create minimal VM configuration</li>
+<li>Initialize core Move VM</li>
+<li>Set up basic module loading</li>
+<li>Verify simple Move code execution</li>
+</ul></li>
+<li>Initial Testing
 <ul>
-<li>Automatic token burning</li>
-<li>Reduces total supply</li>
-<li>Creates natural price support</li>
-<li>Incentivizes efficient resource allocation</li>
-</ul>
+<li>Create basic test modules</li>
+<li>Verify module loading</li>
+<li>Test simple execution</li>
+<li>Establish performance baselines</li>
+</ul></li>
+</ol>
 </section>
-<section id="high-network-demand-above-50-capacity" class="level4">
-<h4 class="anchored" data-anchor-id="high-network-demand-above-50-capacity">High Network Demand (Above 50% Capacity)</h4>
+<section id="phase-2-trading-extensions-weeks-3-4" class="level3">
+<h3 class="anchored" data-anchor-id="phase-2-trading-extensions-weeks-3-4">Phase 2: Trading Extensions (Weeks 3-4)</h3>
+<p>Next, we build our trading-specific functionality:</p>
+<ol type="1">
+<li>Native Functions
 <ul>
-<li>Token minting triggered</li>
-<li>New tokens match excess computational requirements</li>
-<li>Ensures liquidity reflects actual network utility</li>
-</ul>
-</section>
-</section>
-</section>
-<section id="investment-structure" class="level2">
-<h2 class="anchored" data-anchor-id="investment-structure">Investment Structure</h2>
+<li>Implement order creation</li>
+<li>Add position tracking</li>
+<li>Create price calculations</li>
+<li>Build market data functions</li>
+</ul></li>
+<li>State Management
 <ul>
-<li>$100,000 initial investment</li>
-<li>Immediate 100,000 RØMER tokens</li>
-<li>No complex vesting</li>
-<li>Transparent, algorithmic market making strategy</li>
-</ul>
-</section>
-<section id="market-maker-value-proposition" class="level2">
-<h2 class="anchored" data-anchor-id="market-maker-value-proposition">Market Maker Value Proposition</h2>
-<section id="beyond-traditional-blockchain-participation" class="level3">
-<h3 class="anchored" data-anchor-id="beyond-traditional-blockchain-participation">Beyond Traditional Blockchain Participation</h3>
+<li>Design order book state</li>
+<li>Implement position tracking</li>
+<li>Create state updates</li>
+<li>Build query interface</li>
+</ul></li>
+<li>Contract Loading
 <ul>
-<li>Become network infrastructure</li>
-<li>Earn tokens through market making</li>
-<li>Contribute to a stable computational economy</li>
-<li>Use familiar trading infrastructure</li>
-</ul>
+<li>Extract DeepBook modules</li>
+<li>Adapt for our environment</li>
+<li>Create deployment tools</li>
+<li>Test contract loading</li>
+</ul></li>
+</ol>
 </section>
-<section id="technical-differentiation" class="level3">
-<h3 class="anchored" data-anchor-id="technical-differentiation">Technical Differentiation</h3>
+<section id="phase-3-integration-and-testing-weeks-5-6" class="level3">
+<h3 class="anchored" data-anchor-id="phase-3-integration-and-testing-weeks-5-6">Phase 3: Integration and Testing (Weeks 5-6)</h3>
+<p>Finally, we integrate with our sequencer and implement comprehensive testing:</p>
+<ol type="1">
+<li>Sequencer Integration
 <ul>
-<li>Integrated validation and trading tools</li>
-<li>Built-in market making capabilities</li>
-<li>Geographic market making advantages</li>
-<li>Professional-grade trading API</li>
-</ul>
+<li>Create transaction processor</li>
+<li>Implement ordered execution</li>
+<li>Add state synchronization</li>
+<li>Build response handling</li>
+</ul></li>
+<li>Testing Suite
+<ul>
+<li>Unit test coverage</li>
+<li>Integration tests</li>
+<li>Performance benchmarks</li>
+<li>Stress testing</li>
+</ul></li>
+</ol>
 </section>
 </section>
-<section id="core-philosophical-shift" class="level2">
-<h2 class="anchored" data-anchor-id="core-philosophical-shift">Core Philosophical Shift</h2>
-<p>We don’t see market makers as external participants. You’re not just providing liquidity—you’re the fundamental economic layer of computational infrastructure.</p>
-<p><strong>Are you ready to become the infrastructure?</strong></p>
+<section id="key-implementation-details" class="level2">
+<h2 class="anchored" data-anchor-id="key-implementation-details">Key Implementation Details</h2>
+<section id="native-functions" class="level3">
+<h3 class="anchored" data-anchor-id="native-functions">Native Functions</h3>
+<p>Our native function table focuses on essential trading operations:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode rust code-with-copy"><code class="sourceCode rust"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">fn</span> build_dex_natives() <span class="op">-&gt;</span> NativeFunctionTable <span class="op">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Start with minimal Move natives</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> <span class="kw">mut</span> natives <span class="op">=</span> <span class="pp">NativeFunctionTable::</span>new()<span class="op">;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Add order management</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    natives<span class="op">.</span>register_function(</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"order"</span><span class="op">,</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"create"</span><span class="op">,</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        create_order_native<span class="op">,</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    )<span class="op">;</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Add position tracking</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    natives<span class="op">.</span>register_function(</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">"position"</span><span class="op">,</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">"update"</span><span class="op">,</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>        update_position_native<span class="op">,</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    )<span class="op">;</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Add price calculations</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    natives<span class="op">.</span>register_function(</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>        <span class="st">"price"</span><span class="op">,</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">"calculate"</span><span class="op">,</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>        calculate_price_native<span class="op">,</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    )<span class="op">;</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    natives</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="verifier-implementation" class="level3">
+<h3 class="anchored" data-anchor-id="verifier-implementation">Verifier Implementation</h3>
+<p>We create a focused verifier that handles our specific needs:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode rust code-with-copy"><code class="sourceCode rust"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">pub</span> <span class="kw">struct</span> RomerVerifier <span class="op">{</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Basic Move verification</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    move_verifier<span class="op">:</span> Verifier<span class="op">,</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Trading-specific checks</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    dex_verifier<span class="op">:</span> DexVerifier<span class="op">,</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="kw">impl</span> RomerVerifier <span class="op">{</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> <span class="kw">fn</span> verify_module(<span class="op">&amp;</span><span class="kw">self</span><span class="op">,</span> module<span class="op">:</span> <span class="op">&amp;</span>CompiledModule) <span class="op">-&gt;</span> <span class="dt">Result</span><span class="op">&lt;</span>()<span class="op">&gt;</span> <span class="op">{</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Run basic Move verification</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        <span class="kw">self</span><span class="op">.</span>move_verifier<span class="op">.</span>verify(module)<span class="op">?;</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Add our trading-specific checks</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        <span class="kw">self</span><span class="op">.</span>dex_verifier<span class="op">.</span>verify_trading_safety(module)<span class="op">?;</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>        <span class="cn">Ok</span>(())</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="development-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="development-workflow">Development Workflow</h2>
+<p>Our development process emphasizes incremental progress and thorough testing:</p>
+<ol type="1">
+<li>Environment Setup
+<ul>
+<li>Clone Sui repository</li>
+<li>Extract needed components</li>
+<li>Set up development tools</li>
+<li>Create test infrastructure</li>
+</ul></li>
+<li>Iterative Development
+<ul>
+<li>Start with minimal VM</li>
+<li>Add features incrementally</li>
+<li>Continuous testing</li>
+<li>Regular performance checks</li>
+</ul></li>
+<li>Integration Testing
+<ul>
+<li>Module loading tests</li>
+<li>Execution validation</li>
+<li>State management</li>
+<li>Error handling</li>
+</ul></li>
+</ol>
+</section>
+<section id="testing-strategy" class="level2">
+<h2 class="anchored" data-anchor-id="testing-strategy">Testing Strategy</h2>
+<p>Testing focuses on both correctness and performance:</p>
+<ol type="1">
+<li>Unit Testing
+<ul>
+<li>VM initialization</li>
+<li>Module loading</li>
+<li>Native functions</li>
+<li>State management</li>
+</ul></li>
+<li>Integration Testing
+<ul>
+<li>Full execution flows</li>
+<li>State synchronization</li>
+<li>Error conditions</li>
+<li>Recovery scenarios</li>
+</ul></li>
+<li>Performance Testing
+<ul>
+<li>Execution latency</li>
+<li>State access speed</li>
+<li>Memory usage</li>
+<li>Transaction throughput</li>
+</ul></li>
+</ol>
+</section>
+<section id="success-criteria" class="level2">
+<h2 class="anchored" data-anchor-id="success-criteria">Success Criteria</h2>
+<p>The execution engine must meet these requirements:</p>
+<ol type="1">
+<li>Functionality
+<ul>
+<li>Successful Move execution</li>
+<li>Correct order processing</li>
+<li>Accurate state management</li>
+<li>Proper error handling</li>
+</ul></li>
+<li>Performance
+<ul>
+<li>Module load time &lt; 50ms</li>
+<li>Transaction execution &lt; 1ms</li>
+<li>State updates &lt; 100μs</li>
+<li>Memory usage &lt; 1GB</li>
+</ul></li>
+</ol>
+<p>This development plan creates a focused execution engine that leverages Sui’s proven Move implementation while maintaining the simplicity and performance required for our trading operations. By carefully selecting which components to use from Sui’s implementation, we can build a robust system without reinventing core VM functionality.</p>
 
 
 </section>

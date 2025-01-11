@@ -9,7 +9,7 @@
 <link>http://romer.network/content/blog/</link>
 <atom:link href="http://romer.network/content/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description>A First Principles Approach to Blockchain Design</description>
-<generator>quarto-1.7.2</generator>
+<generator>quarto-1.6.40</generator>
 <lastBuildDate>Thu, 09 Jan 2025 14:00:00 GMT</lastBuildDate>
 <item>
   <title>Understanding FIX Protocol</title>

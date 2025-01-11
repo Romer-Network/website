@@ -1,0 +1,91 @@
+# Investment Round Deliverables: Building Professional Market Making Infrastructure
+
+This investment round funds development through testnet launch, delivering three core components that create a complete market making infrastructure stack. By leveraging existing technology where appropriate while building custom solutions where necessary, we create a capital-efficient path to market.
+
+<div class="feature-grid">
+<div class="feature-card">
+### Specialized CLOB Virtual Machine
+
+Our testnet delivers a customized Move VM specifically engineered for professional market making operations. Built by forking and enhancing Sui's [DeepBook](https://deepbook.tech/) implementation, this specialized VM provides:
+
+1. Native Order Book Operations
+   - Market and limit order processing
+   - Price-time priority matching engine
+   - Automatic order book maintenance
+   - Built-in position tracking
+
+2. Market Maker Optimizations
+   - Order type validation at the VM level
+   - Efficient state management for active orders
+   - Integrated risk management primitives
+   - Cross-market position aggregation
+
+3. Performance Enhancements
+   - Parallel order processing capabilities
+   - Optimized state transitions for trading
+   - Memory-efficient order storage
+   - High-throughput matching engine
+
+The VM represents a significant advance in blockchain trading infrastructure, combining proven technology from Sui with custom enhancements for market making operations. By building on DeepBook's foundation while adding specialized functionality, we create a robust yet innovative solution.
+
+[Explore VM Development →](./vm-development.qmd){.card-cta-button}
+</div>
+
+<div class="feature-card">
+### Professional FIX Sequencer
+
+The sequencer serves as a complete FIX gateway, enabling traditional trading infrastructure to connect directly with blockchain operations. At testnet launch, the sequencer provides:
+
+1. Complete FIX Integration
+   - Native FIX protocol support
+   - Standard session management
+   - Market data distribution
+   - Order entry and management
+   - Execution reporting
+
+2. Market Making Features
+   - Permissionless SenderCompID registration
+   - BLS signature authentication
+   - Position and risk monitoring
+   - Order flow management
+
+3. Advanced Infrastructure
+   - High-performance message processing
+   - Reliable session management
+   - Scalable connection handling
+   - Production-ready monitoring
+
+The sequencer creates a seamless bridge between traditional finance and blockchain capabilities, eliminating the need for custom adaptors or parallel systems. This direct integration significantly reduces the barriers to blockchain adoption for traditional trading firms.
+
+[Explore Sequencer Development →](./sequencer-development.qmd){.card-cta-button}
+</div>
+
+<div class="feature-card">
+### Geographic Validator Network
+
+Our validator network implements the initial version of Proof of Physics consensus while leveraging Commonware primitives for core functionality. The testnet validator network delivers:
+
+1. Geographic Validation
+   - Physical infrastructure verification
+   - Regional performance monitoring
+   - Network path optimization
+   - Location-based consensus participation
+
+2. Network Operations
+   - Block production and validation
+   - Transaction ordering and finality
+   - State synchronization
+   - Performance metric tracking
+
+3. Market Maker Integration
+   - Validator qualification system
+   - Hardware signature verification
+   - Regional order flow protection
+   - Market maker performance monitoring
+
+Built on proven Commonware foundations, our validator network creates true geographic decentralization while protecting regional market making operations. This approach ensures both network security and sustainable market maker economics.
+
+[Explore Validator Development →](./validator-development.qmd){.card-cta-button}
+</div>
+</div>
+

@@ -53,7 +53,7 @@ website:
         href: index.qmd
         icon: house
       
-      - text: "Market Makers"
+      - text: "For Market Makers"
         menu: 
           - text: "Overview"
             href: content/market-makers/index.qmd
@@ -62,7 +62,7 @@ website:
             href: content/market-makers/partner-framework.qmd
             icon: diagram-3
       
-      - text: "Technical Design"
+      - text: "Technology"
         menu:
           - text: "Architecture Overview"
             href: content/technical/index.qmd
@@ -76,6 +76,17 @@ website:
           - text: "FIX Protocol"
             href: content/technical/fix.qmd
             icon: wrench
+
+      - text: Roadmap
+        menu:
+          - text: "Investment Deliverables"
+            href: content/technical/investment-deliverables.qmd
+          - text: "CLOB Virtual Machine"
+            href: content/technical/vm-development.qmd
+          - text: "FIX Sequencer"
+            href: content/technical/sequencer-development.qmd
+          - text: "Validator Network"
+            href: content/technical/validator-development.qmd
       
       - text: "Tokenomics"
         menu:

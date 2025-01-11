@@ -163,23 +163,23 @@ Rømer Chain integrates directly with the world's trading infrastructure:
 ::: {.column width="25%"}
 **Phase 1: Q1 2025**
 
-- Market Making Program
-- Devnet1 release
-- FIX Sessions with Sequencer
+- Move CLOB VM
+
 :::
 
 ::: {.column width="25%"}
 **Phase 2: Q2 2025**
 
-- Sequencer with custom VM
-- DevNet2
-- FIX Orders
+- FIX Sequencer 
+
 :::
 
 ::: {.column width="25%"}
 **Phase 3: Q3 2025**
 
+- Validator 
 - Testnet Release
+
 :::
 
 ::: {.column width="25%"}
@@ -284,4 +284,4 @@ This funding will support:
 - Market maker testing program
 :::
 
-Let's discuss how you can participate in building the future of market making infrastructure.
+For a detailed guide on our current development plan please see our [Investment Deliverables](../technical/investment-deliverables.qmd)

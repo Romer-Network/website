@@ -1,0 +1,196 @@
+# FIX Sequencer Development Plan
+
+The Rømer Chain sequencer creates a bridge between traditional trading infrastructure and our blockchain execution engine. Our testnet implementation focuses on supporting a carefully chosen subset of FIX 4.2 messages that enable essential market making operations while maintaining simplicity and reliability.
+
+## Core Protocol Implementation
+
+We leverage the fefix library to handle the fundamental FIX protocol implementation, providing robust message parsing and validation. This allows us to focus our development efforts on the specific message types and workflows needed for our testnet deployment.
+
+## Testnet Message Support
+
+For our testnet, we implement a focused set of FIX messages that enable complete market making functionality while maintaining simplicity. Each message type serves a specific purpose in our trading workflow.
+
+### Session Management Messages
+
+Our session management implementation combines traditional FIX session handling with blockchain-native BLS authentication.
+
+1. Logon (Tag=35, MsgType=A)
+   - Initiates a new FIX session
+   - Carries BLS signature in Password(554) field
+   - Includes market maker's SenderCompID
+   - Establishes heartbeat interval
+   - Required for all market making operations
+
+2. Logout (Tag=35, MsgType=5)
+   - Gracefully terminates an active session
+   - Includes optional text reason
+   - Ensures proper session cleanup
+   - Prevents sequence number gaps
+
+3. Create Session (Custom Message Type)
+   - Registers new market maker identity
+   - Associates BLS public key with SenderCompID
+   - Sets initial permissions and limits
+   - Required before first Logon
+
+### Trading Messages
+
+Our trading message support focuses on essential order types and market operations.
+
+1. New Order - Limit (Tag=35, MsgType=D)
+   - Creates new limit order
+   - Price specified in Price(44) field
+   - Quantity in OrderQty(38) field
+   - Side(54) indicates buy/sell
+   - TimeInForce(59) controls order lifetime
+   - Supports standard FIX limit order workflow
+
+2. New Order - Market (Tag=35, MsgType=D)
+   - Creates new market order
+   - OrdType(40)=1 indicates market order
+   - Quantity in OrderQty(38) field
+   - Side(54) indicates buy/sell
+   - Executes immediately at best available price
+   - No price field required
+
+3. Market Maker Quote (Tag=35, MsgType=i)
+   - Creates market depth
+   - BidPx(132) and OfferPx(133) specify prices
+   - BidSize(134) and OfferSize(135) specify quantities
+   - QuoteID(117) for tracking and updates
+   - Enables efficient market making operations
+
+### Market Data Messages
+
+Our market data implementation provides both snapshot and incremental updates.
+
+1. Market Data Request (Tag=35, MsgType=V)
+   - Requests order book information
+   - MDReqID(262) for response tracking
+   - SubscriptionRequestType(263) indicates type:
+     - 0 = Snapshot
+     - 1 = Snapshot + Updates
+     - 2 = Disable previous subscription
+   - MarketDepth(264) specifies levels requested
+   - MDUpdateType(265) controls update style
+
+2. Market Data Snapshot (Tag=35, MsgType=W)
+   - Provides full order book state
+   - MDReqID(262) links to request
+   - NoMDEntries(268) indicates entry count
+   - Includes price and quantity for each level
+   - Sent for both initial snapshots and refreshes
+
+3. Market Data Incremental Refresh (Tag=35, MsgType=X)
+   - Provides order book updates
+   - MDReqID(262) links to subscription
+   - NoMDEntries(268) indicates update count
+   - MDUpdateAction(279) specifies change type:
+     - 0 = New
+     - 1 = Change
+     - 2 = Delete
+   - More efficient than full snapshots
+
+## Message Processing Pipeline
+
+Our message processing system creates a clear path from receipt to execution while maintaining strict ordering guarantees.
+
+### Validation Phase
+
+Message validation occurs in multiple stages:
+
+1. Protocol Validation
+   - fefix handles basic FIX syntax
+   - Checks required fields
+   - Validates field formats
+   - Ensures message integrity
+
+2. Session Validation
+   - Verifies BLS signatures
+   - Checks sequence numbers
+   - Validates permissions
+   - Ensures proper session state
+
+3. Business Validation
+   - Checks order parameters
+   - Validates market maker limits
+   - Ensures market state consistency
+   - Applies trading rules
+
+### Transaction Ordering
+
+The ordering system processes validated messages with several key guarantees:
+
+1. Fairness Properties
+   - Preserves temporal ordering
+   - Prevents front-running
+   - Maintains session consistency
+   - Ensures deterministic processing
+
+2. Performance Characteristics
+   - Minimal latency overhead
+   - Predictable throughput
+   - Efficient resource usage
+   - Scalable design
+
+## Development Timeline
+
+Our development process spans three months with clear milestones:
+
+### Month 1: Core Session Management
+   - Implement Logon/Logout handling
+   - Build BLS authentication
+   - Create session management
+   - Develop basic testing infrastructure
+
+### Month 2: Trading Messages
+   - Implement order messages
+   - Add market maker quotes
+   - Build order validation
+   - Create order processing pipeline
+
+### Month 3: Market Data and Integration
+   - Implement market data messages
+   - Add incremental updates
+   - Create full integration tests
+   - Optimize performance
+
+## Testing Strategy
+
+Our testing approach verifies both correctness and performance:
+
+1. Protocol Conformance
+   - FIX 4.2 compliance
+   - Message format validation
+   - Session state management
+   - Error handling
+
+2. Functional Testing
+   - Order processing
+   - Market data distribution
+   - Quote management
+   - Trading workflows
+
+3. Performance Testing
+   - Message latency
+   - Throughput capacity
+   - Resource utilization
+   - System scalability
+
+## Success Criteria
+
+The testnet sequencer must meet specific requirements:
+
+1. Protocol Support
+   - Full support for specified messages
+   - Correct FIX 4.2 compliance
+   - Proper error handling
+   - Reliable session management
+
+2. Performance Targets
+   - Message validation < 50μs
+   - Order processing < 100μs
+   - Market data updates < 250μs
+   - Support for 100+ concurrent sessions
+
+This focused implementation provides the essential functionality needed for market making while maintaining simplicity and reliability. By supporting this carefully chosen set of FIX messages, we enable market makers to connect using their existing systems while ensuring efficient and fair order processing.

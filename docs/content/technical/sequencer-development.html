@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>pitch – Rømer Chain</title>
+<title>sequencer-development – Rømer Chain</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -102,8 +102,10 @@ cookieconsent.run({
 
 
 <meta property="og:title" content="Rømer Chain">
+<meta property="og:description" content="A First Principles Approach to Blockchain Design">
 <meta property="og:site_name" content="Rømer Chain">
 <meta name="twitter:title" content="Rømer Chain">
+<meta name="twitter:description" content="A First Principles Approach to Blockchain Design">
 <meta name="twitter:creator" content="@romerchain">
 <meta name="twitter:site" content="@romerchain">
 <meta name="twitter:card" content="summary_large_image">
@@ -275,97 +277,246 @@ cookieconsent.run({
 
 
 
-<section id="rømer-chain-the-market-makers-native-blockchain-infrastructure" class="level1">
-<h1>Rømer Chain: The Market Maker’s Native Blockchain Infrastructure</h1>
-<section id="redefining-blockchain-validation-node-providers-are-market-makers" class="level2">
-<h2 class="anchored" data-anchor-id="redefining-blockchain-validation-node-providers-are-market-makers">Redefining Blockchain Validation: Node Providers ARE Market Makers</h2>
-<p>Rømer Chain fundamentally reimagines blockchain infrastructure by recognizing a critical truth: market makers and node providers aren’t separate entities—they’re one and the same.</p>
-<section id="your-validator-node-a-complete-market-making-platform" class="level3">
-<h3 class="anchored" data-anchor-id="your-validator-node-a-complete-market-making-platform">Your Validator Node: A Complete Market Making Platform</h3>
-<p>We’ve designed the validator node as an integrated market making suite, not just a computational resource. This means:</p>
+<section id="fix-sequencer-development-plan" class="level1">
+<h1>FIX Sequencer Development Plan</h1>
+<p>The Rømer Chain sequencer creates a bridge between traditional trading infrastructure and our blockchain execution engine. Our testnet implementation focuses on supporting a carefully chosen subset of FIX 4.2 messages that enable essential market making operations while maintaining simplicity and reliability.</p>
+<section id="core-protocol-implementation" class="level2">
+<h2 class="anchored" data-anchor-id="core-protocol-implementation">Core Protocol Implementation</h2>
+<p>We leverage the fefix library to handle the fundamental FIX protocol implementation, providing robust message parsing and validation. This allows us to focus our development efforts on the specific message types and workflows needed for our testnet deployment.</p>
+</section>
+<section id="testnet-message-support" class="level2">
+<h2 class="anchored" data-anchor-id="testnet-message-support">Testnet Message Support</h2>
+<p>For our testnet, we implement a focused set of FIX messages that enable complete market making functionality while maintaining simplicity. Each message type serves a specific purpose in our trading workflow.</p>
+<section id="session-management-messages" class="level3">
+<h3 class="anchored" data-anchor-id="session-management-messages">Session Management Messages</h3>
+<p>Our session management implementation combines traditional FIX session handling with blockchain-native BLS authentication.</p>
+<ol type="1">
+<li>Logon (Tag=35, MsgType=A)
 <ul>
-<li>Your node is simultaneously your:
-<ul>
-<li>Network validation infrastructure</li>
-<li>Trading operation center</li>
-<li>Risk management platform</li>
-<li>Liquidity management system</li>
+<li>Initiates a new FIX session</li>
+<li>Carries BLS signature in Password(554) field</li>
+<li>Includes market maker’s SenderCompID</li>
+<li>Establishes heartbeat interval</li>
+<li>Required for all market making operations</li>
 </ul></li>
-</ul>
-</section>
-</section>
-<section id="native-market-maker-api-plug-and-play" class="level2">
-<h2 class="anchored" data-anchor-id="native-market-maker-api-plug-and-play">Native Market Maker API: Plug and Play</h2>
-<p>Our validator nodes come with an intuitive API specifically engineered for professional trading operations. This isn’t an afterthought—it’s the core design philosophy.</p>
-<section id="seamless-integration-features" class="level3">
-<h3 class="anchored" data-anchor-id="seamless-integration-features">Seamless Integration Features</h3>
+<li>Logout (Tag=35, MsgType=5)
 <ul>
-<li>Direct DEX interaction</li>
-<li>Automated trading strategies</li>
-<li>Real-time network utilization tracking</li>
-<li>Risk management controls</li>
-<li>Multi-signature trading configurations</li>
-</ul>
-</section>
-</section>
-<section id="the-economic-mechanism-rømer-as-a-computational-utility-token" class="level2">
-<h2 class="anchored" data-anchor-id="the-economic-mechanism-rømer-as-a-computational-utility-token">The Economic Mechanism: RØMER as a Computational Utility Token</h2>
-<section id="dynamic-supply-adjustment" class="level3">
-<h3 class="anchored" data-anchor-id="dynamic-supply-adjustment">Dynamic Supply Adjustment</h3>
-<p>Unlike traditional cryptocurrencies, RØMER maintains stability by directly tracking computational demand:</p>
-<section id="low-network-demand-below-50-capacity" class="level4">
-<h4 class="anchored" data-anchor-id="low-network-demand-below-50-capacity">Low Network Demand (Below 50% Capacity)</h4>
+<li>Gracefully terminates an active session</li>
+<li>Includes optional text reason</li>
+<li>Ensures proper session cleanup</li>
+<li>Prevents sequence number gaps</li>
+</ul></li>
+<li>Create Session (Custom Message Type)
 <ul>
-<li>Automatic token burning</li>
-<li>Reduces total supply</li>
-<li>Creates natural price support</li>
-<li>Incentivizes efficient resource allocation</li>
-</ul>
+<li>Registers new market maker identity</li>
+<li>Associates BLS public key with SenderCompID</li>
+<li>Sets initial permissions and limits</li>
+<li>Required before first Logon</li>
+</ul></li>
+</ol>
 </section>
-<section id="high-network-demand-above-50-capacity" class="level4">
-<h4 class="anchored" data-anchor-id="high-network-demand-above-50-capacity">High Network Demand (Above 50% Capacity)</h4>
+<section id="trading-messages" class="level3">
+<h3 class="anchored" data-anchor-id="trading-messages">Trading Messages</h3>
+<p>Our trading message support focuses on essential order types and market operations.</p>
+<ol type="1">
+<li>New Order - Limit (Tag=35, MsgType=D)
 <ul>
-<li>Token minting triggered</li>
-<li>New tokens match excess computational requirements</li>
-<li>Ensures liquidity reflects actual network utility</li>
-</ul>
-</section>
-</section>
-</section>
-<section id="investment-structure" class="level2">
-<h2 class="anchored" data-anchor-id="investment-structure">Investment Structure</h2>
+<li>Creates new limit order</li>
+<li>Price specified in Price(44) field</li>
+<li>Quantity in OrderQty(38) field</li>
+<li>Side(54) indicates buy/sell</li>
+<li>TimeInForce(59) controls order lifetime</li>
+<li>Supports standard FIX limit order workflow</li>
+</ul></li>
+<li>New Order - Market (Tag=35, MsgType=D)
 <ul>
-<li>$100,000 initial investment</li>
-<li>Immediate 100,000 RØMER tokens</li>
-<li>No complex vesting</li>
-<li>Transparent, algorithmic market making strategy</li>
-</ul>
-</section>
-<section id="market-maker-value-proposition" class="level2">
-<h2 class="anchored" data-anchor-id="market-maker-value-proposition">Market Maker Value Proposition</h2>
-<section id="beyond-traditional-blockchain-participation" class="level3">
-<h3 class="anchored" data-anchor-id="beyond-traditional-blockchain-participation">Beyond Traditional Blockchain Participation</h3>
+<li>Creates new market order</li>
+<li>OrdType(40)=1 indicates market order</li>
+<li>Quantity in OrderQty(38) field</li>
+<li>Side(54) indicates buy/sell</li>
+<li>Executes immediately at best available price</li>
+<li>No price field required</li>
+</ul></li>
+<li>Market Maker Quote (Tag=35, MsgType=i)
 <ul>
-<li>Become network infrastructure</li>
-<li>Earn tokens through market making</li>
-<li>Contribute to a stable computational economy</li>
-<li>Use familiar trading infrastructure</li>
-</ul>
+<li>Creates market depth</li>
+<li>BidPx(132) and OfferPx(133) specify prices</li>
+<li>BidSize(134) and OfferSize(135) specify quantities</li>
+<li>QuoteID(117) for tracking and updates</li>
+<li>Enables efficient market making operations</li>
+</ul></li>
+</ol>
 </section>
-<section id="technical-differentiation" class="level3">
-<h3 class="anchored" data-anchor-id="technical-differentiation">Technical Differentiation</h3>
+<section id="market-data-messages" class="level3">
+<h3 class="anchored" data-anchor-id="market-data-messages">Market Data Messages</h3>
+<p>Our market data implementation provides both snapshot and incremental updates.</p>
+<ol type="1">
+<li>Market Data Request (Tag=35, MsgType=V)
 <ul>
-<li>Integrated validation and trading tools</li>
-<li>Built-in market making capabilities</li>
-<li>Geographic market making advantages</li>
-<li>Professional-grade trading API</li>
+<li>Requests order book information</li>
+<li>MDReqID(262) for response tracking</li>
+<li>SubscriptionRequestType(263) indicates type:
+<ul>
+<li>0 = Snapshot</li>
+<li>1 = Snapshot + Updates</li>
+<li>2 = Disable previous subscription</li>
+</ul></li>
+<li>MarketDepth(264) specifies levels requested</li>
+<li>MDUpdateType(265) controls update style</li>
+</ul></li>
+<li>Market Data Snapshot (Tag=35, MsgType=W)
+<ul>
+<li>Provides full order book state</li>
+<li>MDReqID(262) links to request</li>
+<li>NoMDEntries(268) indicates entry count</li>
+<li>Includes price and quantity for each level</li>
+<li>Sent for both initial snapshots and refreshes</li>
+</ul></li>
+<li>Market Data Incremental Refresh (Tag=35, MsgType=X)
+<ul>
+<li>Provides order book updates</li>
+<li>MDReqID(262) links to subscription</li>
+<li>NoMDEntries(268) indicates update count</li>
+<li>MDUpdateAction(279) specifies change type:
+<ul>
+<li>0 = New</li>
+<li>1 = Change</li>
+<li>2 = Delete</li>
+</ul></li>
+<li>More efficient than full snapshots</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="message-processing-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="message-processing-pipeline">Message Processing Pipeline</h2>
+<p>Our message processing system creates a clear path from receipt to execution while maintaining strict ordering guarantees.</p>
+<section id="validation-phase" class="level3">
+<h3 class="anchored" data-anchor-id="validation-phase">Validation Phase</h3>
+<p>Message validation occurs in multiple stages:</p>
+<ol type="1">
+<li>Protocol Validation
+<ul>
+<li>fefix handles basic FIX syntax</li>
+<li>Checks required fields</li>
+<li>Validates field formats</li>
+<li>Ensures message integrity</li>
+</ul></li>
+<li>Session Validation
+<ul>
+<li>Verifies BLS signatures</li>
+<li>Checks sequence numbers</li>
+<li>Validates permissions</li>
+<li>Ensures proper session state</li>
+</ul></li>
+<li>Business Validation
+<ul>
+<li>Checks order parameters</li>
+<li>Validates market maker limits</li>
+<li>Ensures market state consistency</li>
+<li>Applies trading rules</li>
+</ul></li>
+</ol>
+</section>
+<section id="transaction-ordering" class="level3">
+<h3 class="anchored" data-anchor-id="transaction-ordering">Transaction Ordering</h3>
+<p>The ordering system processes validated messages with several key guarantees:</p>
+<ol type="1">
+<li>Fairness Properties
+<ul>
+<li>Preserves temporal ordering</li>
+<li>Prevents front-running</li>
+<li>Maintains session consistency</li>
+<li>Ensures deterministic processing</li>
+</ul></li>
+<li>Performance Characteristics
+<ul>
+<li>Minimal latency overhead</li>
+<li>Predictable throughput</li>
+<li>Efficient resource usage</li>
+<li>Scalable design</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="development-timeline" class="level2">
+<h2 class="anchored" data-anchor-id="development-timeline">Development Timeline</h2>
+<p>Our development process spans three months with clear milestones:</p>
+<section id="month-1-core-session-management" class="level3">
+<h3 class="anchored" data-anchor-id="month-1-core-session-management">Month 1: Core Session Management</h3>
+<ul>
+<li>Implement Logon/Logout handling</li>
+<li>Build BLS authentication</li>
+<li>Create session management</li>
+<li>Develop basic testing infrastructure</li>
+</ul>
+</section>
+<section id="month-2-trading-messages" class="level3">
+<h3 class="anchored" data-anchor-id="month-2-trading-messages">Month 2: Trading Messages</h3>
+<ul>
+<li>Implement order messages</li>
+<li>Add market maker quotes</li>
+<li>Build order validation</li>
+<li>Create order processing pipeline</li>
+</ul>
+</section>
+<section id="month-3-market-data-and-integration" class="level3">
+<h3 class="anchored" data-anchor-id="month-3-market-data-and-integration">Month 3: Market Data and Integration</h3>
+<ul>
+<li>Implement market data messages</li>
+<li>Add incremental updates</li>
+<li>Create full integration tests</li>
+<li>Optimize performance</li>
 </ul>
 </section>
 </section>
-<section id="core-philosophical-shift" class="level2">
-<h2 class="anchored" data-anchor-id="core-philosophical-shift">Core Philosophical Shift</h2>
-<p>We don’t see market makers as external participants. You’re not just providing liquidity—you’re the fundamental economic layer of computational infrastructure.</p>
-<p><strong>Are you ready to become the infrastructure?</strong></p>
+<section id="testing-strategy" class="level2">
+<h2 class="anchored" data-anchor-id="testing-strategy">Testing Strategy</h2>
+<p>Our testing approach verifies both correctness and performance:</p>
+<ol type="1">
+<li>Protocol Conformance
+<ul>
+<li>FIX 4.2 compliance</li>
+<li>Message format validation</li>
+<li>Session state management</li>
+<li>Error handling</li>
+</ul></li>
+<li>Functional Testing
+<ul>
+<li>Order processing</li>
+<li>Market data distribution</li>
+<li>Quote management</li>
+<li>Trading workflows</li>
+</ul></li>
+<li>Performance Testing
+<ul>
+<li>Message latency</li>
+<li>Throughput capacity</li>
+<li>Resource utilization</li>
+<li>System scalability</li>
+</ul></li>
+</ol>
+</section>
+<section id="success-criteria" class="level2">
+<h2 class="anchored" data-anchor-id="success-criteria">Success Criteria</h2>
+<p>The testnet sequencer must meet specific requirements:</p>
+<ol type="1">
+<li>Protocol Support
+<ul>
+<li>Full support for specified messages</li>
+<li>Correct FIX 4.2 compliance</li>
+<li>Proper error handling</li>
+<li>Reliable session management</li>
+</ul></li>
+<li>Performance Targets
+<ul>
+<li>Message validation &lt; 50μs</li>
+<li>Order processing &lt; 100μs</li>
+<li>Market data updates &lt; 250μs</li>
+<li>Support for 100+ concurrent sessions</li>
+</ul></li>
+</ol>
+<p>This focused implementation provides the essential functionality needed for market making while maintaining simplicity and reliability. By supporting this carefully chosen set of FIX messages, we enable market makers to connect using their existing systems while ensuring efficient and fair order processing.</p>
 
 
 </section>
