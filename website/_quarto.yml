@@ -37,7 +37,7 @@ website:
   
   # Cookie consent and analytics
   cookie-consent: true
-  google-analytics: "G-XXXXXXXXXX"  # Replace with your tracking ID
+  google-analytics: "G-4W9QDWGVSQ"  # Replace with your tracking ID
   
   # Navigation Bar Configuration
   navbar:
